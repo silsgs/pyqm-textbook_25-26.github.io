@@ -1,35 +1,35 @@
-# Table of contents
+# Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: index
+root: docs/index
 
 parts:
   - caption: Course content
     chapters:
 
-      - file: content/01_all/Week1-intro.md
+      - file: docs/01_all/Week1-intro.md
         options:
           numbered: false
         sections:
-        - file: content/01_all/01_01_setting_env.ipynb
-        - file: content/01_all/01_02_git_github.ipynb
-        - file: content/01_all/01_03_python_funds.ipynb
+        - file: docs/01_all/01_01_setting_env.ipynb
+        - file: docs/01_all/01_02_git_github.ipynb
+        - file: docs/01_all/01_03_python_funds.ipynb
 
-      - file: content/02_all/Week2-intro.md
+      - file: docs/02_all/Week2-intro.md
         options:
           numbered: false
         sections:
-        - file: content/02_all/02_01-flow_control.ipynb
-        - file: content/02_all/02_02-compact-code.ipynb
-        - file: content/02_all/02_03-external-data.ipynb
-        - file: content/02_all/02_04-cheatsheet.ipynb
+        - file: docs/02_all/02_01-flow_control.ipynb
+        - file: docs/02_all/02_02-compact-code.ipynb
+        - file: docs/02_all/02_03-external-data.ipynb
+        - file: docs/02_all/02_04-cheatsheet.ipynb
 
-      - file: content/03_all/Week3-intro.md
+      - file: docs/03_all/Week3-intro.md
         options:
           numbered: false
         sections:
-        - file: content/03_all/03_01-function.ipynb
-        - file: content/03_all/03_02-classes.ipynb
-        - file: content/03_all/03_03-cheatsheet.ipynb
+        - file: docs/03_all/03_01-function.ipynb
+        - file: docs/03_all/03_02-classes.ipynb
+        - file: docs/03_all/03_03-cheatsheet.ipynb
 

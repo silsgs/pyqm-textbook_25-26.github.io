@@ -30,7 +30,7 @@ The main goals of this course are to:
 
 | Week | Day | Format           | Topic                                      |
 |------|-----|------------------|--------------------------------------------|
-| 1    | Mo. | Lecture          | Conda envs., Git and Python fundamentals   |
+| 1    | Mo. | Lecture          | [Conda envs., Git and Python fundamentals](docs/01_all)   |
 | 1    | Tu. | F2F              | Mini-project and excersises asistance      |
 | 2    | Mo. | Lecture          | Flow control, comprehensions & I/O         |
 | 2    | Tu. | F2F              | Mini-project and excersises asistance      |

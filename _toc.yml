@@ -15,21 +15,6 @@ parts:
         - file: docs/01_all/01_01_setting_env.ipynb
         - file: docs/01_all/01_02_git_github.ipynb
         - file: docs/01_all/01_03_python_funds.ipynb
-
-      - file: docs/02_all/Week2-intro.md
-        options:
-          numbered: false
-        sections:
-        - file: docs/02_all/02_01-flow_control.ipynb
-        - file: docs/02_all/02_02-compact-code.ipynb
-        - file: docs/02_all/02_03-external-data.ipynb
-        - file: docs/02_all/02_04-cheatsheet.ipynb
-
-      - file: docs/03_all/Week3-intro.md
-        options:
-          numbered: false
-        sections:
-        - file: docs/03_all/03_01-function.ipynb
-        - file: docs/03_all/03_02-classes.ipynb
-        - file: docs/03_all/03_03-cheatsheet.ipynb
+        - file: docs/01_all/exercises/week1-ex1.ipynb
+        - file: docs/01_all/exercises/week1-tut1.ipynb
 

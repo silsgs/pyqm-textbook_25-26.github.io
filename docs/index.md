@@ -59,4 +59,4 @@ The main goals of this course are to:
 This content is licensed under `Creative Commons Attribution-NonCommercial-ShareAlike` (CC BY-NC-SA) license. This license allows others to remix, tweak, and build upon this work non-commercially, as long as they credit the original creator and license their new creations under the same terms. See [LICENSE](./LICENSE) for details.
 
 
-![alt](./Trinity-Main-Logo.jpg)
+![alt](../Trinity-Main-Logo.jpg)

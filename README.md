@@ -31,17 +31,17 @@ The main goals of this course are to:
 | Week | Day | Format           | Topic                                      |
 |------|-----|------------------|--------------------------------------------|
 | 1    | Mo. | Lecture          | [Conda envs., Git and Python fundamentals](docs/01_all)   |
-| 1    | Tu. | F2F              | Mini-project and excersises asistance      |
+| 1    | Tu. | F2F              | [Exercises and tutorial asistance](docs/01_all/exercises) |
 | 2    | Mo. | Lecture          | Flow control, comprehensions & I/O         |
-| 2    | Tu. | F2F              | Mini-project and excersises asistance      |
+| 2    | Tu. | F2F              | Exercises and tutorial asistance           |
 | 3    | Mo. | Lecture          | Functions and classes                      |
-| 3    | Tu. | F2F              | Mini-project and excersises asistance      |
+| 3    | Tu. | F2F              | Exercises and tutorial asistance           |
 | 4    | Mo. | Lecture          | Numpy and Matplotlib                       |
-| 4    | Tu. | F2F              | Mini-project and excersises asistance      |
+| 4    | Tu. | F2F              | Exercises and tutorial asistance           |
 | 5    | Mo. | Lecture          | Scipy and Scientific writing tools         |
-| 5    | Tu. | F2F              | Mini-project and excersises asistance      |
+| 5    | Tu. | F2F              | Exercises and tutorial asistance           |
 | 6    | Mo. | Lecture          | Qutip - Quantum Toolbox in Python          |
-| 6    | Tu. | F2F              | Mini-project and excersises asistance      |
+| 6    | Tu. | F2F              | Exercises and tutorial asistance           |
 
 
 

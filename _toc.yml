@@ -2,19 +2,19 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: docs/index
+root: index
 
 parts:
   - caption: Course content
     chapters:
 
-      - file: docs/01_all/Week1-intro.md
+      - file: 01_all/Week1-intro.md
         options:
           numbered: false
         sections:
-        - file: docs/01_all/01_01_setting_env.ipynb
-        - file: docs/01_all/01_02_git_github.ipynb
-        - file: docs/01_all/01_03_python_funds.ipynb
-        - file: docs/01_all/exercises/week1-ex1.ipynb
-        - file: docs/01_all/exercises/week1-tut1.ipynb
+        - file: 01_all/01_01_setting_env.ipynb
+        - file: 01_all/01_02_git_github.ipynb
+        - file: 01_all/01_03_python_funds.ipynb
+        - file: 01_all/exercises/week1-ex1.ipynb
+        - file: 01_all/exercises/week1-tut1.ipynb
 

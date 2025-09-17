@@ -18,3 +18,12 @@ parts:
         - file: 01_all/exercises/week1-ex1.ipynb
         - file: 01_all/exercises/week1-tut1.ipynb
 
+
+      - file: 02_all/Week2-intro.md
+        options:
+          numbered: false
+        sections:
+        - file: 02_all/02_01-flow_control.ipynb
+        - file: 02_all/02_02-compact-code.ipynb
+        - file: 02_all/02_03-external-data.ipynb
+        - file: 02_all/02_04-cheatsheet.ipynb

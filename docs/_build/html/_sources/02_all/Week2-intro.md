@@ -1,6 +1,18 @@
 # Week 2
 
 ## Part 0. [Review of Week 1](02_00_review_week1.ipynb)
+- 0.1 Python and Conda recap
+- 0.2 Git and GitHub recap
+- 0.3 Python basics recap
+    - 0.3.1 Variables and Data Types
+    - 0.3.2 Basic Operations
+    - 0.3.3 Strings
+    - 0.3.4 Lists
+    - 0.3.5 Tuples
+    - 0.3.6 Sets
+    - 0.3.7 Dictionaries
+    - 0.3.8 Functions
+    - 0.3.9 Modules and Packages
 
 ## Part 1. [Flow control with Python](02_01_flow_control.ipynb)
 - 1.1 Conditional statements: if, elif, else

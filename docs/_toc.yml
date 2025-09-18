@@ -23,7 +23,10 @@ parts:
         options:
           numbered: false
         sections:
+        - file: 02_all/02_00-recap.ipynb 
         - file: 02_all/02_01-flow_control.ipynb
         - file: 02_all/02_02-compact-code.ipynb
         - file: 02_all/02_03-external-data.ipynb
         - file: 02_all/02_04-cheatsheet.ipynb
+        - file: 02_all/exercises/week2_Ex2.ipynb
+        - file: 02_all/exercises/week2_Tut2.ipynb

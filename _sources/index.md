@@ -28,20 +28,20 @@ The main goals of this course are to:
 ## Overview
 
 
-| Week | Day | Format           | Topic                                      |
-|------|-----|------------------|--------------------------------------------|
-| 1    | Mo. | Lecture          | [Conda envs., Git and Python fundamentals](01_all)   |
-| 1    | Tu. | F2F              | [Exercises and tutorial asistance](01_all/exercises) |
-| 2    | Mo. | Lecture          | Flow control, comprehensions & I/O         |
-| 2    | Tu. | F2F              | Exercises and tutorial asistance           |
-| 3    | Mo. | Lecture          | Functions and classes                      |
-| 3    | Tu. | F2F              | Exercises and tutorial asistance           |
-| 4    | Mo. | Lecture          | Numpy and Matplotlib                       |
-| 4    | Tu. | F2F              | Exercises and tutorial asistance           |
-| 5    | Mo. | Lecture          | Scipy and Scientific writing tools         |
-| 5    | Tu. | F2F              | Exercises and tutorial asistance           |
-| 6    | Mo. | Lecture          | Qutip - Quantum Toolbox in Python          |
-| 6    | Tu. | F2F              | Exercises and tutorial asistance           |
+| Week | Day            | Format           | Topic                                                  |
+|------|----------------|------------------|--------------------------------------------------------|
+| 1    | Mo. Sept. 15th | Lecture          | [Conda envs., Git and Python fundamentals](01_all)     |
+| 1    | Tu. Sept. 16th | F2F              | [Exercises and tutorial asistance](01_all/exercises)   |
+| 2    | Mo. Sept. 22nd | Lecture          | [Flow control, comprehensions & I/O](02_all)           |
+| 2    | Tu. Sept. 23rd | F2F              | [Exercises and tutorial asistance](02_all/exercises/)  |
+| 3    | Mo. Sept. 29th | Lecture          | Functions and classes                                  |
+| 3    | Tu. Sept. 30th | F2F              | Exercises and tutorial asistance                       |
+| 4    | Mo. Oct. 6th   | Lecture          | Numpy and Matplotlib                                   |
+| 4    | Tu. Oct. 7th   | F2F              | Exercises and tutorial asistance                       |
+| 5    | Mo. Oct. 13th  | Lecture          | Scipy and Scientific writing tools                     |
+| 5    | Tu. Oct. 14th  | F2F              | Exercises and tutorial asistance                       |
+| 6    | Mo. Oct. 20th  | Lecture          | Qutip - Quantum Toolbox in Python                      |
+| 6    | Tu. Oct. 21st  | F2F              | Exercises and tutorial asistance                       |
 
 
 

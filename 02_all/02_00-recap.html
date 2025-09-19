@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Part 0. Review of Week 1 &#8212; Python for Quantum Mechanics book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_all/02_00-recap';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Part 1. Flow control with Python" href="02_01-flow_control.html" />
+    <link rel="prev" title="Week 2" href="Week2-intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Trinity-Main-Logo.jpg" class="logo__image only-light" alt="Python for Quantum Mechanics book - Home"/>
+    <script>document.write(`<img src="../_static/Trinity-Main-Logo.jpg" class="logo__image only-dark" alt="Python for Quantum Mechanics book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Python For Quantum Mechanics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course content</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_all/Week1-intro.html">Week 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/01_01_setting_env.html">Part 1. Environment set up with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/01_02_git_github.html">Part 2. Basic Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/01_03_python_funds.html">Part 3. Python basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/exercises/week1-ex1.html">Excercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/exercises/week1-tut1.html">Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week2-intro.html">Week 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 0. Review of Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_01-flow_control.html">Part 1. Flow control with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_02-compact-code.html">Part 2. Compact code: Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_03-external-data.html">Part 3. Working with external data and files in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_04-cheatsheet.html">Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises/week2_Ex2.html">Week 2: Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises/week2_Tut2.html">Week 2: Tutorial</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/02_all/02_00-recap.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Part 0. Review of Week 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-conda-recap">0.1 Python and Conda recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-recap">0.2 Git and GitHub recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics-recap">0.3 Python basics recap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">0.3.1 Variables and Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">0.3.2 Basic Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">0.3.3 Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">0.3.4 Lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">0.3.5 Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">0.3.6 Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">0.3.7 Dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-bash-commands">Extra : Bash commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-vim-editor">Extra : VIM editor</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="part-0-review-of-week-1">
+<h1>Part 0. Review of Week 1<a class="headerlink" href="#part-0-review-of-week-1" title="Link to this heading">#</a></h1>
+<p>As a quick review of what we covered in Week 1, we will briefly go over the most important aspects.</p>
+<section id="python-and-conda-recap">
+<h2>0.1 Python and Conda recap<a class="headerlink" href="#python-and-conda-recap" title="Link to this heading">#</a></h2>
+<p>First, we will just make sure that you have Python and Conda installed on your machine. We will also review how to create and manage Conda environments.</p>
+<p>To test if you have Python and Conda installed, you can run the following commands in your terminal or command prompt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+conda<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>Now we will test if you your environment is set up correctly. You can do this by listing all the Conda environments you have on your machine:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>list
+</pre></div>
+</div>
+<p>Now we will try to open a Jupyter Notebook in the folder you have your exercises from last week. You can do this by running the following command in your terminal or command prompt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook<span class="w"> </span>
+</pre></div>
+</div>
+<p>Could you? Did you remeber to activate your environment first?</p>
+<p>Reminder on how to activate your environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>your_environment_name
+</pre></div>
+</div>
+</section>
+<section id="git-and-github-recap">
+<h2>0.2 Git and GitHub recap<a class="headerlink" href="#git-and-github-recap" title="Link to this heading">#</a></h2>
+<p>Git can feel a bit overwhelming at first, but it’s a powerful tool for version control. Let’s go trough the basic commands again and check if you created your GitHub repository for this course successfully. Rembember to check that you have created the repo both locally and online on GitHub.</p>
+<p>To check if git is configured correctly, you can run the following commands in your terminal or command prompt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
+git<span class="w"> </span>config<span class="w"> </span>--list
+</pre></div>
+</div>
+<p>Check that your name and email are correct. If not, you can set them using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;    </span>
+</pre></div>
+</div>
+<p>You will also see a list of other configurations, including the url of your remote repository if you have set one up. <code class="docutils literal notranslate"><span class="pre">remote.origin.url</span></code>.</p>
+<p>These are the basic Git commands we will be using throughout the course:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>: Initialize a new Git repository</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;repository_url&gt;</span></code>: Clone an existing repository</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>: Check the status of your repository</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file_name&gt;</span></code>: Stage changes for the next commit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;commit</span> <span class="pre">message&quot;</span></code>: Commit staged changes with a message</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>: Push committed changes to a remote repository</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>: Pull changes from a remote repository</p></li>
+</ul>
+</section>
+<section id="python-basics-recap">
+<h2>0.3 Python basics recap<a class="headerlink" href="#python-basics-recap" title="Link to this heading">#</a></h2>
+<section id="variables-and-data-types">
+<h3>0.3.1 Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Link to this heading">#</a></h3>
+<p>In Python, variables are used to store data. You can create a variable by simply assigning a value to it using the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator. Python supports several data types, including integers, floats, strings, lists, tuples, sets, and dictionaries.</p>
+</section>
+<section id="basic-operations">
+<h3>0.3.2 Basic Operations<a class="headerlink" href="#basic-operations" title="Link to this heading">#</a></h3>
+<p>Python supports various basic operations, including arithmetic operations (addition, subtraction, multiplication, division), comparison operations (equal to, not equal to, greater than, less than), and logical operations (and, or, not).</p>
+</section>
+<section id="strings">
+<h3>0.3.3 Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h3>
+<p>Strings are sequences of characters enclosed in single or double quotes. You can perform various operations on strings, such as concatenation, slicing, and formatting.</p>
+</section>
+<section id="lists">
+<h3>0.3.4 Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
+<p>Lists are ordered collections of items that can be of different data types. You can create a list by enclosing items in square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Lists are mutable, meaning you can change their content after creation.</p>
+</section>
+<section id="tuples">
+<h3>0.3.5 Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h3>
+<p>Tuples are similar to lists, but they are immutable, meaning their content cannot be changed after creation. You can create a tuple by enclosing items in parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+</section>
+<section id="sets">
+<h3>0.3.6 Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h3>
+<p>Sets are unordered collections of unique items. You can create a set by enclosing items in curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> or by using the <code class="docutils literal notranslate"><span class="pre">set()</span></code> function. Sets are useful for performing mathematical set operations like union, intersection, and difference.</p>
+</section>
+<section id="dictionaries">
+<h3>0.3.7 Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h3>
+<p>Dictionaries are collections of key-value pairs. You can create a dictionary by enclosing key-value pairs in curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> separating keys and values. Dictionaries are mutable and allow for fast lookups based on keys.</p>
+</section>
+</section>
+<section id="extra-bash-commands">
+<h2>Extra : Bash commands<a class="headerlink" href="#extra-bash-commands" title="Link to this heading">#</a></h2>
+<p>Here are some basic bash commands that might be useful when working in the terminal:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code>: List files and directories in the current directory</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code>: List files and directories in long format, showing permissions, ownership, size, and modification date</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>: List all files and directories, including hidden ones</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-lrt</span></code>: List files and directories sorted by modification time, with the most recently modified files first</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-lh</span></code>: List files and directories in long format with human-readable file sizes</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;directory_name&gt;</span></code>: Change the current directory to the specified directory</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>: Move up one directory level</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../..</span></code>: Move up two directory levels</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../../..</span></code>: Move up three directory levels, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code>: Move to the home directory</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">&lt;file_name&gt;</span></code>: Print the content of a file</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">&lt;file_name&gt;</span></code> : Print number of lines in a file</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code>: Print the current working directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">&lt;directory_name&gt;</span></code>: Create a new directory with the specified name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">&lt;file_name&gt;</span></code>: Remove the specified file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">&lt;directory_name&gt;</span></code>: Remove the specified directory and its contents recursively</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">&lt;source&gt;</span> <span class="pre">&lt;destination&gt;</span></code>: Copy a file or directory from source to destination</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">&lt;source&gt;</span> <span class="pre">&lt;destination&gt;</span></code>: Move or rename a file or directory from source to destination</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span> <span class="pre">&lt;directory_name&gt;</span></code>: Display the total size of the specified directory in a human-readable format</p></li>
+</ul>
+<p>Note about <code class="docutils literal notranslate"><span class="pre">rm</span></code> command: Be very careful when using the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command, especially with the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option, as it will permanently delete files and directories without moving them to a trash or recycle bin.</p>
+<p>Note about path: In bash, you can use both absolute and relative paths to specify file and directory locations. An absolute path starts from the root directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/user/documents</span></code>), while a relative path is based on the current working directory (e.g., <code class="docutils literal notranslate"><span class="pre">documents</span></code> if you are already in the <code class="docutils literal notranslate"><span class="pre">user</span></code> directory).
+A relative path can also include <code class="docutils literal notranslate"><span class="pre">..</span></code> to move up one directory level (e.g., <code class="docutils literal notranslate"><span class="pre">../pictures</span></code> to access the <code class="docutils literal notranslate"><span class="pre">pictures</span></code> directory from the <code class="docutils literal notranslate"><span class="pre">documents</span></code> directory).</p>
+<p>Try to open a terminal and navigate to the folder where you have your exercises from last week. You can use the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to list the files and directories in the current directory, and the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command to change directories.</p>
+<p>Bash cheat sheet: <a class="github reference external" href="https://github.com/RehanSaeed/Bash-Cheat-Sheet">RehanSaeed/Bash-Cheat-Sheet</a></p>
+</section>
+<section id="extra-vim-editor">
+<h2>Extra : VIM editor<a class="headerlink" href="#extra-vim-editor" title="Link to this heading">#</a></h2>
+<p>Vim is a powerful text editor that can be used in the terminal. Here are some basic commands to help you get started with Vim:</p>
+<p>Basic Vim commands:</p>
+<ul class="simple">
+<li><p>Typing in the terminal: <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">&lt;file_name&gt;</span></code> will open the specified file in Vim (terminal)</p></li>
+<li><p>Once in Vim:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: Enter insert mode to start editing the file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>: Exit insert mode and return to normal mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:w</span></code>: Save the file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:q</span></code>: Quit Vim</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:wq</span></code>: Save the file and quit Vim</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:q!</span></code>: Quit Vim without saving changes</p></li>
+</ul>
+</li>
+</ul>
+<p>Try to open a terminal and create a new file using Vim. You can use the <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">&lt;file_name&gt;</span></code> command to create and open a new file. Then, try to edit the file, save it, and quit Vim using the commands above. Then, you can use the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to check if the file was created successfully. If you want to keep practicing with Git, you can also try to stage and commit the new file using Git commands to push it to your GitHub repository.</p>
+<p>Would you remember how to do it? If not, you can always go back to the Git section above.</p>
+<p>Hopefully this was a useful recap! If you have any questions or need further clarification on any of the topics covered, feel free to ask.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./02_all"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Week2-intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Week 2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02_01-flow_control.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Part 1. Flow control with Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-conda-recap">0.1 Python and Conda recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-recap">0.2 Git and GitHub recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics-recap">0.3 Python basics recap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">0.3.1 Variables and Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">0.3.2 Basic Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">0.3.3 Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">0.3.4 Lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">0.3.5 Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">0.3.6 Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">0.3.7 Dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-bash-commands">Extra : Bash commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-vim-editor">Extra : VIM editor</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Silvia M. Gimenez Santamarina
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Copyright@2025
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

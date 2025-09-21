@@ -191,7 +191,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../02_all/Week2-intro.html">Week 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_00-recap.html">Part 0. Review of Week 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02_all/02_01-flow_control.html">Part 1. Flow control with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_01-flow_control.html">Part 1. Algorithm and Flow control with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_02-compact-code.html">Part 2. Compact code: Comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_03-external-data.html">Part 3. Working with external data and files in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_04-cheatsheet.html">Cheatsheet</a></li>
@@ -425,7 +425,7 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>pyqm
 </pre></div>
 </div>
-<p>This command activates the <code class="docutils literal notranslate"><span class="pre">pyqm</span></code> environment. You should see the environment name in your terminal prompt, indicating that you are now working within that environment. If you get an error, you get a list of available environments by running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">--envs</span></code>. Sometimes you may need to ativate the environment with the full path, e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">/path/to/env/pyqm</span></code>.</p>
+<p>This command activates the <code class="docutils literal notranslate"><span class="pre">pyqm</span></code> environment. You should see the environment name in your terminal prompt, indicating that you are now working within that environment. If you get an error, you can print a list of available environments by running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">--envs</span></code>. Sometimes you may need to ativate the environment with the full path, e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">/path/to/env/pyqm</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>info<span class="w"> </span>--envs
 conda<span class="w"> </span>activate<span class="w"> </span>/path/to/env/pyqm
 </pre></div>
@@ -434,7 +434,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>/path/to/env/pyqm
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
 </pre></div>
 </div>
-<p>You can check wether you have the environment activated by having a look at the terminal prompt. If the environment is activated, you should see the environment name in parentheses before the prompt, like this: <code class="docutils literal notranslate"><span class="pre">(pyqm)</span> <span class="pre">user&#64;machine:~$</span></code>. Otherwise, it will be written as <code class="docutils literal notranslate"><span class="pre">(base)</span></code>.</p>
+<p>You can check wether you have the environment activated by having a look at the terminal prompt. If the environment is activated, you should see the environment name in parentheses before the prompt, like this: <code class="docutils literal notranslate"><span class="pre">(pyqm)</span> <span class="pre">user&#64;machine:~$</span></code>. Otherwise, it will be written as <code class="docutils literal notranslate"><span class="pre">(base)</span> <span class="pre">user&#64;machine:~$</span></code>.</p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span><span class="w"> </span>user@machine:~$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>pyqm<span class="w"> </span>
 <span class="o">(</span>pyqm<span class="o">)</span><span class="w"> </span>user@machine:~$<span class="w"> </span>conda<span class="w"> </span>deactivate<span class="w"> </span>
@@ -444,7 +444,8 @@ conda<span class="w"> </span>activate<span class="w"> </span>/path/to/env/pyqm
 </section>
 <section id="additional-packages">
 <h3>1.2.3 Additional packages<a class="headerlink" href="#additional-packages" title="Link to this heading">#</a></h3>
-<p>If you need to install additional packages in your conda environment, you can do so using the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> command. First, make sure that your specific envirnoment is active. For example, to install the <code class="docutils literal notranslate"><span class="pre">qutip</span></code> package, you would run:</p>
+<p>Throughout the development of your projects, you may need to install additional packages in your conda environment. You can install as many packages as you need in your conda environment. To do so, you can use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code> command.</p>
+<p>First, make sure that your specific environment is active. For example, to install the <code class="docutils literal notranslate"><span class="pre">qutip</span></code> package, you would run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>qutip
 </pre></div>
 </div>
@@ -452,19 +453,26 @@ conda<span class="w"> </span>activate<span class="w"> </span>/path/to/env/pyqm
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>qutip
 </pre></div>
 </div>
+<p>You can specify the version of the package you want to install by appending <code class="docutils literal notranslate"><span class="pre">=&lt;version_number&gt;</span></code> to the package name. For example, to install version 4.6.0 of the <code class="docutils literal notranslate"><span class="pre">qutip</span></code> package, you would run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span><span class="nv">qutip</span><span class="o">=</span><span class="m">4</span>.6.0
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">qutip</span><span class="o">==</span><span class="m">4</span>.6.0
+</pre></div>
+</div>
 </section>
 </section>
 <section id="jupyter-notebook-and-jupyter-lab">
 <h2>1.3 Jupyter Notebook and Jupyter Lab<a class="headerlink" href="#jupyter-notebook-and-jupyter-lab" title="Link to this heading">#</a></h2>
-<p>Jupyter Notebook and Jupyter Lab are open-source web applications that allow you to create and share documents that contain live code, equations, visualizations, and narrative text. They are widely used in data science, scientific computing, and machine learning for interactive data analysis and visualization.</p>
+<p>Jupyter Notebook and Jupyter Lab are open-source web applications provinding a simple and interactive interface for creating and sharing documents that contain live code, equations, visualizations, and narrative text. It supports many programming languages, including Python, Java, R, Julia, Matlab, Octave, Scheme, Processing, Scala, and many more. For this reason, they are nowdays widely used in data science, scientific computing, and machine learning for interactive data analysis and visualization.</p>
 <section id="install-jupyter-notebook-and-jupyter-lab">
 <h3>1.3.1 Install Jupyter Notebook and Jupyter Lab<a class="headerlink" href="#install-jupyter-notebook-and-jupyter-lab" title="Link to this heading">#</a></h3>
-<p>If you followed the instructions in section 1.2.1, you should already have Jupyter Lab installed in your conda environment. If not, you can install it by running the following command in your terminal (make sure your conda environment is activated):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>jupyterlab<span class="w"> </span>
+<p>If you followed the instructions in section 1.2.1, you should already have Jupyter Notebook and Jupyter Lab installed in your conda environment. If not, you can install it by running the following command in your terminal (make sure your conda environment is activated):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>notebook<span class="w"> </span>
 </pre></div>
 </div>
-<p>You can also install Jupyter Notebook by running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>notebook<span class="w"> </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>jupyterlab<span class="w"> </span>
 </pre></div>
 </div>
 <p>The Jupyter Notebook interface is simpler and more straightforward, while Jupyter Lab offers a more flexible and powerful environment with additional features such as multiple tabs, drag-and-drop functionality, and a file browser. In the following days you can explore their capabilities and choose the one that best suits your needs.</p>
@@ -533,15 +541,18 @@ conda<span class="w"> </span>activate<span class="w"> </span>/path/to/env/pyqm
 <ul>
 <li><p>Install <a class="reference external" href="https://www.anaconda.com/docs/getting-started/anaconda/install">Conda</a></p></li>
 <li><p>In a terminal window, create a new environment</p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">pyqm</span> <span class="pre">python=3.10</span> <span class="pre">numpy</span> <span class="pre">scipy</span> <span class="pre">matplotlib</span> <span class="pre">jupyterlab</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pyqm</span> <span class="pre">python=3.10</span> <span class="pre">numpy</span> <span class="pre">scipy</span> <span class="pre">matplotlib</span> <span class="pre">jupyterlab</span> <span class="pre">notebook</span> <span class="pre">-y</span></code></p>
 </li>
-<li><p>Activate new environment</p>
+<li><p>Activate and deactivate the new environment</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">pyqm</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code></p>
 </li>
-<li><p>Install Jupyter Notebook</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span></code></p>
+<li><p>Install extra packages</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code></p>
 </li>
-<li><p><a class="reference internal" href="#4.-Verify-your-Environment"><span class="xref myst">Verify your Environment</span></a></p></li>
+<li><p>Run Jupyter Notebook or Jupyter Lab</p>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code></p>
+</li>
 </ul>
 </section>
 <section id="additional-resources">

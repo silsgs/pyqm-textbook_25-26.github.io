@@ -49,7 +49,7 @@
         - Copying
 
 ## Exercises
-It is highly recommended to complete the exercises and tutorial provided for this week to reinforce your understanding of the material covered.
+Completing the exercises and tutorial proposed for each week is highly recommended. This will help reinforce your understanding of the material covered.
 
 To run the exercises and tutorial, make sure you have your conda environment activated and run `jupyter notebook` or `jupyter lab` in your terminal. A browser window should open with the Jupyter interface. Then open the corresponding notebook files. 
 

@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '02_all/02_00-recap';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Part 1. Flow control with Python" href="02_01-flow_control.html" />
+    <link rel="next" title="Part 1. Algorithm and Flow control with Python" href="02_01-flow_control.html" />
     <link rel="prev" title="Week 2" href="Week2-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -191,7 +191,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Week2-intro.html">Week 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 0. Review of Week 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_01-flow_control.html">Part 1. Flow control with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_01-flow_control.html">Part 1. Algorithm and Flow control with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_02-compact-code.html">Part 2. Compact code: Comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_03-external-data.html">Part 3. Working with external data and files in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_04-cheatsheet.html">Cheatsheet</a></li>
@@ -347,9 +347,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-environment">0.0 Working environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-conda-recap">0.1 Python and Conda recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-recap">0.2 Git and GitHub recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics-recap">0.3 Python basics recap</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-recap">0.2 Git and GitHub recap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-clone">Git clone</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics-recap-variables-data-types-and-basic-operations">0.3 Python basics recap: Variables, Data types and Basic Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">0.3.1 Variables and Data Types</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">0.3.2 Basic Operations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">0.3.3 Strings</a></li>
@@ -375,9 +379,32 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="part-0-review-of-week-1">
 <h1>Part 0. Review of Week 1<a class="headerlink" href="#part-0-review-of-week-1" title="Link to this heading">#</a></h1>
 <p>As a quick review of what we covered in Week 1, we will briefly go over the most important aspects.</p>
+<section id="working-environment">
+<h2>0.0 Working environment<a class="headerlink" href="#working-environment" title="Link to this heading">#</a></h2>
+<p>First, let’s make sure we all have our working environment organised and set up correctly.</p>
+<p>I strongly suggest you to create a folder in your computer where you will keep all the material related to this course. You can call it <code class="docutils literal notranslate"><span class="pre">pyqm</span></code> or any other name you prefer. Inside this folder, you can create subfolders for each week or topic, where you will store the exercises, notebooks, and any other files related to that week or topic.</p>
+<p>You can open it in your file explorer system; or even better, by the terminal prompt.</p>
+<p>Let’s call that folder <code class="docutils literal notranslate"><span class="pre">pyqm</span></code>, and navigate to it using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command. For example, if you created a folder called <code class="docutils literal notranslate"><span class="pre">pyqm</span></code> in your home directory, you can navigate to it by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/Users/your_username/path/to/folder/
+mkdir<span class="w"> </span>pyqm<span class="w">    </span><span class="c1"># run this command if you haven&#39;t created the folder yet</span>
+<span class="nb">cd</span><span class="w"> </span>pyqm<span class="w">       </span><span class="c1"># run this command to navigate to the folder</span>
+<span class="nb">pwd</span><span class="w">           </span><span class="c1"># this command will print out the current directory you are in</span>
+</pre></div>
+</div>
+<p>In that folder we might want to have the GitHub repository we created for this course, so we can keep track of our progress and share our work with others.
+If it was created somewhere else, you can always move it to the <code class="docutils literal notranslate"><span class="pre">pyqm</span></code> folder using the <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv<span class="w"> </span>/path/to/my-repo<span class="w"> </span>/path/to/folder/pyqm/.
+</pre></div>
+</div>
+<p>Move command syntax: <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">&lt;source&gt;</span> <span class="pre">&lt;destination&gt;</span></code>. The dot at the end means “move to this directory”. Note that this command is also used to rename files and directories.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be careful when using the <code class="docutils literal notranslate"><span class="pre">mv</span></code> command, as it will overwrite files and directories without warning if they already exist in the destination. Always double-check the source and destination paths before executing the command.</p>
+</div>
+<p>In that folder we will be working throughout the course. If you have the materials from last week, you can move them there as well. Otherwise, you can always download them again from Blackboard. Additionally, you can move there your exercises from last week. We would like to have everything in one place.</p>
+</section>
 <section id="python-and-conda-recap">
 <h2>0.1 Python and Conda recap<a class="headerlink" href="#python-and-conda-recap" title="Link to this heading">#</a></h2>
-<p>First, we will just make sure that you have Python and Conda installed on your machine. We will also review how to create and manage Conda environments.</p>
 <p>To test if you have Python and Conda installed, you can run the following commands in your terminal or command prompt:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
 conda<span class="w"> </span>--version
@@ -387,19 +414,20 @@ conda<span class="w"> </span>--version
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>list
 </pre></div>
 </div>
-<p>Now we will try to open a Jupyter Notebook in the folder you have your exercises from last week. You can do this by running the following command in your terminal or command prompt:</p>
+<p>We will try to open a Jupyter Notebook in the folder you have your exercises from last week. You can do this by running the following command in your terminal or command prompt:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook<span class="w"> </span>
 </pre></div>
 </div>
 <p>Could you? Did you remeber to activate your environment first?</p>
 <p>Reminder on how to activate your environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>your_environment_name
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>pyqm
 </pre></div>
 </div>
+<p>Now, can you check your Python version now? Is it the same as before? What is the difference?</p>
 </section>
 <section id="git-and-github-recap">
 <h2>0.2 Git and GitHub recap<a class="headerlink" href="#git-and-github-recap" title="Link to this heading">#</a></h2>
-<p>Git can feel a bit overwhelming at first, but it’s a powerful tool for version control. Let’s go trough the basic commands again and check if you created your GitHub repository for this course successfully. Rembember to check that you have created the repo both locally and online on GitHub.</p>
+<p>Git can feel a bit overwhelming at first, but it’s a powerful tool for version control. Let’s go trough the basic commands again and check if you created your GitHub repository for this course successfully. Rembember to check that you have created the repo locally on the file system of your laptop, and remotely on GitHub.</p>
 <p>To check if git is configured correctly, you can run the following commands in your terminal or command prompt:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
 git<span class="w"> </span>config<span class="w"> </span>--list
@@ -407,7 +435,7 @@ git<span class="w"> </span>config<span class="w"> </span>--list
 </div>
 <p>Check that your name and email are correct. If not, you can set them using:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;    </span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
 </pre></div>
 </div>
 <p>You will also see a list of other configurations, including the url of your remote repository if you have set one up. <code class="docutils literal notranslate"><span class="pre">remote.origin.url</span></code>.</p>
@@ -421,36 +449,137 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>: Push committed changes to a remote repository</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>: Pull changes from a remote repository</p></li>
 </ul>
+<section id="git-clone">
+<h3>Git clone<a class="headerlink" href="#git-clone" title="Link to this heading">#</a></h3>
+<p>Since last week we didn’t get to practice cloning a repository, and that could be important for your work, let’s try to clone a repository. By cloning a repository, you will create a local copy of the code and files available online, which allows you to explore and modify them on your own machine.</p>
+<p>For instance, this could be an interesting repository to clone and explore: <a class="reference external" href="https://github.com/osscar-org/quantum-mechanics">Interactive Notebooks: Quantum Mechanics and Computational Materials Science</a></p>
+<p>As you can see in the top right corner, there is a green button that says “Code”. If you click on it, you will see a URL that you can use to clone the repository.</p>
+<p><img alt="alt" src="../_images/02_00-repo-example.png" /></p>
+<p>You can clone it using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;repository_url&gt;</span></code> command. Just make sure to navigate to the folder where you want to clone the repository before running the command. You can use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command to change directories.</p>
+<p>In our folder called <code class="docutils literal notranslate"><span class="pre">pyqm</span></code> where you have everything related to the course, you can navigate typing in the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>path/to/your/folder/pyqm
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/osscar-org/quantum-mechanics.git
+</pre></div>
+</div>
+<p>It downloads a copy of the repository to your local machine. You can then navigate to the cloned repository using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span></code>  command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>quantum-mechanics
+ls
+</pre></div>
+</div>
+<p>You should see a list of files and directories that are part of the repository. You can now explore the code, make changes, and even contribute back to the original repository if you want.</p>
 </section>
-<section id="python-basics-recap">
-<h2>0.3 Python basics recap<a class="headerlink" href="#python-basics-recap" title="Link to this heading">#</a></h2>
+</section>
+<section id="python-basics-recap-variables-data-types-and-basic-operations">
+<h2>0.3 Python basics recap: Variables, Data types and Basic Operations<a class="headerlink" href="#python-basics-recap-variables-data-types-and-basic-operations" title="Link to this heading">#</a></h2>
 <section id="variables-and-data-types">
 <h3>0.3.1 Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Link to this heading">#</a></h3>
-<p>In Python, variables are used to store data. You can create a variable by simply assigning a value to it using the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator. Python supports several data types, including integers, floats, strings, lists, tuples, sets, and dictionaries.</p>
+<p>In Python, variables are used to store data. You can create a variable by simply assigning a value to it using the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator.</p>
+<p>Python has several built-in data types, including:</p>
+<ul class="simple">
+<li><p>Text Type: strings, <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p>Numeric Types: they can be either integer, float, or complex (<code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">complex()</span></code>)</p></li>
+<li><p>Sequence Types: list, tuple, range (<code class="docutils literal notranslate"><span class="pre">list()</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple()</span></code>, <code class="docutils literal notranslate"><span class="pre">range()</span></code>)</p></li>
+<li><p>Mapping Type: dict (<code class="docutils literal notranslate"><span class="pre">dict()</span></code>)</p></li>
+<li><p>Set Types: set (<code class="docutils literal notranslate"><span class="pre">set()</span></code>)</p></li>
+<li><p>Boolean Type: bool (<code class="docutils literal notranslate"><span class="pre">bool()</span></code>)</p></li>
+<li><p>Binary Types: bytes, bytearray (<code class="docutils literal notranslate"><span class="pre">bytes()</span></code>, <code class="docutils literal notranslate"><span class="pre">bytearray()</span></code>)</p></li>
+<li><p>None Type: NoneType (<code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+</ul>
 </section>
 <section id="basic-operations">
 <h3>0.3.2 Basic Operations<a class="headerlink" href="#basic-operations" title="Link to this heading">#</a></h3>
-<p>Python supports various basic operations, including arithmetic operations (addition, subtraction, multiplication, division), comparison operations (equal to, not equal to, greater than, less than), and logical operations (and, or, not).</p>
+<p>Basic arithmetic operations can be performed using standard operators. Here are some examples:
+Here’s a list of some common operations you can perform with different data types:</p>
+<ul class="simple">
+<li><p>Addition: <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>Subtraction: <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+<li><p>Multiplication: <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+<li><p>Division: <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p>Floor Division: <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
+<li><p>Modulus: <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
+<li><p>Exponentiation: <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
+</ul>
+<p>But we can also perfom comparison operations:</p>
+<ul class="simple">
+<li><p>Equal to: <code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
+<li><p>Not equal to: <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
+<li><p>Greater than: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
+<li><p>Less than: <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
+<li><p>Greater than or equal to: <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
+<li><p>Less than or equal to: <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
+</ul>
+<p>And logical operations:</p>
+<ul class="simple">
+<li><p>And: <code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
+<li><p>Or: <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
+<li><p>Not: <code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+</ul>
 </section>
 <section id="strings">
 <h3>0.3.3 Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h3>
 <p>Strings are sequences of characters enclosed in single or double quotes. You can perform various operations on strings, such as concatenation, slicing, and formatting.</p>
+<p>Operations on strings include:</p>
+<ul class="simple">
+<li><p>Concatenation: <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>Repetition: <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+<li><p>Slicing: <code class="docutils literal notranslate"><span class="pre">string[start:end]</span></code></p></li>
+<li><p>Formatting: <code class="docutils literal notranslate"><span class="pre">f&quot;Hello,</span> <span class="pre">{name}!&quot;</span></code></p></li>
+<li><p>Length: <code class="docutils literal notranslate"><span class="pre">len(string)</span></code></p></li>
+<li><p>Methods: <code class="docutils literal notranslate"><span class="pre">string.lower()</span></code>, <code class="docutils literal notranslate"><span class="pre">string.upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">string.split()</span></code>, <code class="docutils literal notranslate"><span class="pre">string.join()</span></code>, etc.</p></li>
+<li><p>Indexing: <code class="docutils literal notranslate"><span class="pre">string[index]</span></code> to access individual characters</p></li>
+</ul>
 </section>
 <section id="lists">
 <h3>0.3.4 Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
-<p>Lists are ordered collections of items that can be of different data types. You can create a list by enclosing items in square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Lists are mutable, meaning you can change their content after creation.</p>
+<p>Lists are ordered collections of items that can be of different data types. You can create a list by enclosing items in square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Lists are mutable, meaning you can change their content after creation.
+Operations on lists include:</p>
+<ul class="simple">
+<li><p>Accessing elements: <code class="docutils literal notranslate"><span class="pre">list[index]</span></code></p></li>
+<li><p>Slicing: <code class="docutils literal notranslate"><span class="pre">list[start:end]</span></code></p></li>
+<li><p>Adding elements: <code class="docutils literal notranslate"><span class="pre">list.append(item)</span></code>, <code class="docutils literal notranslate"><span class="pre">list.insert(index,</span> <span class="pre">item)</span></code>, <code class="docutils literal notranslate"><span class="pre">list.extend(other_list)</span></code></p></li>
+<li><p>Removing elements: <code class="docutils literal notranslate"><span class="pre">list.remove(item)</span></code>, `list.pop(index)</p></li>
+<li><p>Length: <code class="docutils literal notranslate"><span class="pre">len(list)</span></code></p></li>
+<li><p>Methods: <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code>, <code class="docutils literal notranslate"><span class="pre">list.reverse()</span></code>, <code class="docutils literal notranslate"><span class="pre">list.index(item)</span></code>, <code class="docutils literal notranslate"><span class="pre">list.count(item)</span></code>, etc.</p></li>
+</ul>
 </section>
 <section id="tuples">
 <h3>0.3.5 Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h3>
-<p>Tuples are similar to lists, but they are immutable, meaning their content cannot be changed after creation. You can create a tuple by enclosing items in parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<p>Tuples are similar to lists, but they are <em>immutable</em>, meaning their content cannot be changed after creation. You can create a tuple by enclosing items in parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.
+Operations on tuples include:</p>
+<ul class="simple">
+<li><p>Accessing elements: <code class="docutils literal notranslate"><span class="pre">tuple[index]</span></code></p></li>
+<li><p>Slicing: <code class="docutils literal notranslate"><span class="pre">tuple[start:end]</span></code></p></li>
+<li><p>Length: <code class="docutils literal notranslate"><span class="pre">len(tuple)</span></code></p></li>
+<li><p>Methods: <code class="docutils literal notranslate"><span class="pre">tuple.index(item)</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple.count(item)</span></code>, etc.</p></li>
+<li><p>Packing and Unpacking: You can pack multiple values into a tuple and unpack them into individual variables.</p>
+<ul>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">(1,</span> <span class="pre">2)</span></code> assigns <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="sets">
 <h3>0.3.6 Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h3>
 <p>Sets are unordered collections of unique items. You can create a set by enclosing items in curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> or by using the <code class="docutils literal notranslate"><span class="pre">set()</span></code> function. Sets are useful for performing mathematical set operations like union, intersection, and difference.</p>
+<p>Operations on sets include:</p>
+<ul class="simple">
+<li><p>Adding elements: <code class="docutils literal notranslate"><span class="pre">set.add(item)</span></code></p></li>
+<li><p>Removing elements: <code class="docutils literal notranslate"><span class="pre">set.remove(item)</span></code>, <code class="docutils literal notranslate"><span class="pre">set.discard(item)</span></code>, <code class="docutils literal notranslate"><span class="pre">set.pop()</span></code></p></li>
+<li><p>Set operations: <code class="docutils literal notranslate"><span class="pre">set1.union(set2)</span></code>, <code class="docutils literal notranslate"><span class="pre">set1.intersection(set2)</span></code>, <code class="docutils literal notranslate"><span class="pre">set1.difference(set2)</span></code>, <code class="docutils literal notranslate"><span class="pre">set1.symmetric_difference(set2)</span></code></p></li>
+<li><p>Membership testing: <code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">in</span> <span class="pre">set</span></code></p></li>
+</ul>
 </section>
 <section id="dictionaries">
 <h3>0.3.7 Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h3>
-<p>Dictionaries are collections of key-value pairs. You can create a dictionary by enclosing key-value pairs in curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> separating keys and values. Dictionaries are mutable and allow for fast lookups based on keys.</p>
+<p>Dictionaries are collections of key-value pairs. You can create a dictionary by enclosing key-value pairs in curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> separating keys and values. Dictionaries are mutable and allow for fast lookups based on keys.
+Operations on dictionaries include:</p>
+<ul class="simple">
+<li><p>Accessing values: <code class="docutils literal notranslate"><span class="pre">dict[key]</span></code></p></li>
+<li><p>Adding or updating key-value pairs: <code class="docutils literal notranslate"><span class="pre">dict[key]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></li>
+<li><p>Removing key-value pairs: <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">dict[key]</span></code>, <code class="docutils literal notranslate"><span class="pre">dict.pop(key)</span></code></p></li>
+<li><p>Methods: <code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict.values()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict.items()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict.get(key)</span></code>, etc.</p></li>
+<li><p>Length: <code class="docutils literal notranslate"><span class="pre">len(dict)</span></code></p></li>
+</ul>
 </section>
 </section>
 <section id="extra-bash-commands">
@@ -486,11 +615,15 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">&lt;source&gt;</span> <span class="pre">&lt;destination&gt;</span></code>: Move or rename a file or directory from source to destination</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span> <span class="pre">&lt;directory_name&gt;</span></code>: Display the total size of the specified directory in a human-readable format</p></li>
 </ul>
-<p>Note about <code class="docutils literal notranslate"><span class="pre">rm</span></code> command: Be very careful when using the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command, especially with the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option, as it will permanently delete files and directories without moving them to a trash or recycle bin.</p>
-<p>Note about path: In bash, you can use both absolute and relative paths to specify file and directory locations. An absolute path starts from the root directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/user/documents</span></code>), while a relative path is based on the current working directory (e.g., <code class="docutils literal notranslate"><span class="pre">documents</span></code> if you are already in the <code class="docutils literal notranslate"><span class="pre">user</span></code> directory).
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be very careful when using the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command, especially with the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option, as it will permanently delete files and directories without moving them to a trash or recycle bin.</p>
+</div>
+<p><em>Note about path</em>:
+In bash, you can use both absolute and relative paths to specify file and directory locations. An absolute path starts from the root directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/user/documents</span></code>), while a relative path is based on the current working directory (e.g., <code class="docutils literal notranslate"><span class="pre">documents/</span></code>).
 A relative path can also include <code class="docutils literal notranslate"><span class="pre">..</span></code> to move up one directory level (e.g., <code class="docutils literal notranslate"><span class="pre">../pictures</span></code> to access the <code class="docutils literal notranslate"><span class="pre">pictures</span></code> directory from the <code class="docutils literal notranslate"><span class="pre">documents</span></code> directory).</p>
 <p>Try to open a terminal and navigate to the folder where you have your exercises from last week. You can use the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to list the files and directories in the current directory, and the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command to change directories.</p>
-<p>Bash cheat sheet: <a class="github reference external" href="https://github.com/RehanSaeed/Bash-Cheat-Sheet">RehanSaeed/Bash-Cheat-Sheet</a></p>
+<p><a class="reference external" href="https://github.com/RehanSaeed/Bash-Cheat-Sheet">Bash cheat sheet</a></p>
 </section>
 <section id="extra-vim-editor">
 <h2>Extra : VIM editor<a class="headerlink" href="#extra-vim-editor" title="Link to this heading">#</a></h2>
@@ -498,7 +631,7 @@ A relative path can also include <code class="docutils literal notranslate"><spa
 <p>Basic Vim commands:</p>
 <ul class="simple">
 <li><p>Typing in the terminal: <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">&lt;file_name&gt;</span></code> will open the specified file in Vim (terminal)</p></li>
-<li><p>Once in Vim:</p>
+<li><p>Once in Vim, press the following:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: Enter insert mode to start editing the file</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>: Exit insert mode and return to normal mode</p></li>
@@ -509,6 +642,8 @@ A relative path can also include <code class="docutils literal notranslate"><spa
 </ul>
 </li>
 </ul>
+<p><a class="reference external" href="https://devhints.io/vim">Short VIM cheat sheet</a>
+<a class="reference external" href="https://vim.rtorr.com/">Large VIM cheat sheet</a></p>
 <p>Try to open a terminal and create a new file using Vim. You can use the <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">&lt;file_name&gt;</span></code> command to create and open a new file. Then, try to edit the file, save it, and quit Vim using the commands above. Then, you can use the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to check if the file was created successfully. If you want to keep practicing with Git, you can also try to stage and commit the new file using Git commands to push it to your GitHub repository.</p>
 <p>Would you remember how to do it? If not, you can always go back to the Git section above.</p>
 <p>Hopefully this was a useful recap! If you have any questions or need further clarification on any of the topics covered, feel free to ask.</p>
@@ -559,7 +694,7 @@ A relative path can also include <code class="docutils literal notranslate"><spa
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Part 1. Flow control with Python</p>
+        <p class="prev-next-title">Part 1. Algorithm and Flow control with Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -579,9 +714,13 @@ A relative path can also include <code class="docutils literal notranslate"><spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-environment">0.0 Working environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-conda-recap">0.1 Python and Conda recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-recap">0.2 Git and GitHub recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics-recap">0.3 Python basics recap</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-recap">0.2 Git and GitHub recap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-clone">Git clone</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-basics-recap-variables-data-types-and-basic-operations">0.3 Python basics recap: Variables, Data types and Basic Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">0.3.1 Variables and Data Types</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">0.3.2 Basic Operations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">0.3.3 Strings</a></li>

@@ -193,7 +193,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../02_all/Week2-intro.html">Week 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_00-recap.html">Part 0. Review of Week 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02_all/02_01-flow_control.html">Part 1. Flow control with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_01-flow_control.html">Part 1. Algorithm and Flow control with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_02-compact-code.html">Part 2. Compact code: Comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_03-external-data.html">Part 3. Working with external data and files in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_04-cheatsheet.html">Cheatsheet</a></li>
@@ -391,19 +391,38 @@ document.write(`
 <p>This section introduces the fundamental concepts of Python programming, including variables, data types, control structures, functions, and modules. It provides a solid foundation for writing Python code and understanding how to solve problems using programming.</p>
 <section id="variables">
 <h2>3.1 Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
-<p>Variables are used to store information to be referenced and manipulated in a program. They provide a way of labeling data with a descriptive name, so our programs can be understood more clearly by the reader and ourselves. The name of a variable starts with a letter or the underscore character, followed by letters, numbers, or underscores. A variable name cannot start with a number.</p>
+<p>Variables are used to store information to be referenced and manipulated in a program. They provide a way of labeling data with a descriptive name, so our programs can be understood more clearly by the reader and ourselves.
+You can give any name to a variable, as long as it follows this rules:</p>
+<ul class="simple">
+<li><p>It can not start with a number</p></li>
+<li><p>It can not contain spaces or special characters (except for the underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>).</p></li>
+<li><p>It can not be a reserved word in Python (such as <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">def</span></code>, <code class="docutils literal notranslate"><span class="pre">return</span></code>, etc.)</p></li>
+</ul>
 <p><em>A variable is used to store information that can be referenced later on.</em></p>
 <p><em>We can create an unlimited number of variables; we just have to make sure we give them unique names.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating variables</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>               <span class="c1"># An integer variable</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">3.14</span>            <span class="c1"># A float variable</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>     <span class="c1"># A string variable</span>
+<span class="n">is_student</span> <span class="o">=</span> <span class="kc">True</span>   <span class="c1"># A boolean variable</span>
 </pre></div>
-</div>
-</div>
 </div>
 <section id="integer-and-float-variables">
 <h3>3.1.1 Integer and Float Variables<a class="headerlink" href="#integer-and-float-variables" title="Link to this heading">#</a></h3>
 <p>What is the difference between the following variables?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">b</span><span class="o">=</span><span class="s2">&quot;Hello, world!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="n">c</span><span class="o">=</span><span class="mi">5</span><span class="o">/</span><span class="mf">0.7142857142857143</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">0</span>
@@ -447,40 +466,23 @@ variable c is  &lt;class &#39;float&#39;&gt;
 </div>
 </div>
 </div>
-<p>It should be noted that unlike other languages we do not need to specify the type (or class) of this variable, that will simply be infered from the value it is given. Here <code class="docutils literal notranslate"><span class="pre">a</span></code> is an integer becuase we have set it to one. To display a variable’s value we can use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.</p>
-<p>We can also check what class this varible is using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function as follows and we find that <code class="docutils literal notranslate"><span class="pre">a</span></code> is indeed an integer (denoted by <code class="docutils literal notranslate"><span class="pre">int</span></code>).</p>
-<p>Another difference between Python and other languages is that equating two variables sets the value of one variable to a copy of the other. Subsequently changing one does not change the other.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mf">1.5</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<p>It should be noted that unlike other languages we do not need to specify the type (or class) of this variable. That will simply be assigned from the value it is given.</p>
+<p>Here <code class="docutils literal notranslate"><span class="pre">a</span></code> is automatically assigned as an integer because we have set it to <code class="docutils literal notranslate"><span class="pre">1</span></code>. But we can also assign its tyoe explicitly as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What is now the difference between <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p>
+<p>To display a variable’s value we can use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
-1
+<p>We have created two variables <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> with the same value but they are different data types.</p>
+<p>To check what class a variable, you can use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function as follows and we find that <code class="docutils literal notranslate"><span class="pre">a</span></code> is indeed an integer (denoted by <code class="docutils literal notranslate"><span class="pre">int</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 </pre></div>
-</div>
-</div>
-</div>
-<p>As seen above we can also work with decimals which are called floating point variables (floats). This is a new data type we changed <code class="docutils literal notranslate"><span class="pre">a</span></code> into.</p>
-<p>Which type of variable is now <code class="docutils literal notranslate"><span class="pre">a</span></code>?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
-</pre></div>
-</div>
-</div>
 </div>
 <p>We can also update the value of a variable in terms of it’s old value. This may seem very strange as an equation but the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign should be thought of as an assignment rather than an equals sign in the traditional mathematical sense.</p>
 <div class="cell docutils container">
@@ -519,7 +521,7 @@ variable c is  &lt;class &#39;float&#39;&gt;
 </div>
 </div>
 </div>
-<p>In the last cell you have have noted that I mixed floats and integers in a single operation and a float was returned. This can also be done for multiplication <code class="docutils literal notranslate"><span class="pre">*</span></code>, division <code class="docutils literal notranslate"><span class="pre">/</span></code>, powers <code class="docutils literal notranslate"><span class="pre">**</span></code>, and absolute value <code class="docutils literal notranslate"><span class="pre">abs()</span></code>.</p>
+<p>In the last cell you might have noted that I mixed floats and integers in a single operation, and that a a float was returned. This can also be done for multiplication <code class="docutils literal notranslate"><span class="pre">*</span></code>, division <code class="docutils literal notranslate"><span class="pre">/</span></code>, powers <code class="docutils literal notranslate"><span class="pre">**</span></code>, and absolute value <code class="docutils literal notranslate"><span class="pre">abs()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplication</span>
@@ -1226,7 +1228,7 @@ q = 6.6
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;set&#39;&gt;
-{2.0, 4, 4.1, &#39;copy&#39;, (5+2j), 3.4e-06}
+{&#39;copy&#39;, 2.0, 4, 4.1, (5+2j), 3.4e-06}
 </pre></div>
 </div>
 </div>
@@ -1405,9 +1407,9 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2.0, 4, 4.1, &#39;copy&#39;, (5+2j), 3.4e-06}
-{2.0, 4, 4.1, 6, &#39;copy&#39;, (5+2j), 3.4e-06}
-{2.0, 4, 4.1, &#39;copy&#39;, (5+2j), 3.4e-06}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;copy&#39;, 2.0, 4, 4.1, (5+2j), 3.4e-06}
+{&#39;copy&#39;, 2.0, 4, 4.1, 6, (5+2j), 3.4e-06}
+{&#39;copy&#39;, 2.0, 4, 4.1, (5+2j), 3.4e-06}
 </pre></div>
 </div>
 </div>

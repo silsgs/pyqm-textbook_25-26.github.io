@@ -28,7 +28,7 @@ print(E_levels)
 ------------------
 
 
-[0;36m  File [0;32m"/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_6386/3443579649.py"[0;36m, line [0;32m1[0m
+[0;36m  File [0;32m"/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_14583/3443579649.py"[0;36m, line [0;32m1[0m
 [0;31m    E_levels =[0m
 [0m               ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax

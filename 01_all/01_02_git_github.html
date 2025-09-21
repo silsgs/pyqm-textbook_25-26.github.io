@@ -191,7 +191,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../02_all/Week2-intro.html">Week 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_00-recap.html">Part 0. Review of Week 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02_all/02_01-flow_control.html">Part 1. Flow control with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_01-flow_control.html">Part 1. Algorithm and Flow control with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_02-compact-code.html">Part 2. Compact code: Comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_03-external-data.html">Part 3. Working with external data and files in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_all/02_04-cheatsheet.html">Cheatsheet</a></li>
@@ -349,9 +349,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-git-commands">2.1 Basic Git commands</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-github-account">2.2 Create a GitHub account</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-repository-on-github">2.3 Create a new repository on GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-branch-optional">2.3 Create a new branch (optional):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-branches-optional">2.3.1 Merge branches (optional):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-repository-on-your-local-machine-and-in-github-remote-repository">2.3 Create a new repository on your local machine and in GitHub (remote repository)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-optional">2.3 Branches (optional):</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-branch-optional">2.3.1 Create a new branch (optional):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-branches-optional">2.3.2 Merge branches (optional):</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-changes-from-github">2.4 Pull changes from GitHub:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-a-repository-from-github">2.4 Clone a repository from GitHub:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-commit-history">2.5 View commit history:</a><ul class="nav section-nav flex-column">
@@ -386,10 +389,11 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--help
 </pre></div>
 </div>
-<p>Just in (the rare) case you need to reinstall Git, here are the instructions:</p>
+<p>In the case that Git is not installed (you can check by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>), here are the instructions:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>
 </pre></div>
 </div>
+<p>Quick question: Why we are not using <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install Git?</p>
 <p>For this course, we will use the following basic Git commands:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>: Initialize a new Git repository in the current directory.</p></li>
@@ -402,7 +406,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>: View the commit history of the repository.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>: List all branches in the repository. You can also create a new branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">&lt;branch-name&gt;</span></code>.</p></li>
 </ul>
-<p>Intially, we won’t use branches, but it is good to know that they exist.</p>
+<p>Intially, we won’t use branches, but it is good to know that they exist. Branches allow you to work on your project committing changes to a separate branch without affecting the main codebase. This is useful for testing new features or making changes without risking the stability of the main code.</p>
 <p>More information can be found here: <a class="reference external" href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html">https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html</a></p>
 </section>
 <section id="create-a-github-account">
@@ -417,8 +421,8 @@ document.write(`
 <li><p>Once your account is created, you can log in and start using GitHub.</p></li>
 </ol>
 </section>
-<section id="create-a-new-repository-on-github">
-<h2>2.3 Create a new repository on GitHub<a class="headerlink" href="#create-a-new-repository-on-github" title="Link to this heading">#</a></h2>
+<section id="create-a-new-repository-on-your-local-machine-and-in-github-remote-repository">
+<h2>2.3 Create a new repository on your local machine and in GitHub (remote repository)<a class="headerlink" href="#create-a-new-repository-on-your-local-machine-and-in-github-remote-repository" title="Link to this heading">#</a></h2>
 <p>For this section we will be using the terminal.</p>
 <ol class="arabic simple">
 <li><p>Create a local git repository:</p></li>
@@ -430,7 +434,32 @@ git<span class="w"> </span>init<span class="w">    </span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Add a new file to the repository:</p></li>
+<li><p>Create a new repository on GitHub:</p>
+<ul class="simple">
+<li><p>Go to your GitHub account and click on the “New” button to create a new repository.</p></li>
+<li><p>Fill in the repository name matching your local repository name (<code class="docutils literal notranslate"><span class="pre">my-repo</span></code>), description, and make it public.</p></li>
+<li><p>Click on the “Create repository” button to create the new repository.</p></li>
+</ul>
+</li>
+</ol>
+<p>We will need the url of the remote repository to link it to our local repository. You can find the URL of the remote repository on the GitHub page of the repository you just created. It should look something like this: <code class="docutils literal notranslate"><span class="pre">https://github.com/your-username/my-repo.git</span></code></p>
+<ol class="arabic simple" start="3">
+<li><p>Configure your Git username and email (if not done already):</p></li>
+</ol>
+<p>We need to configure GitHub credentials in our local machine. This is done using the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your.email@example.com&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Link the local repository to the remote repository:</p></li>
+</ol>
+<p>To begin, open up a terminal window and navigate to the directory where you want to create your new Git repository. Then, run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/your-username/my-repo.git
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Add a new file to in the local repository:</p></li>
 </ol>
 <p>Using a text editior of your choice, create a new file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code> in the <code class="docutils literal notranslate"><span class="pre">my-repo</span></code> directory. Add some content to the file, such as a brief description of your project.</p>
 <p>Example using VIM:</p>
@@ -447,7 +476,7 @@ git<span class="w"> </span>init<span class="w">    </span>
 </pre></div>
 </div>
 <p>The last line will tell you that there is a file that has been added or modified, yet untracked by git.</p>
-<ol class="arabic simple" start="3">
+<ol class="arabic simple" start="6">
 <li><p>Stage the file for commit:</p></li>
 </ol>
 <p>We then need to add the file to the staging area using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> command:</p>
@@ -455,7 +484,7 @@ git<span class="w"> </span>init<span class="w">    </span>
 git<span class="w"> </span>status
 </pre></div>
 </div>
-<ol class="arabic simple" start="4">
+<ol class="arabic simple" start="7">
 <li><p>Commit the changes:</p></li>
 </ol>
 <p>Comminting the changes to the repository means leaving a descriptive message of what has been changed. The more descriptive, the more usefull they will be for you and your collaborators. This is done using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command:</p>
@@ -471,18 +500,32 @@ git<span class="w"> </span>status
 </div>
 <p>Note that we are assuming that the default branch is called <code class="docutils literal notranslate"><span class="pre">main</span></code>. In older versions of Git, the default branch was called <code class="docutils literal notranslate"><span class="pre">master</span></code>. If your default branch is called <code class="docutils literal notranslate"><span class="pre">master</span></code>, you should use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code> instead.</p>
 </section>
+<section id="branches-optional">
+<h2>2.3 Branches (optional):<a class="headerlink" href="#branches-optional" title="Link to this heading">#</a></h2>
+<p>By default, Git creates a branch called <code class="docutils literal notranslate"><span class="pre">main</span></code> (or <code class="docutils literal notranslate"><span class="pre">master</span></code> in older versions). That is the root branch of your repository. Using branches allows to develop your code in a secondary branch, while keeping an estable version of it in the main branch.</p>
 <section id="create-a-new-branch-optional">
-<h2>2.3 Create a new branch (optional):<a class="headerlink" href="#create-a-new-branch-optional" title="Link to this heading">#</a></h2>
-<p>By default, Git creates a branch called <code class="docutils literal notranslate"><span class="pre">main</span></code> (or <code class="docutils literal notranslate"><span class="pre">master</span></code> in older versions). You can create a new branch using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> command:</p>
+<h3>2.3.1 Create a new branch (optional):<a class="headerlink" href="#create-a-new-branch-optional" title="Link to this heading">#</a></h3>
+<p>You can create a new branch using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>my-branch
-git<span class="w"> </span>checkout<span class="w"> </span>my-branch
+</pre></div>
+</div>
+<p>We can then switch to the new branch using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>my-branch
 git<span class="w"> </span>status
 </pre></div>
 </div>
-<p>This, will push the changes to the <code class="docutils literal notranslate"><span class="pre">my-branch</span></code> branch instead of the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. It is very useful when you don’t want to change the main branch until you are sure that the changes are correct. This is especially useful when working in teams since it avoids conflicts between different people’s changes.</p>
+<p>This, will push the changes to the <code class="docutils literal notranslate"><span class="pre">my-branch</span></code> branch instead of the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. For instance by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Some changes in my branch&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>README.md
+git<span class="w"> </span>add<span class="w"> </span>README.md
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Changes in my branch&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>my-branch
+</pre></div>
+</div>
+<p>It is very useful when you don’t want to change the main branch until you are sure that the changes are correct. This is especially useful when working in teams since it avoids conflicts between different people’s changes.</p>
+</section>
 </section>
 <section id="merge-branches-optional">
-<h2>2.3.1 Merge branches (optional):<a class="headerlink" href="#merge-branches-optional" title="Link to this heading">#</a></h2>
+<h2>2.3.2 Merge branches (optional):<a class="headerlink" href="#merge-branches-optional" title="Link to this heading">#</a></h2>
 <p>Once you have made changes in a branch and you are satisfied with them, you can merge the changes back into the main branch using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
 git<span class="w"> </span>merge<span class="w"> </span>my-branch
@@ -492,7 +535,7 @@ git<span class="w"> </span>status
 </section>
 <section id="pull-changes-from-github">
 <h2>2.4 Pull changes from GitHub:<a class="headerlink" href="#pull-changes-from-github" title="Link to this heading">#</a></h2>
-<p>Whether you are working alone or in a team, it is important to regularly pull changes from the remote repository to ensure that you have the latest version of the code. This is done using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> command:</p>
+<p>Whether you are working alone or in a team, it is important to regularly pull changes from the remote repository to ensure that you have the latest version of the code. This means, updating your local repository with the latest changes from the remote repository. It automatically downloads the changes and merges them into your local branch. This is done using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
@@ -500,8 +543,8 @@ git<span class="w"> </span>status
 </section>
 <section id="clone-a-repository-from-github">
 <h2>2.4 Clone a repository from GitHub:<a class="headerlink" href="#clone-a-repository-from-github" title="Link to this heading">#</a></h2>
-<p>Cloning a repository means creating a local copy of a remote repository on your machine. For instance, there is a public program that you want to use (or contribute to), and it is hosted on GitHub. You can clone the repository to your local machine and work on it locally.</p>
-<p>This is very common specially in research fields which are in early-stages of developement, or fast developing, such as machine learning, computational chemistry, quantum computing. Many researchers share their code on GitHub, and you can clone the repository to your local machine and use it for your own research.</p>
+<p>Cloning a repository means creating a local copy of a remote repository on your machine. For instance, there is a public program that you want to use (or contribute to), and it is hosted on GitHub. You can clone the repository to your local machine and use it locally.</p>
+<p>Using packages and code from public repositories is a common practice in research. Especially in those fields which are in early-stages or very fast developing, such as machine learning, quantum computation, computational chemistry, within many others.</p>
 <p>However, few tips and warnings:</p>
 <ul class="simple">
 <li><p>Always make sure to read the license of the repository before using it, as some repositories may have restrictions on how the code can be used.</p></li>
@@ -515,7 +558,8 @@ git<span class="w"> </span>clone<span class="w"> </span>&lt;repository-url&gt;
 </pre></div>
 </div>
 <p>This means, downloading a copy of a repository hosted at ‘<repository-url>’ to your local machine. You can find the repository URL on the GitHub page of the repository you want to clone.</p>
-<p>In addition to good version control of your code, Git allows to contribute to an existing project that is already hosted on GitHub. It also allows for transoperatibility, as you can work on the same codebase from different machines. You can clone the repository to each machine and work on it locally. Just make sure to push your changes to the remote repository so that they are available on all machines!</p>
+<p>In addition, it allows for a good version control of your code since it tracks every change made to the codebase. If you make a mistake, you can easily revert to a previous version of the code. Writing meaninful commit messages that would also be very helpful for you and your collaborators to understand the changes made to the code over time.</p>
+<p>Another advantage of using Git is that is allows for transoperatibility, as you can work on the same codebase from different machines. You can clone the repository to each machine and work on it locally. Just make sure to push your changes to the remote repository so that they are available on all machines!</p>
 </section>
 <section id="view-commit-history">
 <h2>2.5 View commit history:<a class="headerlink" href="#view-commit-history" title="Link to this heading">#</a></h2>
@@ -601,9 +645,12 @@ git<span class="w"> </span>clone<span class="w"> </span>&lt;repository-url&gt;
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-git-commands">2.1 Basic Git commands</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-github-account">2.2 Create a GitHub account</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-repository-on-github">2.3 Create a new repository on GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-branch-optional">2.3 Create a new branch (optional):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-branches-optional">2.3.1 Merge branches (optional):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-repository-on-your-local-machine-and-in-github-remote-repository">2.3 Create a new repository on your local machine and in GitHub (remote repository)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-optional">2.3 Branches (optional):</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-branch-optional">2.3.1 Create a new branch (optional):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-branches-optional">2.3.2 Merge branches (optional):</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-changes-from-github">2.4 Pull changes from GitHub:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-a-repository-from-github">2.4 Clone a repository from GitHub:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-commit-history">2.5 View commit history:</a><ul class="nav section-nav flex-column">

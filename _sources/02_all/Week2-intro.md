@@ -1,6 +1,6 @@
 # Week 2
 
-## Part 0. [Review of Week 1](02_00_review_week1.ipynb)
+## Part 0. [Review of Week 1](02_all/02_00-recap.ipynb)
 - 0.1 Python and Conda recap
 - 0.2 Git and GitHub recap
 - 0.3 Python basics recap
@@ -33,7 +33,7 @@
 - 3.3 Writing to File
 
 ## Exercises
-It is highly recommended to complete the exercises and tutorial provided for this week to reinforce your understanding of the material covered.
+Completing the exercises and tutorial proposed for each week is highly recommended. This will help reinforce your understanding of the material covered.
 
 To run the exercises and tutorial, make sure you have your conda environment activated and run `jupyter notebook` or `jupyter lab` in your terminal. 
 

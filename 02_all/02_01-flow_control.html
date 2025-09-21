@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Part 1. Flow control with Python &#8212; Python for Quantum Mechanics book</title>
+    <title>Part 1. Algorithm and Flow control with Python &#8212; Python for Quantum Mechanics book</title>
   
   
   
@@ -191,7 +191,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Week2-intro.html">Week 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="02_00-recap.html">Part 0. Review of Week 1</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 1. Flow control with Python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 1. Algorithm and Flow control with Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_02-compact-code.html">Part 2. Compact code: Comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_03-external-data.html">Part 3. Working with external data and files in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_04-cheatsheet.html">Cheatsheet</a></li>
@@ -337,7 +337,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Part 1. Flow control with Python</h1>
+    <h1>Part 1. Algorithm and Flow control with Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -347,8 +347,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-if-elif-else">1.1 Conditional statements: if, elif, else</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statments">If Statments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-flowcharts">Algorithms and flowcharts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indenting">1.1 Indenting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-if-elif-else">1.2 Conditional statements: if, elif, else</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">If Statements</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-and-except">1.2 Try and Except</a></li>
@@ -356,6 +358,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-and-zip">1.4 Range and Zip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">1.5 For loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-continue-pass">1.6 Break, Continue, Pass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-and-flow-control-design">Algorithm and flow control design:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-statements">Flow control statements:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -367,12 +374,125 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="part-1-flow-control-with-python">
-<h1>Part 1. Flow control with Python<a class="headerlink" href="#part-1-flow-control-with-python" title="Link to this heading">#</a></h1>
-<p>Flow control structures are used to control the order in which code is executed. The most common flow control structures are <code class="docutils literal notranslate"><span class="pre">if</span></code> statements, <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="part-1-algorithm-and-flow-control-with-python">
+<h1>Part 1. Algorithm and Flow control with Python<a class="headerlink" href="#part-1-algorithm-and-flow-control-with-python" title="Link to this heading">#</a></h1>
+<section id="algorithms-and-flowcharts">
+<h2>Algorithms and flowcharts<a class="headerlink" href="#algorithms-and-flowcharts" title="Link to this heading">#</a></h2>
+<p>Algorithms are step-by-step procedures or formulas for solving a problem. They are essential in computer science and programming, as they provide a clear set of instructions for performing tasks or computations.</p>
+<p>Before writing any code, it is important to define the logic of your program. A good initial step when developing code is planning and structuring the logic before with a scheme or a flow chart. This involves thinking about the specific operations and functions you will need to implement, as well as the initial data required, and what the expected outputs will be.</p>
+<p>Algorithms are the backbone of programming, as they define how a program operates and processes data. The more complex the task, the more important it is to have a well-defined algorithm to ensure that the program functions correctly and efficiently.</p>
+<p>As a general rule, an algorithm should be:</p>
+<ul class="simple">
+<li><p>Clear and unambiguous: Each step should be precisely defined.</p></li>
+<li><p>Finite: It should have a clear starting and ending point.</p></li>
+<li><p>Effective: Each step should be feasible and executable.</p></li>
+<li><p>Input and Output: It should have defined inputs and outputs.</p></li>
+</ul>
+<p>It is important to understand that an algorithm is not tied to a specific programming language; rather, it is a conceptual framework that can be implemented in various languages.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>A good practise is to first think :</p>
+<ol class="arabic simple">
+<li><p>How your physical system is defined.  Which are the characteristics of your system (eg, dimensionality, interconnections,  …)</p></li>
+<li><p>Then which will be initial data you need to start from (for instance, which variables you will need to define, in which units, transformations you will need to apply, which data you will need to read from external files, …),</p></li>
+<li><p>and finally, which are the expected outputs (which are the outcomes, simulation trajectories, units in which they will be expressed, format of the data, if you will need to export it to an external file, …).</p></li>
+</ol>
+<p>Once you have done taht, you can start developing which operations, functions or methods you will need to implement in order to get your expected output.</p>
+<p>I strongly suggest to write a very basic logic scheme (e.g., a flowchart or a list of steps) to help you plan how the analysis needs to be perform, and how to code it.</p>
+<p>It is very likely that you will modify this scheme as you progress through the problem-solving process. But at least you will have a starting point to work from with a defined structure.</p>
+<p>As you get familiar with programming, you will be able to do this step mentally, but at the beginning it is very useful to write it down.</p>
+</div>
+<p>Flowcharts are extremely useful to visualize the steps of an algorithm, for both in the initial planning stages and once it has been implemented.</p>
+<p>Flowcharts use standardized symbols to represent different types of actions or steps in a process, and arrows to indicate the flow of control from one step to the next.</p>
+<p>Here are some common flowchart symbols:</p>
+<ul class="simple">
+<li><p><strong>Terminator</strong>: Represents the start or end of a process. It is usually depicted as an oval or rounded rectangle.</p></li>
+<li><p><strong>Process</strong>: Represents a process or operation to be performed. It is typically shown as a rectangle.</p></li>
+<li><p><strong>Decision</strong>: Represents a decision point that can lead to different branches based on a condition. It is usually depicted as a diamond shape.</p></li>
+<li><p><strong>Input/Output</strong>: Represents an input or output operation, such as reading data or displaying results.</p></li>
+<li><p><strong>Arrow</strong>: Indicates the flow of control from one step to another.</p></li>
+<li><p><strong>Connector</strong>: Represents a connection point in the flowchart, often used to connect different parts of the chart or to indicate a jump to another section.</p></li>
+<li><p><strong>Loop</strong>: Represents a loop or iteration in the process, often shown as a circular arrow or a rectangle with a curved arrow.</p></li>
+</ul>
+<p><img alt="alt" src="../_images/GCD_through_successive_subtractions.svg" /><em>Image by Arthur Baelde, CC BY-SA 4.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=70282331">https://commons.wikimedia.org/w/index.php?curid=70282331</a></em></p>
+</section>
+<section id="indenting">
+<h2>1.1 Indenting<a class="headerlink" href="#indenting" title="Link to this heading">#</a></h2>
+<p>Python is known for its readability and simplicity. It is actually achieved because it employs indentation as a core aspect of its syntax to define these structures. It is basically in which order, instructions will be executed. An important aspect in Python is that it uses indentation to define blocks of code, which is crucial for maintaining the structure and flow of the program.</p>
+<p>Indentation is a key feature in Python since it denotes blocks of code that belong together, such as the body of a function, loop, or conditional statement. In contrast to many other programming languages that use curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> or keywords to define blocks of code, Python relies on indentation levels to indicate the grouping of statements.</p>
+<p>You can either use tabs or spaces for indentation, but it is important to be consistent throughout your code. Mixing tabs and spaces can lead to errors that are difficult to debug.
+As a standard convention in the Python community, it is recommended to use 4 spaces per indentation level. A good trick to maintain consistency is to configure your text editor or IDE to insert 4 spaces when you press the Tab key.</p>
+<p>Examples :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+    <span class="c1"># first level of indentation (within if statement)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="c1"># second level of indenting (within for loop and if statement)</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span>
+            <span class="c1"># third level of indenting (within if statement within for loop</span>
+            <span class="c1"># within outer if statement)</span>
+            <span class="o">...</span>
+
+</pre></div>
+</div>
+<p>Which of these three examples is right, and which one is wrong?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is True&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;...or is it!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is True&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;...or is it!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first two examples are wrong because they do not maintain consistent indentation levels. The first example lacks indentation for the print statement, and the second example has inconsistent indentation levels for the two print statements. The third example is correct because it maintains consistent indentation levels for both print statements within the <code class="docutils literal notranslate"><span class="pre">if</span></code> block.</p>
+<p>Here is a more complete example of indentation, have a look at the different blocks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="c1"># first level of indentation</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="c1"># second level of indentation</span>
+        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># back to first level of indenting (i.e., outside the for loop, but still in the function definition)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="c1"># back outside the function definition</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">my_function</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
 <section id="conditional-statements-if-elif-else">
-<h2>1.1 Conditional statements: if, elif, else<a class="headerlink" href="#conditional-statements-if-elif-else" title="Link to this heading">#</a></h2>
-<p>Conditional statements are used to execute different blocks of code based on certain conditions. The most common conditional statements are <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<h2>1.2 Conditional statements: if, elif, else<a class="headerlink" href="#conditional-statements-if-elif-else" title="Link to this heading">#</a></h2>
+<p>Conditional statements are used to execute different blocks of code <em>based on certain conditions</em>. The most common conditional statements are <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>Before using conditional statements, it is important to understand boolean expressions. A boolean expression is an expression that evaluates to either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. These expressions are often used in conditional statements to determine which block of code should be executed.</p>
+<p>Conditional statements are based on conditions that evaluate to either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> based on conditionaal expressions.
+Some conditional expressions include:</p>
+<ul class="simple">
+<li><p>Equality: <code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
+<li><p>Inequality: <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
+<li><p>Greater than: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
+<li><p>Less than: <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
+<li><p>Greater than or equal to: <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
+<li><p>Less than or equal to: <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
+<li><p>Membership: <code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code></p></li>
+<li><p>Identity: <code class="docutils literal notranslate"><span class="pre">is</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code></p></li>
+<li><p>Logical operators: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+<li><p>Bitwise operators: <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>, <code class="docutils literal notranslate"><span class="pre">~</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></p></li>
+<li><p>Ternary conditional operator: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">if</span> <span class="pre">condition</span> <span class="pre">else</span> <span class="pre">b</span></code></p></li>
+<li><p>Chained comparisons: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code></p></li>
+<li><p>Lambda functions: <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code></p></li>
+</ul>
+<p>For instance, you can use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to check if a variable is greater than a certain value, and execute a block of code if the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>. You can also use <code class="docutils literal notranslate"><span class="pre">elif</span></code> (short for “else if”) to check multiple conditions, and <code class="docutils literal notranslate"><span class="pre">else</span></code> to execute a block of code if none of the previous conditions are <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+Here is an example of using <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements in Python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is positive&quot;</span><span class="p">)</span>
@@ -382,25 +502,14 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is zero&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Make note that Python uses indentation to separate blocks of code. The standard is to use 4 spaces for each level of indentation.</p>
-<section id="if-statments">
-<h3>If Statments<a class="headerlink" href="#if-statments" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 is less than 4&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 is greater than 4&#39;</span><span class="p">)</span>
+<section id="if-statements">
+<h3>If Statements<a class="headerlink" href="#if-statements" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is positive&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 is less than 4
-</pre></div>
-</div>
-</div>
-</div>
+<p>This code checks if <code class="docutils literal notranslate"><span class="pre">x</span></code> is greater than 0. This loops are based on boolean operations, either if something is true or false. If the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>, it prints “x is positive”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Feel free to experiment with the boolean value of the following condtions</span>
@@ -499,11 +608,13 @@ document.write(`
 </div>
 </div>
 <p>It should be noted that we can ommit either/both <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> as well as having as many <code class="docutils literal notranslate"><span class="pre">elif</span></code>s as we want.</p>
+<p><strong>Short exercise</strong>: Write a program that checks if a number is positive, negative or zero and prints an appropriate message to the user.</p>
 </section>
 </section>
 <section id="try-and-except">
 <h2>1.2 Try and Except<a class="headerlink" href="#try-and-except" title="Link to this heading">#</a></h2>
 <p>Testing code is an import way to find out where the problems are. The <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code> block allows us to test a block of code for errors. If an error occurs, the code in the <code class="docutils literal notranslate"><span class="pre">except</span></code> block is executed.</p>
+<p>Here is an example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
@@ -544,6 +655,14 @@ code is finished
 </pre></div>
 </div>
 </div>
+</div>
+<p><strong>Short exercise</strong>: Write a program that takes user input and handles potential errors using try and except blocks. For example, you could prompt the user to enter a number and handle cases where the input is not a valid number (e.g., if the user enters a string instead of a number).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You entered:&quot;</span><span class="p">,</span> <span class="n">user_input</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s not a valid number!&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </section>
 <section id="while-loops">
@@ -591,6 +710,12 @@ code is finished
 </pre></div>
 </div>
 <p>This gives us a list of numbers from 0 to 4. The range function can also take two arguments, a start and an end. The start is inclusive, the end is exclusive.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Warning
+Remember that Python uses zero-based indexing, meaning that the first element of a sequence is at index 0. This is important to keep in mind when working with lists, strings, and other data structures in Python.
+Different programming languages use different conventions, so always check the documentation if you’re unsure. For example, in some languages like MATLAB, indexing starts at 1. And this mess your code up!</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stop</span> <span class="o">=</span> <span class="mi">10</span>
@@ -650,6 +775,10 @@ range(0, 10)
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">range()</span></code> in loops, remember that the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value is exclusive. This means that if you want to include a specific number in your loop, you need to set the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value to one more than that number.</p>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">zip()</span></code> function takes in two iterable data structures and returns an iterator of two object tupples as shown.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -667,12 +796,22 @@ range(0, 10)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;zip&#39;&gt;
-((1, &#39;one&#39;), (2, &#39;two&#39;), (3, &#39;three&#39;))
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1, &#39;one&#39;), (2, &#39;two&#39;), (3, &#39;three&#39;))
 </pre></div>
 </div>
 </div>
 </div>
 <p>Each item is paired with its corresponding item in the structures. The length of this new object is determined by the shortest list as seen. This is a very useful object when we iterate over two objects.</p>
+<p><strong>Short exercise</strong>: Write a program that generates two lists, at least one using <code class="docutils literal notranslate"><span class="pre">range()</span></code>, both of equal length and uses the <code class="docutils literal notranslate"><span class="pre">zip()</span></code> function to iterate over them simultaneously, printing out pairs of corresponding elements from each list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">letter</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="for-loops">
 <h2>1.5 For loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
@@ -832,6 +971,12 @@ pi -&gt; 3.14159265359
 </div>
 </div>
 </div>
+<p><strong>Short exercise</strong>: Write a program that iterates over x, y, z coordinates of a 3D point stored in a dictionary and prints each coordinate with its corresponding axis label (x, y, z).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">axis</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">point</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="break-continue-pass">
 <h2>1.6 Break, Continue, Pass<a class="headerlink" href="#break-continue-pass" title="Link to this heading">#</a></h2>
@@ -870,6 +1015,24 @@ pi -&gt; 3.14159265359
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># This will print only odd numbers</span>
 </pre></div>
 </div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<section id="algorithm-and-flow-control-design">
+<h3>Algorithm and flow control design:<a class="headerlink" href="#algorithm-and-flow-control-design" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Know the physical system you are trying to model and your input data to model it.</p></li>
+<li><p>Know the algorithm’s goal, defining which are the expected outputs.</p></li>
+<li><p>Think about the data types you will be using, and how to structure your data (e.g., lists, dictionaries, arrays).</p></li>
+<li><p>Plan the logic, which functions you will need to implement.</p></li>
+<li><p>Write a basic scheme or flowchart to help you plan how the analysis needs to be performed, and how to code it.</p></li>
+<li><p>Implement the code, testing and modifying the workflow as you go.</p></li>
+</ol>
+</section>
+<section id="flow-control-statements">
+<h3>Flow control statements:<a class="headerlink" href="#flow-control-statements" title="Link to this heading">#</a></h3>
+<p>In this section, we have covered the basics of flow control in Python, including conditional statements (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>), loops (<code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code>), and control statements (<code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, <code class="docutils literal notranslate"><span class="pre">pass</span></code>). These constructs are fundamental for creating dynamic and responsive programs that can make decisions and repeat actions based on certain conditions. An important note is to keep the indentation consistent, as it defines each block of code in your Python program.</p>
+</section>
 </section>
 </section>
 
@@ -937,8 +1100,10 @@ pi -&gt; 3.14159265359
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-if-elif-else">1.1 Conditional statements: if, elif, else</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statments">If Statments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-flowcharts">Algorithms and flowcharts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indenting">1.1 Indenting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-if-elif-else">1.2 Conditional statements: if, elif, else</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">If Statements</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-and-except">1.2 Try and Except</a></li>
@@ -946,6 +1111,11 @@ pi -&gt; 3.14159265359
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-and-zip">1.4 Range and Zip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">1.5 For loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-continue-pass">1.6 Break, Continue, Pass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-and-flow-control-design">Algorithm and flow control design:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-statements">Flow control statements:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

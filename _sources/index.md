@@ -8,9 +8,9 @@ author: Silvia M. Gimenez Santamarina
 
 ## Description
 
-This is the online textbook for the course Introduction to Python for Quantum Mechanics. The course provides a practical introduction to Python programming, with a focus on both core and applied libraries relevant to Quantum Physics. It is designed to support students in developing the coding skills necessary to carry out your projects effectively.
+This is the online textbook for the course Introduction to Python for Quantum Mechanics. The course provides a practical introduction to Python programming, with a focus on both core and applied libraries relevant to Quantum Physics. It is designed to support students in developing the coding skills necessary to carry out their MSc and further projects effectively.
 
-The course covers essential scientific libraries and specialized quantum computation tools, such as Numpy, Scipy, Matplotlib and Qutip. It also includes a short tutorial on conda virtual environment management and the basic use of Git for reliable version control of scripts and programs.
+The course covers essential scientific libraries such as NumPy, SciPy, and Matplotlib, as well as specialized quantum computation tools like QuTiP and Qiskit. It also includes a short tutorial on creating and managing Conda virtual environments, along with basic Git usage for reliable version control of scripts and programs.
 
 ### Course goals
 
@@ -28,20 +28,20 @@ The main goals of this course are to:
 ## Overview
 
 
-| Week | Day            | Format           | Topic                                                  |
-|------|----------------|------------------|--------------------------------------------------------|
-| 1    | Mo. Sept. 15th | Lecture          | [Conda envs., Git and Python fundamentals](01_all)     |
-| 1    | Tu. Sept. 16th | F2F              | [Exercises and tutorial asistance](01_all/exercises)   |
-| 2    | Mo. Sept. 22nd | Lecture          | [Flow control, comprehensions & I/O](02_all)           |
-| 2    | Tu. Sept. 23rd | F2F              | [Exercises and tutorial asistance](02_all/exercises/)  |
-| 3    | Mo. Sept. 29th | Lecture          | Functions and classes                                  |
-| 3    | Tu. Sept. 30th | F2F              | Exercises and tutorial asistance                       |
-| 4    | Mo. Oct. 6th   | Lecture          | Numpy and Matplotlib                                   |
-| 4    | Tu. Oct. 7th   | F2F              | Exercises and tutorial asistance                       |
-| 5    | Mo. Oct. 13th  | Lecture          | Scipy and Scientific writing tools                     |
-| 5    | Tu. Oct. 14th  | F2F              | Exercises and tutorial asistance                       |
-| 6    | Mo. Oct. 20th  | Lecture          | Qutip - Quantum Toolbox in Python                      |
-| 6    | Tu. Oct. 21st  | F2F              | Exercises and tutorial asistance                       |
+| Week | Day            | Format           | Topic                                                                    |
+|------|----------------|------------------|--------------------------------------------------------------------------|
+| 1    | Mo. Sept. 15th | Lecture          | [Conda envs., Git and Python fundamentals](docs/01_all/Week1-intro.md)   |
+| 1    | Tu. Sept. 16th | F2F              | [Exercises and tutorial asistance](01_all/exercises/)                    |
+| 2    | Mo. Sept. 22nd | Lecture          | [Flow control, comprehensions & I/O](02_all/Week2-intro.md)              |
+| 2    | Tu. Sept. 23rd | F2F              | [Exercises and tutorial asistance](02_all/exercises/)                    |
+| 3    | Mo. Sept. 29th | Lecture          | Functions and classes                                                    |
+| 3    | Tu. Sept. 30th | F2F              | Exercises and tutorial asistance                                         |
+| 4    | Mo. Oct. 6th   | Lecture          | Numpy and Matplotlib                                                     |
+| 4    | Tu. Oct. 7th   | F2F              | Exercises and tutorial asistance                                         |
+| 5    | Mo. Oct. 13th  | Lecture          | Scipy and Scientific writing tools                                       |
+| 5    | Tu. Oct. 14th  | F2F              | Exercises and tutorial asistance                                         |
+| 6    | Mo. Oct. 20th  | Lecture          | Qutip - Quantum Toolbox in Python                                        |
+| 6    | Tu. Oct. 21st  | F2F              | Exercises and tutorial asistance                                         |
 
 
 

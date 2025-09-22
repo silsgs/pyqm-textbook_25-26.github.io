@@ -400,29 +400,20 @@ You can give any name to a variable, as long as it follows this rules:</p>
 </ul>
 <p><em>A variable is used to store information that can be referenced later on.</em></p>
 <p><em>We can create an unlimited number of variables; we just have to make sure we give them unique names.</em></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating variables</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating variables</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>               <span class="c1"># An integer variable</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">3.14</span>            <span class="c1"># A float variable</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>     <span class="c1"># A string variable</span>
 <span class="n">is_student</span> <span class="o">=</span> <span class="kc">True</span>   <span class="c1"># A boolean variable</span>
 </pre></div>
 </div>
+</div>
+</div>
 <section id="integer-and-float-variables">
 <h3>3.1.1 Integer and Float Variables<a class="headerlink" href="#integer-and-float-variables" title="Link to this heading">#</a></h3>
 <p>What is the difference between the following variables?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
-<span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
-<span class="n">b</span><span class="o">=</span><span class="s2">&quot;Hello, world!&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-
-<span class="n">c</span><span class="o">=</span><span class="mi">5</span><span class="o">/</span><span class="mf">0.7142857142857143</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">0</span>
@@ -981,6 +972,7 @@ True
 <li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> is not <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> is not an empty string.</p></li>
 </ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">None</span></code> variable is useful when there is no available data, allowing you to store something temporarily. It is helpful in functions, dealing with missing data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
@@ -1228,7 +1220,7 @@ q = 6.6
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;set&#39;&gt;
-{&#39;copy&#39;, 2.0, 4, 4.1, (5+2j), 3.4e-06}
+{2.0, 4, 4.1, (5+2j), 3.4e-06, &#39;copy&#39;}
 </pre></div>
 </div>
 </div>
@@ -1407,9 +1399,9 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;copy&#39;, 2.0, 4, 4.1, (5+2j), 3.4e-06}
-{&#39;copy&#39;, 2.0, 4, 4.1, 6, (5+2j), 3.4e-06}
-{&#39;copy&#39;, 2.0, 4, 4.1, (5+2j), 3.4e-06}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2.0, 4, 4.1, (5+2j), 3.4e-06, &#39;copy&#39;}
+{2.0, 4, 4.1, 6, (5+2j), 3.4e-06, &#39;copy&#39;}
+{2.0, 4, 4.1, (5+2j), 3.4e-06, &#39;copy&#39;}
 </pre></div>
 </div>
 </div>

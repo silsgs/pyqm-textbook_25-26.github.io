@@ -371,6 +371,31 @@ document.write(`
 <section id="exercise-1-decimal-to-from-binary">
 <h2>Exercise 1: Decimal to/from Binary<a class="headerlink" href="#exercise-1-decimal-to-from-binary" title="Link to this heading">#</a></h2>
 <p>Write a cell that converts a decimal integer to a binary string, using a while loop and not just recasting.</p>
+<p><strong>Hint</strong>: You can use the modulus operator (<code class="docutils literal notranslate"><span class="pre">%</span></code>) to get the remainder when dividing by 2, which tells you whether the current least significant bit is a 0 or a 1. Then, you can use integer division (<code class="docutils literal notranslate"><span class="pre">//</span></code>) to shift the number to the right (i.e., divide by 2 and discard the remainder) for the next iteration of the loop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">decimal_to_binary</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;0&quot;</span>
+    <span class="n">binary_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">bit</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span>
+        <span class="n">binary_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">bit</span><span class="p">)</span> <span class="o">+</span> <span class="n">binary_str</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">binary_str</span>
+<span class="c1"># Example usage:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decimal_to_binary</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: &quot;1010&quot;</span>
+</pre></div>
+</div>
+<p>There is also a built-in function in Python to convert decimal integers to binary strings, called <code class="docutils literal notranslate"><span class="pre">bin()</span></code>. You can use it like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: &quot;0b1010&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">0b</span></code> prefix indicates that the string represents a binary number.
+To convert a binary string back to a decimal integer, you can use the built-in <code class="docutils literal notranslate"><span class="pre">int()</span></code> function with base 2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">binary_str</span> <span class="o">=</span> <span class="s2">&quot;1010&quot;</span>
+<span class="n">decimal_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">binary_str</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decimal_int</span><span class="p">)</span>  <span class="c1"># Output: 10</span>
+</pre></div>
+</div>
 <a class="reference internal image-reference" href="../../_images/binary.png"><img alt="two dice" src="../../_images/binary.png" style="width: 400px;" />
 </a>
 <div class="cell docutils container">
@@ -415,8 +440,9 @@ document.write(`
 </section>
 <section id="exercise-2-balmer-lines">
 <h2>Exercise 2: Balmer Lines<a class="headerlink" href="#exercise-2-balmer-lines" title="Link to this heading">#</a></h2>
-<p>As seen in the last excercise the energy levels of a hydrogen atom are the following
-$<span class="math notranslate nohighlight">\( E_n = - \frac{e^2}{8 \pi \varepsilon_0 a_0 n^2} \approx \frac{-13.6\text{eV}}{n^2} .\)</span>$</p>
+<p>As seen in the the excercises from Week 1, the energy levels of a hydrogen atom are the following</p>
+<div class="math notranslate nohighlight">
+\[ E_n = - \frac{e^2}{8 \pi \varepsilon_0 a_0 n^2} \approx \frac{-13.6\text{eV}}{n^2} .\]</div>
 <p>Make an empty list and append the values of the first ten energies using a for-loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -444,7 +470,7 @@ $<span class="math notranslate nohighlight">\( E_n = - \frac{e^2}{8 \pi \varepsi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_14583/3443579649.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_4113/3443579649.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">E_levels</span> <span class="o">=</span>
                <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -560,8 +586,7 @@ $<span class="math notranslate nohighlight">\( H = \begin{pmatrix}
 </section>
 <section id="exercise-4-how-many-days-left-do-you-have-to-live">
 <h2>Exercise 4: How many days left do you have to live?<a class="headerlink" href="#exercise-4-how-many-days-left-do-you-have-to-live" title="Link to this heading">#</a></h2>
-<p>By inputting the current date dd/mm/yyyy and your birthday dd/mm/yyyy. Calculate how many days you have lived.
-<a class="reference internal" href="../../_images/stopwatch.jpg"><img alt="two dice" src="../../_images/stopwatch.jpg" style="width: 300px;" /></a></p>
+<p>By inputting the current date dd/mm/yyyy and your birthday dd/mm/yyyy. Calculate how many days you have lived.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_date</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the current date dd/mm/yyyy: &quot;</span> <span class="p">)</span>
@@ -598,7 +623,6 @@ $<span class="math notranslate nohighlight">\( H = \begin{pmatrix}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_year_leap</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">birth_year_leap</span> <span class="o">=</span> <span class="kc">True</span>
-        
 </pre></div>
 </div>
 </div>

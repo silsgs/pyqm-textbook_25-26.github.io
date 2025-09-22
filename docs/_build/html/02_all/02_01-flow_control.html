@@ -358,7 +358,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-and-zip">1.4 Range and Zip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">1.5 For loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-continue-pass">1.6 Break, Continue, Pass</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-and-flow-control-design">Algorithm and flow control design:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-statements">Flow control statements:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -411,6 +415,9 @@ document.write(`
 <li><p><strong>Loop</strong>: Represents a loop or iteration in the process, often shown as a circular arrow or a rectangle with a curved arrow.</p></li>
 </ul>
 <p><img alt="alt" src="../_images/GCD_through_successive_subtractions.svg" /><em>Image by Arthur Baelde, CC BY-SA 4.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=70282331">https://commons.wikimedia.org/w/index.php?curid=70282331</a></em></p>
+<p>Practical example of an schematic algorithm:
+![alt](images/wasp-algorithm.png, <em>Algorithmic representation of the Wasp algorithm, extracted from <a class="reference external" href="https://arxiv.org/pdf/2505.10505">https://arxiv.org/pdf/2505.10505</a>; public repository available at <a class="github reference external" href="https://github.com/GagliardiGroup/wasp">GagliardiGroup/wasp</a></em>)</p>
+<p><strong>Short exercise</strong> : Draw a flowchart for the following algorithm to read a trajectory file with cartesian coordinates, then transform them to spherical coordinates to apply a 180° rotation, and finally write the results to a new file in cartesian coordinates again.</p>
 </section>
 <section id="indenting">
 <h2>1.1 Indenting<a class="headerlink" href="#indenting" title="Link to this heading">#</a></h2>
@@ -448,12 +455,7 @@ As a standard convention in the Python community, it is recommended to use 4 spa
 </div>
 <p>The first two examples are wrong because they do not maintain consistent indentation levels. The first example lacks indentation for the print statement, and the second example has inconsistent indentation levels for the two print statements. The third example is correct because it maintains consistent indentation levels for both print statements within the <code class="docutils literal notranslate"><span class="pre">if</span></code> block.</p>
 <p>Here is a more complete example of indentation, have a look at the different blocks:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="c1"># Indented with 4 spaces</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is true!&quot;</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="c1"># first level of indentation</span>
     <span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
@@ -609,11 +611,13 @@ Here is an example of using <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 <p>It should be noted that we can ommit either/both <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> as well as having as many <code class="docutils literal notranslate"><span class="pre">elif</span></code>s as we want.</p>
+<p><strong>Short exercise</strong>: Write a program that checks if a number is positive, negative or zero and prints an appropriate message to the user.</p>
 </section>
 </section>
 <section id="try-and-except">
 <h2>1.2 Try and Except<a class="headerlink" href="#try-and-except" title="Link to this heading">#</a></h2>
 <p>Testing code is an import way to find out where the problems are. The <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code> block allows us to test a block of code for errors. If an error occurs, the code in the <code class="docutils literal notranslate"><span class="pre">except</span></code> block is executed.</p>
+<p>Here is an example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
@@ -654,6 +658,14 @@ code is finished
 </pre></div>
 </div>
 </div>
+</div>
+<p><strong>Short exercise</strong>: Write a program that takes user input and handles potential errors using try and except blocks. For example, you could prompt the user to enter a number and handle cases where the input is not a valid number (e.g., if the user enters a string instead of a number).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You entered:&quot;</span><span class="p">,</span> <span class="n">user_input</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s not a valid number!&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </section>
 <section id="while-loops">
@@ -701,6 +713,12 @@ code is finished
 </pre></div>
 </div>
 <p>This gives us a list of numbers from 0 to 4. The range function can also take two arguments, a start and an end. The start is inclusive, the end is exclusive.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Warning
+Remember that Python uses zero-based indexing, meaning that the first element of a sequence is at index 0. This is important to keep in mind when working with lists, strings, and other data structures in Python.
+Different programming languages use different conventions, so always check the documentation if you’re unsure. For example, in some languages like MATLAB, indexing starts at 1. And this mess your code up!</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stop</span> <span class="o">=</span> <span class="mi">10</span>
@@ -760,6 +778,10 @@ range(0, 10)
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">range()</span></code> in loops, remember that the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value is exclusive. This means that if you want to include a specific number in your loop, you need to set the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value to one more than that number.</p>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">zip()</span></code> function takes in two iterable data structures and returns an iterator of two object tupples as shown.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -783,6 +805,14 @@ range(0, 10)
 </div>
 </div>
 <p>Each item is paired with its corresponding item in the structures. The length of this new object is determined by the shortest list as seen. This is a very useful object when we iterate over two objects.</p>
+<p><strong>Short exercise</strong>: Write a program that generates two lists, at least one using <code class="docutils literal notranslate"><span class="pre">range()</span></code>, both of equal length and uses the <code class="docutils literal notranslate"><span class="pre">zip()</span></code> function to iterate over them simultaneously, printing out pairs of corresponding elements from each list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">letter</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="for-loops">
 <h2>1.5 For loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
@@ -942,6 +972,12 @@ pi -&gt; 3.14159265359
 </div>
 </div>
 </div>
+<p><strong>Short exercise</strong>: Write a program that iterates over x, y, z coordinates of a 3D point stored in a dictionary and prints each coordinate with its corresponding axis label (x, y, z).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">axis</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">point</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="break-continue-pass">
 <h2>1.6 Break, Continue, Pass<a class="headerlink" href="#break-continue-pass" title="Link to this heading">#</a></h2>
@@ -983,8 +1019,8 @@ pi -&gt; 3.14159265359
 </section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
-<p>In this section, we have covered the basics of flow control in Python, including conditional statements (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>), loops (<code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code>), and control statements (<code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, <code class="docutils literal notranslate"><span class="pre">pass</span></code>). These constructs are fundamental for creating dynamic and responsive programs that can make decisions and repeat actions based on certain conditions. An important note is to keep the indentation consistent, as it defines each block of code in your Python program.</p>
-<p>Algorithm and flow control design:</p>
+<section id="algorithm-and-flow-control-design">
+<h3>Algorithm and flow control design:<a class="headerlink" href="#algorithm-and-flow-control-design" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Know the physical system you are trying to model and your input data to model it.</p></li>
 <li><p>Know the algorithm’s goal, defining which are the expected outputs.</p></li>
@@ -993,6 +1029,11 @@ pi -&gt; 3.14159265359
 <li><p>Write a basic scheme or flowchart to help you plan how the analysis needs to be performed, and how to code it.</p></li>
 <li><p>Implement the code, testing and modifying the workflow as you go.</p></li>
 </ol>
+</section>
+<section id="flow-control-statements">
+<h3>Flow control statements:<a class="headerlink" href="#flow-control-statements" title="Link to this heading">#</a></h3>
+<p>In this section, we have covered the basics of flow control in Python, including conditional statements (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>), loops (<code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code>), and control statements (<code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, <code class="docutils literal notranslate"><span class="pre">pass</span></code>). These constructs are fundamental for creating dynamic and responsive programs that can make decisions and repeat actions based on certain conditions. An important note is to keep the indentation consistent, as it defines each block of code in your Python program.</p>
+</section>
 </section>
 </section>
 
@@ -1071,7 +1112,11 @@ pi -&gt; 3.14159265359
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-and-zip">1.4 Range and Zip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">1.5 For loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-continue-pass">1.6 Break, Continue, Pass</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-and-flow-control-design">Algorithm and flow control design:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-statements">Flow control statements:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

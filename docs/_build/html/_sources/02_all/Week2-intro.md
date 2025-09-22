@@ -1,6 +1,6 @@
 # Week 2
 
-## Part 0. [Review of Week 1](docs/02_all/02_00-recap.ipynb)
+## Part 0. [Review of Week 1](02_all/02_00-recap.ipynb)
 - 0.1 Python and Conda recap
 - 0.2 Git and GitHub recap
 - 0.3 Python basics recap

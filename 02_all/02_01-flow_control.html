@@ -616,15 +616,31 @@ Here is an example of using <code class="docutils literal notranslate"><span cla
 </section>
 <section id="try-and-except">
 <h2>1.2 Try and Except<a class="headerlink" href="#try-and-except" title="Link to this heading">#</a></h2>
-<p>Testing code is an import way to find out where the problems are. The <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code> block allows us to test a block of code for errors. If an error occurs, the code in the <code class="docutils literal notranslate"><span class="pre">except</span></code> block is executed.</p>
+<p>Testing code is an important way to find out where the problems are. It is very easy to use the <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code> block to catch and handle errors. If an error occurs, the code in the <code class="docutils literal notranslate"><span class="pre">except</span></code> block is executed.This is the basic syntax:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    try:
+        # Some Code
+    except:
+        # Executed if error in the
+        # try block
+</pre></div>
+</div>
 <p>Here is an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Code that may raise an exception</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># exception occurs, if code under try throws error</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An exception occurred.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Another example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can&#39;t divide by zero!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Testing code is an import way to find out where the problems are. The <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> <span class="c1"># block of code...</span>
@@ -674,7 +690,7 @@ code is finished
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># This is equivalent to count = count + 1</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># This is equivalent to add 1 to `count`</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -741,7 +757,8 @@ range(0, 10)
 </div>
 </div>
 </div>
-<p>Notice that we get a sequence running from 0-9, not 0-10!! It turns out we can add arguments in the parantheses to obtain a more specific sequence:</p>
+<p>Notice that we get a sequence running from 0-9, not 0-10!! It is because the end is exclusive.</p>
+<p>Syntax: <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">end,</span> <span class="pre">step)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">10</span>
@@ -780,7 +797,7 @@ range(0, 10)
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
-<p>When using <code class="docutils literal notranslate"><span class="pre">range()</span></code> in loops, remember that the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value is exclusive. This means that if you want to include a specific number in your loop, you need to set the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value to one more than that number.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">range()</span></code> in loops, remember that the <code class="docutils literal notranslate"><span class="pre">end</span></code> value is exclusive. This means that if you want to include a specific number in your loop, you need to set the <code class="docutils literal notranslate"><span class="pre">end</span></code> value to one more than that number. <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">end+1,</span> <span class="pre">step)</span></code></p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">zip()</span></code> function takes in two iterable data structures and returns an iterator of two object tupples as shown.</p>
 <div class="cell docutils container">
@@ -805,6 +822,27 @@ range(0, 10)
 </div>
 </div>
 <p>Each item is paired with its corresponding item in the structures. The length of this new object is determined by the shortest list as seen. This is a very useful object when we iterate over two objects.</p>
+<p>It can take several iterables as input, and it will return an iterator that aggregates elements from each of the iterables. The resulting iterator produces tuples, where the i-th tuple contains the i-th element from each of the input iterables. The iteration stops when the shortest input iterable ends.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">]</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+<span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span> <span class="s2">&quot;Chicago&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisbon&quot;</span><span class="p">]</span> <span class="c1"># Notice cities has an extra element</span>
+
+<span class="c1"># Zipping three lists</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ages</span><span class="p">,</span> <span class="n">cities</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">, lives in </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice, 25, lives in New York.
+Bob, 30, lives in San Francisco.
+Charlie, 35, lives in Chicago.
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Short exercise</strong>: Write a program that generates two lists, at least one using <code class="docutils literal notranslate"><span class="pre">range()</span></code>, both of equal length and uses the <code class="docutils literal notranslate"><span class="pre">zip()</span></code> function to iterate over them simultaneously, printing out pairs of corresponding elements from each list.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
@@ -856,7 +894,9 @@ range(0, 10)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-13
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
 16
 19
 22
@@ -873,7 +913,7 @@ range(0, 10)
 <span class="n">y</span><span class="o">=</span><span class="mi">1</span>
 
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>  <span class="c1"># Notice that we start from 1 and go to 19 (20 is excluded)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fib&#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
     <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="n">y</span>
 </pre></div>

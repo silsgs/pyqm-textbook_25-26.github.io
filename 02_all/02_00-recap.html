@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -522,7 +522,7 @@ Here’s a list of some common operations you can perform with different data ty
 <ul class="simple">
 <li><p>Concatenation: <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
 <li><p>Repetition: <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
-<li><p>Slicing: <code class="docutils literal notranslate"><span class="pre">string[start:end]</span></code></p></li>
+<li><p>Slicing: <code class="docutils literal notranslate"><span class="pre">string[start:end:step]</span></code></p></li>
 <li><p>Formatting: <code class="docutils literal notranslate"><span class="pre">f&quot;Hello,</span> <span class="pre">{name}!&quot;</span></code></p></li>
 <li><p>Length: <code class="docutils literal notranslate"><span class="pre">len(string)</span></code></p></li>
 <li><p>Methods: <code class="docutils literal notranslate"><span class="pre">string.lower()</span></code>, <code class="docutils literal notranslate"><span class="pre">string.upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">string.split()</span></code>, <code class="docutils literal notranslate"><span class="pre">string.join()</span></code>, etc.</p></li>
@@ -535,9 +535,9 @@ Here’s a list of some common operations you can perform with different data ty
 Operations on lists include:</p>
 <ul class="simple">
 <li><p>Accessing elements: <code class="docutils literal notranslate"><span class="pre">list[index]</span></code></p></li>
-<li><p>Slicing: <code class="docutils literal notranslate"><span class="pre">list[start:end]</span></code></p></li>
+<li><p>Slicing: <code class="docutils literal notranslate"><span class="pre">list[start:end:step]</span></code></p></li>
 <li><p>Adding elements: <code class="docutils literal notranslate"><span class="pre">list.append(item)</span></code>, <code class="docutils literal notranslate"><span class="pre">list.insert(index,</span> <span class="pre">item)</span></code>, <code class="docutils literal notranslate"><span class="pre">list.extend(other_list)</span></code></p></li>
-<li><p>Removing elements: <code class="docutils literal notranslate"><span class="pre">list.remove(item)</span></code>, `list.pop(index)</p></li>
+<li><p>Removing elements: <code class="docutils literal notranslate"><span class="pre">list.remove(item)</span></code>, <code class="docutils literal notranslate"><span class="pre">list.pop(index)</span></code></p></li>
 <li><p>Length: <code class="docutils literal notranslate"><span class="pre">len(list)</span></code></p></li>
 <li><p>Methods: <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code>, <code class="docutils literal notranslate"><span class="pre">list.reverse()</span></code>, <code class="docutils literal notranslate"><span class="pre">list.index(item)</span></code>, <code class="docutils literal notranslate"><span class="pre">list.count(item)</span></code>, etc.</p></li>
 </ul>
@@ -580,6 +580,19 @@ Operations on dictionaries include:</p>
 <li><p>Methods: <code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict.values()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict.items()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict.get(key)</span></code>, etc.</p></li>
 <li><p>Length: <code class="docutils literal notranslate"><span class="pre">len(dict)</span></code></p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remeber that Python starts counting and indexing at 0. Take into account that the first element of a list, tuple, or string is accessed using index 0.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Output: 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Output: 20</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Output: 50 (last element)</span>
+
+<span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Generates numbers from 0 to 4</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 <section id="extra-bash-commands">

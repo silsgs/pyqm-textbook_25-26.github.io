@@ -349,7 +349,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input">3.1 User input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-from-file">3.2 Reading from File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-from-file">3.3 Writing from File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">3.3 Writing to File</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-escape-sequences">Special Characters (Escape Sequences)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -379,7 +382,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_4097/1338552462.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_11624/1338552462.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your name: &#39;</span><span class="p">)</span>
 
 <span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
@@ -418,12 +421,32 @@ document.write(`
 <section id="reading-from-file">
 <h2>3.2 Reading from File<a class="headerlink" href="#reading-from-file" title="Link to this heading">#</a></h2>
 <p>We can read data from a file using the built-in <code class="docutils literal notranslate"><span class="pre">open()</span></code> function. This function takes the filename as an argument and returns a file object. We can then use the <code class="docutils literal notranslate"><span class="pre">read()</span></code> method to read the contents of the file.</p>
+<p>Create a new file called <code class="docutils literal notranslate"><span class="pre">test.txt</span></code> inside your <code class="docutils literal notranslate"><span class="pre">pyqm</span></code> folder and the following text.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Hello!
+You are reading this text file.
+This file has a number of lines of text.
+
+Also some empty lines.
+
+
+
+Thanks for reading!
+</pre></div>
+</div>
+<p>Then run the following code to read the contents of the file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The file <code class="docutils literal notranslate"><span class="pre">test.txt</span></code> is stored in the same directory as this notebook to save specifying a path. The <code class="docutils literal notranslate"><span class="pre">'r'</span></code> argument in the open function specifies that we are opening this file for reading so this file cannont be editted while open in this way. Within the indented clause the file can be refered to as <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">'r'</span></code> argument in the open function specifies that we are opening this file for reading so this file cannont be editted while open in this way. Within the indented clause the file can be refered to as <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">read()</span></code> method reads the entire contents of the file and stores it in the variable <code class="docutils literal notranslate"><span class="pre">data</span></code>. Finally, we print the contents of the file.</p>
+<p>We can also especify the full path to the file if it is not in the same directory as the script. For instance:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/your/file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>We can also iterate through the file which will get each line as a string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -605,14 +628,19 @@ g
 </div>
 </div>
 </section>
-<section id="writing-from-file">
-<h2>3.3 Writing from File<a class="headerlink" href="#writing-from-file" title="Link to this heading">#</a></h2>
-<p>We can write data to a file using the built-in <code class="docutils literal notranslate"><span class="pre">open()</span></code> function with the <code class="docutils literal notranslate"><span class="pre">'w'</span></code> argument. This will open the file for writing. If the file does not exist, it will be created. If the file does exist, it will be overwritten. We can then use the <code class="docutils literal notranslate"><span class="pre">write()</span></code> method to write data to the file.</p>
+<section id="writing-to-file">
+<h2>3.3 Writing to File<a class="headerlink" href="#writing-to-file" title="Link to this heading">#</a></h2>
+<p>We can write data to a file using the built-in <code class="docutils literal notranslate"><span class="pre">open()</span></code> function with the <code class="docutils literal notranslate"><span class="pre">'w'</span></code> argument. We can then use the <code class="docutils literal notranslate"><span class="pre">write()</span></code> method to write data to the file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Let’s say we want to store a list of the first 11 sqaure numbers. First it might be good to make such a list.</p>
+<p>Try to open the file <code class="docutils literal notranslate"><span class="pre">output.txt</span></code> in your <code class="docutils literal notranslate"><span class="pre">pyqm</span></code> folder to see that if has been correctly created.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This will open the file for writing. If the file does not exist, it will be created. <strong>If the file does exist, it will be overwritten</strong>.</p>
+</div>
+<p><strong>Short exercise</strong> : Let’s say we want to store a list of the first 11 sqaure numbers. First it might be good to make such a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)]</span>
@@ -668,6 +696,53 @@ g
 </div>
 </div>
 <p>It is important to note here that when we use the <code class="docutils literal notranslate"><span class="pre">'w'</span></code> string when opening a file that already exists we will completely rewrite that file. If we simply want to add to this file we can append using <code class="docutils literal notranslate"><span class="pre">'a'</span></code> and if we only want to create a file we can use <code class="docutils literal notranslate"><span class="pre">'a'</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When we use the built-in function <code class="docutils literal notranslate"><span class="pre">with</span></code> the file is automatically closed when we leave the indented block. If we do not use this function we need to remember to add a command to close the file. Otherwise, you might encounter issues with data not being written to the file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">This is a new line.&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<section id="special-characters-escape-sequences">
+<h3>Special Characters (Escape Sequences)<a class="headerlink" href="#special-characters-escape-sequences" title="Link to this heading">#</a></h3>
+<p>Some Common Special Characters (Escape Sequences) when working with text files:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Escape sequence</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Example usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>\n</p></td>
+<td><p>New line (line break)</p></td>
+<td><p>“Hello\nWorld” → Hello World</p></td>
+</tr>
+<tr class="row-odd"><td><p>\t</p></td>
+<td><p>Tab (horizontal tab)</p></td>
+<td><p>“A\tB\tC” → A B C</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Writing lines with new line characters</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Line 1</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Line 2</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Writing tab-separated values</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;time</span><span class="se">\t</span><span class="s2">x</span><span class="se">\t</span><span class="s2">y</span><span class="se">\t</span><span class="s2">z</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;0.0</span><span class="se">\t</span><span class="s2">0.5</span><span class="se">\t</span><span class="s2">1.2</span><span class="se">\t</span><span class="s2">0.8</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is also very common to find files where lines are separated by tabs or commas. As we have seen before, we can use the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method to split a string into a list based on a specified delimiter.</p>
+</section>
 </section>
 </section>
 
@@ -737,7 +812,10 @@ g
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input">3.1 User input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-from-file">3.2 Reading from File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-from-file">3.3 Writing from File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">3.3 Writing to File</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-escape-sequences">Special Characters (Escape Sequences)</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -926,9 +926,6 @@ gnirts regnol a si siht ,olleh
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hello,&#39;, &#39;this&#39;, &#39;is&#39;, &#39;a&#39;, &#39;longer&#39;, &#39;string&#39;]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </section>
@@ -1100,11 +1097,16 @@ True
 <h2>3.2 Data Structures and Operations<a class="headerlink" href="#data-structures-and-operations" title="Link to this heading">#</a></h2>
 <section id="lists">
 <h3>3.2.1 Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
-<p>Lists are a an ordered collection of items of any data type (mixing data types is allowed). To create a list of elements in Python, we use the following notation.</p>
+<p>Lists are a an <strong>ordered</strong> collection of items of any data type (mixing data types is allowed). A list of elements in Python uses the following notation.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>my_list = [item1, item2, item3, ...]
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="s2">&quot;Three&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">emptylist</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># this is an empty list</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="s2">&quot;Three&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">emptylist</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
 </pre></div>
@@ -1112,12 +1114,14 @@ True
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
+&lt;class &#39;list&#39;&gt;
 [1, -2.0, &#39;Three&#39;, (4+0j), None]
 </pre></div>
 </div>
 </div>
 </div>
-<p>One can access the elements of a lists by their placment starting with 0.</p>
+<p>You can access elements in a list using indexing, where the first element has an index of 0.</p>
+<p>You can also use negative indexing to access elements from the end of the list.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></th>
@@ -1139,14 +1143,38 @@ True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># first element has index 0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># fourth element has index 3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># positive indexing</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># first element has index 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># third element has index 2</span>
+
+<span class="c1"># negative indexing, starts from the end</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># last element has index -1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># second to last element has index -2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+Three
+None
 (4+0j)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lists are <strong>mutable</strong>, meaning their content can be changed after creation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>   <span class="c1"># initial full list</span>
+
+<span class="n">mylist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c1"># changing the second element</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>   <span class="c1"># modified full list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -2.0, &#39;Three&#39;, (4+0j), None]
+[1, 2.0, &#39;Three&#39;, (4+0j), None]
 </pre></div>
 </div>
 </div>
@@ -1154,7 +1182,7 @@ True
 </section>
 <section id="tuples">
 <h3>3.2.2 Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h3>
-<p>Tuples are immutable lists, they cannot be modified once created. The elements can be accessed in the same way.</p>
+<p>Tuples are <strong>immutable</strong> lists, they cannot be modified once created. The elements can be accessed in the same way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">6.626e-34</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">)</span>
@@ -1200,7 +1228,7 @@ q = 6.6
 </section>
 <section id="sets">
 <h3>3.2.3 Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h3>
-<p>Sets are an unordered collection of unique items. Sets are useful to eliminate repeated elements.</p>
+<p>Sets are an <strong>unordered</strong> collection of unique items. Sets are useful to eliminate repeated elements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myset</span> <span class="o">=</span> <span class="p">{</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">2</span> <span class="p">,</span><span class="mi">4</span> <span class="p">,</span><span class="mf">4.0</span> <span class="p">,</span><span class="mi">5</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;copy&#39;</span><span class="p">,</span> <span class="s2">&quot;copy&quot;</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">,</span> <span class="mf">3.4e-6</span><span class="p">}</span> 
@@ -1218,6 +1246,13 @@ q = 6.6
 </div>
 </div>
 <p>Notice that floats and integers are not distinguished. The data type of the element listed first is the one that is kept.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ordered vs Unordered data structures.</p>
+<p><strong>Ordered data structures</strong> guarantee that elements are retrieved in the same order they were inserted while unordered data structures do not maintain any specific order. These are Lists (mutable), Tuples (immutable), and Strings (immutable ordered collection of characters).</p>
+<p><strong>Unordered data structures</strong> do not guarantee any specific order of elements. These are Sets (mutable collection of unique items) and Dictionaries (mutable collection of key-value pairs).</p>
+<p>Although dictionaries preserve insertion order starting from Python 3.7, their keys are unordered, meaning you cannot index or slice them like ordered structures.</p>
+</div>
 </section>
 <section id="dictionaries">
 <h3>3.2.4 Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h3>
@@ -1319,8 +1354,8 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -2.0, &#39;Three&#39;, (4+0j), None]
-[1, -2.0, &#39;Three&#39;, (4+0j), 5.0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.0, &#39;Three&#39;, (4+0j), None]
+[1, 2.0, &#39;Three&#39;, (4+0j), 5.0]
 </pre></div>
 </div>
 </div>
@@ -1355,9 +1390,9 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -2.0, &#39;Three&#39;, (4+0j), 5.0]
-[1, -2.0, &#39;Three&#39;, (4+0j), 5.0, 6.0]
-[1, -2.0, &#39;Three&#39;, (4+0j), 5.0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.0, &#39;Three&#39;, (4+0j), 5.0]
+[1, 2.0, &#39;Three&#39;, (4+0j), 5.0, 6.0]
+[1, 2.0, &#39;Three&#39;, (4+0j), 5.0]
 </pre></div>
 </div>
 </div>
@@ -1373,8 +1408,8 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -2.0, 2.5, &#39;Three&#39;, (4+0j), 5.0]
-[1, -2.0, &#39;Three&#39;, (4+0j), 5.0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.0, 2.5, &#39;Three&#39;, (4+0j), 5.0]
+[1, 2.0, &#39;Three&#39;, (4+0j), 5.0]
 </pre></div>
 </div>
 </div>
@@ -1392,7 +1427,7 @@ False
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2.0, 4, 4.1, &#39;copy&#39;, (5+2j), 3.4e-06}
-{2.0, 4, 4.1, 6, &#39;copy&#39;, (5+2j), 3.4e-06}
+{2.0, 4, 4.1, &#39;copy&#39;, 6, (5+2j), 3.4e-06}
 {2.0, 4, 4.1, &#39;copy&#39;, (5+2j), 3.4e-06}
 </pre></div>
 </div>
@@ -1434,8 +1469,8 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mylist = [1, -2.0, &#39;Three&#39;, (4+0j), 5.0]
-sublist = [1, -2.0, &#39;Three&#39;] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mylist = [1, 2.0, &#39;Three&#39;, (4+0j), 5.0]
+sublist = [1, 2.0, &#39;Three&#39;] 
 
 mytuple = (4.1, 6.626e-34, -3, 6.6)
 subtuple = (-3, 6.6)
@@ -1457,7 +1492,7 @@ subtuple = (-3, 6.6)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, &#39;Three&#39;, 5.0]
-[-2.0, (4+0j)]
+[2.0, (4+0j)]
 [1, &#39;Three&#39;, 5.0]
 </pre></div>
 </div>

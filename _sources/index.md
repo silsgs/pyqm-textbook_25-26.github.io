@@ -27,13 +27,12 @@ The main goals of this course are to:
 
 ## Overview
 
-
 | Week | Day            | Format           | Topic                                                                    |
 |------|----------------|------------------|--------------------------------------------------------------------------|
-| 1    | Mo. Sept. 15th | Lecture          | [Conda envs., Git and Python fundamentals](docs/01_all/Week1-intro.md)   |
-| 1    | Tu. Sept. 16th | F2F              | [Exercises and tutorial asistance](01_all/exercises/)                    |
+| 1    | Mo. Sept. 15th | Lecture          | [Conda envs., Git and Python fundamentals](01_all/Week1-intro.md)   |
+| 1    | Tu. Sept. 16th | F2F              | Exercises and tutorial asistance                    |
 | 2    | Mo. Sept. 22nd | Lecture          | [Flow control, comprehensions & I/O](02_all/Week2-intro.md)              |
-| 2    | Tu. Sept. 23rd | F2F              | [Exercises and tutorial asistance](02_all/exercises/)                    |
+| 2    | Tu. Sept. 23rd | F2F              | Exercises and tutorial asistance                     |
 | 3    | Mo. Sept. 29th | Lecture          | Functions and classes                                                    |
 | 3    | Tu. Sept. 30th | F2F              | Exercises and tutorial asistance                                         |
 | 4    | Mo. Oct. 6th   | Lecture          | Numpy and Matplotlib                                                     |

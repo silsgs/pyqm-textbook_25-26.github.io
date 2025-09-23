@@ -371,9 +371,10 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>We can process the input data as needed. For example, we can split each word in a sentence entered by the user by using the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method, which splits a string into a list of substrings based on a specified delimiter (whitespace by default).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space seperated integers: &#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space separated integers: &#39;</span><span class="p">)</span>
 
 <span class="n">l</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
@@ -387,8 +388,8 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_9980/3303451008.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">entry</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space seperated integers: &#39;</span><span class="p">)</span>
+<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_10423/916508561.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">entry</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space separated integers: &#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">l</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> 
@@ -408,7 +409,7 @@ document.write(`
 </div>
 <p>The data is now stored as a single string called <code class="docutils literal notranslate"><span class="pre">entry</span></code>. This is not particularly useful for working with this data. We shoud put this data into a list and make each element the integer entered.</p>
 <p>Remebering what we learened about compactifying our code we can write this all in one line.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space seperated integers: &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space separated integers: &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>

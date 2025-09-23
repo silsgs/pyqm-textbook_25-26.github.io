@@ -1,6 +1,6 @@
 # Week 2
 
-## Part 0. [Review of Week 1](02_all/02_00-recap.ipynb)
+## Part 0. [Review of Week 1](02_00-recap.ipynb)
 - 0.1 Python and Conda recap
 - 0.2 Git and GitHub recap
 - 0.3 Python basics recap
@@ -14,7 +14,7 @@
     - 0.3.8 Functions
     - 0.3.9 Modules and Packages
 
-## Part 1. [Flow control with Python](02_01_flow_control.ipynb)
+## Part 1. [Flow control with Python](02_all/02_01-flow_control.ipynb)
 - 1.1 Conditional statements: if, elif, else
 - 1.2 Try and Except
 - 1.3 While loops

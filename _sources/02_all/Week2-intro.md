@@ -13,8 +13,10 @@
     - 0.3.7 Dictionaries
     - 0.3.8 Functions
     - 0.3.9 Modules and Packages
+- Extra : Short list of Bash commands
+- Extra : Short list of VIM commands
 
-## Part 1. [Flow control with Python](02_all/02_01-flow_control.ipynb)
+## Part 1. [Flow control with Python](02_01-flow_control.ipynb)
 - 1.1 Conditional statements: if, elif, else
 - 1.2 Try and Except
 - 1.3 While loops
@@ -22,12 +24,12 @@
 - 1.5 For loops
 - 1.6 Break, Continue, Pass
 
-## Part 2. [Compact code: Comprehensions](02_02_compact-code.ipynb)
+## Part 2. [Compact code: Comprehensions](02_02-compact-code.ipynb)
 - 2.1 Comprehensions
     - 2.1.1 List, Set and Dictionary Comprehensions
     - 2.1.2 Generator Expressions
 
-## Part 3. [Working with external data and files in Python](02_03_external-data.ipynb)
+## Part 3. [Working with external data and files in Python](02_03-external-data.ipynb)
 - 3.1 User input
 - 3.2 Reading from File
 - 3.3 Writing to File

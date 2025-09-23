@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cheatsheet" href="02_04-cheatsheet.html" />
-    <link rel="prev" title="Part 2. Compact code: Comprehensions" href="02_02-compact-code.html" />
+    <link rel="prev" title="Part 2. Compact code and Comprehensions" href="02_02-compact-code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,7 +192,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Week2-intro.html">Week 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="02_00-recap.html">Part 0. Review of Week 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_01-flow_control.html">Part 1. Algorithm and Flow control with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_02-compact-code.html">Part 2. Compact code: Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_02-compact-code.html">Part 2. Compact code and Comprehensions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 3. Working with external data and files in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_04-cheatsheet.html">Cheatsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exercises/week2_Ex2.html">Week 2: Exercises</a></li>
@@ -350,7 +350,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input">3.1 User input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-from-file">3.2 Reading from File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">3.3 Writing to File</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-escape-sequences">Special Characters (Escape Sequences)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-special-characters-escape-sequences">Note on Special Characters (Escape Sequences)</a></li>
 </ul>
 </li>
 </ul>
@@ -382,7 +382,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_7055/1338552462.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_7511/1338552462.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your name: &#39;</span><span class="p">)</span>
 
 <span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
@@ -708,8 +708,8 @@ g
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<section id="special-characters-escape-sequences">
-<h3>Special Characters (Escape Sequences)<a class="headerlink" href="#special-characters-escape-sequences" title="Link to this heading">#</a></h3>
+<section id="note-on-special-characters-escape-sequences">
+<h3>Note on Special Characters (Escape Sequences)<a class="headerlink" href="#note-on-special-characters-escape-sequences" title="Link to this heading">#</a></h3>
 <p>Some Common Special Characters (Escape Sequences) when working with text files:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -730,6 +730,8 @@ g
 </tbody>
 </table>
 </div>
+<p>Just be careful when reading and writing files and their encodings. The default encoding is usually UTF-8, but it can vary depending on the system and the file. If you encounter issues with special characters, you might need to specify the encoding when opening the file.</p>
+<p>When writing to a file, you can include these special characters in your strings to format the output. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Writing lines with new line characters</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Line 1</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -782,7 +784,7 @@ g
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Part 2. Compact code: Comprehensions</p>
+        <p class="prev-next-title">Part 2. Compact code and Comprehensions</p>
       </div>
     </a>
     <a class="right-next"
@@ -813,7 +815,7 @@ g
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input">3.1 User input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-from-file">3.2 Reading from File</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">3.3 Writing to File</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-escape-sequences">Special Characters (Escape Sequences)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-special-characters-escape-sequences">Note on Special Characters (Escape Sequences)</a></li>
 </ul>
 </li>
 </ul>

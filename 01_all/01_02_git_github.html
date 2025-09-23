@@ -352,15 +352,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-repository-on-your-local-machine-and-in-github-remote-repository">2.3 Create a new repository on your local machine and in GitHub (remote repository)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-optional">2.3 Branches (optional):</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-branch-optional">2.3.1 Create a new branch (optional):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-branches-optional">2.3.2 Merge branches (optional):</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-branches-optional">2.3.2 Merge branches (optional):</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-changes-from-github">2.4 Pull changes from GitHub:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-a-repository-from-github">2.4 Clone a repository from GitHub:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-commit-history">2.5 View commit history:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-a-repository-from-github">2.5 Clone a repository from GitHub:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-commit-history">2.6 View commit history:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
 </ul>
             </nav>
         </div>
@@ -524,15 +522,15 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 </div>
 <p>It is very useful when you don’t want to change the main branch until you are sure that the changes are correct. This is especially useful when working in teams since it avoids conflicts between different people’s changes.</p>
 </section>
-</section>
 <section id="merge-branches-optional">
-<h2>2.3.2 Merge branches (optional):<a class="headerlink" href="#merge-branches-optional" title="Link to this heading">#</a></h2>
+<h3>2.3.2 Merge branches (optional):<a class="headerlink" href="#merge-branches-optional" title="Link to this heading">#</a></h3>
 <p>Once you have made changes in a branch and you are satisfied with them, you can merge the changes back into the main branch using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
 git<span class="w"> </span>merge<span class="w"> </span>my-branch
 git<span class="w"> </span>status
 </pre></div>
 </div>
+</section>
 </section>
 <section id="pull-changes-from-github">
 <h2>2.4 Pull changes from GitHub:<a class="headerlink" href="#pull-changes-from-github" title="Link to this heading">#</a></h2>
@@ -543,7 +541,7 @@ git<span class="w"> </span>status
 <p>If you have followed the previous steps so far, now you should have a local repository with a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, and the same repository should be available on GitHub. You can verify this by going to your GitHub account and checking if the repository is there.</p>
 </section>
 <section id="clone-a-repository-from-github">
-<h2>2.4 Clone a repository from GitHub:<a class="headerlink" href="#clone-a-repository-from-github" title="Link to this heading">#</a></h2>
+<h2>2.5 Clone a repository from GitHub:<a class="headerlink" href="#clone-a-repository-from-github" title="Link to this heading">#</a></h2>
 <p>Cloning a repository means creating a local copy of a remote repository on your machine. For instance, there is a public program that you want to use (or contribute to), and it is hosted on GitHub. You can clone the repository to your local machine and use it locally.</p>
 <p>Using packages and code from public repositories is a common practice in research. Especially in those fields which are in early-stages or very fast developing, such as machine learning, quantum computation, computational chemistry, within many others.</p>
 <p>However, few tips and warnings:</p>
@@ -563,20 +561,20 @@ git<span class="w"> </span>clone<span class="w"> </span>&lt;repository-url&gt;
 <p>Another advantage of using Git is that is allows for transoperatibility, as you can work on the same codebase from different machines. You can clone the repository to each machine and work on it locally. Just make sure to push your changes to the remote repository so that they are available on all machines!</p>
 </section>
 <section id="view-commit-history">
-<h2>2.5 View commit history:<a class="headerlink" href="#view-commit-history" title="Link to this heading">#</a></h2>
+<h2>2.6 View commit history:<a class="headerlink" href="#view-commit-history" title="Link to this heading">#</a></h2>
 <p>To view the commit history of a repository, you can use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
 </pre></div>
 </div>
 <p>This will display a list of all the commits in the repository, along with their commit messages, author information, and timestamps. You can use this information to track changes to the code over time and to identify specific commits that introduced bugs or other issues.</p>
+</section>
 <section id="additional-resources">
-<h3>Additional resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h3>
+<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html">Basic Git commands</a></p></li>
 <li><p><a class="reference external" href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Short tutorial</a></p></li>
 <li><p><a class="reference external" href="https://education.github.com/git-cheat-sheet-education.pdf">Git cheatsheet</a></p></li>
 </ul>
-</section>
 </section>
 </section>
 
@@ -649,15 +647,13 @@ git<span class="w"> </span>clone<span class="w"> </span>&lt;repository-url&gt;
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-repository-on-your-local-machine-and-in-github-remote-repository">2.3 Create a new repository on your local machine and in GitHub (remote repository)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-optional">2.3 Branches (optional):</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-branch-optional">2.3.1 Create a new branch (optional):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-branches-optional">2.3.2 Merge branches (optional):</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-branches-optional">2.3.2 Merge branches (optional):</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-changes-from-github">2.4 Pull changes from GitHub:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-a-repository-from-github">2.4 Clone a repository from GitHub:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-commit-history">2.5 View commit history:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-a-repository-from-github">2.5 Clone a repository from GitHub:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-commit-history">2.6 View commit history:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
 </ul>
   </nav></div>
 

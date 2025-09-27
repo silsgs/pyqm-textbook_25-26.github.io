@@ -63,5 +63,20 @@ This content is licensed under `Creative Commons Attribution-NonCommercial-Share
 
 ```{admonition} Click the button to reveal!
 :class: dropdown
+
+Python example
+
+```python
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+```
+
+
 Some hidden toggle content!
 ```

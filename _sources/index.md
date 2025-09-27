@@ -59,3 +59,9 @@ This content is licensed under `Creative Commons Attribution-NonCommercial-Share
 
 
 ![alt](./Trinity-Main-Logo.jpg)
+
+
+```{admonition} Click the button to reveal!
+:class: dropdown
+Some hidden toggle content!
+```

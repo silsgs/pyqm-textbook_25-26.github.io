@@ -35,7 +35,7 @@ print(l)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
-[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_10423/916508561.py[0m in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_3509/916508561.py[0m in [0;36m<cell line: 1>[0;34m()[0m
 [0;32m----> 1[0;31m [0mentry[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m'enter space separated integers: '[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0;34m[0m[0m
 [1;32m      3[0m [0ml[0m [0;34m=[0m [0mentry[0m[0;34m.[0m[0msplit[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

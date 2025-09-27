@@ -22,15 +22,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-E_levels = 
-
-print(E_levels)
+print(Class_Instance.name)
 ------------------
 
 
-[0;36m  File [0;32m"/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_3521/3443579649.py"[0;36m, line [0;32m1[0m
-[0;31m    E_levels =[0m
-[0m               ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
-
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_3540/2970650819.py[0m in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0;31m [0mprint[0m[0;34m([0m[0mClass_Instance[0m[0;34m.[0m[0mname[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mAttributeError[0m: 'My_Class' object has no attribute 'name'
 

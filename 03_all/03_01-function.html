@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Part 1: Functions and Lambda Functions &#8212; Python for Quantum Mechanics book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_all/03_01-function';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Trinity-Main-Logo.jpg" class="logo__image only-light" alt="Python for Quantum Mechanics book - Home"/>
+    <script>document.write(`<img src="../_static/Trinity-Main-Logo.jpg" class="logo__image only-dark" alt="Python for Quantum Mechanics book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Python For Quantum Mechanics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course content</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_all/Week1-intro.html">Week 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/01_01_setting_env.html">Part 1. Environment set up with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/01_02_git_github.html">Part 2. Basic Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/01_03_python_funds.html">Part 3. Python basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/exercises/week1-ex1.html">Excercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/exercises/week1-tut1.html">Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_all/Week2-intro.html">Week 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_00-recap.html">Part 0. Review of Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_01-flow_control.html">Part 1. Algorithm and Flow control with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_02-compact-code.html">Part 2. Compact code and Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_03-external-data.html">Part 3. Working with external data and files in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_04-cheatsheet.html">Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/exercises/week2_Ex2.html">Week 2: Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/exercises/week2_Tut2.html">Week 2: Tutorial</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/03_all/03_01-function.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Part 1: Functions and Lambda Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">1.1 Defining Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-syntax">1.1.1 Function Syntax</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-arguments">1.1.2 Function Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-returning-a-value">1.1.3 Functions Returning a Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-returning-multiple-values">1.1.4 Functions Returning Multiple Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-functions">1.1.5 Recursive Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-arguments">1.1.6 Implicit Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments-args-and-kwargs">1.1.7 Keyword Arguments, *args, and **kwargs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-filter-and-lambda-functions">1.1.8 Map, Filter, and Lambda Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">1.1.9 Lambda Functions</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="part-1-functions-and-lambda-functions">
+<h1>Part 1: Functions and Lambda Functions<a class="headerlink" href="#part-1-functions-and-lambda-functions" title="Link to this heading">#</a></h1>
+<p>In this part, we will explore functions and lambda functions in Python. Functions are blocks of code, fundamental in programming, that perform specific tasks and can be reused throughout a program. They help in organizing code, improving readability, and reducing redundancy.</p>
+<p>We can define our own functions to encapsulate logic and operations, making our code modular and easier to maintain.
+It is also very common to use Lambda functions for short, throwaway functions that are not reused elsewhere in the code.
+Lambda functions are a way to create small, anonymous functions in a single line of code.</p>
+<p>The difference between functions and lambda functions is that functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword and can contain multiple expressions and statements, while lambda functions are defined using the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword and can only contain a single expression. They provide a way to create small, anonymous functions on the fly.</p>
+<section id="defining-functions">
+<h2>1.1 Defining Functions<a class="headerlink" href="#defining-functions" title="Link to this heading">#</a></h2>
+<p>Functions are blocks of reusable code that perform a specific task. They help in <strong>breaking down complex problems into smaller, manageable pieces</strong>. If you remember from last week, algorithms are step-by-step procedures or formulas for solving a problem. Functions can be thought of as a way to implement algorithms in code.</p>
+<p>They are useful to compactify code. Rather than writing 20 lines of code to do a specific task with certain values for the variables used, instead we define a function that we can call with different arguments and use it multiple times.</p>
+<section id="function-syntax">
+<h3>1.1.1 Function Syntax<a class="headerlink" href="#function-syntax" title="Link to this heading">#</a></h3>
+<p>In Python, a function is defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword, followed by the <strong>function name, parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>, and a colon <code class="docutils literal notranslate"><span class="pre">:</span></code></strong>. Remember the importance of syntax and indentation. The function body is indented below the definition line.</p>
+<p>Syntax:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>def function_name([parameters]):
+    &lt;block&gt;
+    [return &lt;expression&gt;]
+</pre></div>
+</div>
+<p>Note a few things:</p>
+<ul class="simple">
+<li><p>The function name should be descriptive and follow standard naming conventions (lowercase letters and underscores).</p></li>
+<li><p>Parameters (also called arguments) are optional. A function can have zero or more parameters.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is also optional. If a function does not have a return statement, it returns <code class="docutils literal notranslate"><span class="pre">None</span></code> by default.</p></li>
+<li><p>Indentation is crucial in Python, as it defines the scope of the function body.</p></li>
+</ul>
+</section>
+<section id="function-arguments">
+<h3>1.1.2 Function Arguments<a class="headerlink" href="#function-arguments" title="Link to this heading">#</a></h3>
+<p>Functions can take arguments, which are values passed to the function when it is called. There are several types of arguments:</p>
+<ul class="simple">
+<li><p><strong>Positional Arguments</strong>: The most common type, where the order of arguments matters.</p></li>
+<li><p><strong>Keyword Arguments</strong>: Arguments that are passed by explicitly specifying the parameter name.</p></li>
+<li><p><strong>Default Arguments</strong>: Arguments that assume a default value if a value is not provided.</p></li>
+<li><p><strong>Variable-length Arguments</strong>: Arguments that allow you to pass a variable number of arguments to a function.</p></li>
+</ul>
+<p>If you use positional and keyword arguments in a function call, all the positional arguments must come first. Otherwise, you’ll get a syntax error:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a function with default and positional arguments</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a function with keyword arguments</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="n">greet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Hi&quot;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a function with default arguments</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a function with variable-length arguments</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">print_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="functions-returning-a-value">
+<h3>1.1.3 Functions Returning a Value<a class="headerlink" href="#functions-returning-a-value" title="Link to this heading">#</a></h3>
+<p>In order to save the output of a function, the common method is the  <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. It can be used or not in a function, depending on whether you want to use the output of the function later in your code or not.
+Technical detail, if there is no <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is used, the function returns <code class="docutils literal notranslate"><span class="pre">None</span></code> by default.</p>
+<p>Example of a function that returns a value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a function that returns a value</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 8</span>
+</pre></div>
+</div>
+<p>Example of a function that does not return a value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a function that returns a value</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If then you try to print <code class="docutils literal notranslate"><span class="pre">result</span></code>, it will print <code class="docutils literal notranslate"><span class="pre">None</span></code> because the function does not return anything.</p>
+</section>
+<section id="functions-returning-multiple-values">
+<h3>1.1.4 Functions Returning Multiple Values<a class="headerlink" href="#functions-returning-multiple-values" title="Link to this heading">#</a></h3>
+<p>Functions can return multiple values by separating them with commas. The returned values are packed into a tuple.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a function that returns multiple values</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_coordinates</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_coordinates</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># Output: 10 20 </span>
+</pre></div>
+</div>
+<p>Whats the output of the following code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">sum_val</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">diff_val</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">sum_val</span><span class="p">,</span> <span class="n">diff_val</span>        
+<span class="n">result</span> <span class="o">=</span> <span class="n">calculate</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="recursive-functions">
+<h3>1.1.5 Recursive Functions<a class="headerlink" href="#recursive-functions" title="Link to this heading">#</a></h3>
+<p>A recursive function is a function that calls itself in order to solve a problem. It is typically constructed with a base case that has a statement to stop the recursion and a recursive case to continue the recursion.</p>
+<ul class="simple">
+<li><p>The base case is the condition to stop the recursion.</p></li>
+<li><p>The recursive case is the part where the function calls on itself.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a recursive function to calculate factorial</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>  <span class="c1"># Base case</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Recursive case</span>
+</pre></div>
+</div>
+<p>Recursive functions can be very useful for small problems, such as calculating factorials or incrementing numbers, but they can also lead to performance issues if the recursion depth is too high. Python has a recursion limit (which can be checked and set using the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module) to prevent infinite recursion from crashing the program.</p>
+</section>
+<section id="implicit-arguments">
+<h3>1.1.6 Implicit Arguments<a class="headerlink" href="#implicit-arguments" title="Link to this heading">#</a></h3>
+<p>In Python, methods defined within a class automatically take the instance of the class as the first argument, conventionally named <code class="docutils literal notranslate"><span class="pre">self</span></code>. This allows methods to access and modify the instance’s attributes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a class with a method using implicit arguments</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says woof!&quot;</span><span class="p">)</span>
+
+<span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">)</span>
+<span class="n">dog</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="keyword-arguments-args-and-kwargs">
+<h3>1.1.7 Keyword Arguments, *args, and **kwargs<a class="headerlink" href="#keyword-arguments-args-and-kwargs" title="Link to this heading">#</a></h3>
+<p>Python allows you to define functions that can accept a variable number of arguments using <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a function using *args and **kwargs</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">example_function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">example_function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is very useful when you need to create functions that can handle a flexible number of inputs.</p>
+</section>
+<section id="map-filter-and-lambda-functions">
+<h3>1.1.8 Map, Filter, and Lambda Functions<a class="headerlink" href="#map-filter-and-lambda-functions" title="Link to this heading">#</a></h3>
+<p>Python provides built-in functions like <code class="docutils literal notranslate"><span class="pre">map()</span></code> and <code class="docutils literal notranslate"><span class="pre">filter()</span></code> that can be used in conjunction with lambda functions to process collections of data.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">map()</span></code>: Applies a function to all items in an input list (or any iterable) and returns a map object (which can be converted to a list).</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of using map with a lambda function</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squared</span><span class="p">)</span>  <span class="c1"># Output: [1, 4, 9, 16, 25]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">filter()</span></code>: Filters items in an input list (or any iterable) based on a function that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of using filter with a lambda function</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">even_numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">)</span>  <span class="c1"># Output: [2, 4]</span>
+</pre></div>
+</div>
+</section>
+<section id="lambda-functions">
+<h3>1.1.9 Lambda Functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">#</a></h3>
+<p>Lambda functions are small anonymous functions defined using the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword. They can take any number of arguments but can only have one expression. The expression is evaluated and returned.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a lambda function</span>
+<span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 8</span>
+</pre></div>
+</div>
+<p>Lambda functions are often used in conjunction with functions like <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, and <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>. The benefit of using lambda functions is that they allow you to write concise, inline functions without the need for a full function definition.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of using a lambda function with sorted</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">sorted_points</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">point</span><span class="p">:</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_points</span><span class="p">)</span>  <span class="c1"># Output: [(3, 1), (1, 2), (2, 3), (5, 4)]</span>
+</pre></div>
+</div>
+<p>Exercises:</p>
+<ol class="arabic simple">
+<li><p>Write a function that takes a list of numbers as input and returns the sum of all the numbers in the list.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_of_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 15</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that takes a string as input and returns the string in reverse order.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">reverse_string</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reverse_string</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">))</span>  <span class="c1"># Output: &quot;olleh&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that takes a list of strings as input and returns a new list containing only the strings that have a length greater than 3.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filter_long_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strings</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_long_strings</span><span class="p">([</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;hey&quot;</span><span class="p">,</span> <span class="s2">&quot;greetings&quot;</span><span class="p">]))</span>  <span class="c1"># Output: [&quot;hello&quot;, &quot;greetings&quot;]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Write a recursive function that takes a positive integer n as input and returns the nth Fibonacci number.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>  <span class="c1"># Output: 8</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Write a function that takes a list of numbers as input and returns a new list containing only the even numbers from the original list. Use the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function and a lambda function to accomplish this.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filter_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_even_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>  <span class="c1"># Output: [2, 4, 6]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Write a function that takes a list of numbers as input and returns a new list containing the squares of all the numbers in the original list. Use the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function and a lambda function to accomplish this.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: [1, 4, 9, 16, 25]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Write a function that takes a list of tuples, where each tuple contains a name and an age, and returns a new list of names sorted by age in ascending order. Use the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function and a lambda function to accomplish this.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_by_age</span><span class="p">(</span><span class="n">people</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">people</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">person</span><span class="p">:</span> <span class="n">person</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_by_age</span><span class="p">([(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)]))</span>  <span class="c1"># Output: [&quot;Bob&quot;, &quot;Alice&quot;, &quot;Charlie&quot;]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Write a function that takes a list of numbers as input and returns the maximum number in the list. Do not use the built-in <code class="docutils literal notranslate"><span class="pre">max()</span></code> function.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_maximum</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">max_num</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">max_num</span><span class="p">:</span>   
+            <span class="n">max_num</span> <span class="o">=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="n">max_num</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">find_maximum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 5</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Write a function that takes a list of strings as input and returns a new list containing the strings sorted in alphabetical order. Do not use the built-in <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">strings</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">strings</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">strings</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_strings</span><span class="p">([</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]))</span>  <span class="c1"># Output: [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Write a function that takes a list of numbers as input and returns the average of all the numbers in the list.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">average_of_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="k">if</span> <span class="n">numbers</span> <span class="k">else</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">average_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 3.0</span>
+</pre></div>
+</div>
+<p>Physics oriented exerscises:</p>
+<ol class="arabic simple">
+<li><p>Write a function that calculates the kinetic energy of an object given its mass and velocity. The formula for kinetic energy is KE = 0.5 * mass * velocity^2.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kinetic_energy</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kinetic_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 125</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that calculates the potential energy of an object given its mass, height, and gravitational acceleration. The formula for potential energy is PE = mass * gravity * height.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">potential_energy</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">height</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">potential_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 490.5</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that calculates the period of a simple pendulum given its length and gravitational acceleration. The formula for the period is T = 2 * π * sqrt(length / gravity).</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pendulum_period</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">gravity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pendulum_period</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: approximately 6.283</span>
+</pre></div>
+</div>
+<p>Quantum physics oriented exercises:</p>
+<ol class="arabic simple">
+<li><p>Write a function that calculates the energy of a photon given its frequency. The formula for the energy of a photon is E = h * frequency, where h is Planck’s constant (approximately 6.626 x 10^-34 Js).</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="mf">5e14</span><span class="p">))</span>  <span class="c1"># Output: approximately 3.313e-19</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. The formula for the de Broglie wavelength is λ = h / (mass * velocity), where h is Planck’s constant.</p></li>
+</ol>
+<div class="highlight-pythondef notranslate"><div class="highlight"><pre><span></span>    return h / (mass * velocity)
+print(de_broglie_wavelength(9.11e-31, 1e6))  # Output: approximately 7.27e-10
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. The formula for the energy levels is E_n = -13.6 eV / n^2.</p></li>
+</ol>
+<div class="highlight-pythondef notranslate"><div class="highlight"><pre><span></span>    return -13.6 / (n ** 2)
+print(hydrogen_energy_level(1))  # Output: -13.6
+print(hydrogen_energy_level(2))  # Output: -3.4
+</pre></div>
+</div>
+<p>Quantum physics oriented excersises with positional and keyword arguments:</p>
+<ol class="arabic simple">
+<li><p>Write a function that calculates the energy of a photon given its frequency and optionally its wavelength. If the wavelength is provided, use it to calculate the frequency using the formula frequency = speed_of_light / wavelength. The speed of light is approximately 3 x 10^8 m/s.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wavelength</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">,</span> <span class="n">speed_of_light</span><span class="o">=</span><span class="mf">3e8</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">wavelength</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">frequency</span> <span class="o">=</span> <span class="n">speed_of_light</span> <span class="o">/</span> <span class="n">wavelength</span>
+    <span class="k">if</span> <span class="n">frequency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either frequency or wavelength must be provided.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mf">5e14</span><span class="p">))</span>  <span class="c1"># Output: approximately 3.313e-19</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">600e-9</span><span class="p">))</span>  <span class="c1"># Output: approximately 3.313e-19</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for the de Broglie wavelength is λ = h / (mass * velocity), where h is Planck’s constant.</p></li>
+</ol>
+<div class="highlight-pythondef notranslate"><div class="highlight"><pre><span></span>    if mass_unit == &#39;g&#39;:
+        mass /= 1000  # Convert grams to kilograms
+    return h / (mass * velocity)
+print(de_broglie_wavelength(9.11e-31, 1e6))  # Output: approximately 7.27e-10
+print(de_broglie_wavelength(9.11e-28, 1e6, mass_unit=&#39;g&#39;))  # Output: approximately 7.27e-10
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. Allow the user to specify the energy unit as either electron volts (eV) or joules (J) using a keyword argument. The formula for the energy levels is E_n = -13.6 eV / n^2.</p></li>
+</ol>
+<div class="highlight-pythondef notranslate"><div class="highlight"><pre><span></span>    energy_eV = -13.6 / (n ** 2)
+    if energy_unit == &#39;J&#39;:
+        energy_eV *= 1.60218e-19  # Convert eV to Joules
+    return energy_eV
+print(hydrogen_energy_level(1))  # Output: -13.6 eV
+print(hydrogen_energy_level(1, energy_unit=&#39;J&#39;))  # Output: approximately -2.179e-18 J
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Write a function that calculates the wavelength of a photon given its energy. Allow the user to specify the energy in electron volts (eV) or joules (J) using a keyword argument. The formula for the wavelength is λ = h * c / E, where h is Planck’s constant and c is the speed of light.</p></li>
+</ol>
+<div class="highlight-pythondef notranslate"><div class="highlight"><pre><span></span>    if energy_unit == &#39;eV&#39;:
+        energy *= 1.60218e-19  # Convert eV to Joules
+    return h * speed_of_light / energy
+print(photon_wavelength(3.313e-19))  # Output: approximately 600e-9 m
+print(photon_wavelength(2.179e-18, energy_unit=&#39;J&#39;))  # Output: approximately 91.2e-9 m
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Write a function that calculates the momentum of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for momentum is p = mass * velocity.</p></li>
+</ol>
+<div class="highlight-pythondef notranslate"><div class="highlight"><pre><span></span>    if mass_unit == &#39;g&#39;:
+        mass /= 1000  # Convert grams to kilograms
+    return mass * velocity
+print(particle_momentum(9.11e-31, 1e6))  # Output: approximately 9.11e-25 kg*m/s
+print(particle_momentum(9.11e-28, 1e6, mass_unit=&#39;g&#39;))  # Output: approximately 9.11e-25 kg*m/s
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./03_all"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">1.1 Defining Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-syntax">1.1.1 Function Syntax</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-arguments">1.1.2 Function Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-returning-a-value">1.1.3 Functions Returning a Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-returning-multiple-values">1.1.4 Functions Returning Multiple Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-functions">1.1.5 Recursive Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-arguments">1.1.6 Implicit Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments-args-and-kwargs">1.1.7 Keyword Arguments, *args, and **kwargs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-filter-and-lambda-functions">1.1.8 Map, Filter, and Lambda Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">1.1.9 Lambda Functions</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Silvia M. Gimenez Santamarina
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Copyright@2025
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

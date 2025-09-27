@@ -76,7 +76,3 @@ data = np.random.randn(2, 100)
 fig, ax = plt.subplots()
 ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
 ```
-
-
-Some hidden toggle content!
-```

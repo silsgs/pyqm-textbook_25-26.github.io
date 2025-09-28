@@ -26,7 +26,7 @@
     - 2.1.7 Pull changes from GitHub
     - 2.1.8 Create a pull request on GitHub   
 
-## Part 3. [Python basics](01_03_python_basics.ipynb)
+## Part 3. [Python basics](01_03_python_funds.ipynb)
 - 3.1 Variables
     - 3.1.1 Integer and Float Variables
     - 3.1.2 Scientific Notation

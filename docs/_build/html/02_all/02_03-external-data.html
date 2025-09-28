@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cheatsheet" href="02_04-cheatsheet.html" />
-    <link rel="prev" title="Part 2. Compact code: Comprehensions" href="02_02-compact-code.html" />
+    <link rel="prev" title="Part 2. Compact code and Comprehensions" href="02_02-compact-code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,11 +192,18 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Week2-intro.html">Week 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="02_00-recap.html">Part 0. Review of Week 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_01-flow_control.html">Part 1. Algorithm and Flow control with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_02-compact-code.html">Part 2. Compact code: Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_02-compact-code.html">Part 2. Compact code and Comprehensions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 3. Working with external data and files in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_04-cheatsheet.html">Cheatsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exercises/week2_Ex2.html">Week 2: Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exercises/week2_Tut2.html">Week 2: Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_all/Week3-intro.html">Week 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_all/03_01-function.html">Part 1: Functions and Lambda Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_all/03_02-classes.html">Part 2: Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_all/exercises/week3_Ex3.html">Week 3: Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_all/exercises/week3_Tut3.html">Week 3: Tutorial</a></li>
 </ul>
 </details></li>
 </ul>
@@ -349,10 +356,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input">3.1 User input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-from-file">3.2 Reading from File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">3.3 Writing to File</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-escape-sequences">Special Characters (Escape Sequences)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">3.3 Writing to File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-special-characters-escape-sequences">Note on Special Characters (Escape Sequences)</a></li>
 </ul>
             </nav>
         </div>
@@ -373,17 +378,29 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>We can process the input data as needed. For example, we can split each word in a sentence entered by the user by using the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method, which splits a string into a list of substrings based on a specified delimiter (whitespace by default).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your name: &#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space separated integers: &#39;</span><span class="p">)</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)):</span>
+    <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_14325/1338552462.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your name: &#39;</span><span class="p">)</span>
+<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_23824/916508561.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">entry</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space separated integers: &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">l</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)):</span>
 
 <span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1279</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
@@ -397,23 +414,9 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space seperated integers: &#39;</span><span class="p">)</span>
-
-<span class="n">l</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)):</span>
-    <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>The data is now stored as a single string called <code class="docutils literal notranslate"><span class="pre">entry</span></code>. This is not particularly useful for working with this data. We shoud put this data into a list and make each element the integer entered.</p>
 <p>Remebering what we learened about compactifying our code we can write this all in one line.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space seperated integers: &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter space separated integers: &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -708,8 +711,47 @@ g
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<section id="special-characters-escape-sequences">
-<h3>Special Characters (Escape Sequences)<a class="headerlink" href="#special-characters-escape-sequences" title="Link to this heading">#</a></h3>
+<p>Here’s a list of the modes you can use when opening a file:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘r’</p></td>
+<td><p>Read only (default) - Opens a file for reading. Raises I/O error if file doesn’t exist.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘r+’</p></td>
+<td><p>Read and write. Raises I/O error if the file does not exist.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘w’</p></td>
+<td><p>Write only - Opens a file for writing. If the file exists, it will be overwritten. If the file does not exist, it will be created.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘w+’</p></td>
+<td><p>Read and write - Overwrites file or creates new one.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘a’</p></td>
+<td><p>Append only - Opens a file for appending. Creates file if it doesn’t exist.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘a+’</p></td>
+<td><p>Read and append - Pointer at end. Creates file if it doesn’t exist.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘x’</p></td>
+<td><p>Create - Creates a new file. If the file already exists, the operation will fail.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘b’</p></td>
+<td><p>Binary - Opens a file in binary mode (e.g., for non-text files like images). This can be combined with other modes (e.g., ‘rb’, ‘wb’,  ‘ab’ for reading, writing or appending in a binary file).</p></td>
+</tr>
+<tr class="row-even"><td><p>‘t’</p></td>
+<td><p>Text (default) - Opens a file in text mode. This can be combined with other modes (e.g., ‘rt’, ‘wt’,  ‘at’ for reading, writing or appending in a text file).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="note-on-special-characters-escape-sequences">
+<h2>Note on Special Characters (Escape Sequences)<a class="headerlink" href="#note-on-special-characters-escape-sequences" title="Link to this heading">#</a></h2>
 <p>Some Common Special Characters (Escape Sequences) when working with text files:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -730,6 +772,8 @@ g
 </tbody>
 </table>
 </div>
+<p>Just be careful when reading and writing files and their encodings. The default encoding is usually UTF-8, but it can vary depending on the system and the file. If you encounter issues with special characters, you might need to specify the encoding when opening the file.</p>
+<p>When writing to a file, you can include these special characters in your strings to format the output. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Writing lines with new line characters</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Line 1</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -742,7 +786,6 @@ g
 </pre></div>
 </div>
 <p>It is also very common to find files where lines are separated by tabs or commas. As we have seen before, we can use the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method to split a string into a list based on a specified delimiter.</p>
-</section>
 </section>
 </section>
 
@@ -782,7 +825,7 @@ g
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Part 2. Compact code: Comprehensions</p>
+        <p class="prev-next-title">Part 2. Compact code and Comprehensions</p>
       </div>
     </a>
     <a class="right-next"
@@ -812,10 +855,8 @@ g
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input">3.1 User input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-from-file">3.2 Reading from File</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">3.3 Writing to File</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-escape-sequences">Special Characters (Escape Sequences)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-file">3.3 Writing to File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-special-characters-escape-sequences">Note on Special Characters (Escape Sequences)</a></li>
 </ul>
   </nav></div>
 

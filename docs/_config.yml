@@ -57,3 +57,4 @@ parse:
     - smartquotes
     - substitution
     - tasklist
+    - dollarmath

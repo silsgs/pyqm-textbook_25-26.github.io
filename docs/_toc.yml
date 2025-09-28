@@ -18,7 +18,6 @@ parts:
         - file: 01_all/exercises/week1-ex1.ipynb
         - file: 01_all/exercises/week1-tut1.ipynb
 
-
       - file: 02_all/Week2-intro.md
         options:
           numbered: false
@@ -30,3 +29,13 @@ parts:
         - file: 02_all/02_04-cheatsheet.ipynb
         - file: 02_all/exercises/week2_Ex2.ipynb
         - file: 02_all/exercises/week2_Tut2.ipynb
+
+      - file: 03_all/Week3-intro.md
+        options:
+          numbered: false
+        sections:
+        - file: 03_all/03_01-function.ipynb 
+        - file: 03_all/03_02-classes.ipynb 
+        - file: 03_all/exercises/week3_Ex3.ipynb
+        - file: 03_all/exercises/week3_Tut3.ipynb
+

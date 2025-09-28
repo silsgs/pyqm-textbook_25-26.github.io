@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '02_all/02_01-flow_control';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Part 2. Compact code: Comprehensions" href="02_02-compact-code.html" />
+    <link rel="next" title="Part 2. Compact code and Comprehensions" href="02_02-compact-code.html" />
     <link rel="prev" title="Part 0. Review of Week 1" href="02_00-recap.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -192,11 +192,18 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Week2-intro.html">Week 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="02_00-recap.html">Part 0. Review of Week 1</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 1. Algorithm and Flow control with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_02-compact-code.html">Part 2. Compact code: Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_02-compact-code.html">Part 2. Compact code and Comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_03-external-data.html">Part 3. Working with external data and files in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_04-cheatsheet.html">Cheatsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exercises/week2_Ex2.html">Week 2: Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exercises/week2_Tut2.html">Week 2: Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_all/Week3-intro.html">Week 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_all/03_01-function.html">Part 1: Functions and Lambda Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_all/03_02-classes.html">Part 2: Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_all/exercises/week3_Ex3.html">Week 3: Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_all/exercises/week3_Tut3.html">Week 3: Tutorial</a></li>
 </ul>
 </details></li>
 </ul>
@@ -378,7 +385,7 @@ document.write(`
 <h1>Part 1. Algorithm and Flow control with Python<a class="headerlink" href="#part-1-algorithm-and-flow-control-with-python" title="Link to this heading">#</a></h1>
 <section id="algorithms-and-flowcharts">
 <h2>Algorithms and flowcharts<a class="headerlink" href="#algorithms-and-flowcharts" title="Link to this heading">#</a></h2>
-<p>Algorithms are step-by-step procedures or formulas for solving a problem. They are essential in computer science and programming, as they provide a clear set of instructions for performing tasks or computations.</p>
+<p><strong>Algorithms</strong> are step-by-step procedures or formulas for solving a problem. They are essential in computer science and programming, as they provide a clear set of instructions for performing tasks or computations.</p>
 <p>Before writing any code, it is important to define the logic of your program. A good initial step when developing code is planning and structuring the logic before with a scheme or a flow chart. This involves thinking about the specific operations and functions you will need to implement, as well as the initial data required, and what the expected outputs will be.</p>
 <p>Algorithms are the backbone of programming, as they define how a program operates and processes data. The more complex the task, the more important it is to have a well-defined algorithm to ensure that the program functions correctly and efficiently.</p>
 <p>As a general rule, an algorithm should be:</p>
@@ -388,21 +395,23 @@ document.write(`
 <li><p>Effective: Each step should be feasible and executable.</p></li>
 <li><p>Input and Output: It should have defined inputs and outputs.</p></li>
 </ul>
+<p>Here is an example of an algorithm’s basic scheme :
+<img alt="alt" src="../_images/wasp-algorithm.png" /><em>Algorithmic representation of the Wasp algorithm, extracted from <a class="reference external" href="https://arxiv.org/pdf/2505.10505">https://arxiv.org/pdf/2505.10505</a>; public repository available at <a class="github reference external" href="https://github.com/GagliardiGroup/wasp">GagliardiGroup/wasp</a></em>)</p>
 <p>It is important to understand that an algorithm is not tied to a specific programming language; rather, it is a conceptual framework that can be implemented in various languages.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
 <p>A good practise is to first think :</p>
 <ol class="arabic simple">
-<li><p>How your physical system is defined.  Which are the characteristics of your system (eg, dimensionality, interconnections,  …)</p></li>
+<li><p>How your physical system is defined.  Which are the characteristics of your system (eg, Hamiltonian, dimensionality, interconnections, …)</p></li>
 <li><p>Then which will be initial data you need to start from (for instance, which variables you will need to define, in which units, transformations you will need to apply, which data you will need to read from external files, …),</p></li>
 <li><p>and finally, which are the expected outputs (which are the outcomes, simulation trajectories, units in which they will be expressed, format of the data, if you will need to export it to an external file, …).</p></li>
 </ol>
-<p>Once you have done taht, you can start developing which operations, functions or methods you will need to implement in order to get your expected output.</p>
-<p>I strongly suggest to write a very basic logic scheme (e.g., a flowchart or a list of steps) to help you plan how the analysis needs to be perform, and how to code it.</p>
+<p>Once you have done that, you can start developing how will be the whole process. Which operations, functions or methods you will need to implement in order to get your expected output.</p>
+<p>I strongly recommend to write down a very basic, simplistic, logic scheme (e.g., a flowchart or a list of steps) to help you plan how the analysis needs to be performed, and how to code it.</p>
 <p>It is very likely that you will modify this scheme as you progress through the problem-solving process. But at least you will have a starting point to work from with a defined structure.</p>
 <p>As you get familiar with programming, you will be able to do this step mentally, but at the beginning it is very useful to write it down.</p>
 </div>
-<p>Flowcharts are extremely useful to visualize the steps of an algorithm, for both in the initial planning stages and once it has been implemented.</p>
+<p><strong>Flowcharts</strong> are extremely useful to visualize the steps of an algorithm, for both in the initial planning stages and once it has been implemented.</p>
 <p>Flowcharts use standardized symbols to represent different types of actions or steps in a process, and arrows to indicate the flow of control from one step to the next.</p>
 <p>Here are some common flowchart symbols:</p>
 <ul class="simple">
@@ -415,8 +424,6 @@ document.write(`
 <li><p><strong>Loop</strong>: Represents a loop or iteration in the process, often shown as a circular arrow or a rectangle with a curved arrow.</p></li>
 </ul>
 <p><img alt="alt" src="../_images/GCD_through_successive_subtractions.svg" /><em>Image by Arthur Baelde, CC BY-SA 4.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=70282331">https://commons.wikimedia.org/w/index.php?curid=70282331</a></em></p>
-<p>Practical example of an schematic algorithm:
-![alt](images/wasp-algorithm.png, <em>Algorithmic representation of the Wasp algorithm, extracted from <a class="reference external" href="https://arxiv.org/pdf/2505.10505">https://arxiv.org/pdf/2505.10505</a>; public repository available at <a class="github reference external" href="https://github.com/GagliardiGroup/wasp">GagliardiGroup/wasp</a></em>)</p>
 <p><strong>Short exercise</strong> : Draw a flowchart for the following algorithm to read a trajectory file with cartesian coordinates, then transform them to spherical coordinates to apply a 180° rotation, and finally write the results to a new file in cartesian coordinates again.</p>
 </section>
 <section id="indenting">
@@ -424,7 +431,7 @@ document.write(`
 <p>Python is known for its readability and simplicity. It is actually achieved because it employs indentation as a core aspect of its syntax to define these structures. It is basically in which order, instructions will be executed. An important aspect in Python is that it uses indentation to define blocks of code, which is crucial for maintaining the structure and flow of the program.</p>
 <p>Indentation is a key feature in Python since it denotes blocks of code that belong together, such as the body of a function, loop, or conditional statement. In contrast to many other programming languages that use curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> or keywords to define blocks of code, Python relies on indentation levels to indicate the grouping of statements.</p>
 <p>You can either use tabs or spaces for indentation, but it is important to be consistent throughout your code. Mixing tabs and spaces can lead to errors that are difficult to debug.
-As a standard convention in the Python community, it is recommended to use 4 spaces per indentation level. A good trick to maintain consistency is to configure your text editor or IDE to insert 4 spaces when you press the Tab key.</p>
+As a standard convention in the Python community is to use 4 spaces per indentation level. A good trick to maintain consistency is to configure your text editor or IDE to insert 4 spaces when you press the Tab key.</p>
 <p>Examples :</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
     <span class="c1"># first level of indentation (within if statement)</span>
@@ -616,15 +623,31 @@ Here is an example of using <code class="docutils literal notranslate"><span cla
 </section>
 <section id="try-and-except">
 <h2>1.2 Try and Except<a class="headerlink" href="#try-and-except" title="Link to this heading">#</a></h2>
-<p>Testing code is an import way to find out where the problems are. The <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code> block allows us to test a block of code for errors. If an error occurs, the code in the <code class="docutils literal notranslate"><span class="pre">except</span></code> block is executed.</p>
+<p>Testing code is an important way to find out where the problems are. It is very easy to use the <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code> block to catch and handle errors. If an error occurs, the code in the <code class="docutils literal notranslate"><span class="pre">except</span></code> block is executed.This is the basic syntax:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    try:
+        # Some Code
+    except:
+        # Executed if error in the
+        # try block
+</pre></div>
+</div>
 <p>Here is an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Code that may raise an exception</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># exception occurs, if code under try throws error</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An exception occurred.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Another example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can&#39;t divide by zero!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Testing code is an import way to find out where the problems are. The <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> <span class="c1"># block of code...</span>
@@ -674,7 +697,7 @@ code is finished
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># This is equivalent to count = count + 1</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># This is equivalent to add 1 to `count`</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -715,9 +738,8 @@ code is finished
 <p>This gives us a list of numbers from 0 to 4. The range function can also take two arguments, a start and an end. The start is inclusive, the end is exclusive.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Warning
-Remember that Python uses zero-based indexing, meaning that the first element of a sequence is at index 0. This is important to keep in mind when working with lists, strings, and other data structures in Python.
-Different programming languages use different conventions, so always check the documentation if you’re unsure. For example, in some languages like MATLAB, indexing starts at 1. And this mess your code up!</p>
+<p>Remember that Python uses <strong>zero-based indexing</strong>, meaning that the first element of a sequence is at index 0. This is important to keep in mind when working with lists, strings, and other data structures in Python.
+Different programming languages use different conventions, so always check the documentation if you’re unsure. For example, in some languages like MATLAB, indexing starts at 1. And this can mess your code up if you don’t know it in advance!</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -741,7 +763,8 @@ range(0, 10)
 </div>
 </div>
 </div>
-<p>Notice that we get a sequence running from 0-9, not 0-10!! It turns out we can add arguments in the parantheses to obtain a more specific sequence:</p>
+<p>Notice that we get a sequence running from 0-9, not 0-10!! It is because the end is exclusive.</p>
+<p>Syntax: <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">end,</span> <span class="pre">step)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">10</span>
@@ -780,7 +803,7 @@ range(0, 10)
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
-<p>When using <code class="docutils literal notranslate"><span class="pre">range()</span></code> in loops, remember that the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value is exclusive. This means that if you want to include a specific number in your loop, you need to set the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value to one more than that number.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">range()</span></code> in loops, remember that the <code class="docutils literal notranslate"><span class="pre">end</span></code> value is exclusive. This means that if you want to include a specific number in your loop, you need to set the <code class="docutils literal notranslate"><span class="pre">end</span></code> value to one more than that number. <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">end+1,</span> <span class="pre">step)</span></code></p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">zip()</span></code> function takes in two iterable data structures and returns an iterator of two object tupples as shown.</p>
 <div class="cell docutils container">
@@ -805,6 +828,27 @@ range(0, 10)
 </div>
 </div>
 <p>Each item is paired with its corresponding item in the structures. The length of this new object is determined by the shortest list as seen. This is a very useful object when we iterate over two objects.</p>
+<p>It can take several iterables as input, and it will return an iterator that aggregates elements from each of the iterables. The resulting iterator produces tuples, where the i-th tuple contains the i-th element from each of the input iterables. The iteration stops when the shortest input iterable ends.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">]</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+<span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span> <span class="s2">&quot;Chicago&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisbon&quot;</span><span class="p">]</span> <span class="c1"># Notice cities has an extra element</span>
+
+<span class="c1"># Zipping three lists</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ages</span><span class="p">,</span> <span class="n">cities</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">, lives in </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice, 25, lives in New York.
+Bob, 30, lives in San Francisco.
+Charlie, 35, lives in Chicago.
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Short exercise</strong>: Write a program that generates two lists, at least one using <code class="docutils literal notranslate"><span class="pre">range()</span></code>, both of equal length and uses the <code class="docutils literal notranslate"><span class="pre">zip()</span></code> function to iterate over them simultaneously, printing out pairs of corresponding elements from each list.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
@@ -873,7 +917,7 @@ range(0, 10)
 <span class="n">y</span><span class="o">=</span><span class="mi">1</span>
 
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>  <span class="c1"># Notice that we start from 1 and go to 19 (20 is excluded)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fib&#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
     <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="n">y</span>
 </pre></div>
@@ -1025,7 +1069,7 @@ pi -&gt; 3.14159265359
 <li><p>Know the physical system you are trying to model and your input data to model it.</p></li>
 <li><p>Know the algorithm’s goal, defining which are the expected outputs.</p></li>
 <li><p>Think about the data types you will be using, and how to structure your data (e.g., lists, dictionaries, arrays).</p></li>
-<li><p>Plan the logic, which functions you will need to implement.</p></li>
+<li><p>Plan the logic, which operations you will need to implement.</p></li>
 <li><p>Write a basic scheme or flowchart to help you plan how the analysis needs to be performed, and how to code it.</p></li>
 <li><p>Implement the code, testing and modifying the workflow as you go.</p></li>
 </ol>
@@ -1081,7 +1125,7 @@ pi -&gt; 3.14159265359
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Part 2. Compact code: Comprehensions</p>
+        <p class="prev-next-title">Part 2. Compact code and Comprehensions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

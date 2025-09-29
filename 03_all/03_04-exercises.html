@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03_all/03_04-exercises';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -355,8 +357,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-exercises">General Python exercises:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-related">Physics related:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-exercises">QM exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-and-quantum-physics-exercises">Classical and Quantum physics exercises:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-exercises-with-positional-and-keyword-arguments">More exercises with positional and keyword arguments:</a></li>
 </ul>
 </li>
@@ -397,7 +398,8 @@ document.write(`
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_of_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 15</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> 
 </pre></div>
 </div>
 </div>
@@ -408,7 +410,8 @@ document.write(`
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">reverse_string</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">reverse_string</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">))</span>  <span class="c1"># Output: &quot;olleh&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">reverse_string</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
@@ -419,7 +422,8 @@ document.write(`
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filter_long_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strings</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">filter_long_strings</span><span class="p">([</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;hey&quot;</span><span class="p">,</span> <span class="s2">&quot;greetings&quot;</span><span class="p">]))</span>  <span class="c1"># Output: [&quot;hello&quot;, &quot;greetings&quot;]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_long_strings</span><span class="p">([</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;hey&quot;</span><span class="p">,</span> <span class="s2">&quot;greetings&quot;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -435,7 +439,8 @@ document.write(`
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>  <span class="c1"># Output: 8</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
@@ -446,7 +451,8 @@ document.write(`
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filter_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">filter_even_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>  <span class="c1"># Output: [2, 4, 6]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_even_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span> 
 </pre></div>
 </div>
 </div>
@@ -457,7 +463,8 @@ document.write(`
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">square_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: [1, 4, 9, 16, 25]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">square_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> 
 </pre></div>
 </div>
 </div>
@@ -468,7 +475,7 @@ document.write(`
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_by_age</span><span class="p">(</span><span class="n">people</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">people</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">person</span><span class="p">:</span> <span class="n">person</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sort_by_age</span><span class="p">([(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)]))</span>  <span class="c1"># Output: [&quot;Bob&quot;, &quot;Alice&quot;, &quot;Charlie&quot;]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_by_age</span><span class="p">([(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)]))</span> 
 </pre></div>
 </div>
 </div>
@@ -483,7 +490,8 @@ document.write(`
         <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">max_num</span><span class="p">:</span>   
             <span class="n">max_num</span> <span class="o">=</span> <span class="n">num</span>
     <span class="k">return</span> <span class="n">max_num</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">find_maximum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">find_maximum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> 
 </pre></div>
 </div>
 </div>
@@ -498,7 +506,8 @@ document.write(`
             <span class="k">if</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
                 <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">strings</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sort_strings</span><span class="p">([</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]))</span>  <span class="c1"># Output: [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_strings</span><span class="p">([</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]))</span> 
 </pre></div>
 </div>
 </div>
@@ -509,81 +518,85 @@ document.write(`
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">average_of_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="k">if</span> <span class="n">numbers</span> <span class="k">else</span> <span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">average_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 3.0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">average_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> 
 </pre></div>
 </div>
 </div>
 </section>
-<section id="physics-related">
-<h3>Physics related:<a class="headerlink" href="#physics-related" title="Link to this heading">#</a></h3>
+<section id="classical-and-quantum-physics-exercises">
+<h3>Classical and Quantum physics exercises:<a class="headerlink" href="#classical-and-quantum-physics-exercises" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Write a function that calculates the kinetic energy of an object given its mass and velocity. The formula for kinetic energy is KE = 0.5 * mass * velocity^2.</p></li>
+<li><p>Write a function that calculates the kinetic energy of an object given its mass and velocity. The formula for kinetic energy is <span class="math notranslate nohighlight">\(E_{k} = \frac{1}{2} * mass * velocity^{2}\)</span>.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kinetic_energy</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">):</span>
     <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span> <span class="o">**</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">kinetic_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 125</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">kinetic_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Write a function that calculates the potential energy of an object given its mass, height, and gravitational acceleration. The formula for potential energy is PE = mass * gravity * height.</p></li>
+<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. The formula for the energy levels is <span class="math notranslate nohighlight">\(E_{n} = -13.6 eV / n^{2}\)</span>.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hydrogen_energy_level</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">13.6</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that calculates the potential energy of an object given its mass, height, and gravitational acceleration. The formula for potential energy is <span class="math notranslate nohighlight">\(PE = mass * gravity * height\)</span>.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">potential_energy</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">height</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">potential_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 490.5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">potential_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>Write a function that calculates the period of a simple pendulum given its length and gravitational acceleration. The formula for the period is T = 2 * π * sqrt(length / gravity).</p></li>
+<ol class="arabic simple" start="4">
+<li><p>Write a function that calculates the energy of a photon given its frequency. The formula for the energy of a photon is <span class="math notranslate nohighlight">\(E = h * frequency\)</span>, where h is Planck’s constant (approximately <span class="math notranslate nohighlight">\(6.626 x 10^-{34}\)</span> Js).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="mf">5e14</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Write a function that calculates the period of a simple pendulum given its length and gravitational acceleration. The formula for the period is <span class="math notranslate nohighlight">\(T = 2 * \pi * sqrt(length / gravity)\)</span>. Hint: you might neeed to import the <code class="docutils literal notranslate"><span class="pre">math</span></code> module to access the value of <span class="math notranslate nohighlight">\(\pi\)</span> and the square root function. (Just add <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> in the first line of your code).</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">pendulum_period</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">gravity</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pendulum_period</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: approximately 6.283</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pendulum_period</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
-</section>
-<section id="qm-exercises">
-<h3>QM exercises:<a class="headerlink" href="#qm-exercises" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Write a function that calculates the energy of a photon given its frequency. The formula for the energy of a photon is E = h * frequency, where h is Planck’s constant (approximately 6.626 x 10^-34 Js).</p></li>
-</ol>
-<div class="dropdown admonition">
-<p class="admonition-title">Click to reveal the solution!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="mf">5e14</span><span class="p">))</span>  <span class="c1"># Output: approximately 3.313e-19</span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. The formula for the de Broglie wavelength is λ = h / (mass * velocity), where h is Planck’s constant.</p></li>
+<ol class="arabic simple" start="6">
+<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. The formula for the de Broglie wavelength is <span class="math notranslate nohighlight">\(\uplambda = h / (mass * velocity)\)</span>, where h is Planck’s constant.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">de_broglie_wavelength</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span>  <span class="c1"># Output: approximately 7.27e-10</span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. The formula for the energy levels is E_n = -13.6 eV / n^2.</p></li>
-</ol>
-<div class="dropdown admonition">
-<p class="admonition-title">Click to reveal the solution!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hydrogen_energy_level</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mf">13.6</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># Output: -13.6</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># Output: -3.4</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
@@ -591,23 +604,25 @@ document.write(`
 <section id="more-exercises-with-positional-and-keyword-arguments">
 <h3>More exercises with positional and keyword arguments:<a class="headerlink" href="#more-exercises-with-positional-and-keyword-arguments" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Write a function that calculates the energy of a photon given its frequency and optionally its wavelength. If the wavelength is provided, use it to calculate the frequency using the formula frequency = speed_of_light / wavelength. The speed of light is approximately 3 x 10^8 m/s.</p></li>
+<li><p>Write a function that calculates the energy of a photon given its frequency and optionally its wavelength. If the wavelength is provided, use it to calculate the frequency using the formula frequency = speed_of_light / wavelength. The speed of light is approximately <span class="math notranslate nohighlight">\(3*10^{8}\)</span> m/s.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wavelength</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">,</span> <span class="n">speed_of_light</span><span class="o">=</span><span class="mf">3e8</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">wavelength</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">frequency</span> <span class="o">=</span> <span class="n">speed_of_light</span> <span class="o">/</span> <span class="n">wavelength</span>
+    
     <span class="k">if</span> <span class="n">frequency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either frequency or wavelength must be provided.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mf">5e14</span><span class="p">))</span>  <span class="c1"># Output: approximately 3.313e-19</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">600e-9</span><span class="p">))</span>  <span class="c1"># Output: approximately 3.313e-19</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mf">5e14</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">600e-9</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for the de Broglie wavelength is λ = h / (mass * velocity), where h is Planck’s constant.</p></li>
+<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for the de Broglie wavelength is <span class="math notranslate nohighlight">\(\uplambda = h / (mass * velocity)\)</span>, where h is Planck’s constant.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
@@ -615,13 +630,14 @@ document.write(`
     <span class="k">if</span> <span class="n">mass_unit</span> <span class="o">==</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span>
         <span class="n">mass</span> <span class="o">/=</span> <span class="mi">1000</span>  <span class="c1"># Convert grams to kilograms</span>
     <span class="k">return</span> <span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span>  <span class="c1"># Output: approximately 7.27e-10</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-28</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">))</span>  <span class="c1"># Output: approximately 7.27e-10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-28</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. Allow the user to specify the energy unit as either electron volts (eV) or joules (J) using a keyword argument. The formula for the energy levels is E_n = -13.6 eV / n^2.</p></li>
+<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. Allow the user to specify the energy unit as either electron volts (eV) or joules (J) using a keyword argument. The formula for the energy levels is <span class="math notranslate nohighlight">\(E_{n} = -13.6 eV / n^{2}\)</span>.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
@@ -630,13 +646,14 @@ document.write(`
     <span class="k">if</span> <span class="n">energy_unit</span> <span class="o">==</span> <span class="s1">&#39;J&#39;</span><span class="p">:</span>
         <span class="n">energy_eV</span> <span class="o">*=</span> <span class="mf">1.60218e-19</span>  <span class="c1"># Convert eV to Joules</span>
     <span class="k">return</span> <span class="n">energy_eV</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># Output: -13.6 eV</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;J&#39;</span><span class="p">))</span>  <span class="c1"># Output: approximately -2.179e-18 J</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;J&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Write a function that calculates the wavelength of a photon given its energy. Allow the user to specify the energy in electron volts (eV) or joules (J) using a keyword argument. The formula for the wavelength is λ = h * c / E, where h is Planck’s constant and c is the speed of light.</p></li>
+<li><p>Write a function that calculates the wavelength of a photon given its energy. Allow the user to specify the energy in electron volts (eV) or joules (J) using a keyword argument. The formula for the wavelength is <span class="math notranslate nohighlight">\(\uplambda = h * c / E\)</span>, where h is Planck’s constant and c is the speed of light.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
@@ -644,13 +661,14 @@ document.write(`
     <span class="k">if</span> <span class="n">energy_unit</span> <span class="o">==</span> <span class="s1">&#39;eV&#39;</span><span class="p">:</span>
         <span class="n">energy</span> <span class="o">*=</span> <span class="mf">1.60218e-19</span>  <span class="c1"># Convert eV to Joules</span>
     <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">speed_of_light</span> <span class="o">/</span> <span class="n">energy</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">photon_wavelength</span><span class="p">(</span><span class="mf">3.313e-19</span><span class="p">))</span>  <span class="c1"># Output: approximately 600e-9 m</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">photon_wavelength</span><span class="p">(</span><span class="mf">2.179e-18</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;J&#39;</span><span class="p">))</span>  <span class="c1"># Output: approximately 91.2e-9 m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_wavelength</span><span class="p">(</span><span class="mf">3.313e-19</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_wavelength</span><span class="p">(</span><span class="mf">2.179e-18</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;J&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Write a function that calculates the momentum of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for momentum is p = mass * velocity.</p></li>
+<li><p>Write a function that calculates the momentum of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for momentum is <span class="math notranslate nohighlight">\(p = mass * velocity\)</span>.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
@@ -658,8 +676,9 @@ document.write(`
     <span class="k">if</span> <span class="n">mass_unit</span> <span class="o">==</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span>
         <span class="n">mass</span> <span class="o">/=</span> <span class="mi">1000</span>  <span class="c1"># Convert grams to kilograms</span>
     <span class="k">return</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">particle_momentum</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span>  <span class="c1"># Output: approximately 9.11e-25 kg*m/s</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">particle_momentum</span><span class="p">(</span><span class="mf">9.11e-28</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">))</span>  <span class="c1"># Output: approximately 9.11e-25 kg*m/s</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">particle_momentum</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">particle_momentum</span><span class="p">(</span><span class="mf">9.11e-28</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
@@ -1110,8 +1129,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-exercises">General Python exercises:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-related">Physics related:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-exercises">QM exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-and-quantum-physics-exercises">Classical and Quantum physics exercises:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-exercises-with-positional-and-keyword-arguments">More exercises with positional and keyword arguments:</a></li>
 </ul>
 </li>

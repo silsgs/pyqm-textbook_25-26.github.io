@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Functions &#8212; Python for Quantum Mechanics book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_all/03_04-exercises';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Trinity-Main-Logo.jpg" class="logo__image only-light" alt="Python for Quantum Mechanics book - Home"/>
+    <script>document.write(`<img src="../_static/Trinity-Main-Logo.jpg" class="logo__image only-dark" alt="Python for Quantum Mechanics book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Python For Quantum Mechanics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course content</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_all/Week1-intro.html">Week 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/01_01_setting_env.html">Part 1. Environment set up with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/01_02_git_github.html">Part 2. Basic Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/01_03_python_funds.html">Part 3. Python basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/exercises/week1-ex1.html">Excercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_all/exercises/week1-tut1.html">Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_all/Week2-intro.html">Week 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_00-recap.html">Part 0. Review of Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_01-flow_control.html">Part 1. Algorithm and Flow control with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_02-compact-code.html">Part 2. Compact code and Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_03-external-data.html">Part 3. Working with external data and files in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/02_04-cheatsheet.html">Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/exercises/week2_Ex2.html">Week 2: Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_all/exercises/week2_Tut2.html">Week 2: Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Week3-intro.html">Week 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_01-function.html">Part 1: Functions and Lambda Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_02-classes.html">Part 2: Classes</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/03_all/03_04-exercises.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-exercises">General Python exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-related">Physics related:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-exercises">QM exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-exercises-with-positional-and-keyword-arguments">More exercises with positional and keyword arguments:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-building-classes">Exercises building classes:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-using-inheritance">Exercises using inheritance:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-with-classes-physics">Exercises with classes, physics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-in-classes-and-inheritance">Exercises in classes and inheritance:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<section id="general-python-exercises">
+<h3>General Python exercises:<a class="headerlink" href="#general-python-exercises" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Write a function that takes a list of numbers as input and returns the sum of all the numbers in the list.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_of_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 15</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that takes a string as input and returns the string in reverse order.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">reverse_string</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reverse_string</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">))</span>  <span class="c1"># Output: &quot;olleh&quot;</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that takes a list of strings as input and returns a new list containing only the strings that have a length greater than 3.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filter_long_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strings</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_long_strings</span><span class="p">([</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;hey&quot;</span><span class="p">,</span> <span class="s2">&quot;greetings&quot;</span><span class="p">]))</span>  <span class="c1"># Output: [&quot;hello&quot;, &quot;greetings&quot;]</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Write a recursive function that takes a positive integer n as input and returns the nth Fibonacci number.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>  <span class="c1"># Output: 8</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Write a function that takes a list of numbers as input and returns a new list containing only the even numbers from the original list. Use the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function and a lambda function to accomplish this.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filter_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_even_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>  <span class="c1"># Output: [2, 4, 6]</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Write a function that takes a list of numbers as input and returns a new list containing the squares of all the numbers in the original list. Use the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function and a lambda function to accomplish this.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: [1, 4, 9, 16, 25]</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Write a function that takes a list of tuples, where each tuple contains a name and an age, and returns a new list of names sorted by age in ascending order. Use the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function and a lambda function to accomplish this.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_by_age</span><span class="p">(</span><span class="n">people</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">people</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">person</span><span class="p">:</span> <span class="n">person</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_by_age</span><span class="p">([(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)]))</span>  <span class="c1"># Output: [&quot;Bob&quot;, &quot;Alice&quot;, &quot;Charlie&quot;]</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Write a function that takes a list of numbers as input and returns the maximum number in the list. Do not use the built-in <code class="docutils literal notranslate"><span class="pre">max()</span></code> function.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_maximum</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">max_num</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">max_num</span><span class="p">:</span>   
+            <span class="n">max_num</span> <span class="o">=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="n">max_num</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">find_maximum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 5</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Write a function that takes a list of strings as input and returns a new list containing the strings sorted in alphabetical order. Do not use the built-in <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">strings</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">strings</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">strings</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_strings</span><span class="p">([</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]))</span>  <span class="c1"># Output: [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Write a function that takes a list of numbers as input and returns the average of all the numbers in the list.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">average_of_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="k">if</span> <span class="n">numbers</span> <span class="k">else</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">average_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># Output: 3.0</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="physics-related">
+<h3>Physics related:<a class="headerlink" href="#physics-related" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Write a function that calculates the kinetic energy of an object given its mass and velocity. The formula for kinetic energy is KE = 0.5 * mass * velocity^2.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kinetic_energy</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kinetic_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 125</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that calculates the potential energy of an object given its mass, height, and gravitational acceleration. The formula for potential energy is PE = mass * gravity * height.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">potential_energy</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">height</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">potential_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 490.5</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that calculates the period of a simple pendulum given its length and gravitational acceleration. The formula for the period is T = 2 * π * sqrt(length / gravity).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pendulum_period</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">gravity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pendulum_period</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: approximately 6.283</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="qm-exercises">
+<h3>QM exercises:<a class="headerlink" href="#qm-exercises" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Write a function that calculates the energy of a photon given its frequency. The formula for the energy of a photon is E = h * frequency, where h is Planck’s constant (approximately 6.626 x 10^-34 Js).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="mf">5e14</span><span class="p">))</span>  <span class="c1"># Output: approximately 3.313e-19</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. The formula for the de Broglie wavelength is λ = h / (mass * velocity), where h is Planck’s constant.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">de_broglie_wavelength</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span>  <span class="c1"># Output: approximately 7.27e-10</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. The formula for the energy levels is E_n = -13.6 eV / n^2.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hydrogen_energy_level</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">13.6</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># Output: -13.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># Output: -3.4</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="more-exercises-with-positional-and-keyword-arguments">
+<h3>More exercises with positional and keyword arguments:<a class="headerlink" href="#more-exercises-with-positional-and-keyword-arguments" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Write a function that calculates the energy of a photon given its frequency and optionally its wavelength. If the wavelength is provided, use it to calculate the frequency using the formula frequency = speed_of_light / wavelength. The speed of light is approximately 3 x 10^8 m/s.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wavelength</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">,</span> <span class="n">speed_of_light</span><span class="o">=</span><span class="mf">3e8</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">wavelength</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">frequency</span> <span class="o">=</span> <span class="n">speed_of_light</span> <span class="o">/</span> <span class="n">wavelength</span>
+    <span class="k">if</span> <span class="n">frequency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either frequency or wavelength must be provided.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mf">5e14</span><span class="p">))</span>  <span class="c1"># Output: approximately 3.313e-19</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">600e-9</span><span class="p">))</span>  <span class="c1"># Output: approximately 3.313e-19</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for the de Broglie wavelength is λ = h / (mass * velocity), where h is Planck’s constant.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">de_broglie_wavelength</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">mass_unit</span> <span class="o">==</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span>
+        <span class="n">mass</span> <span class="o">/=</span> <span class="mi">1000</span>  <span class="c1"># Convert grams to kilograms</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span>  <span class="c1"># Output: approximately 7.27e-10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-28</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">))</span>  <span class="c1"># Output: approximately 7.27e-10</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. Allow the user to specify the energy unit as either electron volts (eV) or joules (J) using a keyword argument. The formula for the energy levels is E_n = -13.6 eV / n^2.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hydrogen_energy_level</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;eV&#39;</span><span class="p">):</span>
+    <span class="n">energy_eV</span> <span class="o">=</span> <span class="o">-</span><span class="mf">13.6</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">energy_unit</span> <span class="o">==</span> <span class="s1">&#39;J&#39;</span><span class="p">:</span>
+        <span class="n">energy_eV</span> <span class="o">*=</span> <span class="mf">1.60218e-19</span>  <span class="c1"># Convert eV to Joules</span>
+    <span class="k">return</span> <span class="n">energy_eV</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># Output: -13.6 eV</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;J&#39;</span><span class="p">))</span>  <span class="c1"># Output: approximately -2.179e-18 J</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Write a function that calculates the wavelength of a photon given its energy. Allow the user to specify the energy in electron volts (eV) or joules (J) using a keyword argument. The formula for the wavelength is λ = h * c / E, where h is Planck’s constant and c is the speed of light.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_wavelength</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;eV&#39;</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">,</span> <span class="n">speed_of_light</span><span class="o">=</span><span class="mf">3e8</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">energy_unit</span> <span class="o">==</span> <span class="s1">&#39;eV&#39;</span><span class="p">:</span>
+        <span class="n">energy</span> <span class="o">*=</span> <span class="mf">1.60218e-19</span>  <span class="c1"># Convert eV to Joules</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">speed_of_light</span> <span class="o">/</span> <span class="n">energy</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_wavelength</span><span class="p">(</span><span class="mf">3.313e-19</span><span class="p">))</span>  <span class="c1"># Output: approximately 600e-9 m</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_wavelength</span><span class="p">(</span><span class="mf">2.179e-18</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;J&#39;</span><span class="p">))</span>  <span class="c1"># Output: approximately 91.2e-9 m</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Write a function that calculates the momentum of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for momentum is p = mass * velocity.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">particle_momentum</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">mass_unit</span> <span class="o">==</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span>
+        <span class="n">mass</span> <span class="o">/=</span> <span class="mi">1000</span>  <span class="c1"># Convert grams to kilograms</span>
+    <span class="k">return</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">particle_momentum</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span>  <span class="c1"># Output: approximately 9.11e-25 kg*m/s</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">particle_momentum</span><span class="p">(</span><span class="mf">9.11e-28</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">))</span>  <span class="c1"># Output: approximately 9.11e-25 kg*m/s</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="exercises-building-classes">
+<h3>Exercises building classes:<a class="headerlink" href="#exercises-building-classes" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> that has attributes for width and height. Include methods to calculate the area and perimeter of the rectangle.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> that has attributes for account holder’s name and balance. Include methods to deposit, withdraw, and check the balance.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BankAccount</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_holder</span><span class="p">,</span> <span class="n">initial_balance</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span> <span class="o">=</span> <span class="n">account_holder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">initial_balance</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deposited </span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2">. New balance: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insufficient funds&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Withdrew </span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2">. New balance: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Account holder: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span><span class="si">}</span><span class="s2">, Balance: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Student</span></code> that has attributes for name, age, and grades (a list of numbers). Include methods to add a grade, calculate the average grade, and display student information.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grades</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_grade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grade</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grades</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">average_grade</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">grades</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grades</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grades</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, Age: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">, Average Grade: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">average_grade</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Library</span></code> that has attributes for name and a list of books (each book can be represented as a string). Include methods to add a book, remove a book, and display all books in the library.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Library</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_books</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Books in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; - </span><span class="si">{</span><span class="n">book</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Car</span></code> that has attributes for make, model, year, and mileage. Include methods to drive the car (which increases mileage), display car information, and check if the car needs maintenance (e.g., every 10,000 miles).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">mileage</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mileage</span> <span class="o">=</span> <span class="n">mileage</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mileage</span> <span class="o">+=</span> <span class="n">distance</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Driven </span><span class="si">{</span><span class="n">distance</span><span class="si">}</span><span class="s2"> miles. Total mileage: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mileage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Car Information:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Make: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Model: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Year: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Mileage: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mileage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">needs_maintenance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mileage</span> <span class="o">&gt;=</span> <span class="mi">10000</span>    
+
+<span class="c1"># Example usage:</span>
+<span class="n">my_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
+<span class="n">my_car</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">my_car</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Needs maintenance:&quot;</span><span class="p">,</span> <span class="n">my_car</span><span class="o">.</span><span class="n">needs_maintenance</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="exercises-using-inheritance">
+<h3>Exercises using inheritance:<a class="headerlink" href="#exercises-using-inheritance" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">Animal</span></code> with attributes for name and age. Include a method to make a sound. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">Dog</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">Animal</span></code> and override the sound method to bark and meow, respectively.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Bark!&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Meow!&quot;</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> with attributes for make, model, and year. Include a method to display vehicle information. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">Car</span></code> and <code class="docutils literal notranslate"><span class="pre">Truck</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> and add specific attributes (e.g., number of doors for <code class="docutils literal notranslate"><span class="pre">Car</span></code>, payload capacity for <code class="docutils literal notranslate"><span class="pre">Truck</span></code>).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vehicle</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vehicle Information: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">num_doors</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_doors</span> <span class="o">=</span> <span class="n">num_doors</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of doors: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_doors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Truck</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">payload_capacity</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">payload_capacity</span> <span class="o">=</span> <span class="n">payload_capacity</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Payload capacity: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">payload_capacity</span><span class="si">}</span><span class="s2"> tons&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="exercises-with-classes-physics">
+<h3>Exercises with classes, physics:<a class="headerlink" href="#exercises-with-classes-physics" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Particle</span></code> that has attributes for mass, charge, and position (a tuple of x, y, z coordinates). Include methods to calculate the kinetic energy and potential energy of the particle in a gravitational field.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Particle</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">charge</span> <span class="o">=</span> <span class="n">charge</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">position</span>  <span class="c1"># position is a tuple (x, y, z)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kinetic_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">velocity</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># acceleration due to gravity in m/s^2</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">height</span>   
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">ElectricField</span></code> that has attributes for field strength and direction (a tuple of x, y, z components). Include methods to calculate the force on a charged particle placed in the field.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ElectricField</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">=</span> <span class="n">field_strength</span>  <span class="c1"># in N/C</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">direction</span>  <span class="c1"># direction is a tuple (x, y, z)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">force_on_particle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">particle</span><span class="p">):</span>
+        <span class="n">fx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">particle</span><span class="o">.</span><span class="n">charge</span>
+        <span class="n">fy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">particle</span><span class="o">.</span><span class="n">charge</span>
+        <span class="n">fz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">particle</span><span class="o">.</span><span class="n">charge</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Wave</span></code> that has attributes for amplitude, frequency, and wavelength. Include methods to calculate the wave speed and the energy of the wave.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Wave</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">=</span> <span class="n">amplitude</span>  <span class="c1"># in meters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="n">frequency</span>  <span class="c1"># in Hz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">wavelength</span>  <span class="c1"># in meters</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">wave_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">QuantumState</span></code> that has attributes for the wavefunction (a function of position) and energy level. Include methods to calculate the probability density and expectation value of position.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QuantumState</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">,</span> <span class="n">energy_level</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span> <span class="o">=</span> <span class="n">wavefunction</span>  <span class="c1"># wavefunction is a callable function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">energy_level</span> <span class="o">=</span> <span class="n">energy_level</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">probability_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+        <span class="n">psi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">expectation_value_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position_range</span><span class="p">):</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">integral</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">probability_density</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">dx</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">position_range</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">integral</span>   
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Circuit</span></code> that has attributes for resistance, capacitance, and inductance. Include methods to calculate the impedance and resonant frequency of the circuit.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Circuit</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resistance</span><span class="p">,</span> <span class="n">capacitance</span><span class="p">,</span> <span class="n">inductance</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resistance</span> <span class="o">=</span> <span class="n">resistance</span>  <span class="c1"># in ohms</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">capacitance</span> <span class="o">=</span> <span class="n">capacitance</span>  <span class="c1"># in farads</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inductance</span> <span class="o">=</span> <span class="n">inductance</span>  <span class="c1"># in henrys</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">impedance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frequency</span><span class="p">):</span>
+        <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="n">frequency</span>
+        <span class="n">z_capacitive</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacitance</span><span class="p">)</span>
+        <span class="n">z_inductive</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inductance</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resistance</span> <span class="o">+</span> <span class="n">z_capacitive</span> <span class="o">+</span> <span class="n">z_inductive</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">resonant_frequency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inductance</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacitance</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+</section>
+<section id="exercises-in-classes-and-inheritance">
+<h3>Exercises in classes and inheritance:<a class="headerlink" href="#exercises-in-classes-and-inheritance" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">QuantumParticle</span></code> with attributes for mass, charge, and spin. Include methods to calculate the de Broglie wavelength and energy of the particle. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">Electron</span></code> and <code class="docutils literal notranslate"><span class="pre">Proton</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">QuantumParticle</span></code> and add specific attributes (e.g., atomic number for <code class="docutils literal notranslate"><span class="pre">Proton</span></code>).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QuantumParticle</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">spin</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>  <span class="c1"># in kg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">charge</span> <span class="o">=</span> <span class="n">charge</span>  <span class="c1"># in coulombs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spin</span> <span class="o">=</span> <span class="n">spin</span>  <span class="c1"># in ħ units</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">de_broglie_wavelength</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">momentum</span><span class="p">):</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span>  <span class="c1"># Planck&#39;s constant in J·s</span>
+        <span class="k">return</span> <span class="n">h</span> <span class="o">/</span> <span class="n">momentum</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frequency</span><span class="p">):</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span>  <span class="c1"># Planck&#39;s constant in J·s</span>
+        <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Electron</span><span class="p">(</span><span class="n">QuantumParticle</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">9.10938356e-31</span><span class="p">,</span> <span class="n">charge</span><span class="o">=-</span><span class="mf">1.602176634e-19</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Proton</span><span class="p">(</span><span class="n">QuantumParticle</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">1.6726219e-27</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="mf">1.602176634e-19</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atomic_number</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">QuantumSystem</span></code> with attributes for Hamiltonian and wavefunction. Include methods to calculate the time evolution of the system and expectation values of observables. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">HarmonicOscillator</span></code> and <code class="docutils literal notranslate"><span class="pre">ParticleInBox</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">QuantumSystem</span></code> and implement specific Hamiltonians and wavefunctions.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QuantumSystem</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hamiltonian</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">hamiltonian</span>  <span class="c1"># Hamiltonian is a callable function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span> <span class="o">=</span> <span class="n">wavefunction</span>  <span class="c1"># Wavefunction is a callable function</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">time_evolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="c1"># Placeholder for time evolution calculation</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">expectation_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observable</span><span class="p">,</span> <span class="n">position_range</span><span class="p">):</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">integral</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="o">*</span> <span class="n">observable</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">position_range</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">integral</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">HarmonicOscillator</span><span class="p">(</span><span class="n">QuantumSystem</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">frequency</span><span class="p">):</span>
+        <span class="n">hamiltonian</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">mass</span> <span class="o">*</span> <span class="p">(</span><span class="n">frequency</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Simplified Hamiltonian</span>
+        <span class="n">wavefunction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">mass</span> <span class="o">*</span> <span class="n">frequency</span> <span class="o">/</span> <span class="mf">3.14159</span><span class="p">)</span><span class="o">**</span><span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="mf">2.71828</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">mass</span> <span class="o">*</span> <span class="n">frequency</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Ground state wavefunction</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">)</span> 
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ParticleInBox</span><span class="p">(</span><span class="n">QuantumSystem</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box_length</span><span class="p">):</span>
+        <span class="n">hamiltonian</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">box_length</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>  <span class="c1"># Infinite potential well</span>
+        <span class="n">wavefunction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.14159</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.14159</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span>  <span class="c1"># Ground state wavefunction</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">QuantumField</span></code> with attributes for field strength and potential. Include methods to calculate the field equations and energy density. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">ElectromagneticField</span></code> and <code class="docutils literal notranslate"><span class="pre">ScalarField</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">QuantumField</span></code> and implement specific field equations and potentials.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QuantumField</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">=</span> <span class="n">field_strength</span>  <span class="c1"># in appropriate units</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">potential</span>  <span class="c1"># Potential is a callable function</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">field_equations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Placeholder for field equations calculation</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">energy_density</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Placeholder for energy density calculation</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ElectromagneticField</span><span class="p">(</span><span class="n">QuantumField</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ScalarField</span><span class="p">(</span><span class="n">QuantumField</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">)</span> 
+<span class="c1"># Example usage:</span>
+<span class="n">em_field</span> <span class="o">=</span> <span class="n">ElectromagneticField</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">potential</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">scalar_field</span> <span class="o">=</span> <span class="n">ScalarField</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">potential</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./03_all"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-exercises">General Python exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-related">Physics related:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qm-exercises">QM exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-exercises-with-positional-and-keyword-arguments">More exercises with positional and keyword arguments:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-building-classes">Exercises building classes:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-using-inheritance">Exercises using inheritance:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-with-classes-physics">Exercises with classes, physics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-in-classes-and-inheritance">Exercises in classes and inheritance:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Silvia M. Gimenez Santamarina
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Copyright@2025
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

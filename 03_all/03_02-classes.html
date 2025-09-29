@@ -650,6 +650,53 @@ hierarchical relationship between classes.</p>
 </pre></div>
 </div>
 <p>In this example, we defined the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method to specify how two <code class="docutils literal notranslate"><span class="pre">Vector</span></code> instances should be added together using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator. When we use <code class="docutils literal notranslate"><span class="pre">v1</span> <span class="pre">+</span> <span class="pre">v2</span></code>, it calls the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method, which returns a new <code class="docutils literal notranslate"><span class="pre">Vector</span></code> instance with the summed components.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method corresponds to the operator <code class="docutils literal notranslate"><span class="pre">+</span></code>. But, Similary we have:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Operator</p></th>
+<th class="head text-center"><p>Operator	Method</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__add__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__sub__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__mul__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__truediv__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">//</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__floordiv__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__mod__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__pow__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__rshift__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__lshift__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__and__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">|</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__or__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">^</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__xor__(self,</span> <span class="pre">other)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>

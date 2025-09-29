@@ -36,6 +36,6 @@ parts:
         sections:
         - file: 03_all/03_01-function.ipynb 
         - file: 03_all/03_02-classes.ipynb 
-        - file: 03_all/exercises/week3_Ex3.ipynb
-        - file: 03_all/exercises/week3_Tut3.ipynb
+        #- file: 03_all/exercises/week3_Ex3.ipynb
+        #- file: 03_all/exercises/week3_Tut3.ipynb
 

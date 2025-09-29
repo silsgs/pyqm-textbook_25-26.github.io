@@ -27,6 +27,11 @@ The main goals of this course are to:
 
 ## Overview
 
+Monday sessions will be lectures introducing new concepts and libraries, while Tuesday sessions will be face-to-face (F2F) tutorials where students can work on exercises and receive assistance.
+
+- Monday 3pm - 6pm 
+- Tuesday 10am - 11pm
+
 | Week | Day            | Format           | Topic                                                                    |
 |------|----------------|------------------|--------------------------------------------------------------------------|
 | 1    | Mo. Sept. 15th | Lecture          | [Conda envs., Git and Python fundamentals](01_all/Week1-intro.md)        |
@@ -41,7 +46,6 @@ The main goals of this course are to:
 | 5    | Tu. Oct. 14th  | F2F              | Exercises and tutorial asistance                                         |
 | 6    | Mo. Oct. 20th  | Lecture          | Qutip - Quantum Toolbox in Python                                        |
 | 6    | Tu. Oct. 21st  | F2F              | Exercises and tutorial asistance                                         |
-
 
 
 ## Installation & Requirements

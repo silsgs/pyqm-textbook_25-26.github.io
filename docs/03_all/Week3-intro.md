@@ -23,4 +23,3 @@
     - 2.1.4 Instance Variables and Class Variables
     - 2.1.5 Inheritance
     - 2.1.6 Special Methods (Magic Methods)
-

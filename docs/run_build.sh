@@ -4,8 +4,8 @@ jupyter-book clean .
 
 jupyter-book build .
 
-open .
+#open .
 
-#ghp-import -n -p -f _build/html
+ghp-import -n -p -f _build/html
 
 echo "Done!"

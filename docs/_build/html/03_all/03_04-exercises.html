@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Part 2: Classes &#8212; Python for Quantum Mechanics book</title>
+    <title>Functions &#8212; Python for Quantum Mechanics book</title>
   
   
   
@@ -59,10 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '03_all/03_02-classes';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_all/03_04-exercises';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Part 1: Functions and Lambda Functions" href="03_01-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,7 +182,7 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course content</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01_all/Week1-intro.html">Week 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01_all/01_01_setting_env.html">Part 1. Environment set up with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_all/01_02_git_github.html">Part 2. Basic Git and GitHub</a></li>
@@ -200,9 +201,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../02_all/exercises/week2_Tut2.html">Week 2: Tutorial</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week3-intro.html">Week 3</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Week3-intro.html">Week 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="03_01-function.html">Part 1: Functions and Lambda Functions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 2: Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_02-classes.html">Part 2: Classes</a></li>
 </ul>
 </details></li>
 </ul>
@@ -259,7 +260,7 @@
       
       
       
-      <li><a href="../_sources/03_all/03_02-classes.ipynb" target="_blank"
+      <li><a href="../_sources/03_all/03_04-exercises.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +344,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Part 2: Classes</h1>
+    <h1>Functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -353,32 +354,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-programming-oop-concepts">2.1 Object-Oriented Programming (OOP) Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-instances">2.1.1 Classes and instances</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class">2.1.2 Defining A Class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-instances-of-a-class">2.1.3 Creating Instances of a Class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes-and-methods">2.1.4 Attributes and Methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">2.1.5 The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> Method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-variables-and-class-variables">2.1.6 Instance Variables and Class Variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-self-parameter">2.1.7 The <code class="docutils literal notranslate"><span class="pre">self</span></code> Parameter</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-and-repr-methods">2.1.8 The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">2.2 Inheritance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">2.3 Operator Overloading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-exercises">General Python exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-and-quantum-physics-exercises">Classical and Quantum physics exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similar-exercises-with-positional-and-keyword-arguments">Similar exercises with positional and keyword arguments:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-building-classes">Exercises building classes:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-using-inheritance">Exercises using inheritance:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-with-classes-physics">Exercises with classes, physics:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-in-classes-and-inheritance">Exercises in classes and inheritance:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-with-classes-physics">Exercises with classes, physics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-in-classes-and-inheritance">Exercises in classes and inheritance:</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -389,270 +385,310 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="part-2-classes">
-<h1>Part 2: Classes<a class="headerlink" href="#part-2-classes" title="Link to this heading">#</a></h1>
-<section id="object-oriented-programming-oop-concepts">
-<h2>2.1 Object-Oriented Programming (OOP) Concepts<a class="headerlink" href="#object-oriented-programming-oop-concepts" title="Link to this heading">#</a></h2>
-<p>Classes and Objects in Python are at the core of Object-Oriented Programming (OOP). They provide a way of bundling data and functionality all together. OOP permits the grouping of related <strong>properties and behaviors into individual objects</strong>. You can think of objects as real-world entities that have attributes (properties) and behaviors (methods).</p>
-<p>It is based on the concept of “objects”, which can contain data in the form of fields (often known as attributes or properties), and code in the form of procedures (often known as methods).</p>
-<p>It also exists in other programming languages such as Java, C++, and Ruby, and it allows for:</p>
-<ul class="simple">
-<li><p><strong>Encapsulation</strong>: Bundling data and methods that operate on the data within one unit, e.g.: a class in Python.</p></li>
-<li><p><strong>Inheritance</strong>: Creating new classes based on previously existing classes, allowing for code reuse and the creation of a hierarchical relationship between classes.</p></li>
-</ul>
-<section id="classes-and-instances">
-<h3>2.1.1 Classes and instances<a class="headerlink" href="#classes-and-instances" title="Link to this heading">#</a></h3>
-<p>Classes allow you to <strong>create user-defined data structures</strong> that <strong>encapsulate data and functionality together</strong>. By creating a new class, you create a new type of object, with functions (the same functions we saw in the previous section) which identify the behaviors and actions of the objects created from the class.</p>
-<p>An <strong>instance</strong> is a specific object created from a particular class. Each class instance can have attributes attached to it for maintaining its state. When a class is defined, no memory is allocated until an instance of the class is created.</p>
-<p>We can think of classes as categories of objects, and instances as the specific objects that belong to those categories. (For example, if we have a class called <code class="docutils literal notranslate"><span class="pre">Dog</span></code>, then an instance of that class could be a specific dog named “Buddy”. We will see more examples below.)</p>
-</section>
-<section id="defining-a-class">
-<h3>2.1.2 Defining A Class<a class="headerlink" href="#defining-a-class" title="Link to this heading">#</a></h3>
-<p>Classes create new types of objects, and these objects can have attributes (data) associated with them, as well as behaviors. The behaviors are implemented as functions.</p>
-<p>Syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ClassName</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
-        <span class="c1"># Initialization code here</span>
-    
-    <span class="k">def</span><span class="w"> </span><span class="nf">method_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
-        <span class="c1"># Method code here</span>
-</pre></div>
-</div>
-<p>Here is how we define a class and methods in Python:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Attribute</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">hello_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Method</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
-
-    <span class="c1"># You can add more methods here</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">goodbye_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Goodbye, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>In this example, <code class="docutils literal notranslate"><span class="pre">MyClass</span></code> is a class with an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method (a special method called a constructor or magic method, which is called when an instance of the class is created) and a method called <code class="docutils literal notranslate"><span class="pre">hello_method</span></code>. The <code class="docutils literal notranslate"><span class="pre">self</span></code> parameter in the methods refers to the instance of the class itself.</p>
-<p>Another example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Attribute1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>    <span class="c1"># Attribute2</span>
-    
-    <span class="k">def</span><span class="w"> </span><span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>       <span class="c1"># Method1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says Woof!&quot;</span><span class="p">)</span>
-    
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="c1"># Method2</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span>
-</pre></div>
-</div>
-<p>In this example, we define a class named <code class="docutils literal notranslate"><span class="pre">Dog</span></code> with an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method that initializes the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> attributes, and two methods: <code class="docutils literal notranslate"><span class="pre">bark</span></code>, which prints a barking message, and <code class="docutils literal notranslate"><span class="pre">get_age</span></code>, which returns the age of the dog.</p>
-</section>
-<section id="creating-instances-of-a-class">
-<h3>2.1.3 Creating Instances of a Class<a class="headerlink" href="#creating-instances-of-a-class" title="Link to this heading">#</a></h3>
-<p>To create an instance of a class, you call the class as if it were a function, passing any arguments that the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method requires. For example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_instance</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
-<span class="n">my_instance</span><span class="o">.</span><span class="n">hello_method</span><span class="p">()</span>  <span class="c1"># Output: Hello, Alice!</span>
-</pre></div>
-</div>
-<p>We can create as many instances of a class as we want:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># First instance of Dog</span>
-<span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="c1"># Second instance of Dog</span>
-<span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-
-<span class="c1"># Calling methods on the instances</span>
-<span class="n">dog1</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># Output: Buddy says Woof!</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">dog2</span><span class="o">.</span><span class="n">get_age</span><span class="p">())</span>  <span class="c1"># Output: 5</span>
-</pre></div>
-</div>
-</section>
-<section id="attributes-and-methods">
-<h3>2.1.4 Attributes and Methods<a class="headerlink" href="#attributes-and-methods" title="Link to this heading">#</a></h3>
-<p>Attributes are variables that belong to an instance of a class. They are used to store data about the object. Methods are functions that belong to an instance of a class and can operate on the object’s attributes.
-You can access attributes and methods using the dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>) notation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dog1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Accessing attribute</span>
-<span class="n">dog1</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>       <span class="c1"># Calling method</span>
-</pre></div>
-</div>
-<p>Note the difference between calling attributes and methods. Attributes hold data related to the instance (dog1 and its name), and to access them we don’t use <code class="docutils literal notranslate"><span class="pre">()</span></code>. While methods perform actions or operations (dog1 barks - think of this of a mathematical operation or transformation), and when calling them we do use <code class="docutils literal notranslate"><span class="pre">()</span></code>. This is because methods are functions, and functions can also make use of other arguments as we saw in the previous section.</p>
-</section>
-<section id="the-init-method">
-<h3>2.1.5 The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> Method<a class="headerlink" href="#the-init-method" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is a special method in Python classes. It is called when an instance (object) of the class is created. The purpose of the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is to initialize the attributes of the new object. It is often referred to as the constructor of the class.</p>
-<p>Here is an example of a class with an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Initialize the name attribute</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>    <span class="c1"># Initialize the age attribute</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>When you create an instance of the <code class="docutils literal notranslate"><span class="pre">Person</span></code> class, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is automatically called, and you can pass values for the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> parameters:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-<span class="n">person1</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>  <span class="c1"># Output: Hello, my name is Alice and I am 30 years old.</span>
-</pre></div>
-</div>
-</section>
-<section id="instance-variables-and-class-variables">
-<h3>2.1.6 Instance Variables and Class Variables<a class="headerlink" href="#instance-variables-and-class-variables" title="Link to this heading">#</a></h3>
-<p>We can find two types of variables in a class:</p>
-<ul class="simple">
-<li><p><strong>Instance Variables</strong>: These are variables that are unique to each instance of a class. They are defined within the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method and are prefixed with <code class="docutils literal notranslate"><span class="pre">self.</span></code> to indicate that they belong to the instance. Each instance of the class has its own copy of these variables.</p></li>
-<li><p><strong>Class Variables</strong>: These are variables that are shared among all instances of a class. They are defined within the class but outside of any methods. Class variables are accessed using the class name or through an instance.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">:</span>
-    <span class="n">species</span> <span class="o">=</span> <span class="s2">&quot;Canis familiaris&quot;</span>  <span class="c1"># Class variable</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Instance variable</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>    <span class="c1"># Instance variable</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says Woof!&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="c1"># Instance method</span>
-
-<span class="c1"># Creating instances of the Dog class</span>
-<span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">dog1</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Accessing class variable via instance</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Dog</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>   <span class="c1"># Accessing class variable via class name</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dog1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>     <span class="c1"># Accessing instance variable</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dog2</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>     <span class="c1"># Accessing instance variable</span>
-</pre></div>
-</div>
-</section>
-<section id="the-self-parameter">
-<h3>2.1.7 The <code class="docutils literal notranslate"><span class="pre">self</span></code> Parameter<a class="headerlink" href="#the-self-parameter" title="Link to this heading">#</a></h3>
-<p>In Python, the <code class="docutils literal notranslate"><span class="pre">self</span></code> parameter in class methods refers to the instance of the class itself. It is used to access attributes and methods of the class within its own methods. When you define a method in a class, you must include <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first parameter, even though you do not pass it explicitly when calling the method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says Woof!&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span>
-
-<span class="c1"># Creating an instance of the Dog class</span>
-<span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="c1"># Calling methods on the instance</span>
-<span class="n">dog1</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># Output: Buddy says Woof!</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dog1</span><span class="o">.</span><span class="n">get_age</span><span class="p">())</span>  <span class="c1"># Output: 3</span>
-</pre></div>
-</div>
-</section>
-<section id="the-str-and-repr-methods">
-<h3>2.1.8 The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> Methods<a class="headerlink" href="#the-str-and-repr-methods" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> methods are special methods in Python that define how instances of a class are represented as strings. They are useful for debugging and logging purposes.</p>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method is intended to provide a “pretty” or user-friendly string representation of the object. It is called by the built-in <code class="docutils literal notranslate"><span class="pre">str()</span></code> function and by the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method is intended to provide a more detailed and unambiguous string representation of the object, which can be used to recreate the object. It is called by the built-in <code class="docutils literal notranslate"><span class="pre">repr()</span></code> function and is used in the interactive interpreter.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old.&quot;</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Dog(name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2">, age=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">!r}</span><span class="s2">)&quot;</span> <span class="c1"># !r calls repr() on the attribute  </span>
-
-<span class="c1"># Creating an instance of the Dog class</span>
-<span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">)</span>          <span class="c1"># Calls __str__: Output: Buddy is 3 years old</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">dog1</span><span class="p">))</span>    <span class="c1"># Calls __repr__: Output: Dog(name=&#39;Buddy&#39;, age=3)</span>
-</pre></div>
-</div>
-<section id="example">
-<h4>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h4>
-<p><a class="reference external" href="https://github.com/GagliardiGroup/wasp/blob/main/src/wasp.py">WASP program</a></p>
-</section>
-</section>
-</section>
-<section id="inheritance">
-<h2>2.2 Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h2>
-<p>Inheritance is a fundamental concept in object-oriented programming that allows a class (called the child or subclass) to inherit attributes and methods from another class (called the parent or superclass). This promotes code reuse and establishes a
-hierarchical relationship between classes.</p>
-<p>You can inherit from a parent class by creating a new class and putting the parent class name in parentheses after the new class name. The child class will then inherit all the attributes and methods of the parent class.</p>
-<p>Syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Parent</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
-</pre></div>
-</div>
-<p>Here, <code class="docutils literal notranslate"><span class="pre">Child</span></code> inherits data from <code class="docutils literal notranslate"><span class="pre">Parent</span></code>. The <code class="docutils literal notranslate"><span class="pre">super()</span></code> function is used to call the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the parent class to initialize the inherited attributes. It allows you to initialize the attributes of the parent class, in addition to any attributes defined in the child class.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Subclasses must implement this method.&quot;</span><span class="p">)</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says Woof!&quot;</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says Meow!&quot;</span>    
-
-<span class="c1"># Creating instances of the Dog and Cat classes</span>
-<span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">)</span>
-<span class="n">cat</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;Whiskers&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">dog</span><span class="o">.</span><span class="n">speak</span><span class="p">())</span>  <span class="c1"># Output: Buddy says Woof!</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">speak</span><span class="p">())</span>  <span class="c1"># Output: Whiskers says Meow!</span>
-</pre></div>
-</div>
-<p>We can see that both <code class="docutils literal notranslate"><span class="pre">Dog</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> classes inherit from the <code class="docutils literal notranslate"><span class="pre">Animal</span></code> class. They both implement the <code class="docutils literal notranslate"><span class="pre">speak</span></code> method, which is defined as an abstract method in the <code class="docutils literal notranslate"><span class="pre">Animal</span></code> class.</p>
-</section>
-<section id="operator-overloading">
-<h2>2.3 Operator Overloading<a class="headerlink" href="#operator-overloading" title="Link to this heading">#</a></h2>
-<p>Operator overloading allows you to define custom behavior for standard operators (like +, -, *, etc.) when they are used with instances of your classes. This is done by defining special methods in your class that correspond to the operators you want to overload.</p>
-<p>For example, to overload the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, you would define the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method in your class. Here is an example of a simple <code class="docutils literal notranslate"><span class="pre">Vector</span></code> class that overloads the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator to add two vectors together:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Vector(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
-
-<span class="c1"># Creating instances of the Vector class</span>
-<span class="n">v1</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">v2</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-
-<span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>  <span class="c1"># This calls the __add__ method</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v3</span><span class="p">)</span>  <span class="c1"># Output: Vector(7, 10)</span>
-</pre></div>
-</div>
-<p>In this example, we defined the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method to specify how two <code class="docutils literal notranslate"><span class="pre">Vector</span></code> instances should be added together using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator. When we use <code class="docutils literal notranslate"><span class="pre">v1</span> <span class="pre">+</span> <span class="pre">v2</span></code>, it calls the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method, which returns a new <code class="docutils literal notranslate"><span class="pre">Vector</span></code> instance with the summed components.</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<section id="general-python-exercises">
+<h3>General Python exercises:<a class="headerlink" href="#general-python-exercises" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Write a function that takes a list of numbers as input and returns the sum of all the numbers in the list.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_of_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that takes a string as input and returns the string in reverse order.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">reverse_string</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">reverse_string</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that takes a list of strings as input and returns a new list containing only the strings that have a length greater than 3.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filter_long_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strings</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_long_strings</span><span class="p">([</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;hey&quot;</span><span class="p">,</span> <span class="s2">&quot;greetings&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Write a recursive function that takes a positive integer n as input and returns the nth Fibonacci number.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Write a function that takes a list of numbers as input and returns a new list containing only the even numbers from the original list. Use the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function and a lambda function to accomplish this.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filter_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_even_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Write a function that takes a list of numbers as input and returns a new list containing the squares of all the numbers in the original list. Use the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function and a lambda function to accomplish this.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">square_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Write a function that takes a list of tuples, where each tuple contains a name and an age, and returns a new list of names sorted by age in ascending order. Use the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function and a lambda function to accomplish this.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_by_age</span><span class="p">(</span><span class="n">people</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">people</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">person</span><span class="p">:</span> <span class="n">person</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_by_age</span><span class="p">([(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)]))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Write a function that takes a list of numbers as input and returns the maximum number in the list. Do not use the built-in <code class="docutils literal notranslate"><span class="pre">max()</span></code> function.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_maximum</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">max_num</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">max_num</span><span class="p">:</span>   
+            <span class="n">max_num</span> <span class="o">=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="n">max_num</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">find_maximum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Write a function that takes a list of strings as input and returns a new list containing the strings sorted in alphabetical order. Do not use the built-in <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">strings</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">strings</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">strings</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">strings</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_strings</span><span class="p">([</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Write a function that takes a list of numbers as input and returns the average of all the numbers in the list.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">average_of_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="k">if</span> <span class="n">numbers</span> <span class="k">else</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">average_of_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+</section>
+<section id="classical-and-quantum-physics-exercises">
+<h3>Classical and Quantum physics exercises:<a class="headerlink" href="#classical-and-quantum-physics-exercises" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Write a function that calculates the kinetic energy of an object given its mass and velocity. The formula for kinetic energy is <span class="math notranslate nohighlight">\(E_{k} = \frac{1}{2} * mass * velocity^{2}\)</span>.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kinetic_energy</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">kinetic_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. The formula for the energy levels is <span class="math notranslate nohighlight">\(E_{n} = -13.6 eV / n^{2}\)</span>.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hydrogen_energy_level</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">13.6</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that calculates the potential energy of an object given its mass, height, and gravitational acceleration. The formula for potential energy is <span class="math notranslate nohighlight">\(PE = mass * gravity * height\)</span>.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">potential_energy</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">height</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">potential_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Write a function that calculates the energy of a photon given its frequency. The formula for the energy of a photon is <span class="math notranslate nohighlight">\(E = h * frequency\)</span>, where h is Planck’s constant (approximately <span class="math notranslate nohighlight">\(6.626 x 10^-{34}\)</span> Js).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="mf">5e14</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Write a function that calculates the period of a simple pendulum given its length and gravitational acceleration. The formula for the period is <span class="math notranslate nohighlight">\(T = 2 * \pi * sqrt(length / gravity)\)</span>. Hint: you might neeed to import the <code class="docutils literal notranslate"><span class="pre">math</span></code> module to access the value of <span class="math notranslate nohighlight">\(\pi\)</span> and the square root function. (Just add <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> in the first line of your code).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pendulum_period</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">gravity</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">gravity</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pendulum_period</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. The formula for the de Broglie wavelength is <span class="math notranslate nohighlight">\(\uplambda = h / (mass * velocity)\)</span>, where h is Planck’s constant.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">de_broglie_wavelength</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</section>
+<section id="similar-exercises-with-positional-and-keyword-arguments">
+<h3>Similar exercises with positional and keyword arguments:<a class="headerlink" href="#similar-exercises-with-positional-and-keyword-arguments" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Write a function that calculates the energy of a photon given its frequency and optionally its wavelength. If the wavelength is provided, use it to calculate the frequency using the formula frequency = speed_of_light / wavelength. The speed of light is approximately <span class="math notranslate nohighlight">\(3*10^{8}\)</span> m/s.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wavelength</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">,</span> <span class="n">speed_of_light</span><span class="o">=</span><span class="mf">3e8</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">wavelength</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">frequency</span> <span class="o">=</span> <span class="n">speed_of_light</span> <span class="o">/</span> <span class="n">wavelength</span>
+    
+    <span class="k">if</span> <span class="n">frequency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either frequency or wavelength must be provided.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mf">5e14</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_energy</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">600e-9</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write a function that calculates the de Broglie wavelength of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for the de Broglie wavelength is <span class="math notranslate nohighlight">\(\uplambda = h / (mass * velocity)\)</span>, where h is Planck’s constant.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">de_broglie_wavelength</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">mass_unit</span> <span class="o">==</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span>
+        <span class="n">mass</span> <span class="o">/=</span> <span class="mi">1000</span>  <span class="c1"># Convert grams to kilograms</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">9.11e-28</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Write a function that calculates the energy levels of a hydrogen atom given the principal quantum number n. Allow the user to specify the energy unit as either electron volts (eV) or joules (J) using a keyword argument. The formula for the energy levels is <span class="math notranslate nohighlight">\(E_{n} = -13.6 eV / n^{2}\)</span>.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hydrogen_energy_level</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;eV&#39;</span><span class="p">):</span>
+    <span class="n">energy_eV</span> <span class="o">=</span> <span class="o">-</span><span class="mf">13.6</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">energy_unit</span> <span class="o">==</span> <span class="s1">&#39;J&#39;</span><span class="p">:</span>
+        <span class="n">energy_eV</span> <span class="o">*=</span> <span class="mf">1.60218e-19</span>  <span class="c1"># Convert eV to Joules</span>
+    <span class="k">return</span> <span class="n">energy_eV</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">hydrogen_energy_level</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;J&#39;</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Write a function that calculates the wavelength of a photon given its energy. Allow the user to specify the energy in electron volts (eV) or joules (J) using a keyword argument. The formula for the wavelength is <span class="math notranslate nohighlight">\(\uplambda = h * c / E\)</span>, where h is Planck’s constant and c is the speed of light.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">photon_wavelength</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;eV&#39;</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span><span class="p">,</span> <span class="n">speed_of_light</span><span class="o">=</span><span class="mf">3e8</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">energy_unit</span> <span class="o">==</span> <span class="s1">&#39;eV&#39;</span><span class="p">:</span>
+        <span class="n">energy</span> <span class="o">*=</span> <span class="mf">1.60218e-19</span>  <span class="c1"># Convert eV to Joules</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">speed_of_light</span> <span class="o">/</span> <span class="n">energy</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_wavelength</span><span class="p">(</span><span class="mf">3.313e-19</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">photon_wavelength</span><span class="p">(</span><span class="mf">2.179e-18</span><span class="p">,</span> <span class="n">energy_unit</span><span class="o">=</span><span class="s1">&#39;J&#39;</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Write a function that calculates the momentum of a particle given its mass and velocity. Allow the user to specify the mass in kilograms or grams using a keyword argument. The formula for momentum is <span class="math notranslate nohighlight">\(p = mass * velocity\)</span>.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">particle_momentum</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">mass_unit</span> <span class="o">==</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span>
+        <span class="n">mass</span> <span class="o">/=</span> <span class="mi">1000</span>  <span class="c1"># Convert grams to kilograms</span>
+    <span class="k">return</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">particle_momentum</span><span class="p">(</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">particle_momentum</span><span class="p">(</span><span class="mf">9.11e-28</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="exercises-building-classes">
 <h3>Exercises building classes:<a class="headerlink" href="#exercises-building-classes" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
@@ -711,6 +747,36 @@ hierarchical relationship between classes.</p>
 </div>
 </div>
 <ol class="arabic simple" start="3">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Student</span></code> that has attributes for name, age, and grades (a list of numbers). Include methods to add a grade, calculate the average grade, and display student information.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grades</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_grade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grade</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grades</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">average_grade</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">grades</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grades</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grades</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, Age: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">, Average Grade: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">average_grade</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">add_grade</span><span class="p">(</span><span class="mi">85</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">add_grade</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
 <li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Library</span></code> that has attributes for name and a list of books (each book can be represented as a string). Include methods to add a book, remove a book, and display all books in the library.</p></li>
 </ol>
 <div class="dropdown admonition">
@@ -737,6 +803,40 @@ hierarchical relationship between classes.</p>
 <span class="n">library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">)</span>
 <span class="n">library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="s2">&quot;To Kill a Mockingbird&quot;</span><span class="p">)</span>
 <span class="n">library</span><span class="o">.</span><span class="n">display_books</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Car</span></code> that has attributes for make, model, year, and mileage. Include methods to drive the car (which increases mileage), display car information, and check if the car needs maintenance (e.g., every 10,000 miles).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">mileage</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mileage</span> <span class="o">=</span> <span class="n">mileage</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mileage</span> <span class="o">+=</span> <span class="n">distance</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Driven </span><span class="si">{</span><span class="n">distance</span><span class="si">}</span><span class="s2"> miles. Total mileage: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mileage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Car Information:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Make: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Model: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Year: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Mileage: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mileage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">needs_maintenance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mileage</span> <span class="o">&gt;=</span> <span class="mi">10000</span>    
+
+<span class="c1"># Usage:</span>
+<span class="n">my_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
+<span class="n">my_car</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">my_car</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Needs maintenance:&quot;</span><span class="p">,</span> <span class="n">my_car</span><span class="o">.</span><span class="n">needs_maintenance</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -889,7 +989,7 @@ hierarchical relationship between classes.</p>
 </div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">QuantumState</span></code> that has attributes for the wavefunction (a function of position) and energy level. Include methods to calculate the probability density and expectation value of position. Hint: you might need to use numerical integration for the expectation value. You can use the library <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for numerical operations (<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>, <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> for <span class="math notranslate nohighlight">\(\pi\)</span>, and <code class="docutils literal notranslate"><span class="pre">np.exp()</span></code> to calculate the exponential function).</p></li>
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">QuantumState</span></code> that has attributes for the wavefunction (a function of position) and energy level. Include methods to calculate the probability density and expectation value of position. Hint: you might need to use numerical integration for the expectation value. You can use the library <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for numerical operations.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
@@ -943,8 +1043,9 @@ hierarchical relationship between classes.</p>
 </pre></div>
 </div>
 </div>
+</section>
 <section id="exercises-in-classes-and-inheritance">
-<h4>Exercises in classes and inheritance:<a class="headerlink" href="#exercises-in-classes-and-inheritance" title="Link to this heading">#</a></h4>
+<h3>Exercises in classes and inheritance:<a class="headerlink" href="#exercises-in-classes-and-inheritance" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">QuantumParticle</span></code> with attributes for mass, charge, and spin. Include methods to calculate the de Broglie wavelength and energy of the particle. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">Electron</span></code> and <code class="docutils literal notranslate"><span class="pre">Proton</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">QuantumParticle</span></code> and add specific attributes (e.g., atomic number for <code class="docutils literal notranslate"><span class="pre">Proton</span></code>).</p></li>
 </ol>
@@ -973,7 +1074,7 @@ hierarchical relationship between classes.</p>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">1.6726219e-27</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="mf">1.602176634e-19</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">atomic_number</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c1"># Usage:</span>
+<span class="c1"># Example usage:</span>
 <span class="n">electron</span> <span class="o">=</span> <span class="n">Electron</span><span class="p">()</span>
 <span class="n">proton</span> <span class="o">=</span> <span class="n">Proton</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Electron de Broglie wavelength:&quot;</span><span class="p">,</span> <span class="n">electron</span><span class="o">.</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">1e-24</span><span class="p">))</span>
@@ -1012,7 +1113,7 @@ hierarchical relationship between classes.</p>
         <span class="n">wavefunction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.14159</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.14159</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span>  <span class="c1"># Ground state wavefunction</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">)</span>   
 
-<span class="c1"># Usage:</span>
+<span class="c1"># Example usage:</span>
 <span class="n">ho</span> <span class="o">=</span> <span class="n">HarmonicOscillator</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mf">1e14</span><span class="p">)</span>
 <span class="n">pib</span> <span class="o">=</span> <span class="n">ParticleInBox</span><span class="p">(</span><span class="n">box_length</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Harmonic Oscillator expectation value:&quot;</span><span class="p">,</span> <span class="n">ho</span><span class="o">.</span><span class="n">expectation_value</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-9</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
@@ -1046,7 +1147,7 @@ hierarchical relationship between classes.</p>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">)</span> 
 
-<span class="c1"># Usage:</span>
+<span class="c1"># Example usage:</span>
 <span class="n">em_field</span> <span class="o">=</span> <span class="n">ElectromagneticField</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">potential</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">scalar_field</span> <span class="o">=</span> <span class="n">ScalarField</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">potential</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Electromagnetic Field Strength:&quot;</span><span class="p">,</span> <span class="n">em_field</span><span class="o">.</span><span class="n">field_strength</span><span class="p">)</span>
@@ -1054,7 +1155,6 @@ hierarchical relationship between classes.</p>
 </pre></div>
 </div>
 </div>
-</section>
 </section>
 </section>
 </section>
@@ -1089,15 +1189,6 @@ hierarchical relationship between classes.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="03_01-function.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Part 1: Functions and Lambda Functions</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -1114,32 +1205,27 @@ hierarchical relationship between classes.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-programming-oop-concepts">2.1 Object-Oriented Programming (OOP) Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-instances">2.1.1 Classes and instances</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class">2.1.2 Defining A Class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-instances-of-a-class">2.1.3 Creating Instances of a Class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes-and-methods">2.1.4 Attributes and Methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-init-method">2.1.5 The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> Method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-variables-and-class-variables">2.1.6 Instance Variables and Class Variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-self-parameter">2.1.7 The <code class="docutils literal notranslate"><span class="pre">self</span></code> Parameter</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-and-repr-methods">2.1.8 The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">2.2 Inheritance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">2.3 Operator Overloading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-exercises">General Python exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-and-quantum-physics-exercises">Classical and Quantum physics exercises:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similar-exercises-with-positional-and-keyword-arguments">Similar exercises with positional and keyword arguments:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-building-classes">Exercises building classes:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-using-inheritance">Exercises using inheritance:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-with-classes-physics">Exercises with classes, physics:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-in-classes-and-inheritance">Exercises in classes and inheritance:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-with-classes-physics">Exercises with classes, physics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-in-classes-and-inheritance">Exercises in classes and inheritance:</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+
   </nav></div>
 
 </div></div>

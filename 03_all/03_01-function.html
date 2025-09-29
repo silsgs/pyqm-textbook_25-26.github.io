@@ -365,7 +365,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">1.2 Lambda Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-built-in-functions-map-and-filter">1.2.1 Some useful built-in functions: Map() and Filter()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-built-in-functions-map-filter-and-sorted">1.2.1 Some useful built-in functions: Map(), Filter() and Sorted()</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
@@ -669,17 +669,9 @@ Example:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span> 
 </pre></div>
 </div>
-<p>Lambda functions are often used in conjunction with functions like <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, and <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>. The benefit of using lambda functions is that they allow you to write concise, inline functions without the need for a full function definition.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of using a lambda function with sorted</span>
-<span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-
-<span class="n">sorted_points</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">point</span><span class="p">:</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sorted_points</span><span class="p">)</span>  <span class="c1"># Output: [(3, 1), (1, 2), (2, 3), (5, 4)]</span>
-</pre></div>
-</div>
-<section id="some-useful-built-in-functions-map-and-filter">
-<h3>1.2.1 Some useful built-in functions: Map() and Filter()<a class="headerlink" href="#some-useful-built-in-functions-map-and-filter" title="Link to this heading">#</a></h3>
-<p>There are some very useful built-in functions in Python like <code class="docutils literal notranslate"><span class="pre">map()</span></code> and <code class="docutils literal notranslate"><span class="pre">filter()</span></code> that can be used in conjunction with lambda functions to efficiently process collections of data.</p>
+<section id="some-useful-built-in-functions-map-filter-and-sorted">
+<h3>1.2.1 Some useful built-in functions: Map(), Filter() and Sorted()<a class="headerlink" href="#some-useful-built-in-functions-map-filter-and-sorted" title="Link to this heading">#</a></h3>
+<p>Since lambda functions are often used for short, throwaway functions, they are commonly used in combination with built-in functions that operate on collections of data, such as lists or tuples. There are some very useful built-in functions like <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> that can be used to efficiently work with collections of data.</p>
 <p>For instance:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">map()</span></code> function: Applies a function to all items in an input list (or any iterable) and returns a map object (which can be converted to a list). A map object is an iterator that applies the function to each item of the iterable, yielding the results one by one.</p></li>
@@ -699,6 +691,15 @@ Example:</p>
 
 <span class="n">even_numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">)</span>  <span class="c1"># Output: [2, 4]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function: Sorts items in an iterable based on a key function. You can use a lambda function to define the sorting criteria.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of using sorted with a lambda function</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>   
+<span class="n">sorted_points</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">point</span><span class="p">:</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_points</span><span class="p">)</span>  <span class="c1"># Output: [(3, 1), (1, 2), (2, 3), (5, 4)]</span>
 </pre></div>
 </div>
 </section>
@@ -1077,7 +1078,7 @@ Example:</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">1.2 Lambda Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-built-in-functions-map-and-filter">1.2.1 Some useful built-in functions: Map() and Filter()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-useful-built-in-functions-map-filter-and-sorted">1.2.1 Some useful built-in functions: Map(), Filter() and Sorted()</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">

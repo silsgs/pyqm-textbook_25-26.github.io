@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03_all/03_02-classes';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -367,6 +369,13 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">2.2 Inheritance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">2.3 Operator Overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-building-classes">Exercises building classes:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-using-inheritance">Exercises using inheritance:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-with-classes-physics">Exercises with classes, physics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-in-classes-and-inheritance">Exercises in classes and inheritance:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -639,6 +648,412 @@ hierarchical relationship between classes.</p>
 </div>
 <p>In this example, we defined the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method to specify how two <code class="docutils literal notranslate"><span class="pre">Vector</span></code> instances should be added together using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator. When we use <code class="docutils literal notranslate"><span class="pre">v1</span> <span class="pre">+</span> <span class="pre">v2</span></code>, it calls the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method, which returns a new <code class="docutils literal notranslate"><span class="pre">Vector</span></code> instance with the summed components.</p>
 </section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<section id="exercises-building-classes">
+<h3>Exercises building classes:<a class="headerlink" href="#exercises-building-classes" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> that has attributes for width and height. Include methods to calculate the area and perimeter of the rectangle.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">my_rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area:&quot;</span><span class="p">,</span> <span class="n">my_rectangle</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Perimeter:&quot;</span><span class="p">,</span> <span class="n">my_rectangle</span><span class="o">.</span><span class="n">perimeter</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> that has attributes for account holder’s name and balance. Include methods to deposit, withdraw, and check the balance.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BankAccount</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_holder</span><span class="p">,</span> <span class="n">initial_balance</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span> <span class="o">=</span> <span class="n">account_holder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">initial_balance</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deposited </span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2">. New balance: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insufficient funds&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Withdrew </span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2">. New balance: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Account holder: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span><span class="si">}</span><span class="s2">, Balance: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">account</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">account</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">account</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">account</span><span class="o">.</span><span class="n">check_balance</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Library</span></code> that has attributes for name and a list of books (each book can be represented as a string). Include methods to add a book, remove a book, and display all books in the library.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Library</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_books</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Books in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; - </span><span class="si">{</span><span class="n">book</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">library</span> <span class="o">=</span> <span class="n">Library</span><span class="p">(</span><span class="s2">&quot;City Library&quot;</span><span class="p">)</span>
+<span class="n">library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">)</span>
+<span class="n">library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="s2">&quot;To Kill a Mockingbird&quot;</span><span class="p">)</span>
+<span class="n">library</span><span class="o">.</span><span class="n">display_books</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="exercises-using-inheritance">
+<h3>Exercises using inheritance:<a class="headerlink" href="#exercises-using-inheritance" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">Animal</span></code> with attributes for name and age. Include a method to make a sound. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">Dog</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">Animal</span></code> and override the sound method to bark and meow, respectively.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Bark!&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Meow!&quot;</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;Whiskers&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dog</span><span class="o">.</span><span class="n">make_sound</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">make_sound</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> with attributes for make, model, and year. Include a method to display vehicle information. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">Car</span></code> and <code class="docutils literal notranslate"><span class="pre">Truck</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> and add specific attributes (e.g., number of doors for <code class="docutils literal notranslate"><span class="pre">Car</span></code>, payload capacity for <code class="docutils literal notranslate"><span class="pre">Truck</span></code>).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vehicle</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vehicle Information: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">make</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">num_doors</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_doors</span> <span class="o">=</span> <span class="n">num_doors</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of doors: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_doors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Truck</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">payload_capacity</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">payload_capacity</span> <span class="o">=</span> <span class="n">payload_capacity</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Payload capacity: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">payload_capacity</span><span class="si">}</span><span class="s2"> tons&quot;</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">vehicle</span> <span class="o">=</span> <span class="n">Vehicle</span><span class="p">(</span><span class="s2">&quot;Honda&quot;</span><span class="p">,</span> <span class="s2">&quot;Civic&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
+<span class="n">vehicle</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+<span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">car</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+<span class="n">truck</span> <span class="o">=</span> <span class="n">Truck</span><span class="p">(</span><span class="s2">&quot;Ford&quot;</span><span class="p">,</span> <span class="s2">&quot;F-150&quot;</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">truck</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="exercises-with-classes-physics">
+<h3>Exercises with classes, physics:<a class="headerlink" href="#exercises-with-classes-physics" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Particle</span></code> that has attributes for mass, charge, and position (a tuple of x, y, z coordinates). Include methods to calculate the kinetic energy and potential energy of the particle in a gravitational field.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Particle</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">charge</span> <span class="o">=</span> <span class="n">charge</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">position</span>  <span class="c1"># position is a tuple (x, y, z)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kinetic_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">velocity</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># acceleration due to gravity in m/s^2</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">height</span>   
+
+<span class="c1"># Usage:</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kinetic Energy:&quot;</span><span class="p">,</span> <span class="n">particle</span><span class="o">.</span><span class="n">kinetic_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Potential Energy:&quot;</span><span class="p">,</span> <span class="n">particle</span><span class="o">.</span><span class="n">potential_energy</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">ElectricField</span></code> that has attributes for field strength and direction (a tuple of x, y, z components). Include methods to calculate the force on a charged particle placed in the field.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ElectricField</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">=</span> <span class="n">field_strength</span>  <span class="c1"># in N/C</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">direction</span>  <span class="c1"># direction is a tuple (x, y, z)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">force_on_particle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">particle</span><span class="p">):</span>
+        <span class="n">fx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">particle</span><span class="o">.</span><span class="n">charge</span>
+        <span class="n">fy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">particle</span><span class="o">.</span><span class="n">charge</span>
+        <span class="n">fz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">particle</span><span class="o">.</span><span class="n">charge</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fz</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">field</span> <span class="o">=</span> <span class="n">ElectricField</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Force on Particle:&quot;</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">force_on_particle</span><span class="p">(</span><span class="n">particle</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Wave</span></code> that has attributes for amplitude, frequency, and wavelength. Include methods to calculate the wave speed and the energy of the wave.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Wave</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">,</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">=</span> <span class="n">amplitude</span>  <span class="c1"># in meters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="n">frequency</span>  <span class="c1"># in Hz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">wavelength</span>  <span class="c1"># in meters</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">wave_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>   
+<span class="c1"># Usage:</span>
+<span class="n">wave</span> <span class="o">=</span> <span class="n">Wave</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wave Speed:&quot;</span><span class="p">,</span> <span class="n">wave</span><span class="o">.</span><span class="n">wave_speed</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wave Energy:&quot;</span><span class="p">,</span> <span class="n">wave</span><span class="o">.</span><span class="n">energy</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">QuantumState</span></code> that has attributes for the wavefunction (a function of position) and energy level. Include methods to calculate the probability density and expectation value of position. Hint: you might need to use numerical integration for the expectation value. You can use the library <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for numerical operations (<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>, <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> for <span class="math notranslate nohighlight">\(\pi\)</span>, and <code class="docutils literal notranslate"><span class="pre">np.exp()</span></code> to calculate the exponential function).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QuantumState</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">,</span> <span class="n">energy_level</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span> <span class="o">=</span> <span class="n">wavefunction</span>  <span class="c1"># wavefunction is a callable function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">energy_level</span> <span class="o">=</span> <span class="n">energy_level</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">probability_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+        <span class="n">psi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">expectation_value_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position_range</span><span class="p">):</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">integral</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">probability_density</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">dx</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">position_range</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">integral</span>   
+
+<span class="c1"># Usage:</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">wavefunction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Example wavefunction</span>
+<span class="n">quantum_state</span> <span class="o">=</span> <span class="n">QuantumState</span><span class="p">(</span><span class="n">wavefunction</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Probability Density at x=0:&quot;</span><span class="p">,</span> <span class="n">quantum_state</span><span class="o">.</span><span class="n">probability_density</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expectation Value of Position:&quot;</span><span class="p">,</span> <span class="n">quantum_state</span><span class="o">.</span><span class="n">expectation_value_position</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Circuit</span></code> that has attributes for resistance, capacitance, and inductance. Include methods to calculate the impedance and resonant frequency of the circuit.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Circuit</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resistance</span><span class="p">,</span> <span class="n">capacitance</span><span class="p">,</span> <span class="n">inductance</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resistance</span> <span class="o">=</span> <span class="n">resistance</span>  <span class="c1"># in ohms</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">capacitance</span> <span class="o">=</span> <span class="n">capacitance</span>  <span class="c1"># in farads</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inductance</span> <span class="o">=</span> <span class="n">inductance</span>  <span class="c1"># in henrys</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">impedance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frequency</span><span class="p">):</span>
+        <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="n">frequency</span>
+        <span class="n">z_capacitive</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacitance</span><span class="p">)</span>
+        <span class="n">z_inductive</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">inductance</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resistance</span> <span class="o">+</span> <span class="n">z_capacitive</span> <span class="o">+</span> <span class="n">z_inductive</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">resonant_frequency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inductance</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacitance</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span>   
+
+<span class="c1"># Usage:</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Impedance at 1000 Hz:&quot;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">impedance</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resonant Frequency:&quot;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">resonant_frequency</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="exercises-in-classes-and-inheritance">
+<h3>Exercises in classes and inheritance:<a class="headerlink" href="#exercises-in-classes-and-inheritance" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">QuantumParticle</span></code> with attributes for mass, charge, and spin. Include methods to calculate the de Broglie wavelength and energy of the particle. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">Electron</span></code> and <code class="docutils literal notranslate"><span class="pre">Proton</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">QuantumParticle</span></code> and add specific attributes (e.g., atomic number for <code class="docutils literal notranslate"><span class="pre">Proton</span></code>).</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QuantumParticle</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">spin</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>  <span class="c1"># in kg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">charge</span> <span class="o">=</span> <span class="n">charge</span>  <span class="c1"># in coulombs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spin</span> <span class="o">=</span> <span class="n">spin</span>  <span class="c1"># in ħ units</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">de_broglie_wavelength</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">momentum</span><span class="p">):</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span>  <span class="c1"># Planck&#39;s constant in J·s</span>
+        <span class="k">return</span> <span class="n">h</span> <span class="o">/</span> <span class="n">momentum</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frequency</span><span class="p">):</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span>  <span class="c1"># Planck&#39;s constant in J·s</span>
+        <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">frequency</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Electron</span><span class="p">(</span><span class="n">QuantumParticle</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">9.10938356e-31</span><span class="p">,</span> <span class="n">charge</span><span class="o">=-</span><span class="mf">1.602176634e-19</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Proton</span><span class="p">(</span><span class="n">QuantumParticle</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">1.6726219e-27</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="mf">1.602176634e-19</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atomic_number</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">electron</span> <span class="o">=</span> <span class="n">Electron</span><span class="p">()</span>
+<span class="n">proton</span> <span class="o">=</span> <span class="n">Proton</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Electron de Broglie wavelength:&quot;</span><span class="p">,</span> <span class="n">electron</span><span class="o">.</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">1e-24</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proton energy at 1e14 Hz:&quot;</span><span class="p">,</span> <span class="n">proton</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="mf">1e14</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">QuantumSystem</span></code> with attributes for Hamiltonian and wavefunction. Include methods to calculate the time evolution of the system and expectation values of observables. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">HarmonicOscillator</span></code> and <code class="docutils literal notranslate"><span class="pre">ParticleInBox</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">QuantumSystem</span></code> and implement specific Hamiltonians and wavefunctions.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QuantumSystem</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hamiltonian</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">hamiltonian</span>  <span class="c1"># Hamiltonian is a callable function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span> <span class="o">=</span> <span class="n">wavefunction</span>  <span class="c1"># Wavefunction is a callable function</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">time_evolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="c1"># Placeholder for time evolution calculation</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">expectation_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observable</span><span class="p">,</span> <span class="n">position_range</span><span class="p">):</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">integral</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="o">*</span> <span class="n">observable</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavefunction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">position_range</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">integral</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">HarmonicOscillator</span><span class="p">(</span><span class="n">QuantumSystem</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">frequency</span><span class="p">):</span>
+        <span class="n">hamiltonian</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">mass</span> <span class="o">*</span> <span class="p">(</span><span class="n">frequency</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Simplified Hamiltonian</span>
+        <span class="n">wavefunction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">mass</span> <span class="o">*</span> <span class="n">frequency</span> <span class="o">/</span> <span class="mf">3.14159</span><span class="p">)</span><span class="o">**</span><span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="mf">2.71828</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">mass</span> <span class="o">*</span> <span class="n">frequency</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Ground state wavefunction</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">)</span> 
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ParticleInBox</span><span class="p">(</span><span class="n">QuantumSystem</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box_length</span><span class="p">):</span>
+        <span class="n">hamiltonian</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">box_length</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>  <span class="c1"># Infinite potential well</span>
+        <span class="n">wavefunction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.14159</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.14159</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span>  <span class="c1"># Ground state wavefunction</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">)</span>   
+
+<span class="c1"># Usage:</span>
+<span class="n">ho</span> <span class="o">=</span> <span class="n">HarmonicOscillator</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mf">1e14</span><span class="p">)</span>
+<span class="n">pib</span> <span class="o">=</span> <span class="n">ParticleInBox</span><span class="p">(</span><span class="n">box_length</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Harmonic Oscillator expectation value:&quot;</span><span class="p">,</span> <span class="n">ho</span><span class="o">.</span><span class="n">expectation_value</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-9</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Particle in Box expectation value:&quot;</span><span class="p">,</span> <span class="n">pib</span><span class="o">.</span><span class="n">expectation_value</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create a base class <code class="docutils literal notranslate"><span class="pre">QuantumField</span></code> with attributes for field strength and potential. Include methods to calculate the field equations and energy density. Then, create subclasses <code class="docutils literal notranslate"><span class="pre">ElectromagneticField</span></code> and <code class="docutils literal notranslate"><span class="pre">ScalarField</span></code> that inherit from <code class="docutils literal notranslate"><span class="pre">QuantumField</span></code> and implement specific field equations and potentials.</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal the solution!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QuantumField</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">=</span> <span class="n">field_strength</span>  <span class="c1"># in appropriate units</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">potential</span>  <span class="c1"># Potential is a callable function</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">field_equations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Placeholder for field equations calculation</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">energy_density</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Placeholder for energy density calculation</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ElectromagneticField</span><span class="p">(</span><span class="n">QuantumField</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ScalarField</span><span class="p">(</span><span class="n">QuantumField</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">)</span> 
+
+<span class="c1"># Usage:</span>
+<span class="n">em_field</span> <span class="o">=</span> <span class="n">ElectromagneticField</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">potential</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">scalar_field</span> <span class="o">=</span> <span class="n">ScalarField</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">potential</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Electromagnetic Field Strength:&quot;</span><span class="p">,</span> <span class="n">em_field</span><span class="o">.</span><span class="n">field_strength</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Field Strength:&quot;</span><span class="p">,</span> <span class="n">scalar_field</span><span class="o">.</span><span class="n">field_strength</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -712,6 +1127,13 @@ hierarchical relationship between classes.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">2.2 Inheritance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">2.3 Operator Overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-building-classes">Exercises building classes:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-using-inheritance">Exercises using inheritance:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-with-classes-physics">Exercises with classes, physics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-in-classes-and-inheritance">Exercises in classes and inheritance:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

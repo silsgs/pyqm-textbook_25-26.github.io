@@ -358,7 +358,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-exercises">General Python exercises:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-and-quantum-physics-exercises">Classical and Quantum physics exercises:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-exercises-with-positional-and-keyword-arguments">More exercises with positional and keyword arguments:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similar-exercises-with-positional-and-keyword-arguments">Similar exercises with positional and keyword arguments:</a></li>
 </ul>
 </li>
 </ul>
@@ -601,8 +601,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="more-exercises-with-positional-and-keyword-arguments">
-<h3>More exercises with positional and keyword arguments:<a class="headerlink" href="#more-exercises-with-positional-and-keyword-arguments" title="Link to this heading">#</a></h3>
+<section id="similar-exercises-with-positional-and-keyword-arguments">
+<h3>Similar exercises with positional and keyword arguments:<a class="headerlink" href="#similar-exercises-with-positional-and-keyword-arguments" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Write a function that calculates the energy of a photon given its frequency and optionally its wavelength. If the wavelength is provided, use it to calculate the frequency using the formula frequency = speed_of_light / wavelength. The speed of light is approximately <span class="math notranslate nohighlight">\(3*10^{8}\)</span> m/s.</p></li>
 </ol>
@@ -706,6 +706,11 @@ document.write(`
 
     <span class="k">def</span><span class="w"> </span><span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">my_rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area:&quot;</span><span class="p">,</span> <span class="n">my_rectangle</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Perimeter:&quot;</span><span class="p">,</span> <span class="n">my_rectangle</span><span class="o">.</span><span class="n">perimeter</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -732,6 +737,12 @@ document.write(`
 
     <span class="k">def</span><span class="w"> </span><span class="nf">check_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Account holder: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span><span class="si">}</span><span class="s2">, Balance: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">account</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">account</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">account</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">account</span><span class="o">.</span><span class="n">check_balance</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -756,6 +767,12 @@ document.write(`
 
     <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, Age: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">, Average Grade: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">average_grade</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">add_grade</span><span class="p">(</span><span class="mi">85</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">add_grade</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -780,6 +797,12 @@ document.write(`
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Books in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; - </span><span class="si">{</span><span class="n">book</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">library</span> <span class="o">=</span> <span class="n">Library</span><span class="p">(</span><span class="s2">&quot;City Library&quot;</span><span class="p">)</span>
+<span class="n">library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">)</span>
+<span class="n">library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="s2">&quot;To Kill a Mockingbird&quot;</span><span class="p">)</span>
+<span class="n">library</span><span class="o">.</span><span class="n">display_books</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -809,7 +832,7 @@ document.write(`
     <span class="k">def</span><span class="w"> </span><span class="nf">needs_maintenance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mileage</span> <span class="o">&gt;=</span> <span class="mi">10000</span>    
 
-<span class="c1"># Example usage:</span>
+<span class="c1"># Usage:</span>
 <span class="n">my_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
 <span class="n">my_car</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
 <span class="n">my_car</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
@@ -840,6 +863,13 @@ document.write(`
 <span class="k">class</span><span class="w"> </span><span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Meow!&quot;</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;Whiskers&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dog</span><span class="o">.</span><span class="n">make_sound</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">make_sound</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -873,6 +903,14 @@ document.write(`
     <span class="k">def</span><span class="w"> </span><span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Payload capacity: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">payload_capacity</span><span class="si">}</span><span class="s2"> tons&quot;</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">vehicle</span> <span class="o">=</span> <span class="n">Vehicle</span><span class="p">(</span><span class="s2">&quot;Honda&quot;</span><span class="p">,</span> <span class="s2">&quot;Civic&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
+<span class="n">vehicle</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+<span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">car</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
+<span class="n">truck</span> <span class="o">=</span> <span class="n">Truck</span><span class="p">(</span><span class="s2">&quot;Ford&quot;</span><span class="p">,</span> <span class="s2">&quot;F-150&quot;</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">truck</span><span class="o">.</span><span class="n">display_info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -896,6 +934,11 @@ document.write(`
     <span class="k">def</span><span class="w"> </span><span class="nf">potential_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
         <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># acceleration due to gravity in m/s^2</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">height</span>   
+
+<span class="c1"># Usage:</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kinetic Energy:&quot;</span><span class="p">,</span> <span class="n">particle</span><span class="o">.</span><span class="n">kinetic_energy</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Potential Energy:&quot;</span><span class="p">,</span> <span class="n">particle</span><span class="o">.</span><span class="n">potential_energy</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -914,6 +957,11 @@ document.write(`
         <span class="n">fy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">particle</span><span class="o">.</span><span class="n">charge</span>
         <span class="n">fz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_strength</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">particle</span><span class="o">.</span><span class="n">charge</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fz</span><span class="p">)</span>
+
+<span class="c1"># Usage:</span>
+<span class="n">field</span> <span class="o">=</span> <span class="n">ElectricField</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Force on Particle:&quot;</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">force_on_particle</span><span class="p">(</span><span class="n">particle</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -933,11 +981,15 @@ document.write(`
 
     <span class="k">def</span><span class="w"> </span><span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>   
+<span class="c1"># Usage:</span>
+<span class="n">wave</span> <span class="o">=</span> <span class="n">Wave</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wave Speed:&quot;</span><span class="p">,</span> <span class="n">wave</span><span class="o">.</span><span class="n">wave_speed</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wave Energy:&quot;</span><span class="p">,</span> <span class="n">wave</span><span class="o">.</span><span class="n">energy</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">QuantumState</span></code> that has attributes for the wavefunction (a function of position) and energy level. Include methods to calculate the probability density and expectation value of position.</p></li>
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">QuantumState</span></code> that has attributes for the wavefunction (a function of position) and energy level. Include methods to calculate the probability density and expectation value of position. Hint: you might need to use numerical integration for the expectation value. You can use the library <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for numerical operations.</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal the solution!</p>
@@ -954,6 +1006,13 @@ document.write(`
         <span class="n">dx</span> <span class="o">=</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">position_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">integral</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">probability_density</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">dx</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">position_range</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">integral</span>   
+
+<span class="c1"># Usage:</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">wavefunction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Example wavefunction</span>
+<span class="n">quantum_state</span> <span class="o">=</span> <span class="n">QuantumState</span><span class="p">(</span><span class="n">wavefunction</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Probability Density at x=0:&quot;</span><span class="p">,</span> <span class="n">quantum_state</span><span class="o">.</span><span class="n">probability_density</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expectation Value of Position:&quot;</span><span class="p">,</span> <span class="n">quantum_state</span><span class="o">.</span><span class="n">expectation_value_position</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -976,6 +1035,11 @@ document.write(`
 
     <span class="k">def</span><span class="w"> </span><span class="nf">resonant_frequency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inductance</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacitance</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span>   
+
+<span class="c1"># Usage:</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Impedance at 1000 Hz:&quot;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">impedance</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resonant Frequency:&quot;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">resonant_frequency</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1009,6 +1073,12 @@ document.write(`
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">1.6726219e-27</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="mf">1.602176634e-19</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">atomic_number</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Example usage:</span>
+<span class="n">electron</span> <span class="o">=</span> <span class="n">Electron</span><span class="p">()</span>
+<span class="n">proton</span> <span class="o">=</span> <span class="n">Proton</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Electron de Broglie wavelength:&quot;</span><span class="p">,</span> <span class="n">electron</span><span class="o">.</span><span class="n">de_broglie_wavelength</span><span class="p">(</span><span class="mf">1e-24</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proton energy at 1e14 Hz:&quot;</span><span class="p">,</span> <span class="n">proton</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="mf">1e14</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1042,6 +1112,12 @@ document.write(`
         <span class="n">hamiltonian</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">box_length</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>  <span class="c1"># Infinite potential well</span>
         <span class="n">wavefunction</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.14159</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.14159</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">box_length</span><span class="p">)</span>  <span class="c1"># Ground state wavefunction</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">,</span> <span class="n">wavefunction</span><span class="p">)</span>   
+
+<span class="c1"># Example usage:</span>
+<span class="n">ho</span> <span class="o">=</span> <span class="n">HarmonicOscillator</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">9.11e-31</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mf">1e14</span><span class="p">)</span>
+<span class="n">pib</span> <span class="o">=</span> <span class="n">ParticleInBox</span><span class="p">(</span><span class="n">box_length</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Harmonic Oscillator expectation value:&quot;</span><span class="p">,</span> <span class="n">ho</span><span class="o">.</span><span class="n">expectation_value</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-9</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Particle in Box expectation value:&quot;</span><span class="p">,</span> <span class="n">pib</span><span class="o">.</span><span class="n">expectation_value</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1070,9 +1146,12 @@ document.write(`
 <span class="k">class</span><span class="w"> </span><span class="nc">ScalarField</span><span class="p">(</span><span class="n">QuantumField</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">field_strength</span><span class="p">,</span> <span class="n">potential</span><span class="p">)</span> 
+
 <span class="c1"># Example usage:</span>
 <span class="n">em_field</span> <span class="o">=</span> <span class="n">ElectromagneticField</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">potential</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">scalar_field</span> <span class="o">=</span> <span class="n">ScalarField</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">potential</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>   
+<span class="n">scalar_field</span> <span class="o">=</span> <span class="n">ScalarField</span><span class="p">(</span><span class="n">field_strength</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">potential</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Electromagnetic Field Strength:&quot;</span><span class="p">,</span> <span class="n">em_field</span><span class="o">.</span><span class="n">field_strength</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Field Strength:&quot;</span><span class="p">,</span> <span class="n">scalar_field</span><span class="o">.</span><span class="n">field_strength</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1130,7 +1209,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-exercises">General Python exercises:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-and-quantum-physics-exercises">Classical and Quantum physics exercises:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-exercises-with-positional-and-keyword-arguments">More exercises with positional and keyword arguments:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similar-exercises-with-positional-and-keyword-arguments">Similar exercises with positional and keyword arguments:</a></li>
 </ul>
 </li>
 </ul>

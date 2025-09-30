@@ -367,8 +367,14 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">2.2 Inheritance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">2.3 Operator Overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-oop-concepts">2.2 Advanced OOP Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">2.2.1 Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">2.2.2 Operator Overloading</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-other-useful-methods-the-getitem-and-setitem-methods">Some other useful methods: The <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> and <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> Methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-building-classes">Exercises building classes:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-using-inheritance">Exercises using inheritance:</a></li>
@@ -446,6 +452,12 @@ document.write(`
 </pre></div>
 </div>
 <p>In this example, we define a class named <code class="docutils literal notranslate"><span class="pre">Dog</span></code> with an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method that initializes the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> attributes, and two methods: <code class="docutils literal notranslate"><span class="pre">bark</span></code>, which prints a barking message, and <code class="docutils literal notranslate"><span class="pre">get_age</span></code>, which returns the age of the dog.</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">dir()</span></code> to obtain a list of all the attributes and methods of a class or an instance:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">MyClass</span><span class="p">))</span>  <span class="c1"># Lists attributes and methods of the MyClass class</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">Dog</span><span class="p">))</span>  <span class="c1"># Lists attributes and methods of the Dog class</span>
+</pre></div>
+</div>
+<p>Note all the special methods (with double underscores) that are automatically created for classes. These methods are used internally by Python to implement various behaviors, such as object creation, representation, and comparison. We can override these methods to customize the behavior of our classes. (See section on Operator Overloading below.)</p>
 </section>
 <section id="creating-instances-of-a-class">
 <h3>2.1.3 Creating Instances of a Class<a class="headerlink" href="#creating-instances-of-a-class" title="Link to this heading">#</a></h3>
@@ -577,12 +589,15 @@ You can access attributes and methods using the dot (<code class="docutils liter
 </div>
 <section id="example">
 <h4>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h4>
-<p><a class="reference external" href="https://github.com/GagliardiGroup/wasp/blob/main/src/wasp.py">WASP program</a></p>
+<p>See the following example of a class called <code class="docutils literal notranslate"><span class="pre">WASP</span></code>, where you they initialize the class with a list of specific parameters.
+<a class="reference external" href="https://github.com/GagliardiGroup/wasp/blob/main/src/wasp.py">WASP program</a></p>
 </section>
 </section>
 </section>
+<section id="advanced-oop-concepts">
+<h2>2.2 Advanced OOP Concepts<a class="headerlink" href="#advanced-oop-concepts" title="Link to this heading">#</a></h2>
 <section id="inheritance">
-<h2>2.2 Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h2>
+<h3>2.2.1 Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h3>
 <p>Inheritance is a fundamental concept in object-oriented programming that allows a class (called the child or subclass) to inherit attributes and methods from another class (called the parent or superclass). This promotes code reuse and establishes a
 hierarchical relationship between classes.</p>
 <p>You can inherit from a parent class by creating a new class and putting the parent class name in parentheses after the new class name. The child class will then inherit all the attributes and methods of the parent class.</p>
@@ -625,7 +640,7 @@ hierarchical relationship between classes.</p>
 <p>We can see that both <code class="docutils literal notranslate"><span class="pre">Dog</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> classes inherit from the <code class="docutils literal notranslate"><span class="pre">Animal</span></code> class. They both implement the <code class="docutils literal notranslate"><span class="pre">speak</span></code> method, which is defined as an abstract method in the <code class="docutils literal notranslate"><span class="pre">Animal</span></code> class.</p>
 </section>
 <section id="operator-overloading">
-<h2>2.3 Operator Overloading<a class="headerlink" href="#operator-overloading" title="Link to this heading">#</a></h2>
+<h3>2.2.2 Operator Overloading<a class="headerlink" href="#operator-overloading" title="Link to this heading">#</a></h3>
 <p>Operator overloading allows you to define custom behavior for standard operators (like +, -, *, etc.) when they are used with instances of your classes. This is done by defining special methods in your class that correspond to the operators you want to overload.</p>
 <p>For example, to overload the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, you would define the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method in your class. Here is an example of a simple <code class="docutils literal notranslate"><span class="pre">Vector</span></code> class that overloads the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator to add two vectors together:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
@@ -633,10 +648,10 @@ hierarchical relationship between classes.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>             <span class="c1"># Here `other` is another instance of Vector</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span>     <span class="c1"># Check if `other` is an instance of Vector</span>
             <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>             <span class="c1"># This will be returned if `other` is not a Vector instance</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Vector(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
@@ -645,8 +660,8 @@ hierarchical relationship between classes.</p>
 <span class="n">v1</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 
-<span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>  <span class="c1"># This calls the __add__ method</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v3</span><span class="p">)</span>  <span class="c1"># Output: Vector(7, 10)</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>     <span class="c1"># This calls the __add__ method</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v3</span><span class="p">)</span>        <span class="c1"># Output: Vector(7, 10)</span>
 </pre></div>
 </div>
 <p>In this example, we defined the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method to specify how two <code class="docutils literal notranslate"><span class="pre">Vector</span></code> instances should be added together using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator. When we use <code class="docutils literal notranslate"><span class="pre">v1</span> <span class="pre">+</span> <span class="pre">v2</span></code>, it calls the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method, which returns a new <code class="docutils literal notranslate"><span class="pre">Vector</span></code> instance with the summed components.</p>
@@ -697,6 +712,48 @@ hierarchical relationship between classes.</p>
 </tbody>
 </table>
 </div>
+<section id="some-other-useful-methods-the-getitem-and-setitem-methods">
+<h4>Some other useful methods: The <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> and <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> Methods<a class="headerlink" href="#some-other-useful-methods-the-getitem-and-setitem-methods" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> and <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> methods are special methods in Python that allow you to define custom behavior for indexing and slicing operations on instances of your class. They enable your class to behave like a container (e.g., list, dictionary) that supports item access and assignment using square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>).</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> method is called when you use the indexing operator to retrieve an item from an instance of your class.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> method is called when you use the indexing operator to set an item in an instance of your class.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>   <span class="c1"># Remember, self refers to the instance of the class, then x and y are parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>  <span class="c1"># index is the position of the item we want to access</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+        <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Index out of range&quot;</span><span class="p">)</span> <span class="c1"># Raise an error if the index is out of range</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>  <span class="c1"># index is the position of the item we want to set, value is the new value we want to set</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Index out of range&quot;</span><span class="p">)</span> <span class="c1"># Again, raise an error if the index is out of range</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Vector(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="c1"># This is just to have a nice printing of the object</span>
+</pre></div>
+</div>
+<p>In this example, we defined the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> and <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> methods to allow indexing into a <code class="docutils literal notranslate"><span class="pre">Vector</span></code> instance. The <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> method retrieves the x or y component based on the index, while the <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> method allows you to set the x or y component.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Calls __getitem__: Output: 10</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>    <span class="c1"># Calls __setitem__</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Output: 15   </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>     <span class="c1"># Output: Vector(15, 20)</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
@@ -1175,8 +1232,14 @@ hierarchical relationship between classes.</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">2.2 Inheritance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">2.3 Operator Overloading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-oop-concepts">2.2 Advanced OOP Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">2.2.1 Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">2.2.2 Operator Overloading</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-other-useful-methods-the-getitem-and-setitem-methods">Some other useful methods: The <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> and <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> Methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-building-classes">Exercises building classes:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-using-inheritance">Exercises using inheritance:</a></li>

@@ -29,8 +29,8 @@ The main goals of this course are to:
 
 Monday sessions will be lectures introducing new concepts and libraries, while Tuesday sessions will be face-to-face (F2F) tutorials where students can work on exercises and receive assistance.
 
-- Monday 3pm - 6pm 
-- Tuesday 10am - 11pm
+- Monday: 3pm - 6pm 
+- Tuesday: 10am - 11pm
 
 | Week | Day            | Format           | Topic                                                                    |
 |------|----------------|------------------|--------------------------------------------------------------------------|

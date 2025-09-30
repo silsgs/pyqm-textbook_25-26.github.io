@@ -362,6 +362,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-functions">1.1.5 Recursive Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-arguments">1.1.6 Implicit Arguments</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments-args-and-kwargs">1.1.7 Keyword Arguments, *args, and **kwargs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-vs-local-variables">1.1.8 Global vs Local Variables</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">1.2 Lambda Functions</a><ul class="nav section-nav flex-column">
@@ -646,6 +647,26 @@ Example:</p>
 </pre></div>
 </div>
 <p>This is very useful when you need to create functions that can handle a flexible number of inputs. This is very common in matplotlib, for example, where you can pass a variable number of arguments to customize plots.</p>
+</section>
+<section id="global-vs-local-variables">
+<h3>1.1.8 Global vs Local Variables<a class="headerlink" href="#global-vs-local-variables" title="Link to this heading">#</a></h3>
+<p>Variables defined inside a function are called <strong>local variables</strong> and can only be accessed within that function. Variables defined outside of any function are called <strong>global variables</strong> and can be accessed from anywhere in the code, including inside functions.
+Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Global variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">():</span>
+    <span class="c1"># Local variable</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inside function, x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># Accessing global variable</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inside function, y =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># Accessing local variable</span>
+
+<span class="n">my_function</span><span class="p">()</span> <span class="c1"># Calling the function</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Outside function, x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># Accessing global variable</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Outside function, y =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># This will raise an error because y is not defined outside the function</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="lambda-functions">
@@ -1079,6 +1100,7 @@ Example:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-functions">1.1.5 Recursive Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-arguments">1.1.6 Implicit Arguments</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments-args-and-kwargs">1.1.7 Keyword Arguments, *args, and **kwargs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-vs-local-variables">1.1.8 Global vs Local Variables</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">1.2 Lambda Functions</a><ul class="nav section-nav flex-column">

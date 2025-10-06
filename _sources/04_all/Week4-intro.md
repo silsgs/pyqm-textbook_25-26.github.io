@@ -1,148 +1,96 @@
 # Week 4
 
+## Part 0. Python libraries for scientific computing
+- 0.1 Installing Libraries
+- 0.2 Importing Libraries
+
 ## Part 1. Numpy for numerical computations
-### 1.1 Introduction to Numpy
-#### 1.1.1 Installing Numpy
-#### 1.1.2 Importing Numpy
+- 1.1 Introduction to Numpy
+- 1.2 Numpy Objects: N-dimensional arrays
+  - 1.2.1 Array Attributes
+  - 1.2.2 Array Indexing & Slicing
+  - 1.2.3 Array Creation Functions
+  - 1.2.4 Array Operations
+    - Statistical functions
+    - Linear Algebra operations
+    - Reshaping and Transposing
+    - Stacking and Splitting
+    - Sorting and Searching
+    - Input and Output
+    - Copying and Masking
+    - Important methods for working with Matrices and Vectors
+- 1.3 Non-numeric data types in Numpy
+- 1.4 Linear algebra with Numpy
+  - 1.4.1 Scalar Array/Matrix Operations
+  - 1.4.2 Array-Array Operations
+  - 1.4.3 Matrix Multiplication and Dot Product
+  - 1.4.4 Other Linear Algebra Operations
+- 1.5 Some useful Numpy tools
+  - 1.5.1 Random Numbers
+  - 1.5.2 Polynomial Fitting
 
-### 1.2 Numpy Arrays
-#### 1.2.1 Creating Numpy Arrays
-##### From Lists or Tuples
-##### Using Built-in Functions
-##### From External Data
-#### 1.2.2 Array Attributes
-##### Shape
-##### Data Type
-##### Size
-##### Number of Dimensions
-#### 1.2.3 Array Indexing and Slicing
-##### Indexing with Integers
-##### Slicing Arrays            
-##### Boolean Indexing
-##### Fancy Indexing
-#### 1.2.4 Array Operations
-##### Arithmetic Operations
-##### Universal Functions (ufuncs)
-##### Aggregation Functions
-##### Broadcasting
-#### 1.2.5 Reshaping and Resizing Arrays
-##### Reshape
-##### Resize
-##### Flatten and Ravel
-### 1.3 Copying Arrays
-### 1.4 Basic Operators
-### 1.5 Numpy Constants
-### 1.6 Mathematical Functions
-### 1.7 0-dimensional Arrays
+## Part 2. Matplotlib for data visualization
+- 2.1 Matplotlib Pyplot
+- 2.2 Line Plots
+  - 2.2.1 Lines
+  - 2.2.2 Colour
+  - 2.2.3 Width
+  - 2.2.4 Line style
+  - 2.2.5 Marker Types
+  - 2.2.6 Axes
+    - Limits
+    - Ticks
+  - 2.2.7 Grid
+  - 2.2.8 Labels
+    - Title
+    - Axis Lables
+  - 2.2.9 Legends
+  - 2.2.10 Error Bars
+  - 2.2.11 Asymptotes and Annotations
+  - 2.2.12 Log-log and Semi-log plots
+- 2.3 Figure object
+- 2.4 Multiple plots
+  - 2.4.1 2.4.1 Making sub-plots using `plt.subplot()`
+  - 2.4.2 Plots in Plots
+  - 2.4.3 Making sub-plots using `fig.add_subplot()`
+  - 2.4.4 Making sub-plots using `plt.subplots()`
+  - 2.4.5 Histogram
+  - 2.4.6 Scatter
+  - 2.4.7 Bar Chart
+  - 2.4.8 Pie Chart
+- 2.5 3D plots and animations
+  - 2.5.1 3D Line Plots
+  - 2.5.2 Heat Map
+  - 2.5.3 Plotting a Surface
+  - 2.5.4 Interactive backends
+  - 2.5.5 Animations
 
-
-## Multi-Dimensional Numpy Arrays
-
-
-
-
-1.2.1 Creating Numpy Arrays
-    From Lists or Tuples
-    Using Built-in Functions
-    From External Data
-1.2.2 Array Attributes
-    Shape
-    Data Type
-    Size
-    Number of Dimensions        
-1.2.3 Array Indexing and Slicing
-    Indexing with Integers
-    Slicing Arrays
-    Boolean Indexing
-    Fancy Indexing
-1.2.4 Array Operations
-    Arithmetic Operations
-    Universal Functions (ufuncs)
-    Aggregation Functions
-    Broadcasting
-1.2.5 Reshaping and Resizing Arrays
-    Reshape
-    Resize
-    Flatten and Ravel
-1.2.6 Stacking and Splitting Arrays
-    Stacking Arrays (hstack, vstack, dstack)        
-    Splitting Arrays (hsplit, vsplit, dsplit)
-1.2.7 Copying and Viewing Arrays
-    Copying Arrays
-    Viewing Arrays
-1.2.8 Iterating Over Arrays
-    Iterating with nditer
-    Enumerated Iteration with ndenumerate   
-
-
-## Part 2. Pandas for data manipulation and analysis
-2.1 Introduction to Pandas
-2.1.1 What is Pandas?
-2.1.2 Installing Pandas     
-2.1.3 Importing Pandas
-2.2 Pandas Data Structures
-2.2.1 Series
-    Creating a Series
-    Series Attributes
-    Series Indexing and Slicing
-    Series Operations
-2.2.2 DataFrame
-    Creating a DataFrame
-    DataFrame Attributes
-    DataFrame Indexing and Slicing
-    DataFrame Operations
-2.3 Data Input and Output
-2.3.1 Reading Data from CSV Files
-2.3.2 Writing Data to CSV Files
-2.3.3 Reading Data from Excel Files
-2.3.4 Writing Data to Excel Files
-2.3.5 Reading Data from SQL Databases
-2.3.6 Writing Data to SQL Databases
-2.4 Data Cleaning and Preparation
-2.4.1 Handling Missing Data
-    Detecting Missing Data
-    Filling Missing Data
-    Dropping Missing Data
-2.4.2 Data Transformation
-    Renaming Columns
-    Changing Data Types
-    Applying Functions to Data
-2.4.3 Data Filtering and Selection
-    Filtering Rows
-    Selecting Columns
-    Conditional Selection
-2.5 Data Aggregation and Grouping
-2.5.1 Grouping Data
-2.5.2 Aggregation Functions
-2.5.3 Pivot Tables
-2.6 Time Series Analysis
-2.6.1 Date and Time Data Types
-2.6.2 Date Range Generation
-2.6.3 Resampling and Frequency Conversion           
-
-
-Part 3. Data visualization with Matplotlib
-3.1 Introduction to Matplotlib
-3.1.1 What is Matplotlib?
-3.1.2 Installing Matplotlib
-3.1.3 Importing Matplotlib
-3.2 Basic Plotting with Matplotlib
-3.2.1 Creating a Simple Plot
-3.2.2 Plotting Multiple Lines
-3.2.3 Adding Titles and Labels
-3.2.4 Customizing Line Styles and Colors
-3.3 Advanced Plotting Techniques
-3.3.1 Subplots
-3.3.2 Scatter Plots
-3.3.3 Bar Plots
-3.3.4 Histograms
-3.3.5 Pie Charts
-3.4 Plot Customization
-3.4.1 Legends
-3.4.2 Annotations
-3.4.3 Grid Lines
-3.4.4 Axis Limits and Scales
-3.5 Saving and Exporting Plots
-3.5.1 Saving Plots as Image Files
-3.5.2 Exporting Plots to Different Formats
-3.5.3 Adjusting Plot Resolution and Size    
+## Part 3. SciPy for scientific computing
+- 5.1 Scipy Linear Algebra
+    - 5.1.1 Linear Systems
+    - 5.1.2 Spectral Decomposition
+    - 5.1.3 Matrix Functions
+    - 5.1.4 Sparse Matrices
+    - 5.1.5 Matrix Exponential
+    - 5.1.6 Unitary Matrix
+    - 5.1.7 Tensor Product
+    - 5.1.8 Linalg Least Square Fit
+    - 5.1.9 Single Value Decomposition
+    - 5.1.10 Schur Decomposition
+- 5.2 Scipy Optimization
+    - 5.2.1 Function Minimum
+    - 5.2.2 Global Optimization
+    - 5.2.3 Function Roots
+    - 5.2.4 Optimize Least Square Fit
+    - 5.2.5 Curve Fit
+- 5.3 Scipy Fourier Transform 
+    - 5.3.1 The Fourier Transform
+    - 5.3.2 Wave Packet
+    - 5.3.3 The Uncertainty Principle
+    - 5.3.4 Quantum Fourier Transform
+    - 5.3.5 The Bloch Sphere
+- 5.4 Scipy ODEs & PDEs
+    - 5.4.1 Integration
+    - 5.4.2 ODE
+    - 5.4.3 Finite Difference Method
+    - 5.4.4 PDE

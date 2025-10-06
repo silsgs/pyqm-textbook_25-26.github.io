@@ -1,0 +1,77 @@
+Traceback (most recent call last):
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from scipy.optimize import Bounds
+bounds = Bounds([0.0, 1.0], [0.0, 1.0],[0.0, 1.0])
+
+initial_guess = np.array([0.0,0.0,0.0])
+result = optimize.minimize(f, initial_guess, bounds=bounds)
+print(result)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/optimize/_minimize.py[0m in [0;36m_validate_bounds[0;34m(bounds, x0, meth)[0m
+[1;32m   1009[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1010[0;31m         [0mbounds[0m[0;34m.[0m[0mlb[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mbroadcast_to[0m[0;34m([0m[0mbounds[0m[0;34m.[0m[0mlb[0m[0;34m,[0m [0mx0[0m[0;34m.[0m[0mshape[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1011[0m         [0mbounds[0m[0;34m.[0m[0mub[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mbroadcast_to[0m[0;34m([0m[0mbounds[0m[0;34m.[0m[0mub[0m[0;34m,[0m [0mx0[0m[0;34m.[0m[0mshape[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/numpy/lib/_stride_tricks_impl.py[0m in [0;36mbroadcast_to[0;34m(array, shape, subok)[0m
+[1;32m    421[0m     """
+[0;32m--> 422[0;31m     [0;32mreturn[0m [0m_broadcast_to[0m[0;34m([0m[0marray[0m[0;34m,[0m [0mshape[0m[0;34m,[0m [0msubok[0m[0;34m=[0m[0msubok[0m[0;34m,[0m [0mreadonly[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    423[0m [0;34m[0m[0m
+
+[0;32m~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/numpy/lib/_stride_tricks_impl.py[0m in [0;36m_broadcast_to[0;34m(array, shape, subok, readonly)[0m
+[1;32m    357[0m     [0mextras[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 358[0;31m     it = np.nditer(
+[0m[1;32m    359[0m         [0;34m([0m[0marray[0m[0;34m,[0m[0;34m)[0m[0;34m,[0m [0mflags[0m[0;34m=[0m[0;34m[[0m[0;34m'multi_index'[0m[0;34m,[0m [0;34m'refs_ok'[0m[0;34m,[0m [0;34m'zerosize_ok'[0m[0;34m][0m [0;34m+[0m [0mextras[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: operands could not be broadcast together with remapped shapes [original->remapped]: (2,)  and requested shape (3,)
+
+The above exception was the direct cause of the following exception:
+
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_58520/266380097.py[0m in [0;36m<cell line: 5>[0;34m()[0m
+[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0minitial_guess[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0;36m0.0[0m[0;34m,[0m[0;36m0.0[0m[0;34m,[0m[0;36m0.0[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 5[0;31m [0mresult[0m [0;34m=[0m [0moptimize[0m[0;34m.[0m[0mminimize[0m[0;34m([0m[0mf[0m[0;34m,[0m [0minitial_guess[0m[0;34m,[0m [0mbounds[0m[0;34m=[0m[0mbounds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m [0mprint[0m[0;34m([0m[0mresult[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/optimize/_minimize.py[0m in [0;36mminimize[0;34m(fun, x0, args, method, jac, hess, hessp, bounds, constraints, tol, callback, options)[0m
+[1;32m    644[0m         [0;31m# convert to new-style bounds so we only have to consider one case[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    645[0m         [0mbounds[0m [0;34m=[0m [0mstandardize_bounds[0m[0;34m([0m[0mbounds[0m[0;34m,[0m [0mx0[0m[0;34m,[0m [0;34m'new'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 646[0;31m         [0mbounds[0m [0;34m=[0m [0m_validate_bounds[0m[0;34m([0m[0mbounds[0m[0;34m,[0m [0mx0[0m[0;34m,[0m [0mmeth[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    647[0m [0;34m[0m[0m
+[1;32m    648[0m         [0;32mif[0m [0mmeth[0m [0;32min[0m [0;34m{[0m[0;34m"tnc"[0m[0;34m,[0m [0;34m"slsqp"[0m[0;34m,[0m [0;34m"l-bfgs-b"[0m[0;34m}[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/optimize/_minimize.py[0m in [0;36m_validate_bounds[0;34m(bounds, x0, meth)[0m
+[1;32m   1011[0m         [0mbounds[0m[0;34m.[0m[0mub[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mbroadcast_to[0m[0;34m([0m[0mbounds[0m[0;34m.[0m[0mub[0m[0;34m,[0m [0mx0[0m[0;34m.[0m[0mshape[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1012[0m     [0;32mexcept[0m [0mException[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1013[0;31m         [0;32mraise[0m [0mValueError[0m[0;34m([0m[0mmsg[0m[0;34m)[0m [0;32mfrom[0m [0me[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1014[0m [0;34m[0m[0m
+[1;32m   1015[0m     [0;32mreturn[0m [0mbounds[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: The number of bounds is not compatible with the length of `x0`.
+

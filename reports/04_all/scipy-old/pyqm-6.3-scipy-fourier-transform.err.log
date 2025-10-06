@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/silviags/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+steps = 1000
+t = np.linspace(0,10,steps)
+w = [1.0,5.0,10.0,15.0,20.0]
+
+signal = 0
+for wi in w:
+    signal += np.sin(wi*t*2*np.pi)
+
+fig = plt.figure(figsize=(16,5))
+ax = fig.add_axes([.1,.1,.8,.8])
+
+ax.plot(t,noise)
+ax.set_xlabel('t')
+ax.set_ylabel('Amplitude')
+ax.set_xlim(t[0],t[-1])
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_58627/3506221799.py[0m in [0;36m<cell line: 12>[0;34m()[0m
+[1;32m     10[0m [0max[0m [0;34m=[0m [0mfig[0m[0;34m.[0m[0madd_axes[0m[0;34m([0m[0;34m[[0m[0;36m.1[0m[0;34m,[0m[0;36m.1[0m[0;34m,[0m[0;36m.8[0m[0;34m,[0m[0;36m.8[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     11[0m [0;34m[0m[0m
+[0;32m---> 12[0;31m [0max[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0mt[0m[0;34m,[0m[0mnoise[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     13[0m [0max[0m[0;34m.[0m[0mset_xlabel[0m[0;34m([0m[0;34m't'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     14[0m [0max[0m[0;34m.[0m[0mset_ylabel[0m[0;34m([0m[0;34m'Amplitude'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'noise' is not defined
+

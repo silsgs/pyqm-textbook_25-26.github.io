@@ -51,7 +51,7 @@ plt.show()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_58572/274506656.py[0m in [0;36m<cell line: 20>[0;34m()[0m
+[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_59257/274506656.py[0m in [0;36m<cell line: 20>[0;34m()[0m
 [1;32m     18[0m [0max1[0m[0;34m.[0m[0myaxis[0m[0;34m.[0m[0mtick_right[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     19[0m [0;34m[0m[0m
 [0;32m---> 20[0;31m [0max2[0m[0;34m.[0m[0mget_shared_y_axes[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0max1[0m[0;34m,[0m [0max2[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

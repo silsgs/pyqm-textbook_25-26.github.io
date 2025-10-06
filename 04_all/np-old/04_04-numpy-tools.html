@@ -210,7 +210,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../04_00-importing-libs.html">Part 0. Importng Python Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_01-numpy-basics.html">Part 1. Numpy for numerical computations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_02-matplotlib.html">Part 2. Matplotlib for Data Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04_03-scipy.html">Part 3. Scipy</a></li>
 </ul>
 </details></li>
 </ul>
@@ -411,13 +410,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.62148414 0.24602495]
- [0.47240271 0.16268813]
- [0.32130521 0.40188588]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.96608171 0.04730488]
+ [0.71183433 0.21827839]
+ [0.82301583 0.22796839]] 
 
-[[62.14841409 24.60249536]
- [47.24027064 16.26881289]
- [32.13052136 40.18858795]] 
+[[96.60817083  4.7304882 ]
+ [71.18343305 21.82783926]
+ [82.30158305 22.79683925]] 
 </pre></div>
 </div>
 </div>
@@ -435,8 +434,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 92.85196491  85.93244252  91.13483444  97.05093993  82.75699717
- 102.22726049 102.67649276  72.65039941  91.06976014  92.67036785] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 74.97835288  98.53258569 106.26684727  94.05742028  98.65063187
+  83.91417121  88.71270562 111.2975685   97.82659506  69.05376814] 
 </pre></div>
 </div>
 </div>
@@ -458,9 +457,9 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5 6 7 8 9] 
 
-[1 2 6 9 4 0 8 6 4 2 4 2 3 4 3 4 2 0 2 9 3 7 2 8 4 8 0 2 1 0 6 5 7 9 6 7 3
- 8 7 7 0 6 7 6 6 2 2 5 1 5 0 4 7 5 1 1 6 8 5 4 5 5 8 4 5 8 1 3 7 0 1 2 4 6
- 6 8 3 4 8 8 4 6 0 9 3 6 7 5 5 9 7 5 9 2 0 8 7 3 0 4]
+[0 6 7 0 6 5 7 5 3 0 2 6 9 0 8 7 3 4 6 8 5 1 1 4 8 0 9 1 1 3 9 2 3 7 8 1 3
+ 7 2 9 8 8 8 6 6 9 2 5 6 5 7 6 9 3 3 9 1 6 6 7 7 4 4 1 9 6 3 9 6 4 8 2 3 0
+ 6 8 7 9 9 8 7 3 3 4 0 3 5 9 2 7 8 6 9 9 6 7 0 8 0 5]
 </pre></div>
 </div>
 </div>
@@ -645,11 +644,11 @@ $<span class="math notranslate nohighlight">\( x^2+4x-2\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poly =  [-0.15332727  1.81471575  1.14232155] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poly =  [-0.0100256   0.23486032  4.09677507] 
 
-c[0] =  -0.15332727332053345
-c[1] =  1.8147157515638417
-c[2] =  1.1423215518180627
+c[0] =  -0.010025596016596826
+c[1] =  0.23486032378840552
+c[2] =  4.096775067624628
 </pre></div>
 </div>
 </div>
@@ -666,13 +665,13 @@ c[2] =  1.1423215518180627
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[97.67475437 38.20277717]
- [84.61761846  7.61910847]
- [87.33037109  4.01977878]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[51.23834398  9.76074196]
+ [31.58860409 36.6026322 ]
+ [75.3619441  50.40516965]
  ...
- [39.04082683  7.48054636]
- [97.73930719 57.67535268]
- [ 1.81467219 77.98674816]]
+ [87.32844517 58.98657091]
+ [20.98942592 66.78912382]
+ [ 8.91628439 15.83862105]]
 </pre></div>
 </div>
 </div>
@@ -686,10 +685,7 @@ c[2] =  1.1423215518180627
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.705950524339265
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.442354605713035
 </pre></div>
 </div>
 </div>
@@ -703,7 +699,7 @@ c[2] =  1.1423215518180627
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.3954003743964
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.921772808813056
 </pre></div>
 </div>
 </div>
@@ -717,7 +713,7 @@ c[2] =  1.1423215518180627
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>806.2987624222711
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>836.4689424045984
 </pre></div>
 </div>
 </div>
@@ -731,7 +727,7 @@ c[2] =  1.1423215518180627
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00669894057572229
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.018362485937206685
 </pre></div>
 </div>
 </div>
@@ -745,7 +741,7 @@ c[2] =  1.1423215518180627
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.8633082463855
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.97412772031241
 </pre></div>
 </div>
 </div>
@@ -866,7 +862,7 @@ c[2] =  1.1423215518180627
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_59236/2729334545.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_63415/2729334545.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;quibits.txt&quot;</span><span class="p">))</span>
 
 <span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)</span>

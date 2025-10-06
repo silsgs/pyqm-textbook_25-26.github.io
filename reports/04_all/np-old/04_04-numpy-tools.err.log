@@ -28,7 +28,7 @@ print(np.loadtxt("quibits.txt"))
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_59236/2729334545.py[0m in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_63415/2729334545.py[0m in [0;36m<cell line: 1>[0;34m()[0m
 [0;32m----> 1[0;31m [0mprint[0m[0;34m([0m[0mnp[0m[0;34m.[0m[0mloadtxt[0m[0;34m([0m[0;34m"quibits.txt"[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py[0m in [0;36mloadtxt[0;34m(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)[0m

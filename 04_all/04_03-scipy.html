@@ -62,7 +62,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '04_all/04_03-scipy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Part 2. Matplotlib for Data Visualization" href="04_02-matplotlib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,7 +182,7 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course content</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01_all/Week1-intro.html">Week 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01_all/01_01_setting_env.html">Part 1. Environment set up with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_all/01_02_git_github.html">Part 2. Basic Git and GitHub</a></li>
@@ -205,11 +206,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../03_all/03_02-classes.html">Part 2: Classes</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week4-intro.html">Week 4</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Week4-intro.html">Week 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="04_00-importing-libs.html">Part 0. Importng Python Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_01-numpy-basics.html">Part 1. Numpy for numerical computations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_02-matplotlib.html">Part 2. Matplotlib for Data Visualization</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 3. Scipy</a></li>
 </ul>
 </details></li>
 </ul>
@@ -534,13 +534,13 @@ x =  [[  4.  11.  -4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.8497406  0.54062243 0.92634577]
- [0.50442536 0.66645192 0.44812354]
- [0.2179569  0.47134126 0.46538812]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.65636911 0.28822476 0.99047902]
+ [0.62352638 0.98564982 0.75601186]
+ [0.68253991 0.24055698 0.65610259]] 
 
-A^-1 =  [[ 1.03440094  1.93441872 -3.92161173]
- [-1.4331731   2.02359871  0.90417351]
- [ 0.9670612  -2.95543746  3.06962726]]
+A^-1 =  [[-2.55587873 -0.27032014  4.16994161]
+ [-0.5878609   1.3493346  -0.66734849]
+ [ 2.87440304 -0.21351472 -2.56913518]]
 </pre></div>
 </div>
 </div>
@@ -553,7 +553,7 @@ A^-1 =  [[ 1.03440094  1.93441872 -3.92161173]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  0.0956492635160986
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  -0.18186444724997047
 </pre></div>
 </div>
 </div>
@@ -599,13 +599,13 @@ norm(A,ord=np.inf) =  4.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues =  [1.42188527+0.j 0.37443579+0.j 0.70081624+0.j] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues =  [1.38185641+0.j         0.43213386+0.24038326j 0.43213386-0.24038326j] 
 
-Eigenvector Matrix =  [[-0.32025053 -0.77339021 -0.52441076]
- [-0.73818265  0.63256742 -0.20768203]
- [-0.59373898 -0.04154564  0.82574907]] 
+Eigenvector Matrix =  [[-0.50357222+0.j          0.30268934-0.52463623j  0.30268934+0.52463623j]
+ [-0.31866659+0.j          0.26914454+0.2424426j   0.26914454-0.2424426j ]
+ [-0.80303588+0.j         -0.70846227+0.j         -0.70846227-0.j        ]] 
 
-First Eigenvector =  [-0.32025053 -0.73818265 -0.59373898] 
+First Eigenvector =  [-0.50357222+0.j -0.31866659+0.j -0.80303588+0.j] 
 </pre></div>
 </div>
 </div>
@@ -915,20 +915,20 @@ up to a computational error.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.+0.j -0.+0.j -0.-0.j -0.-0.j]
- [-0.+0.j  1.+0.j  0.+0.j -0.+0.j]
- [-0.+0.j  0.-0.j  1.+0.j  0.+0.j]
- [-0.+0.j -0.+0.j  0.+0.j  1.+0.j]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.+0.j -0.-0.j -0.+0.j  0.-0.j]
+ [-0.+0.j  1.+0.j  0.-0.j  0.-0.j]
+ [-0.-0.j  0.+0.j  1.+0.j  0.+0.j]
+ [ 0.+0.j  0.+0.j  0.-0.j  1.+0.j]] 
 
-[[-0.658+0.203j -0.116+0.212j  0.323-0.422j  0.194-0.385j]
- [ 0.059-0.233j -0.251-0.027j -0.55 -0.566j  0.452+0.224j]
- [-0.418+0.309j  0.337+0.225j -0.1  +0.178j  0.167+0.704j]
- [-0.286+0.342j -0.588-0.607j -0.135+0.185j -0.142+0.124j]] 
+[[ 0.25 -0.305j  0.568+0.367j  0.522-0.11j  -0.26 -0.186j]
+ [-0.413+0.56j   0.41 -0.232j  0.282+0.454j -0.075-0.053j]
+ [-0.096-0.24j  -0.283+0.065j  0.294+0.331j -0.393+0.706j]
+ [-0.216-0.497j -0.286-0.394j  0.439+0.201j  0.278-0.399j]] 
 
-[[ 1.+0.j  0.+0.j -0.-0.j -0.+0.j]
- [ 0.-0.j  1.+0.j -0.-0.j  0.-0.j]
+[[ 1.+0.j -0.+0.j -0.-0.j  0.-0.j]
+ [-0.+0.j  1.+0.j -0.-0.j  0.+0.j]
  [-0.+0.j -0.+0.j  1.+0.j  0.-0.j]
- [-0.-0.j  0.+0.j  0.+0.j  1.+0.j]]
+ [ 0.+0.j  0.+0.j  0.+0.j  1.+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1050,7 +1050,7 @@ $<span class="math notranslate nohighlight">\( c_1 = 0.5\)</span><span class="ma
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e72e2becee979cf11cc6f670e5b2555da615e9d03d35961a05a897f743a5c568.png" src="../_images/e72e2becee979cf11cc6f670e5b2555da615e9d03d35961a05a897f743a5c568.png" />
+<img alt="../_images/e12b125cf1ed8595b64c80b2a8172de410479dac977a1627df30440c8ee5994f.png" src="../_images/e12b125cf1ed8595b64c80b2a8172de410479dac977a1627df30440c8ee5994f.png" />
 </div>
 </div>
 </section>
@@ -1082,26 +1082,26 @@ where \)</span>A<span class="math notranslate nohighlight">\( is a non-square ma
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.55034493 0.09780392]
- [0.74310377 0.900073  ]
- [0.35367783 0.62872921]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.64740522 0.68786187]
+ [0.91716973 0.89877821]
+ [0.2721289  0.05891674]] 
 
-U =  [[-0.30569082  0.91221078  0.27280876]
- [-0.81476753 -0.10236741 -0.57067924]
- [-0.49265302 -0.39672712  0.7745325 ]] 
+U =  [[-0.58587858  0.24656315  0.77197986]
+ [-0.79710114 -0.00346919 -0.60383585]
+ [-0.14620553 -0.96912052  0.19856829]] 
 
-Diagonal Elements =  [1.43174407 0.38115234] 
+Diagonal Elements =  [1.61100615 0.15321407] 
 
-v =  [[-0.66208248 -0.74943098]
- [ 0.74943098 -0.66208248]] 
+v =  [[-0.7139418  -0.70020504]
+ [-0.70020504  0.7139418 ]] 
 
-S =  [[1.43174407 0.        ]
- [0.         0.38115234]
+S =  [[1.61100615 0.        ]
+ [0.         0.15321407]
  [0.         0.        ]] 
 
-A =  [[0.55034493 0.09780392]
- [0.74310377 0.900073  ]
- [0.35367783 0.62872921]]
+A =  [[0.64740522 0.68786187]
+ [0.91716973 0.89877821]
+ [0.2721289  0.05891674]]
 </pre></div>
 </div>
 </div>
@@ -1129,17 +1129,17 @@ $<span class="math notranslate nohighlight">\(A = Z T Z^\dagger \)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.12031023 0.57056818 0.63776473]
- [0.13435047 0.47936633 0.93247097]
- [0.72032264 0.48046184 0.14001216]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.91083443 0.14216618 0.21074128]
+ [0.53845496 0.62034754 0.69825736]
+ [0.20209493 0.9238216  0.89882024]] 
 
-A =  [[0.12031023 0.57056818 0.63776473]
- [0.13435047 0.47936633 0.93247097]
- [0.72032264 0.48046184 0.14001216]] 
+A =  [[0.91083443 0.14216618 0.21074128]
+ [0.53845496 0.62034754 0.69825736]
+ [0.20209493 0.9238216  0.89882024]] 
 
-A =  [[0.12031023+0.j 0.57056818+0.j 0.63776473+0.j]
- [0.13435047+0.j 0.47936633+0.j 0.93247097+0.j]
- [0.72032264+0.j 0.48046184+0.j 0.14001216+0.j]]
+A =  [[0.91083443+0.j 0.14216618+0.j 0.21074128+0.j]
+ [0.53845496+0.j 0.62034754+0.j 0.69825736+0.j]
+ [0.20209493+0.j 0.9238216 +0.j 0.89882024+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1151,9 +1151,9 @@ A =  [[0.12031023+0.j 0.57056818+0.j 0.63776473+0.j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T =  [[ 1.41092652 -0.0969494   0.31672973]
- [ 0.         -0.24613508  0.54008985]
- [ 0.          0.         -0.42510272]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T =  [[ 1.73491642  0.27233303  0.02937885]
+ [ 0.          0.73434468 -0.36465105]
+ [ 0.          0.         -0.0392589 ]]
 </pre></div>
 </div>
 </div>
@@ -1165,9 +1165,9 @@ A =  [[0.12031023+0.j 0.57056818+0.j 0.63776473+0.j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z =  [[-0.5496926   0.24534868  0.79852494]
- [-0.62925125 -0.75032293 -0.20262864]
- [-0.5494369   0.61385628 -0.56683292]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z =  [[-0.29362543 -0.89391631  0.33867054]
+ [-0.60534136 -0.10031925 -0.78961882]
+ [-0.73982832  0.43686345  0.51166824]]
 </pre></div>
 </div>
 </div>
@@ -1235,7 +1235,7 @@ A =  [[0.12031023+0.j 0.57056818+0.j 0.63776473+0.j]
 <span class="s2">The above exception was the direct cause of the following exception:</span>
 
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_59203/266380097.py</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
+<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_63363/266380097.py</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> </span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2"> initial_guess = np.array([0.0,0.0,0.0])</span>
 <span class="ne">----&gt; </span><span class="mi">5</span><span class="s2"> result = optimize.minimize(f, initial_guess, bounds=bounds)</span>
@@ -8482,15 +8482,6 @@ if (IPython.notebook.kernel !== null) {
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="04_02-matplotlib.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Part 2. Matplotlib for Data Visualization</p>
-      </div>
-    </a>
 </div>
                 </footer>
               

@@ -210,7 +210,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../04_00-importing-libs.html">Part 0. Importng Python Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_01-numpy-basics.html">Part 1. Numpy for numerical computations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_02-matplotlib.html">Part 2. Matplotlib for Data Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04_03-scipy.html">Part 3. Scipy</a></li>
 </ul>
 </details></li>
 </ul>
@@ -518,13 +517,13 @@ x =  [[  4.  11.  -4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.45242639 0.7484803  0.23147279]
- [0.88387385 0.26849459 0.21784353]
- [0.41768487 0.54794214 0.74592868]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.41756425 0.92358875 0.60073371]
+ [0.28205117 0.73052523 0.82208243]
+ [0.56993148 0.25858141 0.09208868]] 
 
-A^-1 =  [[-0.26737129  1.42580728 -0.33342827]
- [ 1.87798238 -0.79569871 -0.3503874 ]
- [-1.22980757 -0.21388275  1.78470141]]
+A^-1 =  [[-1.02494353  0.4957924   2.26016811]
+ [ 3.12174276 -2.14384366 -1.22620807]
+ [-2.42241562  2.95139873  0.3141934 ]]
 </pre></div>
 </div>
 </div>
@@ -537,7 +536,7 @@ A^-1 =  [[-0.26737129  1.42580728 -0.33342827]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  -0.3026210019126435
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  0.14176598475335953
 </pre></div>
 </div>
 </div>
@@ -583,13 +582,13 @@ norm(A,ord=np.inf) =  4.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues =  [ 1.74564131+0.j  0.14832289+0.j -0.22618594+0.j] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues =  [0.99167723+0.j         0.34859584+0.15706362j 0.34859584-0.15706362j] 
 
-Eigenvector Matrix =  [[-0.46443977 -0.56970144  0.21532353]
- [-0.57227467  0.81797963 -0.86453345]
- [-0.67586789  0.07968432  0.45411198]] 
+Eigenvector Matrix =  [[-0.74820297+0.j         -0.94508906+0.j         -0.94508906-0.j        ]
+ [-0.53874548+0.j          0.11492255+0.21903033j  0.11492255-0.21903033j]
+ [-0.38722814+0.j          0.05302782-0.2069136j   0.05302782+0.2069136j ]] 
 
-First Eigenvector =  [-0.46443977 -0.57227467 -0.67586789] 
+First Eigenvector =  [-0.74820297+0.j -0.53874548+0.j -0.38722814+0.j] 
 </pre></div>
 </div>
 </div>
@@ -893,20 +892,20 @@ The Hadamard gate is unitary as we see below.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.+0.j  0.+0.j -0.-0.j  0.+0.j]
- [ 0.-0.j  1.+0.j -0.+0.j -0.+0.j]
- [-0.+0.j -0.-0.j  1.+0.j  0.-0.j]
- [ 0.-0.j -0.-0.j  0.+0.j  1.+0.j]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.+0.j -0.-0.j -0.+0.j  0.+0.j]
+ [-0.+0.j  1.+0.j -0.-0.j  0.-0.j]
+ [-0.-0.j -0.+0.j  1.+0.j  0.-0.j]
+ [ 0.-0.j  0.+0.j  0.+0.j  1.+0.j]] 
 
-[[ 0.266-0.177j  0.618+0.093j  0.378+0.588j -0.111+0.075j]
- [-0.538+0.11j  -0.011+0.156j  0.058+0.271j  0.584+0.507j]
- [ 0.129-0.371j -0.669+0.279j  0.451+0.246j  0.119-0.203j]
- [ 0.483-0.457j  0.187+0.156j -0.239-0.336j  0.559+0.13j ]] 
+[[-0.057+0.39j  -0.099-0.324j  0.359-0.426j  0.63 +0.152j]
+ [-0.097+0.553j -0.337+0.254j  0.398-0.135j -0.561-0.125j]
+ [-0.159+0.176j  0.093-0.691j -0.43 -0.275j -0.43 +0.105j]
+ [ 0.098-0.681j -0.431-0.186j  0.35 -0.36j  -0.203+0.111j]] 
 
-[[ 1.+0.j  0.+0.j -0.-0.j -0.-0.j]
- [ 0.+0.j  1.+0.j  0.+0.j -0.+0.j]
- [-0.+0.j  0.-0.j  1.+0.j  0.-0.j]
- [-0.+0.j -0.-0.j  0.+0.j  1.+0.j]]
+[[1.+0.j 0.-0.j 0.+0.j 0.-0.j]
+ [0.+0.j 1.+0.j 0.-0.j 0.+0.j]
+ [0.-0.j 0.+0.j 1.+0.j 0.+0.j]
+ [0.+0.j 0.-0.j 0.-0.j 1.+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1028,7 +1027,7 @@ $<span class="math notranslate nohighlight">\( c_1 = 0.5\)</span><span class="ma
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6a156edd638afde944ed13e241b57889b6945691b79acb215743d1512676ab0e.png" src="../../_images/6a156edd638afde944ed13e241b57889b6945691b79acb215743d1512676ab0e.png" />
+<img alt="../../_images/dd3c5182c10573b92d4462eb2935f6a40de4f2286db9087d4c99c86f5516fe7c.png" src="../../_images/dd3c5182c10573b92d4462eb2935f6a40de4f2286db9087d4c99c86f5516fe7c.png" />
 </div>
 </div>
 </section>
@@ -1060,26 +1059,26 @@ where \)</span>A<span class="math notranslate nohighlight">\( is a non-square ma
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.56906167 0.00738781]
- [0.90474397 0.03038433]
- [0.75660258 0.31401259]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.53369458 0.86346615]
+ [0.24569247 0.92317411]
+ [0.5865401  0.16901168]] 
 
-U =  [[-0.42447234 -0.35486736 -0.83300203]
- [-0.67711512 -0.48636657  0.55223426]
- [-0.60111426  0.79844644 -0.0338369 ]] 
+U =  [[-0.70445365  0.07589041 -0.70568102]
+ [-0.6416772  -0.49299386  0.58754356]
+ [-0.30330749  0.86671662  0.39598846]] 
 
-Diagonal Elements =  [1.32610266 0.23637625] 
+Diagonal Elements =  [1.43998273 0.49199886] 
 
-v =  [[-0.98708147 -0.16021916]
- [-0.16021916  0.98708147]] 
+v =  [[-0.49411728 -0.86939526]
+ [ 0.86939526 -0.49411728]] 
 
-S =  [[1.32610266 0.        ]
- [0.         0.23637625]
+S =  [[1.43998273 0.        ]
+ [0.         0.49199886]
  [0.         0.        ]] 
 
-A =  [[0.56906167 0.00738781]
- [0.90474397 0.03038433]
- [0.75660258 0.31401259]]
+A =  [[0.53369458 0.86346615]
+ [0.24569247 0.92317411]
+ [0.5865401  0.16901168]]
 </pre></div>
 </div>
 </div>
@@ -1107,17 +1106,20 @@ $<span class="math notranslate nohighlight">\(A = Z T Z^\dagger \)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.24176549 0.93475132 0.89663852]
- [0.00998832 0.35520629 0.91565973]
- [0.00529475 0.51142483 0.58275829]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.85852624 0.22845972 0.42192322]
+ [0.81937971 0.37516779 0.31717829]
+ [0.41206682 0.36112839 0.18870555]] 
 
-A =  [[0.24176549 0.93475132 0.89663852]
- [0.00998832 0.35520629 0.91565973]
- [0.00529475 0.51142483 0.58275829]] 
+A =  [[0.85852624 0.22845972 0.42192322]
+ [0.81937971 0.37516779 0.31717829]
+ [0.41206682 0.36112839 0.18870555]] 
 
-A =  [[0.24176549+0.j 0.93475132+0.j 0.89663852+0.j]
- [0.00998832+0.j 0.35520629+0.j 0.91565973+0.j]
- [0.00529475+0.j 0.51142483+0.j 0.58275829+0.j]]
+A =  [[0.85852624-2.77555756e-17j 0.22845972-1.24900090e-16j
+  0.42192322+3.05311332e-16j]
+ [0.81937971+2.77555756e-17j 0.37516779-1.66533454e-16j
+  0.31717829+3.05311332e-16j]
+ [0.41206682+1.38777878e-17j 0.36112839-2.77555756e-17j
+  0.18870555+1.11022302e-16j]]
 </pre></div>
 </div>
 </div>
@@ -1129,9 +1131,9 @@ A =  [[0.24176549+0.j 0.93475132+0.j 0.89663852+0.j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T =  [[ 1.17685529 -1.28572943  0.27295413]
- [ 0.          0.22945842 -0.2923731 ]
- [ 0.          0.         -0.22658364]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T =  [[ 1.37346243  0.44720534 -0.26820432]
+ [ 0.          0.02446857  0.04949035]
+ [ 0.         -0.23209268  0.02446857]]
 </pre></div>
 </div>
 </div>
@@ -1143,9 +1145,9 @@ A =  [[0.24176549+0.j 0.93475132+0.j 0.89663852+0.j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z =  [[ 0.81051758  0.58568607  0.00575231]
- [ 0.44030366 -0.60279083 -0.66541408]
- [ 0.38625632 -0.54186257  0.74645228]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z =  [[ 0.63224619  0.49453458 -0.59640615]
+ [ 0.65193816 -0.75551088  0.06465253]
+ [ 0.41861842  0.42969625  0.80007484]]
 </pre></div>
 </div>
 </div>

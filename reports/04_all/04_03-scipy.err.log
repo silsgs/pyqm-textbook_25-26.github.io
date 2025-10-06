@@ -53,7 +53,7 @@ print(result)
 The above exception was the direct cause of the following exception:
 
 [0;31mValueError[0m                                Traceback (most recent call last)
-[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_59203/266380097.py[0m in [0;36m<cell line: 5>[0;34m()[0m
+[0;32m/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_63363/266380097.py[0m in [0;36m<cell line: 5>[0;34m()[0m
 [1;32m      3[0m [0;34m[0m[0m
 [1;32m      4[0m [0minitial_guess[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0;36m0.0[0m[0;34m,[0m[0;36m0.0[0m[0;34m,[0m[0;36m0.0[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 5[0;31m [0mresult[0m [0;34m=[0m [0moptimize[0m[0;34m.[0m[0mminimize[0m[0;34m([0m[0mf[0m[0;34m,[0m [0minitial_guess[0m[0;34m,[0m [0mbounds[0m[0;34m=[0m[0mbounds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

@@ -39,3 +39,16 @@ parts:
         #- file: 03_all/exercises/week3_Ex3.ipynb
         #- file: 03_all/exercises/week3_Tut3.ipynb
 
+      - file: 04_all/Week4-intro.md
+        options:
+          numbered: false
+        sections:
+        - file: 04_all/04_00-importing-libs.ipynb
+        - file: 04_all/04_01-numpy-basics.ipynb
+        - file: 04_all/04_02-matplotlib.ipynb
+
+      - file: 05_all/Week5-intro.md
+        options:
+          numbered: false
+        sections:
+        - file: 05_all/05_01-scipy.ipynb

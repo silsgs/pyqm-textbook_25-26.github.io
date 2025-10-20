@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Part 1. Introduction to QuTiP &#8212; Python for Quantum Mechanics book</title>
+    <title>Part 2. Introduction to QuTiP &#8212; Python for Quantum Mechanics book</title>
   
   
   
@@ -359,7 +359,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Part 1. Introduction to QuTiP</h1>
+    <h1>Part 2. Introduction to QuTiP</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -369,27 +369,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qutip">1.1 What is QuTiP?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qutip">2.1 What is QuTiP?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-qutip">Why QuTiP?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-concepts-and-terminology">1.2 Basic concepts and terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-quantum-objects-qobj">1.3 Creating quantum objects, <code class="docutils literal notranslate"><span class="pre">qobj</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-concepts-and-terminology">2.2 Basic concepts and terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-quantum-objects-qobj">2.3 Creating quantum objects, <code class="docutils literal notranslate"><span class="pre">qobj</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-states">1.4 Operators and states</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-quantum-systems">1.5 Time evolution of quantum systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-quantum-systems">2.5 Time evolution of quantum systems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-solver-result-class">The <code class="docutils literal notranslate"><span class="pre">solver.Result</span></code> Class</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multilple-trajectories-solver-results">Multilple Trajectories Solver Results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-and-plotting">1.6 Visualization and plotting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tensor-products-and-partial-traces">1.7 Using Tensor Products and Partial traces</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-and-plotting">2.6 Visualization and plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tensor-products-and-partial-traces">2.7 Using Tensor Products and Partial traces</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-products">Tensor Products</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-traces">Partial Traces</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superoperators-and-tensor-manipulations">Superoperators and Tensor Manipulations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cases">Cases</a></li>
 </ul>
             </nav>
         </div>
@@ -401,11 +400,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="part-1-introduction-to-qutip">
-<h1>Part 1. Introduction to QuTiP<a class="headerlink" href="#part-1-introduction-to-qutip" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="part-2-introduction-to-qutip">
+<h1>Part 2. Introduction to QuTiP<a class="headerlink" href="#part-2-introduction-to-qutip" title="Link to this heading">#</a></h1>
 <p>The main objective of this part is to introduce the QuTiP library and its basic functionalities for simulating quantum systems, so you can develop some autonomy in using it for your own projects.</p>
 <section id="what-is-qutip">
-<h2>1.1 What is QuTiP?<a class="headerlink" href="#what-is-qutip" title="Link to this heading">#</a></h2>
+<h2>2.1 What is QuTiP?<a class="headerlink" href="#what-is-qutip" title="Link to this heading">#</a></h2>
 <p>QuTiP (Quantum Toolbox in Python) is an open-source software library for simulating the <em>dynamics of open quantum systems</em>. It provides a wide range of tools for creating, manipulating, and analyzing quantum objects, such as state vectors (wavefunctions), bras/ket/density matrices, quantum operators of single and composite systems, and superoperators (useful for defining master equations).</p>
 <p>It supports various quantum systems, including qubits, harmonic oscillators, and spin chains, and allows users to model interactions with the environment through master equations and quantum trajectories. Some relevant applications are in quantum optics, quantum information, and condensed matter physics.</p>
 <p>QuTiP is built on top of Python and leverages libraries such as NumPy, SciPy, and Matplotlib for numerical computations and visualizations.</p>
@@ -427,7 +426,7 @@ document.write(`
 </section>
 </section>
 <section id="basic-concepts-and-terminology">
-<h2>1.2 Basic concepts and terminology<a class="headerlink" href="#basic-concepts-and-terminology" title="Link to this heading">#</a></h2>
+<h2>2.2 Basic concepts and terminology<a class="headerlink" href="#basic-concepts-and-terminology" title="Link to this heading">#</a></h2>
 <p>Some fundamental concepts and terminology used in QuTiP and quantum mechanics:</p>
 <ul class="simple">
 <li><p><strong>Hilbert space</strong>: A Hilbert space is a mathematical framework used to describe quantum systems. It is a complex vector space equipped with an inner product, allowing for the representation of quantum states as vectors.</p></li>
@@ -438,7 +437,7 @@ document.write(`
 </ul>
 </section>
 <section id="creating-quantum-objects-qobj">
-<h2>1.3 Creating quantum objects, <code class="docutils literal notranslate"><span class="pre">qobj</span></code><a class="headerlink" href="#creating-quantum-objects-qobj" title="Link to this heading">#</a></h2>
+<h2>2.3 Creating quantum objects, <code class="docutils literal notranslate"><span class="pre">qobj</span></code><a class="headerlink" href="#creating-quantum-objects-qobj" title="Link to this heading">#</a></h2>
 <p>The key difference between classical and quantum mechanics is the use of operators instead of numbers as variables. Then, quantum states are represented as vectors in a complex vector space (Hilbert space), and operators act on these vectors to produce new vectors. Therefore, in computing the dynamical evolution of quantum systems, we need a data structure that encapsulates the properties of a quantum operator and ket/bra vectors.</p>
 <p>QuTiP provides a class called <code class="docutils literal notranslate"><span class="pre">Qobj</span></code> to represent quantum objects such as states and operators. It contains all the information describing a quantum system, including its dimensions, type (state or operator), and data (matrix representation).</p>
 <div class="admonition note">
@@ -661,7 +660,7 @@ You can compute the inner product between two states and the expectation value o
 </div>
 </section>
 <section id="time-evolution-of-quantum-systems">
-<h2>1.5 Time evolution of quantum systems<a class="headerlink" href="#time-evolution-of-quantum-systems" title="Link to this heading">#</a></h2>
+<h2>2.5 Time evolution of quantum systems<a class="headerlink" href="#time-evolution-of-quantum-systems" title="Link to this heading">#</a></h2>
 <p>In some cases we may want to simulate how a quantum system evolves over time. How the state of a quantum system or an ensamble of quantum systems changes with time is described by the Schrödinger equation (for closed systems) or the master equation (for open systems).</p>
 <p>QuTiP provides several methods for simulating the time evolution of quantum systems. There are two kinds of quantum systems: open systems that interact with a larger environment and closed systems that do not. The most commonly used methods are the Schrödinger equation for closed systems and the master equation for open systems.</p>
 <p>Some of the solvers methods implemented in QuTiP for time evolution:</p>
@@ -764,7 +763,7 @@ merged_result = result1 + result2
 </section>
 </section>
 <section id="visualization-and-plotting">
-<h2>1.6 Visualization and plotting<a class="headerlink" href="#visualization-and-plotting" title="Link to this heading">#</a></h2>
+<h2>2.6 Visualization and plotting<a class="headerlink" href="#visualization-and-plotting" title="Link to this heading">#</a></h2>
 <p>QuTiP provides built-in functions for visualizing quantum states and operators. You can use these functions to create plots of state vectors, density matrices, and expectation values over time.</p>
 <p>Some common visualization functions in QuTiP include:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -797,7 +796,7 @@ merged_result = result1 + result2
 </div>
 </section>
 <section id="using-tensor-products-and-partial-traces">
-<h2>1.7 Using Tensor Products and Partial traces<a class="headerlink" href="#using-tensor-products-and-partial-traces" title="Link to this heading">#</a></h2>
+<h2>2.7 Using Tensor Products and Partial traces<a class="headerlink" href="#using-tensor-products-and-partial-traces" title="Link to this heading">#</a></h2>
 <p>QuTiP provides functions to work with composite quantum systems using tensor products and partial traces. The <code class="docutils literal notranslate"><span class="pre">tensor</span></code> function allows you to create composite states and operators, while the <code class="docutils literal notranslate"><span class="pre">ptrace</span></code> function enables you to compute the partial trace over specified subsystems.</p>
 <section id="tensor-products">
 <h3>Tensor Products<a class="headerlink" href="#tensor-products" title="Link to this heading">#</a></h3>
@@ -864,63 +863,6 @@ merged_result = result1 + result2
 </div>
 </section>
 </section>
-<section id="cases">
-<h2>Cases<a class="headerlink" href="#cases" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Eigenstate for a general 2 level system
-$<span class="math notranslate nohighlight">\(
-S_{\theta,\phi} = S_{x} \sin \theta \cos \phi + S_{y} \sin \theta \sin \phi + S_{z} \cos \theta = n_{\theta,\phi} \cdot S
-\)</span>$</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">qutip</span><span class="w"> </span><span class="kn">import</span> <span class="n">sigmax</span><span class="p">,</span> <span class="n">sigmay</span><span class="p">,</span> <span class="n">sigmaz</span>
-<span class="c1"># Define angles</span>
-<span class="n">th</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.0</span>
-<span class="n">phi</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.0</span>
-
-<span class="c1"># Define the operator O_thphi</span>
-<span class="n">O_thphi</span><span class="o">=</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">sigmax</span><span class="p">()</span><span class="o">+</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">sigmay</span><span class="p">()</span><span class="o">+</span><span class="n">cos</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">sigmaz</span><span class="p">()</span> <span class="c1"># The operator</span>
-
-<span class="c1"># Solve the eigenvalue problem</span>
-<span class="n">lamz</span><span class="p">,</span> <span class="n">vz_thphi</span><span class="o">=</span><span class="n">O_thphi</span><span class="o">.</span><span class="n">eigenstates</span><span class="p">()</span> 
-
-<span class="c1"># Print the results</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvalues:&quot;</span><span class="p">,</span> <span class="n">lamz</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Eigenvectors:&quot;</span><span class="p">,</span> <span class="n">vz_thphi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">vz_thphi</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues: [-1.  1.]
-
-Eigenvectors: Quantum object: dims=[[2], [1]], shape=(2, 1), type=&#39;ket&#39;, dtype=Dense
-Qobj data =
-[[ 0.38268343+0.j        ]
- [-0.65328148-0.65328148j]] Quantum object: dims=[[2], [1]], shape=(2, 1), type=&#39;ket&#39;, dtype=Dense
-Qobj data =
-[[-0.92387953+0.j        ]
- [-0.27059805-0.27059805j]]
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Solving the Schrödinger equation for a qubit under a time-dependent Hamiltonian</p></li>
-</ul>
-<p>Schoringer equation:</p>
-<div class="math notranslate nohighlight">
-\[
-i \hbar \frac{d |\psi \rangle}{dt} = H |\psi \rangle
-\]</div>
-<p>Assuming the Hamiltonian:</p>
-<div class="math notranslate nohighlight">
-\[
-H = -\frac{1}{2} \hbar \omega_{0} \sigma_{x}
-\]</div>
-<p>What is the time evolution of <span class="math notranslate nohighlight">\(| \psi \rangle\)</span> if given <span class="math notranslate nohighlight">\( | \psi(0) \rangle = ( \frac{1}{0} ) \)</span>?</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -969,27 +911,26 @@ H = -\frac{1}{2} \hbar \omega_{0} \sigma_{x}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qutip">1.1 What is QuTiP?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-qutip">2.1 What is QuTiP?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-qutip">Why QuTiP?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-concepts-and-terminology">1.2 Basic concepts and terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-quantum-objects-qobj">1.3 Creating quantum objects, <code class="docutils literal notranslate"><span class="pre">qobj</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-concepts-and-terminology">2.2 Basic concepts and terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-quantum-objects-qobj">2.3 Creating quantum objects, <code class="docutils literal notranslate"><span class="pre">qobj</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-states">1.4 Operators and states</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-quantum-systems">1.5 Time evolution of quantum systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-quantum-systems">2.5 Time evolution of quantum systems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-solver-result-class">The <code class="docutils literal notranslate"><span class="pre">solver.Result</span></code> Class</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multilple-trajectories-solver-results">Multilple Trajectories Solver Results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-and-plotting">1.6 Visualization and plotting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tensor-products-and-partial-traces">1.7 Using Tensor Products and Partial traces</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-and-plotting">2.6 Visualization and plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tensor-products-and-partial-traces">2.7 Using Tensor Products and Partial traces</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-products">Tensor Products</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-traces">Partial Traces</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superoperators-and-tensor-manipulations">Superoperators and Tensor Manipulations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cases">Cases</a></li>
 </ul>
   </nav></div>
 

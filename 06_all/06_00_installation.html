@@ -395,7 +395,7 @@ document.write(`
 <p>We will first need to install them since they weren’t included in the environment we created on Week 1. To install both QuTiP and Qiskit, you can use pip or conda. As always, remember to activate the virtual environment dedicated to this course to avoid conflicts with other packages or projects.</p>
 <p>Open a terminal and run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>pyqm
-pip<span class="w"> </span>install<span class="w"> </span>qutip<span class="w"> </span>qiskit<span class="w"> </span>qiskit-ibm-runtime
+pip<span class="w"> </span>install<span class="w"> </span>qutip<span class="w"> </span>qiskit<span class="w"> </span><span class="s1">&#39;qiskit[visualization]&#39;</span><span class="w"> </span>qiskit-ibm-runtime
 </pre></div>
 </div>
 <p>By running this command, pip will download and install the latest versions of QuTiP and Qiskit along with their dependencies.</p>
@@ -503,7 +503,7 @@ Python version: 3.10.19 | packaged by conda-forge | (main, Oct 13 2025, 14:22:43
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> &gt; Expectation values: 4.001123376454568
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> &gt; Expectation values: 4.000772586143116
 </pre></div>
 </div>
 </div>

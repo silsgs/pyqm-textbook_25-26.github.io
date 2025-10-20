@@ -7,11 +7,11 @@
 ## Part 1. Introduction to Qiskit
 
 ## Part 2. Introduction to QuTiP
-- 1.1 What is QuTiP?
-- 1.2 Installation and setup
-- 1.3 Basic concepts and terminology
-- 1.4 Creating quantum objects
-- 1.5 Operators and states
-- 1.6 Time evolution of quantum systems
-- 1.7 Visualization and plotting
-- 1.8 Hands-on Exercises
+- 2.1 What is QuTiP?
+- 2.2 Installation and setup
+- 2.3 Basic concepts and terminology
+- 2.4 Creating quantum objects
+- 2.5 Operators and states
+- 2.6 Time evolution of quantum systems
+- 2.7 Visualization and plotting
+- 2.8 Hands-on Exercises

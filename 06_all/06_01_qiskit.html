@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Week 6 &#8212; Python for Quantum Mechanics book</title>
+    <title>Part 1. Introduction to Qiskit &#8212; Python for Quantum Mechanics book</title>
   
   
   
@@ -57,11 +57,10 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '06_all/Week6-intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06_all/06_01_qiskit';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Part 0. Installation of QuTiP and Qiskit" href="06_00_installation.html" />
-    <link rel="prev" title="Part 1. Scipy" href="../05_all/05_01-scipy.html" />
+    <link rel="prev" title="Part 0. Installation of QuTiP and Qiskit" href="06_00_installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -214,9 +213,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../05_all/05_01-scipy.html">Part 1. Scipy</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Week 6</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week6-intro.html">Week 6</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="06_00_installation.html">Part 0. Installation of QuTiP and Qiskit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="06_01_qiskit.html">Part 1. Introduction to Qiskit</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 1. Introduction to Qiskit</a></li>
 </ul>
 </details></li>
 </ul>
@@ -273,7 +272,7 @@
       
       
       
-      <li><a href="../_sources/06_all/Week6-intro.md" target="_blank"
+      <li><a href="../_sources/06_all/06_01_qiskit.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +282,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -344,9 +343,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -357,21 +354,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Week 6</h1>
+    <h1>Part 1. Introduction to Qiskit</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-0-installation-of-qutip-and-qiskit">Part 0. Installation of QuTiP and Qiskit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-introduction-to-qiskit">Part 1. Introduction to Qiskit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-introduction-to-qutip">Part 2. Introduction to QuTiP</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -381,33 +368,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="week-6">
-<h1>Week 6<a class="headerlink" href="#week-6" title="Link to this heading">#</a></h1>
-<section id="part-0-installation-of-qutip-and-qiskit">
-<h2>Part 0. Installation of QuTiP and Qiskit<a class="headerlink" href="#part-0-installation-of-qutip-and-qiskit" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>0.1 First steps</p></li>
-<li><p>0.2 Testing the installation</p></li>
-</ul>
-</section>
-<section id="part-1-introduction-to-qiskit">
-<h2>Part 1. Introduction to Qiskit<a class="headerlink" href="#part-1-introduction-to-qiskit" title="Link to this heading">#</a></h2>
-</section>
-<section id="part-2-introduction-to-qutip">
-<h2>Part 2. Introduction to QuTiP<a class="headerlink" href="#part-2-introduction-to-qutip" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>2.1 What is QuTiP?</p></li>
-<li><p>2.2 Installation and setup</p></li>
-<li><p>2.3 Basic concepts and terminology</p></li>
-<li><p>2.4 Creating quantum objects</p></li>
-<li><p>2.5 Operators and states</p></li>
-<li><p>2.6 Time evolution of quantum systems</p></li>
-<li><p>2.7 Visualization and plotting</p></li>
-<li><p>2.8 Hands-on Exercises</p></li>
-</ul>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="part-1-introduction-to-qiskit">
+<h1>Part 1. Introduction to Qiskit<a class="headerlink" href="#part-1-introduction-to-qiskit" title="Link to this heading">#</a></h1>
+<p>We will be using the following material for today session:</p>
+<p><a class="github reference external" href="https://github.com/qiskit-community/qgss-2025/tree/main">qiskit-community/qgss-2025</a></p>
+<p>It is a GitHub repository where you will find the notebooks for the exercises we will be working on today.</p>
+<p>I would recommend creating a new folder in your parent directory dedicated to the course.</p>
+<p>Example: if you have a directory (or folder) called <code class="docutils literal notranslate"><span class="pre">pyqm</span></code>, you can create a subfolder called <code class="docutils literal notranslate"><span class="pre">week6-qiskit</span></code>, and download the notebooks from the repository into this folder. Then, open a jupyter notebook server so you can access the notebooks.</p>
+<p>If you work on the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>path/to/your/pyqm/week6-qiskit
+jupyter<span class="w"> </span>notebook
+</pre></div>
 </div>
+<p>If you open jupyter from Anaconda Navigator, you can navigate to that folder using the file browser.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -441,22 +414,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../05_all/05_01-scipy.html"
+       href="06_00_installation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Part 1. Scipy</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="06_00_installation.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Part 0. Installation of QuTiP and Qiskit</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -464,23 +428,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-0-installation-of-qutip-and-qiskit">Part 0. Installation of QuTiP and Qiskit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-introduction-to-qiskit">Part 1. Introduction to Qiskit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-introduction-to-qutip">Part 2. Introduction to QuTiP</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

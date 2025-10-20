@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '06_all/06_00_installation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Part 1. Introduction to Qiskit" href="06_01_qiskit.html" />
     <link rel="prev" title="Week 6" href="Week6-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -215,6 +216,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Week6-intro.html">Week 6</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 0. Installation of QuTiP and Qiskit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_01_qiskit.html">Part 1. Introduction to Qiskit</a></li>
 </ul>
 </details></li>
 </ul>
@@ -390,9 +392,10 @@ document.write(`
 <p><strong>Official websites</strong></p>
 <p><a class="reference external" href="https://qutip.org/">QuTiP</a></p>
 <p><a class="reference external" href="https://quantum.cloud.ibm.com/docs/en/guides">Qiskit</a></p>
-<p>We will first need to install them since they weren’t included in the environment we created on Week 1. To install both QuTiP and Qiskit, you can use pip or conda. As always, it is recommended to use a virtual environment to avoid conflicts with other packages.</p>
+<p>We will first need to install them since they weren’t included in the environment we created on Week 1. To install both QuTiP and Qiskit, you can use pip or conda. As always, remember to activate the virtual environment dedicated to this course to avoid conflicts with other packages or projects.</p>
 <p>Open a terminal and run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>qutip<span class="w"> </span>qiskit<span class="w"> </span>qiskit-ibm-runtime
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>pyqm
+pip<span class="w"> </span>install<span class="w"> </span>qutip<span class="w"> </span>qiskit<span class="w"> </span>qiskit-ibm-runtime
 </pre></div>
 </div>
 <p>By running this command, pip will download and install the latest versions of QuTiP and Qiskit along with their dependencies.</p>
@@ -500,7 +503,7 @@ Python version: 3.10.19 | packaged by conda-forge | (main, Oct 13 2025, 14:22:43
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> &gt; Expectation values: 4.0005839306681645
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> &gt; Expectation values: 4.001123376454568
 </pre></div>
 </div>
 </div>
@@ -547,6 +550,15 @@ Python version: 3.10.19 | packaged by conda-forge | (main, Oct 13 2025, 14:22:43
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Week 6</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="06_01_qiskit.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Part 1. Introduction to Qiskit</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '05_all/05_01-scipy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 6" href="../06_all/Week6-intro.html" />
     <link rel="prev" title="Week 5" href="Week5-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -213,6 +214,10 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Week5-intro.html">Week 5</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 1. Scipy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_all/Week6-intro.html">Week 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_all/06_00_installation.html">Part 0. Installation of QuTiP and Qiskit</a></li>
 </ul>
 </details></li>
 </ul>
@@ -559,15 +564,15 @@ x =
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A = 
- [[0.75098861 0.82893807 0.05757167]
- [0.9470068  0.19490377 0.4823053 ]
- [0.6496606  0.74492259 0.35837695]] 
+ [[0.93004572 0.6597584  0.2968534 ]
+ [0.22513917 0.45952897 0.90857398]
+ [0.13895513 0.0517816  0.20515171]] 
 
 
 A^-1 = 
- [[ 1.40753418  1.23613285 -1.88970725]
- [ 0.12668711 -1.12695176  1.49630498]
- [-2.81488973  0.10163882  3.10577164]]
+ [[ 0.58123962 -1.47666418  5.69878599]
+ [ 0.98539432  1.84062892 -9.5776203 ]
+ [-0.64241004  0.53560045  3.43194298]]
 </pre></div>
 </div>
 </div>
@@ -580,7 +585,7 @@ A^-1 =
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  -0.20562988589767348
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  -0.08544806968167272
 </pre></div>
 </div>
 </div>
@@ -706,15 +711,15 @@ sqrtm(A) =
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues = 
- [ 1.79575753+0.j  0.14974045+0.j -0.21185499+0.j] 
+ [ 1.16410722+0.j -0.15120683+0.j  0.32421728+0.j] 
 
 Eigenvector Matrix = 
- [[-0.54431747 -0.64620543  0.55140458]
- [-0.57137993  0.48060177 -0.82346283]
- [-0.61420149  0.59282416 -0.1336486 ]] 
+ [[ 0.81151132  0.26760996  0.83866799]
+ [ 0.15186678  0.16186288 -0.46465972]
+ [ 0.56425691 -0.94983436  0.28412559]] 
 
 First Eigenvector = 
- [-0.54431747 -0.57137993 -0.61420149] 
+ [0.81151132 0.15186678 0.56425691] 
 </pre></div>
 </div>
 </div>
@@ -754,7 +759,7 @@ First Eigenvector =
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/34ee8728362f393c9c5cfe503d912b117e63f7342bd51f0566e195babf80fa6c.png" src="../_images/34ee8728362f393c9c5cfe503d912b117e63f7342bd51f0566e195babf80fa6c.png" />
+<img alt="../_images/12f7a5618269af30e07aa0beebe995ec1e6a8a5859716003e24eea32cf9fa35c.png" src="../_images/12f7a5618269af30e07aa0beebe995ec1e6a8a5859716003e24eea32cf9fa35c.png" />
 </div>
 </div>
 <p>A table with some of the special matrices that can be created using <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> are:</p>
@@ -921,21 +926,21 @@ After conversion:
  [4 0 0]
  [0 6 0]] 
 
-[[0 0 1]
- [4 0 0]
- [0 9 0]] 
+[[0 3 0]
+ [0 0 2]
+ [6 0 0]] 
 
 [[0 3 0]
  [0 0 2]
  [6 0 0]] 
 
-  (np.int32(1), np.int32(0))	2
-  (np.int32(2), np.int32(1))	3
-  (np.int32(0), np.int32(2))	1 
-
-  (np.int32(1), np.int32(0))	4
-  (np.int32(2), np.int32(1))	9
   (np.int32(0), np.int32(2))	1
+  (np.int32(1), np.int32(0))	2
+  (np.int32(2), np.int32(1))	3 
+
+[[3]
+ [2]
+ [6]]
 </pre></div>
 </div>
 </div>
@@ -1073,8 +1078,8 @@ A (dense matrix)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[False  True]
- [ True False]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ True  True]
+ [ True  True]] 
 
 [[False False]
  [False False]] 
@@ -1140,20 +1145,20 @@ A (dense matrix)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.+0.j -0.-0.j -0.-0.j  0.-0.j]
- [-0.+0.j  1.+0.j  0.+0.j  0.+0.j]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.+0.j  0.-0.j  0.+0.j  0.+0.j]
+ [ 0.+0.j  1.+0.j -0.+0.j  0.-0.j]
+ [ 0.-0.j -0.-0.j  1.+0.j  0.+0.j]
+ [ 0.-0.j  0.+0.j  0.-0.j  1.+0.j]] 
+
+[[ 0.038+0.194j  0.672+0.188j -0.314+0.106j -0.338+0.501j]
+ [-0.653-0.313j  0.144+0.286j  0.472+0.305j  0.137+0.194j]
+ [ 0.154-0.329j -0.142+0.047j  0.207-0.683j  0.024+0.58j ]
+ [ 0.439-0.334j  0.564+0.265j  0.227-0.118j  0.257-0.42j ]] 
+
+[[ 1.+0.j  0.+0.j -0.+0.j -0.+0.j]
+ [ 0.-0.j  1.+0.j  0.+0.j  0.+0.j]
  [-0.+0.j  0.-0.j  1.+0.j -0.+0.j]
- [ 0.+0.j  0.-0.j -0.-0.j  1.+0.j]] 
-
-[[ 0.637-0.29j   0.077+0.104j -0.277-0.33j  -0.071-0.55j ]
- [-0.185-0.135j -0.01 +0.051j -0.315-0.779j  0.104+0.478j]
- [ 0.325-0.485j  0.357-0.253j  0.196+0.192j  0.518+0.353j]
- [ 0.277-0.201j -0.888+0.034j -0.073+0.167j  0.072+0.236j]] 
-
-[[ 1.+0.j -0.-0.j -0.+0.j -0.+0.j]
- [-0.+0.j  1.+0.j  0.+0.j -0.+0.j]
- [-0.-0.j  0.-0.j  1.+0.j -0.+0.j]
- [-0.-0.j -0.+0.j -0.-0.j  1.+0.j]]
+ [-0.-0.j  0.-0.j -0.-0.j  1.+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1284,7 +1289,7 @@ Result sparse =
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/285e473cf2b88313cc233cd684a9c7440c2d94835ee5234390bd280d7e5def2d.png" src="../_images/285e473cf2b88313cc233cd684a9c7440c2d94835ee5234390bd280d7e5def2d.png" />
+<img alt="../_images/fc6992accb280d18e47daf966ec842407d40d2b8bf165d69bd90629a612cd12d.png" src="../_images/fc6992accb280d18e47daf966ec842407d40d2b8bf165d69bd90629a612cd12d.png" />
 </div>
 </div>
 </section>
@@ -1318,31 +1323,31 @@ Result sparse =
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A = 
- [[0.53417157 0.84127534]
- [0.67017689 0.99424854]
- [0.26438169 0.7783542 ]] 
+ [[0.85007646 0.4827918 ]
+ [0.93908931 0.38612396]
+ [0.78479183 0.86115779]] 
 
 U = 
- [[-0.56813938 -0.20496099 -0.79699977]
- [-0.68261347 -0.42354818  0.59552144]
- [-0.45962647  0.88238196  0.10072526]] 
+ [[-0.54258897 -0.24498603 -0.80347935]
+ [-0.55278372 -0.61607757  0.56114043]
+ [-0.63247717  0.74861891  0.19885261]] 
 
 Diagonal Elements = 
- [1.75276039 0.1852421 ] 
+ [1.79477739 0.35066145] 
 
 v = 
- [[-0.50347583 -0.86400931]
- [-0.86400931  0.50347583]] 
+ [[-0.82278634 -0.56835081]
+ [-0.56835081  0.82278634]] 
 
 S = 
- [[1.75276039 0.        ]
- [0.         0.1852421 ]
+ [[1.79477739 0.        ]
+ [0.         0.35066145]
  [0.         0.        ]] 
 
 A = 
- [[0.53417157 0.84127534]
- [0.67017689 0.99424854]
- [0.26438169 0.7783542 ]]
+ [[0.85007646 0.4827918 ]
+ [0.93908931 0.38612396]
+ [0.78479183 0.86115779]]
 </pre></div>
 </div>
 </div>
@@ -1379,26 +1384,29 @@ A =
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A = 
- [[0.77894953 0.70945601 0.88071869]
- [0.22874192 0.8632121  0.31137398]
- [0.660182   0.61063048 0.82799234]] 
+ [[0.8364588  0.0141936  0.19691753]
+ [0.81386296 0.02552034 0.02713407]
+ [0.42127484 0.58366012 0.31276195]] 
 
 T = 
- [[ 1.90500862 -0.24083969  0.55773007]
- [ 0.          0.04130608  0.01450316]
- [ 0.          0.          0.52383928]]
+ [[ 1.07724082  0.49727195  0.42761794]
+ [ 0.          0.04875013 -0.1143075 ]
+ [ 0.          0.64027321  0.04875013]]
 Z = 
- [[-0.70297481 -0.66441163  0.25373923]
- [-0.34090661  0.00167006 -0.94009568]
- [-0.62418675  0.74736497  0.22767633]]
+ [[-0.57705908 -0.72358244 -0.37872321]
+ [-0.46389283  0.67205561 -0.57718689]
+ [-0.67216535  0.15738395  0.7234805 ]]
 Tc = 
- [[ 1.90500862+0.j  0.24083969+0.j -0.55773007+0.j]
- [ 0.        +0.j  0.04130608+0.j  0.01450316+0.j]
- [ 0.        +0.j  0.        +0.j  0.52383928+0.j]]
+ [[ 1.07724082+1.66533454e-16j -0.37572976+2.26811033e-01j
+  -0.07585703+4.81420923e-01j]
+ [ 0.        +0.00000000e+00j  0.04875013+2.70532860e-01j
+   0.38007151-3.63573344e-01j]
+ [ 0.        +0.00000000e+00j  0.        +0.00000000e+00j
+   0.04875013-2.70532860e-01j]]
 Zc = 
- [[ 0.70297481+0.j -0.66441163+0.j  0.25373923+0.j]
- [ 0.34090661+0.j  0.00167006+0.j -0.94009568+0.j]
- [ 0.62418675+0.j  0.74736497+0.j  0.22767633+0.j]]
+ [[ 0.43873923+0.37484005j -0.41529783-0.16895102j -0.45646534+0.5075682j ]
+ [ 0.35269869+0.30133069j -0.43355255+0.40389351j  0.10926541-0.64943571j]
+ [ 0.51104873+0.4366182j   0.6557513 -0.13370011j  0.31646979+0.01245487j]]
 </pre></div>
 </div>
 </div>
@@ -1415,14 +1423,17 @@ Zc =
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A = 
- [[0.77894953 0.70945601 0.88071869]
- [0.22874192 0.8632121  0.31137398]
- [0.660182   0.61063048 0.82799234]] 
+ [[0.8364588  0.0141936  0.19691753]
+ [0.81386296 0.02552034 0.02713407]
+ [0.42127484 0.58366012 0.31276195]] 
 
 A = 
- [[0.77894953+0.j 0.70945601+0.j 0.88071869+0.j]
- [0.22874192+0.j 0.8632121 +0.j 0.31137398+0.j]
- [0.660182  +0.j 0.61063048+0.j 0.82799234+0.j]]
+ [[0.8364588 +1.87350135e-16j 0.0141936 -5.55111512e-17j
+  0.19691753+2.77555756e-17j]
+ [0.81386296+8.67361738e-17j 0.02552034-3.05311332e-16j
+  0.02713407+5.55111512e-17j]
+ [0.42127484+1.11022302e-16j 0.58366012+9.71445147e-17j
+  0.31276195+0.00000000e+00j]]
 </pre></div>
 </div>
 </div>
@@ -1671,20 +1682,17 @@ Second minimum is at x_min2 = [1.96025391]
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: -10.019646349962679
+                 fun: -10.019646349962706
                    x: [ 1.960e+00]
                  nit: 5
-                nfev: 98
-          population: [[ 1.966e+00]
-                       [ 1.979e+00]
+                nfev: 100
+          population: [[ 1.976e+00]
+                       [ 2.058e+00]
                        ...
-                       [ 1.987e+00]
-                       [ 1.983e+00]]
- population_energies: [-1.002e+01 -1.002e+01 ... -1.001e+01 -1.001e+01]
-                 jac: [-1.243e-06]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+                       [ 1.993e+00]
+                       [ 1.984e+00]]
+ population_energies: [-1.002e+01 -9.898e+00 ... -1.001e+01 -1.001e+01]
+                 jac: [ 0.000e+00]
 </pre></div>
 </div>
 </div>
@@ -1746,23 +1754,23 @@ Second minimum is at x_min2 = [1.96025391]
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: -92.61094385130289
-                   x: [-4.977e-09  2.471e-11]
-                 nit: 10
-                nfev: 486
-          population: [[ 8.791e-04  1.473e-02]
-                       [-3.622e-02 -1.626e-01]
+                 fun: -92.61094381425436
+                   x: [-8.534e-09 -1.591e-09]
+                 nit: 12
+                nfev: 483
+          population: [[ 2.098e-02 -3.249e-02]
+                       [ 4.648e-02  8.455e-02]
                        ...
-                       [ 1.290e-01 -6.797e-03]
-                       [ 1.267e-02  6.351e-02]]
- population_energies: [-9.261e+01 -9.106e+01 ... -9.139e+01 -9.198e+01]
-                 jac: [ 4.683e-02  6.215e+00]
+                       [-5.636e-02 -1.915e-01]
+                       [ 2.278e-02  2.100e-01]]
+ population_energies: [-9.261e+01 -9.169e+01 ... -9.078e+01 -9.068e+01]
+                 jac: [-6.518e+00  3.300e+00]
 
-Minimum value found:  -92.61094385130289
+Minimum value found:  -92.61094381425436
 
-Parameters at minimum:  [-4.97658494e-09  2.47090446e-11]
+Parameters at minimum:  [-8.53443517e-09 -1.59118297e-09]
 
-Better readability by rounding:  [-0.  0.]
+Better readability by rounding:  [-0. -0.]
 </pre></div>
 </div>
 </div>
@@ -1814,7 +1822,7 @@ Better readability by rounding:  [-0.  0.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/249fea26f9e4505c9cba215b961c607c2d0b9e62f9df9ba8ad3e87540f3f6ad8.png" src="../_images/249fea26f9e4505c9cba215b961c607c2d0b9e62f9df9ba8ad3e87540f3f6ad8.png" />
+<img alt="../_images/886b4f0d140f45be3acf8569d8c96332291a3b6cab518f8042d15247c74415c5.png" src="../_images/886b4f0d140f45be3acf8569d8c96332291a3b6cab518f8042d15247c74415c5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1828,7 +1836,7 @@ Better readability by rounding:  [-0.  0.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Roots: [-0.41134207  9.46748051]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Roots: [-0.27049045 64.6411364 ]
 </pre></div>
 </div>
 </div>
@@ -1854,7 +1862,7 @@ Better readability by rounding:  [-0.  0.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2053fdd9cc1034f8f8f6586d3f024d6a9ecddca3dafbbdd40fc85b82b13abef8.png" src="../_images/2053fdd9cc1034f8f8f6586d3f024d6a9ecddca3dafbbdd40fc85b82b13abef8.png" />
+<img alt="../_images/bad36ecbc2e790f76304749cc041ff03834be122408bb773dc9707bb2f4bea6e.png" src="../_images/bad36ecbc2e790f76304749cc041ff03834be122408bb773dc9707bb2f4bea6e.png" />
 </div>
 </div>
 </section>
@@ -1895,13 +1903,13 @@ Better readability by rounding:  [-0.  0.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.68297274 -0.17041524 -0.5432184  -0.16892855  0.56005028 -0.62355091
-  0.8700634   0.94231821  0.53557057  0.47834154  0.03623508  0.74939737
-  0.58521313 -0.87248755  0.42959292  0.16328246  0.12087977 -0.45217825
-  0.77970571 -0.45871458]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.1603193   0.9900496  -0.85769889  0.88202893  0.48304872  0.63278928
+ -0.0072206   0.01806238  0.97825922  0.35345489 -0.44502259 -0.57857787
+  0.99701081 -0.8560111  -0.14911407  0.68674431  0.64972533 -0.16311452
+ -0.30437536 -0.53892627]
 </pre></div>
 </div>
-<img alt="../_images/35dedbb90a59cab50d3ff7cd453c2d1df1f2442596b6bedefe7fd97a8964f9d2.png" src="../_images/35dedbb90a59cab50d3ff7cd453c2d1df1f2442596b6bedefe7fd97a8964f9d2.png" />
+<img alt="../_images/8641fb7cd9d3ced77cc81cd15ce28f38089b517baa2a418feb2ff47f795cd9b5.png" src="../_images/8641fb7cd9d3ced77cc81cd15ce28f38089b517baa2a418feb2ff47f795cd9b5.png" />
 </div>
 </div>
 <p>We will now define a function to model this curve, as well as a function that calculates the residuals.</p>
@@ -1969,10 +1977,10 @@ Better readability by rounding:  [-0.  0.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.30019214 5.45246586]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.2956409  5.13268534]
 </pre></div>
 </div>
-<img alt="../_images/2c9a83905c80595c5a8ec1da22653aea00d49c19e1ac1b1e60dd81636c8511ec.png" src="../_images/2c9a83905c80595c5a8ec1da22653aea00d49c19e1ac1b1e60dd81636c8511ec.png" />
+<img alt="../_images/e7be1f4bbbea7db6b06883e7e65f78d3e4b22b1f3e3ac84e09c9fed3f1ef61d1.png" src="../_images/e7be1f4bbbea7db6b06883e7e65f78d3e4b22b1f3e3ac84e09c9fed3f1ef61d1.png" />
 </div>
 </div>
 </section>
@@ -2021,10 +2029,10 @@ Better readability by rounding:  [-0.  0.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.30019214 5.45246576]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.72831071 -0.65686659]
 </pre></div>
 </div>
-<img alt="../_images/2c9a83905c80595c5a8ec1da22653aea00d49c19e1ac1b1e60dd81636c8511ec.png" src="../_images/2c9a83905c80595c5a8ec1da22653aea00d49c19e1ac1b1e60dd81636c8511ec.png" />
+<img alt="../_images/fefa1cedadf21c3939935bb0c77fac7dbd1a93319ab6afa632ae5e5d26d5d372.png" src="../_images/fefa1cedadf21c3939935bb0c77fac7dbd1a93319ab6afa632ae5e5d26d5d372.png" />
 </div>
 </div>
 </section>
@@ -2084,7 +2092,7 @@ Better readability by rounding:  [-0.  0.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7f52180b2c2de9ab6c05238a68915a19969c0eee30d6f7d66e340b80ffbed613.png" src="../_images/7f52180b2c2de9ab6c05238a68915a19969c0eee30d6f7d66e340b80ffbed613.png" />
+<img alt="../_images/55cc7040d2a1c518e05b4af8a2809ebb0e067d0246574d56d94d74011a4c6a54.png" src="../_images/55cc7040d2a1c518e05b4af8a2809ebb0e067d0246574d56d94d74011a4c6a54.png" />
 </div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">fft(signal)</span></code> returns the Fourier transform and <code class="docutils literal notranslate"><span class="pre">fftfreq(n,h)</span></code> gives the array of frequencies that correspond to a number of times equal to <code class="docutils literal notranslate"><span class="pre">n</span></code> with gaps of <code class="docutils literal notranslate"><span class="pre">h</span></code> between them.</p>
@@ -2124,7 +2132,7 @@ Better readability by rounding:  [-0.  0.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6444d4dec7f2509999b9de2f85a6f61cbedc23c498b0ea5b45b02f37fafa66bb.png" src="../_images/6444d4dec7f2509999b9de2f85a6f61cbedc23c498b0ea5b45b02f37fafa66bb.png" />
+<img alt="../_images/c14515ab34489c70c4fab01344d633b880c6f9e704f29c3fbb8c0ba6f9bf63de.png" src="../_images/c14515ab34489c70c4fab01344d633b880c6f9e704f29c3fbb8c0ba6f9bf63de.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fourier Transform Peak Frequencies = [ 0.999  4.995  9.99  14.985 19.98 ]
 </pre></div>
 </div>
@@ -2206,7 +2214,7 @@ Better readability by rounding:  [-0.  0.]
 Fourier Transform Frequency Peak =  [8.]
 </pre></div>
 </div>
-<img alt="../_images/7d6ea7515d35943e6e757703efb7e7aef4bafab7b7ca0545977fe0e8a383c149.png" src="../_images/7d6ea7515d35943e6e757703efb7e7aef4bafab7b7ca0545977fe0e8a383c149.png" />
+<img alt="../_images/a99fa475a06cb9ac904293a1e8a8dcc2a7e05cba12d66481f28cf6a4de564309.png" src="../_images/a99fa475a06cb9ac904293a1e8a8dcc2a7e05cba12d66481f28cf6a4de564309.png" />
 </div>
 </div>
 <p>Notice that we obtain a normal distribution around the frequency of the wavepacket. This means that the wavepacket is made up of a range of frequencies, all centered around the frequency of the wave itself.</p>
@@ -2368,12 +2376,12 @@ Fourier Transform Frequency Peak =  [8.]
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
 </pre></div>
 </div>
-<img alt="../_images/cad0fbed4f4a1fe8559f0153f93d7f9cca3c33df77f6cf8c33aecb4714a11d76.png" src="../_images/cad0fbed4f4a1fe8559f0153f93d7f9cca3c33df77f6cf8c33aecb4714a11d76.png" />
+<img alt="../_images/923229efa37614e5065fdcb6c3e2d5dc49bac4e0337c88361b8193f16ecf990f.png" src="../_images/923229efa37614e5065fdcb6c3e2d5dc49bac4e0337c88361b8193f16ecf990f.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
 Fourier Transform Frequency Peak =  [8.]
 </pre></div>
 </div>
-<img alt="../_images/692e8fc55a225f8b36f2dff4dadc104b1ca2843066af1052ca89524d6dc10b2a.png" src="../_images/692e8fc55a225f8b36f2dff4dadc104b1ca2843066af1052ca89524d6dc10b2a.png" />
+<img alt="../_images/5db4abe386a141190613ddc1997cb86cda76c3919047ffcf9dca031a9a3b11c0.png" src="../_images/5db4abe386a141190613ddc1997cb86cda76c3919047ffcf9dca031a9a3b11c0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2386,12 +2394,12 @@ Fourier Transform Frequency Peak =  [8.]
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
 </pre></div>
 </div>
-<img alt="../_images/b453a1e288874a9102bb61ed3d3582bc9d5d8a1cfca3cf909c64c1208b8b2d01.png" src="../_images/b453a1e288874a9102bb61ed3d3582bc9d5d8a1cfca3cf909c64c1208b8b2d01.png" />
+<img alt="../_images/e03521db3146eeec6fb925fd8d8c0ba7f688d6f10f71d5059e2a0fc340eca696.png" src="../_images/e03521db3146eeec6fb925fd8d8c0ba7f688d6f10f71d5059e2a0fc340eca696.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
 Fourier Transform Frequency Peak =  [8.]
 </pre></div>
 </div>
-<img alt="../_images/5e8a7703e6b1207b19635dca35638440021542bd9314a4fdee80b3d459fc959d.png" src="../_images/5e8a7703e6b1207b19635dca35638440021542bd9314a4fdee80b3d459fc959d.png" />
+<img alt="../_images/47007a041f95e1395478b1fb5cb533a4ef2c2a7843364af0626e66d079105933.png" src="../_images/47007a041f95e1395478b1fb5cb533a4ef2c2a7843364af0626e66d079105933.png" />
 </div>
 </div>
 <p>With this function, we demonstrate the uncertainty principle, which states that the more confined a wave is in position space, the more spread out it is in frequency space, and vice versa. Since sigma represents the width of the wave packet in position space, changing its value will illustrate this principle.</p>
@@ -2650,7 +2658,7 @@ psi prob = 1.0 , 0.0
 psi prob = 0.5 , 0.5
 </pre></div>
 </div>
-<img alt="../_images/9bafe4cc532cac810fcab4dc2d6b01a6905225cd0c03ab98b1732afa518e05b9.png" src="../_images/9bafe4cc532cac810fcab4dc2d6b01a6905225cd0c03ab98b1732afa518e05b9.png" />
+<img alt="../_images/f59a9a76acf268a5d94203cb6ce2d47277f063648a01a8ffe712f180ca24a6cb.png" src="../_images/f59a9a76acf268a5d94203cb6ce2d47277f063648a01a8ffe712f180ca24a6cb.png" />
 </div>
 </div>
 <p>This can be seen as an entirely new basis state. We shall label it as</p>
@@ -2971,7 +2979,7 @@ Error = 8.054480129954428e-09
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a44c6b39e2ac7c4d2e826bcbdc13aa913cc734e4a05f448dc418d45893a8e173.png" src="../_images/a44c6b39e2ac7c4d2e826bcbdc13aa913cc734e4a05f448dc418d45893a8e173.png" />
+<img alt="../_images/5b26c8ce50a16cd9d0e52d91874eb7b4977924b532d1c2b2cb051cea58e15178.png" src="../_images/5b26c8ce50a16cd9d0e52d91874eb7b4977924b532d1c2b2cb051cea58e15178.png" />
 </div>
 </div>
 </section>
@@ -3221,44 +3229,6 @@ Error = 8.054480129954428e-09
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">solve_ivp</span><span class="p">(</span><span class="n">wave_fun</span><span class="p">,</span> <span class="n">t_span</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">packet</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t_eval</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_26967/89734126.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">solve_ivp</span><span class="p">(</span><span class="n">wave_fun</span><span class="p">,</span> <span class="n">t_span</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">packet</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t_eval</span><span class="p">)</span>
-
-<span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/integrate/_ivp/ivp.py</span> in <span class="ni">solve_ivp</span><span class="nt">(fun, t_span, y0, method, t_eval, dense_output, events, vectorized, args, **options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span>     <span class="n">status</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span>     <span class="k">while</span> <span class="n">status</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">655</span>         <span class="n">message</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span> 
-<span class="g g-Whitespace">    </span><span class="mi">657</span>         <span class="k">if</span> <span class="n">solver</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;finished&#39;</span><span class="p">:</span>
-
-<span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/integrate/_ivp/base.py</span> in <span class="ni">step</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span>             <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span>
-<span class="ne">--&gt; </span><span class="mi">197</span>             <span class="n">success</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step_impl</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span> 
-<span class="g g-Whitespace">    </span><span class="mi">199</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
-
-<span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/integrate/_ivp/rk.py</span> in <span class="ni">_step_impl</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span>             <span class="n">h_abs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> 
-<span class="ne">--&gt; </span><span class="mi">144</span>             <span class="n">y_new</span><span class="p">,</span> <span class="n">f_new</span> <span class="o">=</span> <span class="n">rk_step</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span>                                    <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">K</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span>             <span class="n">scale</span> <span class="o">=</span> <span class="n">atol</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_new</span><span class="p">))</span> <span class="o">*</span> <span class="n">rtol</span>
-
-<span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/integrate/_ivp/rk.py</span> in <span class="ni">rk_step</span><span class="nt">(fun, t, y, f, h, A, B, C, K)</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">63</span>         <span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">K</span><span class="p">[:</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">a</span><span class="p">[:</span><span class="n">s</span><span class="p">])</span> <span class="o">*</span> <span class="n">h</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span>         <span class="n">K</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> 
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -9319,6 +9289,15 @@ if (IPython.notebook.kernel !== null) {
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Week 5</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../06_all/Week6-intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 6</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

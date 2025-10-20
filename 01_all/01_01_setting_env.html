@@ -214,6 +214,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../05_all/05_01-scipy.html">Part 1. Scipy</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_all/Week6-intro.html">Week 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_all/06_00_installation.html">Part 0. Installation of QuTiP and Qiskit</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -459,21 +463,17 @@ conda<span class="w"> </span>activate<span class="w"> </span>/path/to/env/pyqm
 </section>
 <section id="additional-packages">
 <h3>1.2.3 Additional packages<a class="headerlink" href="#additional-packages" title="Link to this heading">#</a></h3>
-<p>Throughout the development of your projects, you may need to install additional packages in your conda environment. You can install as many packages as you need in your conda environment. To do so, you can use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code> command.</p>
+<p>Throughout the development of your projects, you may need to install additional packages in your conda environment. You can install as many packages as you need in your conda environment. To do so, you can use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code> commands.</p>
 <p>First, make sure that your specific environment is active. For example, to install the <code class="docutils literal notranslate"><span class="pre">qutip</span></code> package, you would run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>qutip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>qutip<span class="w"> </span>qiskit
+<span class="c1"># alternatively</span>
+pip<span class="w"> </span>install<span class="w"> </span>qutip<span class="w"> </span>qiskit
 </pre></div>
 </div>
-<p>Alternatively, you can use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install any packages you might need either they are or not available via conda. For example, to install the Jupyter notebook package using pip, you would run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>qutip
-</pre></div>
-</div>
-<p>You can specify the version of the package you want to install by appending <code class="docutils literal notranslate"><span class="pre">=&lt;version_number&gt;</span></code> to the package name. For example, to install version 4.6.0 of the <code class="docutils literal notranslate"><span class="pre">qutip</span></code> package, you would run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span><span class="nv">qutip</span><span class="o">=</span><span class="m">4</span>.6.0
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">qutip</span><span class="o">==</span><span class="m">4</span>.6.0
+<p>Remember you can specify the version of the package you want to install by appending <code class="docutils literal notranslate"><span class="pre">=&lt;version_number&gt;</span></code> to the package name. For example, to install version 4.6.2 of <code class="docutils literal notranslate"><span class="pre">qutip</span></code>, you would run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span><span class="nv">qutip</span><span class="o">=</span><span class="m">4</span>.6.2
+<span class="c1"># alternatively</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">qutip</span><span class="o">==</span><span class="m">4</span>.6.2
 </pre></div>
 </div>
 </section>

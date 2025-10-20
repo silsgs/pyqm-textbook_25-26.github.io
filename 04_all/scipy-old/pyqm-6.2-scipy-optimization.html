@@ -214,6 +214,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../05_all/05_01-scipy.html">Part 1. Scipy</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_all/Week6-intro.html">Week 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_all/06_00_installation.html">Part 0. Installation of QuTiP and Qiskit</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -418,6 +422,48 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rnd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1075,</span> in <span class="ni">_handle_fromlist</span><span class="nt">(module, fromlist, import_, recursive)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/pyqm/lib/python3.10/site-packages/scipy/__init__.py:134,</span> in <span class="ni">__getattr__</span><span class="nt">(name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">def</span><span class="w"> </span><span class="fm">__getattr__</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">submodules</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">134</span>         <span class="k">return</span> <span class="n">_importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;scipy.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/pyqm/lib/python3.10/importlib/__init__.py:126,</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>             <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">126</span> <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">pyqm</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">optimize</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">439</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._differentialevolution</span><span class="w"> </span><span class="kn">import</span> <span class="n">differential_evolution</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._lsq</span><span class="w"> </span><span class="kn">import</span> <span class="n">least_squares</span><span class="p">,</span> <span class="n">lsq_linear</span>
+<span class="ne">--&gt; </span><span class="mi">439</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._isotonic</span><span class="w"> </span><span class="kn">import</span> <span class="n">isotonic_regression</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._constraints</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">NonlinearConstraint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>                            <span class="n">LinearConstraint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>                            <span class="n">Bounds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._hessian_update_strategy</span><span class="w"> </span><span class="kn">import</span> <span class="n">HessianUpdateStrategy</span><span class="p">,</span> <span class="n">BFGS</span><span class="p">,</span> <span class="n">SR1</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">pyqm</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">optimize</span><span class="o">/</span><span class="n">_isotonic</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">OptimizeResult</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._pava_pybind</span><span class="w"> </span><span class="kn">import</span> <span class="n">pava</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">npt</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <section id="function-minimum">
 <h2>Function Minimum<a class="headerlink" href="#function-minimum" title="Link to this heading">#</a></h2>
@@ -442,48 +488,39 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/optimize/_minimize.py</span> in <span class="ni">_validate_bounds</span><span class="nt">(bounds, x0, meth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1009</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1010</span>         <span class="n">bounds</span><span class="o">.</span><span class="n">lb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">bounds</span><span class="o">.</span><span class="n">lb</span><span class="p">,</span> <span class="n">x0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span>         <span class="n">bounds</span><span class="o">.</span><span class="n">ub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">bounds</span><span class="o">.</span><span class="n">ub</span><span class="p">,</span> <span class="n">x0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [23],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">bounds</span> <span class="o">=</span> <span class="n">Bounds</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">initial_guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">])</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">result</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">initial_guess</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
-<span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/numpy/lib/_stride_tricks_impl.py</span> in <span class="ni">broadcast_to</span><span class="nt">(array, shape, subok)</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">422</span><span class="s2">     return _broadcast_to(array, shape, subok=subok, readonly=True)</span>
-<span class="g g-Whitespace">    </span><span class="mi">423</span><span class="s2"> </span>
+<span class="nn">File /usr/local/lib/python3.9/site-packages/scipy/optimize/_minimize.py:643,</span> in <span class="ni">minimize</span><span class="nt">(fun, x0, args, method, jac, hess, hessp, bounds, constraints, tol, callback, options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">638</span> <span class="n">i_fixed</span> <span class="o">=</span> <span class="p">(</span><span class="n">bounds</span><span class="o">.</span><span class="n">lb</span> <span class="o">==</span> <span class="n">bounds</span><span class="o">.</span><span class="n">ub</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">i_fixed</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">641</span>     <span class="c1"># all the parameters are fixed, a minimizer is not able to do</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span>     <span class="c1"># anything</span>
+<span class="ne">--&gt; </span><span class="mi">643</span>     <span class="k">return</span> <span class="n">_optimize_result_for_equal_bounds</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span>         <span class="n">fun</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">meth</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="c1"># determine whether finite differences are needed for any grad/jac</span>
+<span class="g g-Whitespace">    </span><span class="mi">648</span> <span class="n">fd_needed</span> <span class="o">=</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">callable</span><span class="p">(</span><span class="n">jac</span><span class="p">))</span>
 
-<span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/numpy/lib/_stride_tricks_impl.py</span> in <span class="ni">_broadcast_to</span><span class="nt">(array, shape, subok, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span><span class="s2">     extras = []</span>
-<span class="ne">--&gt; </span><span class="mi">358</span><span class="s2">     it = np.nditer(</span>
-<span class="g g-Whitespace">    </span><span class="mi">359</span><span class="s2">         (array,), flags=[&#39;multi_index&#39;, &#39;refs_ok&#39;, &#39;zerosize_ok&#39;] + extras,</span>
+<span class="nn">File /usr/local/lib/python3.9/site-packages/scipy/optimize/_minimize.py:1007,</span> in <span class="ni">_optimize_result_for_equal_bounds</span><span class="nt">(fun, bounds, method, args, constraints)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="n">success</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span>         <span class="n">message</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All independent variables were fixed by bounds, but &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1003</span>                    <span class="sa">f</span><span class="s2">&quot;the independent variables do not satisfy the &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1004</span>                    <span class="sa">f</span><span class="s2">&quot;constraints exactly. (Maximum violation: </span><span class="si">{</span><span class="n">maxcv</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1006</span> <span class="k">return</span> <span class="n">OptimizeResult</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1007</span>     <span class="n">x</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">fun</span><span class="o">=</span><span class="n">fun</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">),</span> <span class="n">success</span><span class="o">=</span><span class="n">success</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span> <span class="n">nfev</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="n">njev</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nhev</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1009</span> <span class="p">)</span>
 
-<span class="ne">ValueError</span>: operands could not be broadcast together with remapped shapes [original-&gt;remapped]: (2,)  and requested shape (3,)
+<span class="nn">Input In [10],</span> in <span class="ni">f</span><span class="nt">(b)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="mf">.6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">+</span><span class="mf">.3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">+</span><span class="mf">.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
 
-<span class="s2">The above exception was the direct cause of the following exception:</span>
-
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/var/folders/9b/hnjyg5ld18v94zj022rv_zzm0000gn/T/ipykernel_26911/266380097.py</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> </span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2"> initial_guess = np.array([0.0,0.0,0.0])</span>
-<span class="ne">----&gt; </span><span class="mi">5</span><span class="s2"> result = optimize.minimize(f, initial_guess, bounds=bounds)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s2"> print(result)</span>
-
-<span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/optimize/_minimize.py</span> in <span class="ni">minimize</span><span class="nt">(fun, x0, args, method, jac, hess, hessp, bounds, constraints, tol, callback, options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span><span class="s2">         # convert to new-style bounds so we only have to consider one case</span>
-<span class="g g-Whitespace">    </span><span class="mi">645</span><span class="s2">         bounds = standardize_bounds(bounds, x0, &#39;new&#39;)</span>
-<span class="ne">--&gt; </span><span class="mi">646</span><span class="s2">         bounds = _validate_bounds(bounds, x0, meth)</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">648</span><span class="s2">         if meth in {&quot;tnc&quot;, &quot;slsqp&quot;, &quot;l-bfgs-b&quot;}:</span>
-
-<span class="nn">~/opt/miniconda3/envs/PyQM/lib/python3.9/site-packages/scipy/optimize/_minimize.py</span> in <span class="ni">_validate_bounds</span><span class="nt">(bounds, x0, meth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span><span class="s2">         bounds.ub = np.broadcast_to(bounds.ub, x0.shape)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1012</span><span class="s2">     except Exception as e:</span>
-<span class="ne">-&gt; </span><span class="mi">1013</span><span class="s2">         raise ValueError(msg) from e</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span><span class="s2">     return bounds</span>
-
-<span class="ne">ValueError</span>: The number of bounds is not compatible with the length of `x0`.
+<span class="ne">IndexError</span>: index 2 is out of bounds for axis 0 with size 2
 </pre></div>
 </div>
 </div>

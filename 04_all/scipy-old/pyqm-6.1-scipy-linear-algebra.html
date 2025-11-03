@@ -218,6 +218,12 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../06_all/Week6-intro.html">Week 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../06_all/06_00_installation.html">Part 0. Installation of QuTiP and Qiskit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_all/06_01_qiskit.html">Part 1. Introduction to Qiskit</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../07_all/Week7_hackathon_intro.html">Week 7</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../07_all/07_01_problem.html">Hackathon session</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -433,60 +439,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rnd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">linalg</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">pyqm</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">linalg</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">222</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._procrustes</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._decomp_update</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="ne">--&gt; </span><span class="mi">222</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._sketches</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._decomp_cossin</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="c1"># Deprecated namespaces, to be removed in v2.0.0</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">pyqm</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">linalg</span><span class="o">/</span><span class="n">_sketches</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy._lib._util</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">check_random_state</span><span class="p">,</span> <span class="n">rng_integers</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>                               <span class="n">_transition_to_rng</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.sparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">csc_matrix</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;clarkson_woodruff_transform&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="k">def</span><span class="w"> </span><span class="nf">cwt_matrix</span><span class="p">(</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">n_columns</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">pyqm</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">sparse</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">315</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._sputils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_index_dtype</span><span class="p">,</span> <span class="n">safely_cast_index_arrays</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span> <span class="c1"># For backward compatibility with v0.19.</span>
-<span class="ne">--&gt; </span><span class="mi">315</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">csgraph</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="c1"># Deprecated namespaces, to be removed in v2.0.0</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span>     <span class="n">base</span><span class="p">,</span> <span class="n">bsr</span><span class="p">,</span> <span class="n">compressed</span><span class="p">,</span> <span class="n">construct</span><span class="p">,</span> <span class="n">coo</span><span class="p">,</span> <span class="n">csc</span><span class="p">,</span> <span class="n">csr</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">dia</span><span class="p">,</span> <span class="n">dok</span><span class="p">,</span> <span class="n">extract</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="n">lil</span><span class="p">,</span> <span class="n">sparsetools</span><span class="p">,</span> <span class="n">sputils</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span> <span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">pyqm</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">sparse</span><span class="o">/</span><span class="n">csgraph</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">201</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._flow</span><span class="w"> </span><span class="kn">import</span> <span class="n">maximum_flow</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._matching</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="n">maximum_bipartite_matching</span><span class="p">,</span> <span class="n">min_weight_full_bipartite_matching</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">201</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._reordering</span><span class="w"> </span><span class="kn">import</span> <span class="n">reverse_cuthill_mckee</span><span class="p">,</span> <span class="n">structural_rank</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._tools</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span>     <span class="n">construct_dist_matrix</span><span class="p">,</span> <span class="n">reconstruct_path</span><span class="p">,</span> <span class="n">csgraph_from_dense</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span>     <span class="n">csgraph_to_dense</span><span class="p">,</span> <span class="n">csgraph_masked_from_dense</span><span class="p">,</span> <span class="n">csgraph_from_masked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="n">csgraph_to_masked</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy._lib._testutils</span><span class="w"> </span><span class="kn">import</span> <span class="n">PytestTester</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:404,</span> in <span class="ni">parent</span><span class="nt">(self)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
 </div>
 <p>You may be wondering why we are diving into another linear algebra library considering we have already studied <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code>. Simply put, <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> contains everything that <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> does but offers additional functionality. It is used in conjuction with numpy ndarrays.</p>
 <section id="linear-systems">
@@ -562,7 +514,7 @@ x =  [[  4.  11.  -4.]
  [  1.  -4.  -1.]]
 </pre></div>
 </div>
-<img alt="../../_images/a994e83cbe7e80bb10396f213d5fba01bb6f49a0bf4fd4b99b5f7279cc226d0b.png" src="../../_images/a994e83cbe7e80bb10396f213d5fba01bb6f49a0bf4fd4b99b5f7279cc226d0b.png" />
+<img alt="../../_images/2e3bed40e5c3612aa77f14282e0655f4c26299b1216bea2b232054533461f701.png" src="../../_images/2e3bed40e5c3612aa77f14282e0655f4c26299b1216bea2b232054533461f701.png" />
 </div>
 </div>
 </section>
@@ -579,13 +531,13 @@ x =  [[  4.  11.  -4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.90793703 0.02559281 0.5592616 ]
- [0.87148729 0.78115408 0.52119322]
- [0.96424101 0.62373748 0.30683951]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.0037023  0.86401072 0.17879322]
+ [0.76244803 0.24623933 0.09893695]
+ [0.63577647 0.49604026 0.80846117]] 
 
-A^-1 =  [[ 0.45241273 -1.80638908  2.24371588]
- [-1.24573705  1.38094825 -0.07511405]
- [ 1.11060663  2.8693999  -3.63913836]]
+A^-1 =  [[-0.34242141  1.39214323 -0.09463878]
+ [ 1.26356784  0.25266287 -0.3103613 ]
+ [-0.50599468 -1.24981001  1.50176763]]
 </pre></div>
 </div>
 </div>
@@ -598,7 +550,7 @@ A^-1 =  [[ 0.45241273 -1.80638908  2.24371588]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  -0.18876306479783114
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  -0.438051536019881
 </pre></div>
 </div>
 </div>
@@ -644,13 +596,13 @@ norm(A,ord=np.inf) =  4.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues =  [ 1.35389788+0.j        -0.04622396+0.2803132j -0.04622396-0.2803132j] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues =  [0.18702679+0.16665997j 0.18702679-0.16665997j 1.30782962+0.j        ] 
 
-Eigenvector Matrix =  [[ 0.68257443+0.j          0.75080429+0.j          0.75080429-0.j        ]
- [ 0.71906777+0.j         -0.48821975-0.19373787j -0.48821975+0.19373787j]
- [ 0.13051318+0.j         -0.0674027 +0.39478716j -0.0674027 -0.39478716j]] 
+Eigenvector Matrix =  [[-0.00405707+0.1942516j  -0.00405707-0.1942516j  -0.21668812+0.j        ]
+ [-0.57672021-0.17478196j -0.57672021+0.17478196j -0.90197558+0.j        ]
+ [ 0.77401222+0.j          0.77401222-0.j         -0.37347866+0.j        ]] 
 
-First Eigenvector =  [0.68257443+0.j 0.71906777+0.j 0.13051318+0.j] 
+First Eigenvector =  [-0.00405707+0.1942516j  -0.57672021-0.17478196j  0.77401222+0.j        ] 
 </pre></div>
 </div>
 </div>
@@ -690,7 +642,7 @@ First Eigenvector =  [0.68257443+0.j 0.71906777+0.j 0.13051318+0.j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/12f7a5618269af30e07aa0beebe995ec1e6a8a5859716003e24eea32cf9fa35c.png" src="../../_images/12f7a5618269af30e07aa0beebe995ec1e6a8a5859716003e24eea32cf9fa35c.png" />
+<img alt="../../_images/34ee8728362f393c9c5cfe503d912b117e63f7342bd51f0566e195babf80fa6c.png" src="../../_images/34ee8728362f393c9c5cfe503d912b117e63f7342bd51f0566e195babf80fa6c.png" />
 </div>
 </div>
 </section>
@@ -713,8 +665,11 @@ First Eigenvector =  [0.68257443+0.j 0.71906777+0.j 0.13051318+0.j]
  [2 0 0]
  [0 3 0]] 
 
-&lt;class &#39;scipy.sparse.csr.csr_matrix&#39;&gt; 
+&lt;class &#39;scipy.sparse._csr.csr_matrix&#39;&gt; 
 
+&lt;Compressed Sparse Row sparse matrix of dtype &#39;int64&#39;
+	with 3 stored elements and shape (3, 3)&gt;
+  Coords	Values
   (0, 2)	1
   (1, 0)	2
   (2, 1)	3
@@ -758,6 +713,9 @@ First Eigenvector =  [0.68257443+0.j 0.71906777+0.j 0.13051318+0.j]
  [0 0 2]
  [6 0 0]] 
 
+&lt;Compressed Sparse Row sparse matrix of dtype &#39;int64&#39;
+	with 3 stored elements and shape (3, 3)&gt;
+  Coords	Values
   (0, 2)	1
   (1, 0)	2
   (2, 1)	3 
@@ -786,7 +744,10 @@ First Eigenvector =  [0.68257443+0.j 0.71906777+0.j 0.13051318+0.j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (0, 0)	1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;List of Lists sparse matrix of dtype &#39;float64&#39;
+	with 4 stored elements and shape (3, 3)&gt;
+  Coords	Values
+  (0, 0)	1.0
   (0, 1)	2.0
   (2, 0)	7.0
   (2, 2)	1.0 
@@ -889,8 +850,8 @@ then
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ True  True]
- [ True  True]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[False  True]
+ [ True False]] 
 
 [[False False]
  [False False]] 
@@ -954,20 +915,20 @@ The Hadamard gate is unitary as we see below.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.+0.j  0.-0.j  0.+0.j  0.+0.j]
- [ 0.+0.j  1.+0.j -0.+0.j  0.-0.j]
- [ 0.-0.j -0.-0.j  1.+0.j  0.+0.j]
- [ 0.-0.j  0.+0.j  0.-0.j  1.+0.j]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.+0.j -0.+0.j  0.+0.j  0.-0.j]
+ [-0.-0.j  1.+0.j  0.-0.j  0.-0.j]
+ [ 0.-0.j  0.+0.j  1.+0.j -0.+0.j]
+ [ 0.+0.j  0.+0.j -0.+0.j  1.+0.j]] 
 
-[[ 0.038+0.194j  0.672+0.188j -0.314+0.106j -0.338+0.501j]
- [-0.653-0.313j  0.144+0.286j  0.472+0.305j  0.137+0.194j]
- [ 0.154-0.329j -0.142+0.047j  0.207-0.683j  0.024+0.58j ]
- [ 0.439-0.334j  0.564+0.265j  0.227-0.118j  0.257-0.42j ]] 
+[[-0.266+0.291j -0.422-0.148j -0.194-0.144j -0.203+0.739j]
+ [-0.384+0.772j  0.034+0.069j -0.166+0.j    -0.063-0.469j]
+ [-0.024+0.135j -0.272+0.393j  0.822-0.261j -0.089+0.002j]
+ [-0.274-0.091j  0.406+0.633j -0.069+0.406j -0.332+0.266j]] 
 
-[[ 1.+0.j  0.+0.j -0.+0.j -0.+0.j]
- [ 0.-0.j  1.+0.j  0.+0.j  0.+0.j]
- [-0.+0.j  0.-0.j  1.+0.j -0.+0.j]
- [-0.-0.j  0.-0.j -0.-0.j  1.+0.j]]
+[[ 1.+0.j  0.+0.j  0.+0.j  0.-0.j]
+ [ 0.-0.j  1.+0.j  0.+0.j -0.-0.j]
+ [ 0.-0.j  0.+0.j  1.+0.j -0.-0.j]
+ [ 0.+0.j -0.+0.j -0.+0.j  1.+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1089,7 +1050,7 @@ $<span class="math notranslate nohighlight">\( c_1 = 0.5\)</span><span class="ma
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f31d3e43a42bf691318620629ef823ed352a08b52cb162f87e54fa4289fa674b.png" src="../../_images/f31d3e43a42bf691318620629ef823ed352a08b52cb162f87e54fa4289fa674b.png" />
+<img alt="../../_images/6454013c57cb642ff04730fb115656641898ee360085a90ebb1e12d56c3c5382.png" src="../../_images/6454013c57cb642ff04730fb115656641898ee360085a90ebb1e12d56c3c5382.png" />
 </div>
 </div>
 </section>
@@ -1121,26 +1082,26 @@ where \)</span>A<span class="math notranslate nohighlight">\( is a non-square ma
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.27802483 0.07730829]
- [0.40778902 0.28641229]
- [0.37630991 0.45691064]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.99829891 0.39027412]
+ [0.82852674 0.99894182]
+ [0.02551178 0.17719334]] 
 
-U =  [[-0.32224029  0.7448934   0.5842046 ]
- [-0.61281111  0.30623129 -0.72848125]
- [-0.72154261 -0.59275308  0.35779889]] 
+U =  [[-0.62326702  0.76282644  0.17214542]
+ [-0.77785687 -0.58209557 -0.23686163]
+ [-0.08047923 -0.28153254  0.95617076]] 
 
-Diagonal Elements =  [0.80891983 0.16620306] 
+Diagonal Elements =  [1.63705838 0.43051608] 
 
-v =  [[-0.75534318 -0.65532944]
- [ 0.65532944 -0.75534318]] 
+v =  [[-0.77500912 -0.63195005]
+ [ 0.63195005 -0.77500912]] 
 
-S =  [[0.80891983 0.        ]
- [0.         0.16620306]
+S =  [[1.63705838 0.        ]
+ [0.         0.43051608]
  [0.         0.        ]] 
 
-A =  [[0.27802483 0.07730829]
- [0.40778902 0.28641229]
- [0.37630991 0.45691064]]
+A =  [[0.99829891 0.39027412]
+ [0.82852674 0.99894182]
+ [0.02551178 0.17719334]]
 </pre></div>
 </div>
 </div>
@@ -1168,17 +1129,17 @@ $<span class="math notranslate nohighlight">\(A = Z T Z^\dagger \)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.55969869 0.98122334 0.22619461]
- [0.24530843 0.08993176 0.0456872 ]
- [0.56829763 0.60138912 0.74087103]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.7103224  0.6808826  0.87198663]
+ [0.59333157 0.46870625 0.42794521]
+ [0.5396779  0.35536792 0.90692073]] 
 
-A =  [[0.55969869 0.98122334 0.22619461]
- [0.24530843 0.08993176 0.0456872 ]
- [0.56829763 0.60138912 0.74087103]] 
+A =  [[0.7103224  0.6808826  0.87198663]
+ [0.59333157 0.46870625 0.42794521]
+ [0.5396779  0.35536792 0.90692073]] 
 
-A =  [[0.55969869+0.j 0.98122334+0.j 0.22619461+0.j]
- [0.24530843+0.j 0.08993176+0.j 0.0456872 +0.j]
- [0.56829763+0.j 0.60138912+0.j 0.74087103+0.j]]
+A =  [[0.7103224 +0.j 0.6808826 +0.j 0.87198663+0.j]
+ [0.59333157+0.j 0.46870625+0.j 0.42794521+0.j]
+ [0.5396779 +0.j 0.35536792+0.j 0.90692073+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1190,9 +1151,9 @@ A =  [[0.55969869+0.j 0.98122334+0.j 0.22619461+0.j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T =  [[ 1.20294251  0.52355708 -0.74209033]
- [ 0.          0.40923817 -0.37762384]
- [ 0.          0.         -0.2216792 ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T =  [[ 1.87030412 -0.22423416 -0.26473498]
+ [ 0.         -0.09064379 -0.05473726]
+ [ 0.          0.          0.30628906]]
 </pre></div>
 </div>
 </div>
@@ -1204,9 +1165,9 @@ A =  [[0.55969869+0.j 0.98122334+0.j 0.22619461+0.j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z =  [[ 0.52346561  0.78998514  0.31922913]
- [ 0.1498025   0.28349598 -0.94720074]
- [ 0.83877468 -0.54364834 -0.03005865]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z =  [[-0.69001408 -0.66291904 -0.29054934]
+ [-0.46217446  0.71247593 -0.52798941]
+ [-0.55702364  0.23003564  0.79800267]]
 </pre></div>
 </div>
 </div>

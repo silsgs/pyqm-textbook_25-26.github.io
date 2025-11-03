@@ -26,13 +26,6 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-import numpy as np  # we will use numpy for arrays and matrices
-import numpy.random as rnd # loading random number generation functions
-
-import scipy # loading the scipy library
-import scipy.linalg as linalg # alias for linear algebra functions
-from scipy import stats # loading statistical functions
-
-import matplotlib.pyplot as plt # loading plotting functions
+sol = scipy.integrate.solve_ivp(wave_fun, t_span = [0, 1], y0 = packet, t_eval = t_eval)
 -------------------
 

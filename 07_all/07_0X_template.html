@@ -57,10 +57,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '07_all/07_0X_template';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Hackathon week" href="Week7_hackathon_intro.html" />
+    <link rel="next" title="Problem set 1" href="07_01_problem.html" />
+    <link rel="prev" title="Part 2. Introduction to QuTiP" href="../06_all/06_02_qutip.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -219,8 +222,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../06_all/06_02_qutip.html">Part 2. Introduction to QuTiP</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week7_hackathon_intro.html">Hackathon week</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hackathon session</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Hackathon session</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="07_01_problem.html">Problem set 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_02_problem.html">Problem set 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_03_problem.html">Problem set 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_04_spin.html">Problem set 4</a></li>
 </ul>
 </details></li>
 </ul>
@@ -374,7 +380,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#short-guidelines">Short guidelines</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-you-can-use">Resources you can use</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#short-presentation-outline-15">Short presentation outline (15’)</a></li>
 </ul>
 </li>
@@ -395,42 +401,57 @@ document.write(`
 <h2>Short guidelines<a class="headerlink" href="#short-guidelines" title="Link to this heading">#</a></h2>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
-<p>In this problem, you will work on a specific challenge related to quantum mechanics or quantum computing. Your task is to develop a solution using the concepts and tools you’ve learned throughout the course.</p>
+<p>Today you will be working on a specific challenge related to quantum physics or quantum computing. In groups, your task is to develop a solution using the concepts and tools you’ve learned throughout the course. You can use any modules or libraries you find useful, such as NumPy, SciPy or QuTiP.</p>
+<p>We will be using AI copilots to assist you in coding and problem-solving. The focus will be on collaboration, creativity, and critical thinking.</p>
+<p>The final part of the session will involve a short presentation (15’), where each group will share their approach, solution, and reflections on the use of AI tools in their process.</p>
 </section>
 <section id="objectives">
 <h3>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Understand the problem statement and requirements.</p></li>
 <li><p>Collaborate with your team to brainstorm ideas and approaches.</p></li>
-<li><p>Develop a solution using Python or Mathematica.</p></li>
-<li><p>Prepare a presentation to share your findings and reflect on the use of AI copilots in your process.</p></li>
+<li><p>Develop a solution using Python or Mathematica. You can use AI tools to assist you in coding and problem-solving.</p></li>
+<li><p>Prepare a presentation to share your findings and <strong>reflect on the use of AI in your process</strong>.</p></li>
 </ol>
 </section>
-<section id="resources">
-<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h3>
+<section id="resources-you-can-use">
+<h3>Resources you can use<a class="headerlink" href="#resources-you-can-use" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Access to AI copilots for coding assistance.</p></li>
+<li><p>Access to AI copilots/tools for coding assistance. Some examples include GenAI, ChatGPT, or other similar tools.</p></li>
 <li><p>Documentation and resources from previous weeks.</p></li>
-<li><p>Collaboration tools for team communication.</p></li>
 </ul>
 </section>
 <section id="short-presentation-outline-15">
 <h3>Short presentation outline (15’)<a class="headerlink" href="#short-presentation-outline-15" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Introduction to the problem</p></li>
-<li><p>Solution development</p></li>
+<li><p>Background:</p>
+<ul class="simple">
+<li><p>What was the question?</p></li>
+<li><p>How did you approach it?</p></li>
+</ul>
+</li>
+<li><p>Solution development and implementation</p></li>
 <li><p>Implementation (mathematical and coding)</p></li>
 <li><p>Critical reflection on the use of AI copilots. Eg:</p>
 <ul class="simple">
-<li><p>Which AI tools did you use?</p></li>
-<li><p>How did they help you?</p></li>
-<li><p>Were there any challenges in using them?</p></li>
-<li><p>How did you ensure the correctness of the solution?</p></li>
+<li><p>Which AI tool/s did you use?</p></li>
+<li><p>Was it helpful, misleading, or counterproductive?</p></li>
+<li><p>What resources did you need other than AI?</p></li>
+<li><p>How confident are you in your solution?</p></li>
+<li><p>Which parts are less clear or hard to verify?</p></li>
+</ul>
+</li>
+<li><p>Coding skills evaluation</p>
+<ul class="simple">
+<li><p>To what extent do you understand the code generated with AI assistance?</p></li>
+<li><p>Were there functions or code constructs used that you didn’t know before? Do you understand them now?</p></li>
 </ul>
 </li>
 </ol>
 </section>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -464,13 +485,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Week7_hackathon_intro.html"
+       href="../06_all/06_02_qutip.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hackathon week</p>
+        <p class="prev-next-title">Part 2. Introduction to QuTiP</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="07_01_problem.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem set 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -491,7 +521,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#short-guidelines">Short guidelines</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-you-can-use">Resources you can use</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#short-presentation-outline-15">Short presentation outline (15’)</a></li>
 </ul>
 </li>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Problem set 1 &#8212; Python for Quantum Mechanics book</title>
+    <title>Problem set 3 &#8212; Python for Quantum Mechanics book</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '07_all/07_01_problem';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07_all/07_03_problem';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem set 2" href="07_02_problem.html" />
-    <link rel="prev" title="Hackathon session" href="07_0X_template.html" />
+    <link rel="next" title="Problem set 4" href="07_04_spin.html" />
+    <link rel="prev" title="Problem set 2" href="07_02_problem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -223,9 +223,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="07_0X_template.html">Hackathon session</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem set 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_01_problem.html">Problem set 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_02_problem.html">Problem set 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_03_problem.html">Problem set 3</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem set 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_04_spin.html">Problem set 4</a></li>
 </ul>
 </details></li>
@@ -283,7 +283,7 @@
       
       
       
-      <li><a href="../_sources/07_all/07_01_problem.ipynb" target="_blank"
+      <li><a href="../_sources/07_all/07_03_problem.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -367,7 +367,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem set 1</h1>
+    <h1>Problem set 3</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,21 +384,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#short-presentation-outline-15">Short presentation outline (15’)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-1-many-body-quantum-systems">Problem set 1: Many-body quantum systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identical-particle-time-evolution">1.1 Identical particle time-evolution.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polarization-states">1.2 Polarization states.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-2-ensembles">Problem set 2: Ensembles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensembles-of-frac-1-2-spin-systems">2.1 Ensembles of <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> spin systems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-ensembles">2.2 Mixed ensembles</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-3-galuber-states">Problem set 3: Galuber states</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-maths-problem">(Bonus) Maths problem</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#asymptotic-and-convergent-series">Asymptotic and Convergent series</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrically-driven-kerr-model">Parametrically driven Kerr model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-extra-challenge">(Bonus) Extra challenge:</a></li>
 </ul>
 </li>
 </ul>
@@ -412,8 +400,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-1">
-<h1>Problem set 1<a class="headerlink" href="#problem-set-1" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-3">
+<h1>Problem set 3<a class="headerlink" href="#problem-set-3" title="Link to this heading">#</a></h1>
 <section id="short-guidelines">
 <h2>Short guidelines<a class="headerlink" href="#short-guidelines" title="Link to this heading">#</a></h2>
 <section id="description">
@@ -467,98 +455,28 @@ document.write(`
 </ol>
 </section>
 </section>
-<section id="problem-set-1-many-body-quantum-systems">
-<h2>Problem set 1: Many-body quantum systems<a class="headerlink" href="#problem-set-1-many-body-quantum-systems" title="Link to this heading">#</a></h2>
-<section id="identical-particle-time-evolution">
-<h3>1.1 Identical particle time-evolution.<a class="headerlink" href="#identical-particle-time-evolution" title="Link to this heading">#</a></h3>
-<p>Explain why an initially completely symmetric or anti-symmetric wave function describing
-a system of identical particles remains symmetric or anti-symmetric at later times.</p>
+<section id="problem-3">
+<h2>Problem 3<a class="headerlink" href="#problem-3" title="Link to this heading">#</a></h2>
+<section id="parametrically-driven-kerr-model">
+<h3>Parametrically driven Kerr model<a class="headerlink" href="#parametrically-driven-kerr-model" title="Link to this heading">#</a></h3>
+<p>The parametrically driven Kerr model consists of a single bosonic cavity mode of frequency <span class="math notranslate nohighlight">\(\omega_{a}\)</span> containing a Kerr non-linearity with strength <span class="math notranslate nohighlight">\(U\)</span>. proportional to the thrid-order nonlinear susceptibility. The cavity is parametrically driven by a pump mode at the frequency <span class="math notranslate nohighlight">\(\omega_{p} \sim 2\omega_{a}\)</span>, which created two excitations in the cavity mode per absorbed photon. Assuming a sufficiently large separation of timescales between the cavity and pump mode dynamis, we can adiabattically eliminate the pump and describe the dynamics of the cavity mode via the interaction-picture Hamiltonian <span class="math notranslate nohighlight">\((\hbar=1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{H} = - \Delta \hat{a}^{ \dagger} \hat{a} + \frac{U}{2} \hat{a}^{ \dagger 2} \hat{a}^{2} + \frac{G}{2} (\hat{a}^{ \dagger 2} + \hat{a}^{2} ) \]</div>
+<p>where <span class="math notranslate nohighlight">\( \Delta = \omega_{a} - \omega_{p}/2 \)</span> is the detuning of the cavity from the pump, <span class="math notranslate nohighlight">\(G\)</span> corresponds to the strength of the two-photon parametric pump, and <span class="math notranslate nohighlight">\( \hat{a} (\hat{a}^{ \dagger} \)</span> is the bosonic annihilation (creation) operator of the cavity mode satisfiying the commutation relation <span class="math notranslate nohighlight">\( [ \hat{a}, \hat{a}^{ \dagger} ] = 1 \)</span>.</p>
+<p>We further assume the cavity is subject to photon losses, with a loss rate <span class="math notranslate nohighlight">\(\kappa\)</span>. As such, it can be described by the Born-Markov quantum master equation:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d\hat{\rho}}{dt} = -i [ \hat{H}, \hat{\rho} ] + \kappa \left[ \hat{a} \hat{\rho} \hat{a}^{\dagger} - \frac{1}{2} \{ \hat{a}^{\dagger} \hat{a}, \hat{\rho} \} \right] \]</div>
+<p><strong>Task</strong>:</p>
+<p>Reproduce Figures 1a, 1b, 2, 3a and 4c.</p>
+<p><img alt="Fig1a" src="../_images/prob3_fig1.png" /></p>
+<p><img alt="Fig2" src="../_images/prob3_fig2.png" /></p>
+<p><img alt="Fig3a" src="../_images/prob3_fig3a.png" /></p>
+<p><img alt="Fig4c" src="../_images/prob3_fig4c.png" /></p>
 </section>
-<section id="polarization-states">
-<h3>1.2 Polarization states.<a class="headerlink" href="#polarization-states" title="Link to this heading">#</a></h3>
-<p>We model the phase of a photon as a two-level system (q-bit) whose Hilbert space is spanned by a orthonormal basis of two states: |1〉 and |2〉. They correspond, for instance, to two orthogonal linear polarizations with observable polarization operators:</p>
-<div class="math notranslate nohighlight">
-\[ P_{1} = |1\rangle\langle1|,  P_{2} = |2\rangle\langle2| \]</div>
-<ol class="arabic simple">
-<li><p>Provide an example of a normalized pure state for which the expectation value of both <span class="math notranslate nohighlight">\(P_{1}\)</span> and <span class="math notranslate nohighlight">\(P_{2}\)</span> equals 1/2, and a two-by-two matrix representation of the corresponding density-mmatrix operator in the given basis.</p></li>
-<li><p>Find the density matrix for the most general normalized pure state with the properties specified in the previous task.</p></li>
-<li><p>The state with partial polarization has the general representation:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[ \rho = \frac{1}{2}(\mathbb{1} + \xi \cdot \sigma ) \]</div>
-<p>where 1 is the 2x2 identity matrix, <span class="math notranslate nohighlight">\(\sigma\)</span> is the vector of Pauli matrices, <span class="math notranslate nohighlight">\(\xi \in \mathbb{R}^{3}\)</span>. For which <span class="math notranslate nohighlight">\(\xi\)</span> is this state a pure state?</p>
-<ol class="arabic simple" start="4">
-<li><p>For which <span class="math notranslate nohighlight">\(\xi\)</span> is <span class="math notranslate nohighlight">\(\langle P_{1} \rangle = 1\)</span>? For which <span class="math notranslate nohighlight">\(\xi\)</span> is <span class="math notranslate nohighlight">\(\langle P_{2} \rangle = 1\)</span>?</p></li>
-<li><p>Define the states with circular polarizations:
-$<span class="math notranslate nohighlight">\( | \pm \rangle = \frac{1}{2} ( |1\rangle \pm i |2\rangle ) \)</span>$</p></li>
-</ol>
-<p>For which <span class="math notranslate nohighlight">\(\xi\)</span> is <span class="math notranslate nohighlight">\(\langle P_{+} \rangle = 1\)</span>? For which <span class="math notranslate nohighlight">\(\xi\)</span> is <span class="math notranslate nohighlight">\(\langle P_{-} \rangle = 1\)</span>?</p>
-</section>
-</section>
-<section id="problem-set-2-ensembles">
-<h2>Problem set 2: Ensembles<a class="headerlink" href="#problem-set-2-ensembles" title="Link to this heading">#</a></h2>
-<section id="ensembles-of-frac-1-2-spin-systems">
-<h3>2.1 Ensembles of <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> spin systems<a class="headerlink" href="#ensembles-of-frac-1-2-spin-systems" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Consider a pure ensemble of identically prepared spin <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> systems. Suppose the expectation values <span class="math notranslate nohighlight">\(\langle S_{x} \rangle\)</span> and <span class="math notranslate nohighlight">\(\langle S_{z} \rangle\)</span> and the sign of <span class="math notranslate nohighlight">\(\langle S_{y} \rangle\)</span> are known. Show how we may determine the state vector. Why is it unnecesary to know the magnitude of <span class="math notranslate nohighlight">\(\langle S_{y} \rangle\)</span>?</p></li>
-<li><p>Consider now a mixed ensemble of spin <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> systems. Suppose the ensemble averages <span class="math notranslate nohighlight">\(\langle S_{x} \rangle\)</span>, <span class="math notranslate nohighlight">\(\langle S_{y} \rangle\)</span>, and <span class="math notranslate nohighlight">\(\langle S_{z} \rangle\)</span> are known. Show how we may determine the 2x2 density matrix of the ensemble.</p></li>
-</ol>
-</section>
-<section id="mixed-ensembles">
-<h3>2.2 Mixed ensembles<a class="headerlink" href="#mixed-ensembles" title="Link to this heading">#</a></h3>
-<p>The density matrix is defined as:</p>
-<div class="math notranslate nohighlight">
-\[ \rho = \sum_{i} w_{i} | \alpha^{i} \rangle \langle \alpha^{i} | \]</div>
-<p>If <span class="math notranslate nohighlight">\(w_{i} = 1\)</span> for a given <span class="math notranslate nohighlight">\(i\)</span> and 0 elsewhere, then the ensemble is said to be a pure ensemble. Consider a mixed ensemble of spin <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> systems, containing 75% of <span class="math notranslate nohighlight">\(S_{z}^{+}\)</span> systems and 25% of <span class="math notranslate nohighlight">\(S_{x}^{+}\)</span> systems. Calculate the density matrix and the ensemble average expectation value [S]. Consider now that the <span class="math notranslate nohighlight">\(S_{z}\)</span> systems are replaced by systems with <span class="math notranslate nohighlight">\(S\cdot \hat{n}(+)\)</span>, where <span class="math notranslate nohighlight">\(\hat{n}=\cos \theta \hat{y} + \sin \theta \hat{z}\)</span>. Calculate the ensemble average values now.</p>
-</section>
-</section>
-<section id="problem-set-3-galuber-states">
-<h2>Problem set 3: Galuber states<a class="headerlink" href="#problem-set-3-galuber-states" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>By using the commutstion relation <span class="math notranslate nohighlight">\([a, a^{\dagger}] =1\)</span>, show that</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[ e^{-\beta a^{\dagger}} ae^{\beta a^{\dagger}} = \beta + a \]</div>
-<p>Using this result, show that <span class="math notranslate nohighlight">\(\beta = N e^{\beta a^{\dagger}} |0\rangle\)</span> is a coherent state, i.e. <span class="math notranslate nohighlight">\(a|\beta\rangle = \beta |\beta\rangle\)</span>. Finally show that the normalization, <span class="math notranslate nohighlight">\(N=e^{- |\beta|^{2}/2}\)</span>.</p>
-<p><em>Hint</em>: To prove it, consider the <span class="math notranslate nohighlight">\(\beta\)</span> derivative of this expression.</p>
-<ol class="arabic simple" start="2">
-<li><p>Calculate the expectation values, <span class="math notranslate nohighlight">\(x_{0}=\langle \hat{x} \rangle\)</span>  and <span class="math notranslate nohighlight">\(p_{0}=\langle \hat{p} \rangle\)</span>, with respect to <span class="math notranslate nohighlight">\(|\beta \rangle\)</span> and, by considering <span class="math notranslate nohighlight">\(\langle \hat{x}^{2} \rangle\)</span>,  and <span class="math notranslate nohighlight">\(\langle \hat{p}^{2} \rangle\)</span>, show that,</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[ (\Delta p)^{2}(\Delta x)^{2} = \frac{\hbar^{2}}{4} \]</div>
-<p>where <span class="math notranslate nohighlight">\(\Delta p = \hat{p} - \langle \hat{p} \rangle\)</span> (similarly <span class="math notranslate nohighlight">\(x\)</span>).</p>
-<p><em>Hint</em>: Remember how creation and anhiliation operators are related to the phase space operators <span class="math notranslate nohighlight">\(\hat{x}\)</span> and <span class="math notranslate nohighlight">\(\hat{p}\)</span>. Also, note that the Hermitian conjugate of the eigenvalue equation <span class="math notranslate nohighlight">\(a|\beta \rangle = \beta |\beta \rangle\)</span> leads to the relation <span class="math notranslate nohighlight">\(\langle \beta | a^{\dagger} = \beta | \beta^{*} \rangle\)</span>.</p>
-<ol class="arabic simple" start="3">
-<li><p>To determine the coordinate representation to the coherent state, <span class="math notranslate nohighlight">\(\psi(x) = \langle x|\beta\rangle\)</span>, it is helpful to revert back to the expression for <span class="math notranslate nohighlight">\(a\)</span> as a differential operator. Show that the eigenvalue equation <span class="math notranslate nohighlight">\(a|\beta \rangle = \beta|\beta \rangle\)</span> translates to the equation:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[ (x+ \frac{\hbar}{m \omega} \partial_{x}) \psi(x) = \beta \psi(x)\]</div>
-<p>Show that this equation has the solution:</p>
-<div class="math notranslate nohighlight">
-\[ \psi(x) = N exp [-\frac{(x-x_{0}^{2})}{4 (\Delta x)^{2}} + i \frac{p_{0}x}{\hbar}] \]</div>
-<p>where <span class="math notranslate nohighlight">\(x_{0}\)</span> and <span class="math notranslate nohighlight">\(p_{0}\)</span> are defined in part (2).</p>
-<section id="bonus-maths-problem">
-<h3>(Bonus) Maths problem<a class="headerlink" href="#bonus-maths-problem" title="Link to this heading">#</a></h3>
-<section id="asymptotic-and-convergent-series">
-<h4>Asymptotic and Convergent series<a class="headerlink" href="#asymptotic-and-convergent-series" title="Link to this heading">#</a></h4>
-<p>A sequence of function <span class="math notranslate nohighlight">\(\{ \psi_{n} \}\)</span> with <span class="math notranslate nohighlight">\( \psi_{n} : C/z_{0} \rightarrow C , n=0,1,2,... \)</span> is called an asymptotic sequence as <span class="math notranslate nohighlight">\(z \rightarrow z_{0}\)</span> if for each <span class="math notranslate nohighlight">\(n=1,2,...\)</span></p>
-<div class="math notranslate nohighlight">
-\[ \psi_{n-1}(z) = o(\psi_{n}(z)) , z \rightarrow z_{0} \]</div>
-<p>Let <span class="math notranslate nohighlight">\(f(z)\)</span> be a continuous function such that <span class="math notranslate nohighlight">\(f(x):z \in C/z_{0} \rightarrow f(z) \in C\)</span>. We say that <span class="math notranslate nohighlight">\(f(z)\)</span> allows an asymptotic series expansion for <span class="math notranslate nohighlight">\(z \rightarrow z_{0}\)</span> if there exist an asymptotic sequence <span class="math notranslate nohighlight">\(\{ \psi_{n} \}\)</span>, such that for each <span class="math notranslate nohighlight">\(N=1,2,...\)</span></p>
-<div class="math notranslate nohighlight">
-\[ |f(z) - \sum_{n=0}^{N-1} a_{n}\psi_{n}(z) | = O(\psi_{N}(z)), \quad z \rightarrow z_{0}\]</div>
-<p>or equivalently,</p>
-<div class="math notranslate nohighlight">
-\[ |f(z) - \sum_{n=0}^{N-1} a_{n}\psi_{n}(z) | = o(\psi_{N}(z)), \quad z \rightarrow z_{0}\]</div>
-<p>Asymptotic series often appear in many branches of physics when performing perturbative expansions. Note that asymptotic series need not to converge. Similarly, a convergent series need not to be asymptotic.</p>
-<ol class="arabic simple">
-<li><p>Consider the (uniformly convergent) Taylos series for the exponential function <span class="math notranslate nohighlight">\(f(z) = e^{z}\)</span>. Prove that it does not define an asymptotic series for <span class="math notranslate nohighlight">\(e^{z}\)</span>. Prove that it does not define an asymptotic series for <span class="math notranslate nohighlight">\(e^{z}\)</span> when <span class="math notranslate nohighlight">\(|z| \rightarrow \infty\)</span>.</p></li>
-<li><p>Consider now the function,</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[ -E_{i}(-x) = E_{i}(x) = \int_{x}^{\infty} \frac{exp(-t)}{t} dt \]</div>
-<p>and prove that <span class="math notranslate nohighlight">\(E_{1}(x)\)</span> does not converge in any standard sense, but admits an asymmptotic expansion for <span class="math notranslate nohighlight">\(x \rightarrow \infty\)</span>.</p>
-</section>
+<section id="bonus-extra-challenge">
+<h3>(Bonus) Extra challenge:<a class="headerlink" href="#bonus-extra-challenge" title="Link to this heading">#</a></h3>
+<p>If there is time, reproduce also Fig. 5a (to get an exact match, <span class="math notranslate nohighlight">\(N\)</span> has to be chosen rather high especially for low <span class="math notranslate nohighlight">\(U\)</span>, why? this results in high computation times, so for the sake of this exercise, I’d advise choosing <span class="math notranslate nohighlight">\(N \approx 20\)</span> and high <span class="math notranslate nohighlight">\(U\)</span> only). Implement equation (23). You may compare your results against the results produced using QuTiP built-in functions for solving master equations and computing Wigner functions. <a class="reference external" href="https://qutip.org/docs/4.0.2/guide/guide-correlation.html#steadystate-correlation-function">https://qutip.org/docs/4.0.2/guide/guide-correlation.html#steadystate-correlation-function</a></p>
+<p><img alt="Fig5" src="../_images/prob3_fig5.png" /></p>
 </section>
 </section>
 </section>
@@ -594,20 +512,20 @@ $<span class="math notranslate nohighlight">\( | \pm \rangle = \frac{1}{2} ( |1\
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="07_0X_template.html"
+       href="07_02_problem.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hackathon session</p>
+        <p class="prev-next-title">Problem set 2</p>
       </div>
     </a>
     <a class="right-next"
-       href="07_02_problem.html"
+       href="07_04_spin.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem set 2</p>
+        <p class="prev-next-title">Problem set 4</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -634,21 +552,9 @@ $<span class="math notranslate nohighlight">\( | \pm \rangle = \frac{1}{2} ( |1\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#short-presentation-outline-15">Short presentation outline (15’)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-1-many-body-quantum-systems">Problem set 1: Many-body quantum systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identical-particle-time-evolution">1.1 Identical particle time-evolution.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polarization-states">1.2 Polarization states.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-2-ensembles">Problem set 2: Ensembles</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensembles-of-frac-1-2-spin-systems">2.1 Ensembles of <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> spin systems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-ensembles">2.2 Mixed ensembles</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-set-3-galuber-states">Problem set 3: Galuber states</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-maths-problem">(Bonus) Maths problem</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#asymptotic-and-convergent-series">Asymptotic and Convergent series</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrically-driven-kerr-model">Parametrically driven Kerr model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-extra-challenge">(Bonus) Extra challenge:</a></li>
 </ul>
 </li>
 </ul>

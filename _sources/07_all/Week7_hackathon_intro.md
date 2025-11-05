@@ -13,24 +13,34 @@ AI copilots can be a great support in coding, but it's essential to use them wis
 
 ## Hackathon Guidelines
 
-We will split the participants into two teams. Each team will work collaboratively to tackle a specific challenge related to quantum mechanics or quantum computing.
+### Objectives
 
-The hackathon will run for 3 hours. During this time, each team will brainstorm ideas, develop and code solutions, and finally, prepare a presentation of their findings. In that presentation, each team will explain the solution they developed; if they were able to implement it successfully, either in Python or Mathematica, and, very importantly, a section reflecting on the role that AI copilots played in their problem-solving process.
+1. Understand the problem statement and requirements.
+2. Collaborate with your team to brainstorm ideas and approaches.
+3. Develop a solution using Python or Mathematica. You can utilize AI copilots to assist in coding and problem-solving.
+4. Prepare a presentation to share your findings and reflect on the use of AI copilots in your process.
 
-Presentation structure: 
+### Resources you can use
 
-(15 minutes per team)
+- Access to AI copilots for coding assistance. Some examples include GenAI, ChatGPT, or other similar tools.
+- Documentation and resources from previous weeks.
+- Collaboration tools for team communication.
 
-1. Introduction to the problem
-2. Solution development
+### Short presentation outline (15')
+1. Background: 
+   - What was the question?
+   - How did you approach it?
+2. Solution development and implementation
 3. Implementation (mathematical and coding)
 4. Critical reflection on the use of AI copilots. Eg:
-   - Which AI tools did you use?
-   - How did they help you?
-   - Were there any challenges in using them?
-   - How did you ensure the correctness of the solution?
+   - Which AI tool/s did you use?
+   - Was it helpful, misleading, or counterproductive?
+   - What resources did you need other than AI?
+   - How confident are you in your solution? 
+   - Which parts are less clear or hard to verify?
+5. Coding skills evaluation
+   - To what extent do you understand the code generated with AI assistance?
+   - Were there functions or code constructs used that you didn't know before? Do you understand them now?
 
-With this hackathon, we aim at encouraging creativity in problem-solving (first, human driven-strategies in problem formulation and solving), collaboration with your team, and practical application of AI copilots. In the future, these skills will be invaluable as AI tools become increasingly integrated into scientific research and development. 
 
-Good luck, and have fun!
-
+Good luck and have fun! 

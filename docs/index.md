@@ -40,11 +40,11 @@ Monday sessions will be lectures introducing new concepts and libraries, while T
 | 2    | Tu. Sept. 23rd | F2F              | Exercises and tutorial asistance                                         |
 | 3    | Mo. Sept. 29th | Lecture          | [Functions and classes](03_all/Week3-intro.md)                           |
 | 3    | Tu. Sept. 30th | F2F              | Exercises and tutorial asistance                                         |
-| 4    | Mo. Oct. 6th   | Lecture          | Numpy and Matplotlib                                                     |
+| 4    | Mo. Oct. 6th   | Lecture          | [Numpy and Matplotlib](04_all/Week4-intro.md)                           |
 | 4    | Tu. Oct. 7th   | F2F              | Exercises and tutorial asistance                                         |
-| 5    | Mo. Oct. 13th  | Lecture          | Scipy and Scientific writing tools                                       |
+| 5    | Mo. Oct. 13th  | Lecture          | [Scipy and Scientific writing tools](05_all/Week5-intro.md)             |
 | 5    | Tu. Oct. 14th  | F2F              | Exercises and tutorial asistance                                         |
-| 6    | Mo. Oct. 20th  | Lecture          | Qutip - Quantum Toolbox in Python                                        |
+| 6    | Mo. Oct. 20th  | Lecture          | [Qutip - Quantum Toolbox in Python](06_all/Week6-intro.md)              |
 | 6    | Tu. Oct. 21st  | F2F              | Exercises and tutorial asistance                                         |
 
 

@@ -52,3 +52,21 @@ parts:
           numbered: false
         sections:
         - file: 05_all/05_01-scipy.ipynb
+
+      - file: 06_all/Week6-intro.md
+        options:
+          numbered: false
+        sections:
+        - file: 06_all/06_00_installation.ipynb
+        - file: 06_all/06_01_qiskit.ipynb
+        - file: 06_all/06_02_qutip.ipynb
+
+      - file: 07_all/07_0X_template.ipynb
+        options:
+          numbered: false
+        sections:
+        - file: 07_all/07_01_problem.ipynb
+        - file: 07_all/07_02_problem.ipynb
+        - file: 07_all/07_03_problem.ipynb
+        - file: 07_all/07_04_spin.ipynb
+        #- file: 07_all/hackathon_dataset_description.ipynb

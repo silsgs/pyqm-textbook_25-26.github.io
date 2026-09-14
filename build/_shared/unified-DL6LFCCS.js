@@ -1,1 +1,1 @@
-import{b as a}from"/pyqm-textbook_25-26/build/_shared/chunk-7SAO57PG.js";import"/pyqm-textbook_25-26/build/_shared/chunk-O4VQNZ62.js";import"/pyqm-textbook_25-26/build/_shared/chunk-OZE3FFNP.js";export{a as unified};
+import{b as a}from"/pyqm-25-26_textbook/build/_shared/chunk-7SAO57PG.js";import"/pyqm-25-26_textbook/build/_shared/chunk-O4VQNZ62.js";import"/pyqm-25-26_textbook/build/_shared/chunk-OZE3FFNP.js";export{a as unified};

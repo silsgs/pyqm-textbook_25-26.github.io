@@ -1,1 +1,1 @@
-import{c as e}from"/pyqm-textbook_25-26/build/_shared/chunk-OZE3FFNP.js";var n=e((l,t)=>{function a(i){return{name:"Plain text",aliases:["text","txt"],disableAutodetect:!0}}t.exports=a});export default n();
+import{c as e}from"/pyqm-25-26_textbook/build/_shared/chunk-OZE3FFNP.js";var n=e((l,t)=>{function a(i){return{name:"Plain text",aliases:["text","txt"],disableAutodetect:!0}}t.exports=a});export default n();

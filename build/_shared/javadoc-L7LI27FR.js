@@ -1,1 +1,1 @@
-import{a}from"/pyqm-textbook_25-26/build/_shared/chunk-4UW3WPNX.js";import"/pyqm-textbook_25-26/build/_shared/chunk-2HVDTW4E.js";import"/pyqm-textbook_25-26/build/_shared/chunk-MRS6DOXX.js";import"/pyqm-textbook_25-26/build/_shared/chunk-OZE3FFNP.js";export default a();
+import{a}from"/pyqm-25-26_textbook/build/_shared/chunk-4UW3WPNX.js";import"/pyqm-25-26_textbook/build/_shared/chunk-2HVDTW4E.js";import"/pyqm-25-26_textbook/build/_shared/chunk-MRS6DOXX.js";import"/pyqm-25-26_textbook/build/_shared/chunk-OZE3FFNP.js";export default a();
